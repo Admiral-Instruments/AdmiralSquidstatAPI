@@ -1,0 +1,25 @@
+var class_ais_constant_current_element =
+[
+    [ "AisConstantCurrentElement", "class_ais_constant_current_element.html#afbdd4ccd1a7d477467ee71b65d78c4f8", null ],
+    [ "AisConstantCurrentElement", "class_ais_constant_current_element.html#a902cf33513298761d3845a0872e41089", null ],
+    [ "~AisConstantCurrentElement", "class_ais_constant_current_element.html#a31128070c8d4779896cd72e0642a353e", null ],
+    [ "getApproxMaxCurrent", "class_ais_constant_current_element.html#a37b05483a4cd30914f18e93851523c75", null ],
+    [ "getCategory", "class_ais_constant_current_element.html#aa987db0338a3c142887f8d89d8240323", null ],
+    [ "getCurrent", "class_ais_constant_current_element.html#ac684afcbaea66a384116e99aa0e35611", null ],
+    [ "getMaxCapacity", "class_ais_constant_current_element.html#a675ab61e7cac1a6d4942aab846c7b2f0", null ],
+    [ "getMaxDuration", "class_ais_constant_current_element.html#a49fa5eefbdda2f613583073f3d4bf487", null ],
+    [ "getMaxVoltage", "class_ais_constant_current_element.html#a03a21fa99f7adc89e27e1c9bf58a975a", null ],
+    [ "getMinVoltage", "class_ais_constant_current_element.html#aca3fc3e0137b58794b7284c452841aa6", null ],
+    [ "getName", "class_ais_constant_current_element.html#a28c932df2f2cc5cffd13a12b0c3b3e57", null ],
+    [ "getSamplingInterval", "class_ais_constant_current_element.html#a9eca65d792c636fda6d1a90220f5d24b", null ],
+    [ "isAutoRange", "class_ais_constant_current_element.html#ad58fd1b9dd8021b7e24c304080fef4af", null ],
+    [ "operator=", "class_ais_constant_current_element.html#a8604e6db75356191f31e989ae2b2684e", null ],
+    [ "setApproxMaxCurrent", "class_ais_constant_current_element.html#a2e479c059a02631ca8bbaa7db5300bbe", null ],
+    [ "setAutoRange", "class_ais_constant_current_element.html#a40560a5cb573891af0d522c6f1357f81", null ],
+    [ "setCurrent", "class_ais_constant_current_element.html#adbfc07bf984900e3656d6b1ccff2b1e4", null ],
+    [ "setMaxCapacity", "class_ais_constant_current_element.html#a1492a1a664b6de94b060ba07ba919f9d", null ],
+    [ "setMaxDuration", "class_ais_constant_current_element.html#a52e373f39320b58372577e86f04aacf3", null ],
+    [ "setMaxVoltage", "class_ais_constant_current_element.html#a7010996e53d9add23cc08046e9106802", null ],
+    [ "setMinVoltage", "class_ais_constant_current_element.html#a92643077542bcec49014710980a2b6f9", null ],
+    [ "setSamplingInterval", "class_ais_constant_current_element.html#a26565a0de5101621bfc56b24bd2b8965", null ]
+];
