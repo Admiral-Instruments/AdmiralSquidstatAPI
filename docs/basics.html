@@ -92,7 +92,12 @@ $(document).ready(function(){initNavTree('basics.html',''); initResizable(); });
 <h2><a class="anchor" id="autotoc_md0"></a>
 Creating A Custom Experiment</h2>
 <p>First, we will have some environment setup by creating our application:</p>
-<div class="fragment"><div class="line"><span class="keywordtype">char</span>** test = <span class="keyword">nullptr</span>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;AisDeviceTracker.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;AisCustomExperiment.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;experiments/builder_elements/AisConstantCurrentElement.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;experiments/builder_elements/AisConstantPotElement.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">char</span>** test = <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="keywordtype">int</span> args;</div>
 <div class="line">QCoreApplication app(args, test);</div>
 </div><!-- fragment --><p>To build a custom experiment, we need at least one element. In the example we will build below, we have two elements and a sub-experiment. The sub-experiment has the same two elements only with their parameters changed.</p>
@@ -104,7 +109,8 @@ Creating A Custom Experiment</h2>
 <div class="line">    30 <span class="comment">// duration: 30s</span></div>
 <div class="line">);</div>
 <div class="ttc" id="aclass_ais_constant_pot_element_html"><div class="ttname"><a href="class_ais_constant_pot_element.html">AisConstantPotElement</a></div><div class="ttdoc">an experiment that simulates a constant applied voltage.</div><div class="ttdef"><b>Definition:</b> AisConstantPotElement.h:16</div></div>
-</div><!-- fragment --><p>We create another element of a different type.</p>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>for each element you use, you need to include its corresponding header file.</dd></dl>
+<p>We create another element of a different type.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> ccElement = <span class="keyword">new</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>( <span class="comment">// construct a constant current element and assign it to &quot;ccElement&quot;</span></div>
 <div class="line">    1, <span class="comment">// current: 1A</span></div>
 <div class="line">    1, <span class="comment">// sampling interval: 1s</span></div>
@@ -138,7 +144,7 @@ Controlling The Experiment</h2>
 <p>We have two parts below: one that creates logic using signals and slots. The second part assigns that logic to an experiment handler which will discuss in a bit. The first part below is creating some control-flow logic that we can assign to a handler. We can also create other logics in the same way that can be assigned to different handlers which can be used to control different devices. If we only have one device, all the logic will be handled with one handler. We can then have further control within, based on channels.</p>
 <h3><a class="anchor" id="autotoc_md2"></a>
 Creating Control Flow Logic Specific To A Handler</h3>
-<p>The first part is a lambda function called "createLogic" which takes a handler as an argument and connects some of the handler signals to slots. We have other signals related to a handler you can add, which you can find in the <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> This example logic has four conditions on which we can perform other tasks. That is, when we assign this logic to a specific handler, this logic will execute for that handler. The four signals and slots below in the first part are examples for you to follow in order to add other connections.</p>
+<p>The first part is a lambda function called "connectHandlerSignals" which takes a handler as an argument and connects some of the handler signals to slots. We have other signals related to a handler you can add, which you can find in the <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> This example logic has four conditions on which we can perform other tasks. That is, when we assign this logic to a specific handler, this logic will execute for that handler. The four signals and slots below in the first part are examples for you to follow in order to add other connections.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> connectHandlerSignals = [=](<a class="code" href="class_ais_instrument_handler.html">AisInstrumentHandler</a>* handler) {</div>
 <div class="line">    QObject::connect(handler, &amp;<a class="code" href="class_ais_instrument_handler.html#a3de1ee62bac5796ef2d4e24dfb75eebf">AisInstrumentHandler::activeDCDataReady</a>, [=](uint8_t channel, <span class="keyword">const</span> <a class="code" href="struct_ais_d_c_data.html">AisDCData</a>&amp; data) {</div>
 <div class="line">        <span class="comment">// do something when DC data are received, such as writing to a CSV file output</span></div>
@@ -180,6 +186,61 @@ Creating Control Flow Logic Specific To A Handler</h3>
 <div class="ttc" id="astruct_ais_d_c_data_html_ae394dc60504aa5fdbc06604265d71881"><div class="ttname"><a href="struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881">AisDCData::timestamp</a></div><div class="ttdeci">double timestamp</div><div class="ttdoc">the time at which the DC data arrived.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:12</div></div>
 <div class="ttc" id="astruct_ais_experiment_node_html"><div class="ttname"><a href="struct_ais_experiment_node.html">AisExperimentNode</a></div><div class="ttdoc">a structure containing some information regarding the running element.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:107</div></div>
 </div><!-- fragment --><p>For a more complex logic for running a sequence of experiments, please refer to <a class="el" href="control_flow_demo.html">this example</a></p>
+<p>If you would like to output the incoming data to a file such as a CSV file, you may modify the last block to something as follows:</p>
+<div class="fragment"><div class="line">QString filePath;</div>
+<div class="line"><span class="keyword">auto</span> connectHandlerSignals = [=, &amp;filePath](<span class="keyword">const</span> <a class="code" href="class_ais_instrument_handler.html">AisInstrumentHandler</a>* handler) {</div>
+<div class="line"> </div>
+<div class="line">    QObject::connect(handler, &amp;<a class="code" href="class_ais_instrument_handler.html#a9d0df19029d26b1cce0d05650ecfa854">AisInstrumentHandler::experimentNewElementStarting</a>, [=, &amp;filePath](uint8_t channel, <span class="keyword">const</span> <a class="code" href="struct_ais_experiment_node.html">AisExperimentNode</a>&amp; node) {</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">auto</span> utcTime = handler-&gt;getExperimentUTCStartTime(0);</div>
+<div class="line">        <span class="keyword">auto</span> name = <span class="stringliteral">&quot;/&quot;</span> + QString::number(node.<a class="code" href="struct_ais_experiment_node.html#a7cee5797e9099af54630461cf1b4cbec">stepNumber</a>) + <span class="stringliteral">&quot; &quot;</span> + node.<a class="code" href="struct_ais_experiment_node.html#a15a697a5ddf65fa131b316b470fe8075">stepName</a> + <span class="stringliteral">&quot; &quot;</span> + QString::number(utcTime) + <span class="stringliteral">&quot;.csv&quot;</span>;</div>
+<div class="line">        filePath = (QString(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation)) + name);</div>
+<div class="line"> </div>
+<div class="line">        QFile file(filePath);</div>
+<div class="line">        <span class="keywordflow">if</span> (!file.open(QIODevice::WriteOnly | QIODevice::Text)) <span class="comment">// overwrite existing files with the same name</span></div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line"> </div>
+<div class="line">        QTextStream out(&amp;file);</div>
+<div class="line">        out &lt;&lt; <span class="stringliteral">&quot;Time Stamp,&quot;</span></div>
+<div class="line">            &lt;&lt; <span class="stringliteral">&quot;Counter Electrode Voltage,&quot;</span></div>
+<div class="line">            &lt;&lt; <span class="stringliteral">&quot;Working Electrode Voltage,&quot;</span></div>
+<div class="line">            &lt;&lt; <span class="stringliteral">&quot;Current&quot;</span></div>
+<div class="line">            &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">        file.close();</div>
+<div class="line"> </div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;New element beginning: &quot;</span> &lt;&lt; node.<a class="code" href="struct_ais_experiment_node.html#a15a697a5ddf65fa131b316b470fe8075">stepName</a> &lt;&lt; <span class="stringliteral">&quot;step: &quot;</span> &lt;&lt; node.<a class="code" href="struct_ais_experiment_node.html#a7cee5797e9099af54630461cf1b4cbec">stepNumber</a>;</div>
+<div class="line">    });</div>
+<div class="line"> </div>
+<div class="line">    QObject::connect(handler, &amp;<a class="code" href="class_ais_instrument_handler.html#a3de1ee62bac5796ef2d4e24dfb75eebf">AisInstrumentHandler::activeDCDataReady</a>, [=, &amp;filePath](uint8_t channel, <span class="keyword">const</span> <a class="code" href="struct_ais_d_c_data.html">AisDCData</a>&amp; data) {</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;current :&quot;</span> &lt;&lt; data.<a class="code" href="struct_ais_d_c_data.html#a8dbf057e272af392efcfdc6343eb1db5">current</a> &lt;&lt; <span class="stringliteral">&quot;   voltage: &quot;</span> &lt;&lt; data.<a class="code" href="struct_ais_d_c_data.html#ad49c1bb5b6e60fe631e174f64f40afbe">workingElectrodeVoltage</a> &lt;&lt; <span class="stringliteral">&quot;   counter electrode : &quot;</span> &lt;&lt; data.<a class="code" href="struct_ais_d_c_data.html#a6c765ec62a21cddb6482eebf64e5c812">counterElectrodeVoltage</a> &lt;&lt; <span class="stringliteral">&quot;  timestamp : &quot;</span> &lt;&lt; data.<a class="code" href="struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881">timestamp</a>;</div>
+<div class="line"> </div>
+<div class="line">        QFile file(filePath);</div>
+<div class="line">        <span class="keywordflow">if</span> (!file.open(QIODevice::Append | QIODevice::WriteOnly | QIODevice::Text))</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        QTextStream out(&amp;file);</div>
+<div class="line">        out &lt;&lt; data.<a class="code" href="struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881">timestamp</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line">            &lt;&lt; data.<a class="code" href="struct_ais_d_c_data.html#a6c765ec62a21cddb6482eebf64e5c812">counterElectrodeVoltage</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line">            &lt;&lt; data.<a class="code" href="struct_ais_d_c_data.html#ad49c1bb5b6e60fe631e174f64f40afbe">workingElectrodeVoltage</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line">            &lt;&lt; data.<a class="code" href="struct_ais_d_c_data.html#a8dbf057e272af392efcfdc6343eb1db5">current</a></div>
+<div class="line">            &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">        file.close();</div>
+<div class="line">    });</div>
+<div class="line"> </div>
+<div class="line">    QObject::connect(handler, &amp;<a class="code" href="class_ais_instrument_handler.html#a2f319978ea32fc5cf0c5282857bfa405">AisInstrumentHandler::activeACDataReady</a>, [=](uint8_t channel, <span class="keyword">const</span> <a class="code" href="struct_ais_a_c_data.html">AisACData</a>&amp; data) {</div>
+<div class="line">        qDebug() &lt;&lt; data.<a class="code" href="struct_ais_a_c_data.html#ac6b51ee0dfd56a5ad9f919a6c325aa4f">frequency</a> &lt;&lt; <span class="stringliteral">&quot;         &quot;</span> &lt;&lt; data.<a class="code" href="struct_ais_a_c_data.html#aa7f020bc2d02d3bd63880f4290dc82b2">absoluteImpedance</a> &lt;&lt; <span class="stringliteral">&quot;        &quot;</span> &lt;&lt; data.<a class="code" href="struct_ais_a_c_data.html#af1eb5d7ed33b0e383bb966548c82c640">phaseAngle</a>;</div>
+<div class="line">    });</div>
+<div class="line"> </div>
+<div class="line">    QObject::connect(handler, &amp;<a class="code" href="class_ais_instrument_handler.html#a391573a96037abefe0004b4a19c05bd3">AisInstrumentHandler::experimentStopped</a>, [=](uint8_t channel) {</div>
+<div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;Experiment Completed Signal &quot;</span> &lt;&lt; channel;</div>
+<div class="line">    });</div>
+<div class="line">};</div>
+<div class="ttc" id="astruct_ais_a_c_data_html_aa7f020bc2d02d3bd63880f4290dc82b2"><div class="ttname"><a href="struct_ais_a_c_data.html#aa7f020bc2d02d3bd63880f4290dc82b2">AisACData::absoluteImpedance</a></div><div class="ttdeci">double absoluteImpedance</div><div class="ttdoc">the magnitude of the complex impedance.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:53</div></div>
+<div class="ttc" id="astruct_ais_a_c_data_html_ac6b51ee0dfd56a5ad9f919a6c325aa4f"><div class="ttname"><a href="struct_ais_a_c_data.html#ac6b51ee0dfd56a5ad9f919a6c325aa4f">AisACData::frequency</a></div><div class="ttdeci">double frequency</div><div class="ttdoc">the applied frequency in Hz.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:48</div></div>
+<div class="ttc" id="astruct_ais_a_c_data_html_af1eb5d7ed33b0e383bb966548c82c640"><div class="ttname"><a href="struct_ais_a_c_data.html#af1eb5d7ed33b0e383bb966548c82c640">AisACData::phaseAngle</a></div><div class="ttdeci">double phaseAngle</div><div class="ttdoc">the phase angle between the real and the imaginary parts of the impedance.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:68</div></div>
+<div class="ttc" id="astruct_ais_experiment_node_html_a15a697a5ddf65fa131b316b470fe8075"><div class="ttname"><a href="struct_ais_experiment_node.html#a15a697a5ddf65fa131b316b470fe8075">AisExperimentNode::stepName</a></div><div class="ttdeci">QString stepName</div><div class="ttdoc">This is the name of the current element running.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:112</div></div>
+<div class="ttc" id="astruct_ais_experiment_node_html_a7cee5797e9099af54630461cf1b4cbec"><div class="ttname"><a href="struct_ais_experiment_node.html#a7cee5797e9099af54630461cf1b4cbec">AisExperimentNode::stepNumber</a></div><div class="ttdeci">int stepNumber</div><div class="ttdoc">this number is the order of the element within the custom experiment.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:117</div></div>
+</div><!-- fragment --><p>Here we output the DC data to a CSV file but, you may do that for AC data as well in the same manner.</p>
+<p>You may also find it useful to refer to C++ lambdas documentation: <a href="https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp">https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp</a></p>
 <h3><a class="anchor" id="autotoc_md3"></a>
 Connecting Slots To Device-Tracker Signals</h3>
 <p>There are two signals related to a device tracker: when a device is connected and second, when a device is disconnected.</p>
