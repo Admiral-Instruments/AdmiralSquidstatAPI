@@ -50,7 +50,7 @@ var NAVTREEINDEX =
 [
 "_ais_abstract_element_8h_source.html",
 "class_ais_diff_pulse_voltammetry_element.html#a40a87087be879731e0a48b9d9d12016a",
-"struct_ais_a_c_data.html#aa268ce20a2179cacbef0c6f2be1fd9d8"
+"manual_exp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

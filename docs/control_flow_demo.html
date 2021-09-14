@@ -95,15 +95,15 @@ $(document).ready(function(){initNavTree('control_flow_demo.html',''); initResiz
 <div class="line">QCoreApplication app(args, test);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// constructing a constant potential element with required arguments</span></div>
-<div class="line"><span class="keyword">auto</span> cvElement = <span class="keyword">new</span> <a class="code" href="class_ais_constant_pot_element.html">AisConstantPotElement</a>(</div>
-<div class="line">    5, <span class="comment">// voltage: 1v</span></div>
+<div class="line"><a class="code" href="class_ais_constant_pot_element.html">AisConstantPotElement</a> cvElement(</div>
+<div class="line">    5, <span class="comment">// voltage: 5v</span></div>
 <div class="line">    1, <span class="comment">// sampling interval: 1s</span></div>
 <div class="line">    10 <span class="comment">// duration: 10s</span></div>
 <div class="line">);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// constructing a constant current element with required arguments</span></div>
-<div class="line"><span class="keyword">auto</span> ccElement = <span class="keyword">new</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>(</div>
-<div class="line">    2, <span class="comment">// current: 2A</span></div>
+<div class="line"><a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a> ccElement(</div>
+<div class="line">    0.002, <span class="comment">// current: 0.002A</span></div>
 <div class="line">    1, <span class="comment">// sampling interval: 1s</span></div>
 <div class="line">    10 <span class="comment">// duration: 10s</span></div>
 <div class="line">);</div>

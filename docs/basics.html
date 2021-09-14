@@ -103,15 +103,17 @@ Creating A Custom Experiment</h2>
 </div><!-- fragment --><p>To build a custom experiment, we need at least one element. In the example we will build below, we have two elements and a sub-experiment. The sub-experiment has the same two elements only with their parameters changed.</p>
 <p>Let us go through it step by step:</p>
 <p>We first create a constant voltage element and set its parameters as seen in the following code block. You can see a full list of the available elements in the classes section. For now, we are only setting the required parameters. You can get a complete list of settable parameters for any given element type by examining the corresponding element class.</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> cvElement = <span class="keyword">new</span> <a class="code" href="class_ais_constant_pot_element.html">AisConstantPotElement</a>( <span class="comment">// constructing a constant potential element and assign it to &quot;cvElement&quot;</span></div>
-<div class="line">    1, <span class="comment">// voltage: 1v</span></div>
+<div class="fragment"><div class="line"><span class="comment">// constructing a constant potential element with required arguments</span></div>
+<div class="line"><a class="code" href="class_ais_constant_pot_element.html">AisConstantPotElement</a> cvElement(</div>
+<div class="line">    5, <span class="comment">// voltage: 5v</span></div>
 <div class="line">    1, <span class="comment">// sampling interval: 1s</span></div>
-<div class="line">    30 <span class="comment">// duration: 30s</span></div>
+<div class="line">    10 <span class="comment">// duration: 10s</span></div>
 <div class="line">);</div>
 <div class="ttc" id="aclass_ais_constant_pot_element_html"><div class="ttname"><a href="class_ais_constant_pot_element.html">AisConstantPotElement</a></div><div class="ttdoc">an experiment that simulates a constant applied voltage.</div><div class="ttdef"><b>Definition:</b> AisConstantPotElement.h:16</div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>for each element you use, you need to include its corresponding header file.</dd></dl>
 <p>We create another element of a different type.</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> ccElement = <span class="keyword">new</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>( <span class="comment">// construct a constant current element and assign it to &quot;ccElement&quot;</span></div>
+<div class="fragment"><div class="line"><span class="comment">// constructing a constant current element with required arguments</span></div>
+<div class="line"><a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a> ccElement(</div>
 <div class="line">    1, <span class="comment">// current: 1A</span></div>
 <div class="line">    1, <span class="comment">// sampling interval: 1s</span></div>
 <div class="line">    60 <span class="comment">// duration: 60s</span></div>
@@ -129,11 +131,13 @@ Creating A Custom Experiment</h2>
 <div class="line">customExperiment-&gt;appendSubExperiment(&amp;subExperiment, 2); <span class="comment">// append the sub-experiment to the main experiment and set the sub-experiment to run 2 times.</span></div>
 </div><!-- fragment --><p>Again, the order adding/appending the elements and the sub-experiment here corresponds to the order at which they will run. The sub-experiment and the elements it contains will be run after the elements already added to the main experiment</p>
 <p>We create an additional constant voltage element with a different voltage setpoint.</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> cvElement_2 = <span class="keyword">new</span> <a class="code" href="class_ais_constant_pot_element.html">AisConstantPotElement</a>(</div>
+<div class="fragment"><div class="line"><a class="code" href="class_ais_constant_pot_element.html">AisConstantPotElement</a> cvElement_2(</div>
 <div class="line">    4, <span class="comment">// voltage: 4v</span></div>
 <div class="line">    1, <span class="comment">// sampling interval: 1s</span></div>
 <div class="line">    10 <span class="comment">// duration: 10s</span></div>
 <div class="line">);</div>
+<div class="line"> </div>
+<div class="line">customExperiment-&gt;appendElement(cvElement_2, 1); <span class="comment">// this line appends to the main experiment the CV element and set it to run 1 time after the sub-experiment</span></div>
 </div><!-- fragment --><p>This concludes creating the experiment. Next is how to control the workflow of the experiment.</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Controlling The Experiment</h2>
@@ -186,7 +190,7 @@ Creating Control Flow Logic Specific To A Handler</h3>
 <div class="ttc" id="astruct_ais_d_c_data_html_ae394dc60504aa5fdbc06604265d71881"><div class="ttname"><a href="struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881">AisDCData::timestamp</a></div><div class="ttdeci">double timestamp</div><div class="ttdoc">the time at which the DC data arrived.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:12</div></div>
 <div class="ttc" id="astruct_ais_experiment_node_html"><div class="ttname"><a href="struct_ais_experiment_node.html">AisExperimentNode</a></div><div class="ttdoc">a structure containing some information regarding the running element.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:107</div></div>
 </div><!-- fragment --><p>For a more complex logic for running a sequence of experiments, please refer to <a class="el" href="control_flow_demo.html">this example</a></p>
-<p>If you would like to output the incoming data to a file such as a CSV file, you may modify the last block to something as follows:</p>
+<p>If you would like to output the incoming data to a file such as a CSV file, you may modify the previous block to something as follows:</p>
 <div class="fragment"><div class="line">QString filePath;</div>
 <div class="line"><span class="keyword">auto</span> connectHandlerSignals = [=, &amp;filePath](<span class="keyword">const</span> <a class="code" href="class_ais_instrument_handler.html">AisInstrumentHandler</a>* handler) {</div>
 <div class="line"> </div>
@@ -253,11 +257,21 @@ When a Device is Connected</h4>
 <div class="line">    <span class="comment">// The following lines start the experiment that we created</span></div>
 <div class="line">    <span class="keyword">auto</span> handler = tracker-&gt;getInstrumentHandler(deviceName); <span class="comment">// create a device handler using the given device name</span></div>
 <div class="line">    connectHandlerSignals(handler); <span class="comment">// connect the signals we created for the device. This is done once per device.</span></div>
-<div class="line">    handler-&gt;uploadExperimentToChannel(0, customExperiment); <span class="comment">// upload to a specific channel (first arg) an experiment (second arg) on the given device controlled by the handler.</span></div>
-<div class="line">    handler-&gt;startUploadedExperiment(0); <span class="comment">// start the previously uploaded experiment on the given channel.</span></div>
+<div class="line">    <span class="keyword">auto</span> error = handler-&gt;uploadExperimentToChannel(0, customExperiment); <span class="comment">// upload to a specific channel (first arg) an experiment (second arg) on the given</span></div>
+<div class="line">    device controlled by the handler.</div>
+<div class="line">    <span class="keywordflow">if</span> (error) {</div>
+<div class="line">        qDebug() &lt;&lt; error.message();</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keyword">auto</span> error = handler-&gt;startUploadedExperiment(0); <span class="comment">// start the previously uploaded experiment on the given channel.</span></div>
+<div class="line">    <span class="keywordflow">if</span> (error) {</div>
+<div class="line">        qDebug() &lt;&lt; error.message();</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
 <div class="line">});</div>
 <div class="ttc" id="aclass_ais_device_tracker_html_af0985ed0e0e7ba1b5168767720a5f0ff"><div class="ttname"><a href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff">AisDeviceTracker::newDeviceConnected</a></div><div class="ttdeci">void newDeviceConnected(const QString &amp;deviceName)</div><div class="ttdoc">a signal to be emitted whenever a new connection has been successfully established with a device.</div></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Specific to the cycler model, before starting an experiment, you have the option of linking channels so that you can share the electric current over multiple channels using <a class="el" href="class_ais_instrument_handler.html#ac1a5a72c7ba4b72af7965e86d53cb427" title="connect several channels together.">AisInstrumentHandler::setLinkedChannels</a>. If using paralleled channels, <a class="el" href="class_ais_instrument_handler.html#ac1a5a72c7ba4b72af7965e86d53cb427" title="connect several channels together.">AisInstrumentHandler::setLinkedChannels</a> MUST be called before each experiment that uses paralleled channels. To link channels on the cycler, you can modify the last code by first linking the channels, and then uploading and starting the experiment on the master channel for the linked channels:</dd></dl>
+</div><!-- fragment --><p>Please refer to <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> for possible errors that may occur when performing operations such as uploading and starting an experiment. For example, when uploading an experiment, <a class="el" href="class_ais_instrument_handler.html#a5096c381f44458a8875cad033072be57" title="upload an already created custom experiment to a specific channel on the device.">AisInstrumentHandler::uploadExperimentToChannel</a> may return an <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2db4bc733c63671c5b85250a15d857e4">AisErrorCode::InvalidParameters</a> error if the parameters are out of range where you can display the message to check which parameter was not supported for your device.</p>
+<dl class="section note"><dt>Note</dt><dd>Specific to the cycler model, before starting an experiment, you have the option of linking channels so that you can share the electric current over multiple channels using <a class="el" href="class_ais_instrument_handler.html#ac1a5a72c7ba4b72af7965e86d53cb427" title="connect several channels together.">AisInstrumentHandler::setLinkedChannels</a>. If using paralleled channels, <a class="el" href="class_ais_instrument_handler.html#ac1a5a72c7ba4b72af7965e86d53cb427" title="connect several channels together.">AisInstrumentHandler::setLinkedChannels</a> MUST be called before each experiment that uses paralleled channels. To link channels on the cycler, you can modify the last code by first linking the channels, and then uploading and starting the experiment on the master channel for the linked channels:</dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> masterchannel = handler-&gt;setLinkedChannels({ 0, 1 }); <span class="comment">// this does two things, first links the given channels and second returns the masterchannel used to control the combined output.</span></div>
 <div class="line">handler-&gt;uploadExperimentToChannel(masterchannel, customExperiment);</div>
 <div class="line">handler-&gt;startUploadedExperiment(masterchannel);</div>
@@ -274,7 +288,7 @@ When a Device is Disconnected</h4>
 </div><!-- fragment --><p>We still have not started the experiment, we've only created an experiment and setup callback functions via signals. When we connect a device using the tracker as shown below, the <a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">AisDeviceTracker::newDeviceConnected</a> signal will be emitted with the device name. As a result, the slot we connected earlier to the signal <a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">AisDeviceTracker::newDeviceConnected</a> will execute (connecting the other signals and running the experiment). </p><dl class="section note"><dt>Note</dt><dd>in the example we showed, the function connectHandlerSignals is intentionally called inside the <a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">AisDeviceTracker::newDeviceConnected</a> slot because connectHandlerSignals needs a valid handler. When <a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">AisDeviceTracker::newDeviceConnected</a> is emitted, we know we can get a device handler for the newly connected device and then control the device with the handler.</dd></dl>
 <p>Now to connect the device, the easiest way to connect all plugged-in devices is to call <a class="el" href="class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d" title="connect all devices physically plugged to the computer.">AisDeviceTracker::connectAllPluggedInDevices</a>:</p>
 <div class="fragment"><div class="line">tracker-&gt;connectAllPluggedInDevices();</div>
-</div><!-- fragment --><p>To connect specific devices, you may alternatively call <a class="el" href="class_ais_device_tracker.html#a54866695be7fc56b50a9f617db5e3af8" title="establish a connection with a device connected on a USB port.">AisDeviceTracker::connectToDeviceOnComPort</a> with a specific COM port.</p>
+</div><!-- fragment --><p>To connect specific devices, you may alternatively call <a class="el" href="class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097" title="establish a connection with a device connected on a USB port.">AisDeviceTracker::connectToDeviceOnComPort</a> with a specific COM port.</p>
 <div class="fragment"><div class="line">tracker-&gt;connectToDeviceOnComPort(<span class="stringliteral">&quot;COM3&quot;</span>); <span class="comment">// change the port number to yours. For example, in windows, you can find it from the device manager</span></div>
 </div><!-- fragment --><p>Finally, we can start the application by calling:</p>
 <div class="fragment"><div class="line">app.exec();</div>

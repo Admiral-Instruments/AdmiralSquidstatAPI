@@ -3,6 +3,13 @@ var class_ais_error_code =
     [ "ErrorCode", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311a", [
       [ "Unknown", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaf179845d1799253ed6be394310481173", null ],
       [ "Success", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04", null ],
+      [ "HardwareVersionNotReceived", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aabf3dedce62e4eab55b95d30597951c44", null ],
+      [ "InvalidFirmware", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa6783be8bcd26bc35ffd9c9d632b5d0e5", null ],
+      [ "TotalChannelNotReceived", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac76b2ecc2c7826648e1255039a85ce31", null ],
+      [ "FirmwareVersionNotReceived", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa1500e006fafc106f9a90cce144cb097", null ],
+      [ "CalibrationDataNotReceived", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa766cb2c7d6a619be52299c5f9406db04", null ],
+      [ "PingFailed", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9e6360a9f25b393d54619057e78f571f", null ],
+      [ "InitFailed", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac219585f40636442c8349c4ada7913db", null ],
       [ "InvalidChannel", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09", null ],
       [ "BusyChannel", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f", null ],
       [ "DeviceNotFound", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa", null ],

@@ -238,7 +238,7 @@ var NAVTREEINDEX0 =
 "class_ais_d_c_potential_sweep_element.html#af8e86fa6a971317cf87cd8d32464a4a6":[3,0,13,9],
 "class_ais_device_tracker.html":[3,0,14],
 "class_ais_device_tracker.html#a10daf47917dabe80b74b362e0a4416db":[3,0,14,3],
-"class_ais_device_tracker.html#a54866695be7fc56b50a9f617db5e3af8":[3,0,14,2],
+"class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097":[3,0,14,2],
 "class_ais_device_tracker.html#a574102abc96d271e874f310c64cea778":[3,0,14,4],
 "class_ais_device_tracker.html#a9150d683d3b82482ba0e77519b00d21d":[3,0,14,5],
 "class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d":[3,0,14,1],

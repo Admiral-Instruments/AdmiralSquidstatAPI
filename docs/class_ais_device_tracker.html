@@ -115,9 +115,9 @@ Signals</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a54866695be7fc56b50a9f617db5e3af8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#a54866695be7fc56b50a9f617db5e3af8">connectToDeviceOnComPort</a> (const QString &amp;comPort)</td></tr>
-<tr class="memdesc:a54866695be7fc56b50a9f617db5e3af8"><td class="mdescLeft">&#160;</td><td class="mdescRight">establish a connection with a device connected on a USB port.  <a href="class_ais_device_tracker.html#a54866695be7fc56b50a9f617db5e3af8">More...</a><br /></td></tr>
-<tr class="separator:a54866695be7fc56b50a9f617db5e3af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3369b0043dd80bd1ab4e23dabe236097"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097">connectToDeviceOnComPort</a> (const QString &amp;comPort)</td></tr>
+<tr class="memdesc:a3369b0043dd80bd1ab4e23dabe236097"><td class="mdescLeft">&#160;</td><td class="mdescRight">establish a connection with a device connected on a USB port.  <a href="class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097">More...</a><br /></td></tr>
+<tr class="separator:a3369b0043dd80bd1ab4e23dabe236097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9150d683d3b82482ba0e77519b00d21d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#a9150d683d3b82482ba0e77519b00d21d">getInstrumentHandler</a> (const QString &amp;deviceName) const</td></tr>
 <tr class="memdesc:a9150d683d3b82482ba0e77519b00d21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get an instrument handler to control a specific device.  <a href="class_ais_device_tracker.html#a9150d683d3b82482ba0e77519b00d21d">More...</a><br /></td></tr>
 <tr class="separator:a9150d683d3b82482ba0e77519b00d21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,14 +158,14 @@ static <a class="el" href="class_ais_device_tracker.html">AisDeviceTracker</a> *
 
 </div>
 </div>
-<a id="a54866695be7fc56b50a9f617db5e3af8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54866695be7fc56b50a9f617db5e3af8">&#9670;&nbsp;</a></span>connectToDeviceOnComPort()</h2>
+<a id="a3369b0043dd80bd1ab4e23dabe236097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3369b0043dd80bd1ab4e23dabe236097">&#9670;&nbsp;</a></span>connectToDeviceOnComPort()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool AisDeviceTracker::connectToDeviceOnComPort </td>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisDeviceTracker::connectToDeviceOnComPort </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>comPort</em></td><td>)</td>
@@ -266,10 +266,10 @@ You need to specify the communication port specific to your computer. For exampl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the instrument handler that controls the specified device. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>You may get a list of the connected devices using <a class="el" href="class_ais_device_tracker.html#a574102abc96d271e874f310c64cea778" title="get a list of all the connected devices.">getConnectedDevices()</a>. Also, whenever a device has been connected by calling <a class="el" href="class_ais_device_tracker.html#a54866695be7fc56b50a9f617db5e3af8" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a>, a signal is emitted with the device name. A signal and slot example is shown <a class="el" href="basics.html">here</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You may get a list of the connected devices using <a class="el" href="class_ais_device_tracker.html#a574102abc96d271e874f310c64cea778" title="get a list of all the connected devices.">getConnectedDevices()</a>. Also, whenever a device has been connected by calling <a class="el" href="class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a>, a signal is emitted with the device name. A signal and slot example is shown <a class="el" href="basics.html">here</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_instrument_handler.html" title="this class provides control of the device including starting, pausing, resuming and stopping an exper...">AisInstrumentHandler</a> </dd>
 <dd>
-<a class="el" href="class_ais_device_tracker.html#a54866695be7fc56b50a9f617db5e3af8" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a> </dd>
+<a class="el" href="class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a> </dd>
 <dd>
 <a class="el" href="class_ais_device_tracker.html#a574102abc96d271e874f310c64cea778" title="get a list of all the connected devices.">getConnectedDevices()</a> </dd></dl>
 
@@ -306,7 +306,7 @@ You need to specify the communication port specific to your computer. For exampl
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>this signal will be emitted for each newly connected device whenever either <a class="el" href="class_ais_device_tracker.html#a54866695be7fc56b50a9f617db5e3af8" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a> or <a class="el" href="class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d" title="connect all devices physically plugged to the computer.">connectAllPluggedInDevices()</a> successfully established connections. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>this signal will be emitted for each newly connected device whenever either <a class="el" href="class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a> or <a class="el" href="class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d" title="connect all devices physically plugged to the computer.">connectAllPluggedInDevices()</a> successfully established connections. </dd></dl>
 
 </div>
 </div>

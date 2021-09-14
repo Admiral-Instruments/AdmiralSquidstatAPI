@@ -102,26 +102,35 @@ Public Types</h2></td></tr>
 <tr class="memitem:aa1d7e88850560cfd6229469c60e3311a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311a">ErrorCode</a> : uint8_t { <br />
 &#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaf179845d1799253ed6be394310481173">Unknown</a> = 255
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">Success</a> = 0
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aabf3dedce62e4eab55b95d30597951c44">HardwareVersionNotReceived</a> = 1
+, <b>InvalidFirmware</b> = 2
+, <br />
+&#160;&#160;<b>TotalChannelNotReceived</b> = 3
+, <b>FirmwareVersionNotReceived</b> = 5
+, <b>CalibrationDataNotReceived</b> = 6
+, <b>PingFailed</b> = 7
+, <br />
+&#160;&#160;<b>InitFailed</b> = 8
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09">InvalidChannel</a> = 10
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f">BusyChannel</a> = 11
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">DeviceNotFound</a> = 13
 , <br />
-&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">DeviceNotFound</a> = 13
-, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa171244d3a99f7534bfde26c14d062c1">ManualExperimentNotRunning</a> = 51
+&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa171244d3a99f7534bfde26c14d062c1">ManualExperimentNotRunning</a> = 51
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac78c6f0163a0eb87c087208342f4f40b">ExperimentNotUploaded</a> = 52
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa3a8c52eefe36c5e3160c12bf0b36b834">ExperimentIsEmpty</a> = 53
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2db4bc733c63671c5b85250a15d857e4">InvalidParameters</a> = 54
 , <br />
-&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2db4bc733c63671c5b85250a15d857e4">InvalidParameters</a> = 54
-, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa118077e5c7b1e3b3791f56f141a1fbbe">ChannelNotBusy</a> = 55
+&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa118077e5c7b1e3b3791f56f141a1fbbe">ChannelNotBusy</a> = 55
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa90ea3954794670766b633a5dc73fd264">DeviceCommunicationFailed</a> = 100
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5">FailedToSetManualModeCurrentRange</a> = 101
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3">FailedToSetManualModeConstantVoltage</a> = 102
 , <br />
-&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3">FailedToSetManualModeConstantVoltage</a> = 102
-, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa98629f29f502f3d174cea01eb2d024a0">FailedToPauseExperiment</a> = 103
+&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa98629f29f502f3d174cea01eb2d024a0">FailedToPauseExperiment</a> = 103
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaf98ea21b4079500d9ca7ff7ddc13f8cd">FailedToResumeExperiment</a> = 104
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba">FailedToStopExperiment</a> = 105
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49">FailedToUploadExperiment</a> = 106
 , <br />
-&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49">FailedToUploadExperiment</a> = 106
-, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa737b6fbbe3b5833725bf82b7fd7547f1">ExperimentAlreadyPause</a> = 107
+&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa737b6fbbe3b5833725bf82b7fd7547f1">ExperimentAlreadyPause</a> = 107
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699">ExperimentAlreadyRun</a> = 108
 <br />
  }</td></tr>
@@ -164,6 +173,8 @@ constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>operator ErrorCo
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aaf179845d1799253ed6be394310481173"></a>Unknown&#160;</td><td class="fielddoc"><p>indicates that the command failed for an unknown reason </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04"></a>Success&#160;</td><td class="fielddoc"><p>indicates success </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aabf3dedce62e4eab55b95d30597951c44"></a>HardwareVersionNotReceived&#160;</td><td class="fielddoc"><p>indicates success </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09"></a>InvalidChannel&#160;</td><td class="fielddoc"><p>indicates that the given channel number is not valid </p>
 </td></tr>
