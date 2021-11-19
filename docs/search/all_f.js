@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['temperature_222',['temperature',['../struct_ais_d_c_data.html#ae686c0ad102816793735a760312ab5e0',1,'AisDCData']]],
-  ['the_20basics_20of_20running_20experiments_223',['The Basics of Running Experiments',['../basics.html',1,'']]],
-  ['timestamp_224',['timestamp',['../struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881',1,'AisDCData::timestamp()'],['../struct_ais_a_c_data.html#a32f8820d4b38867f1329d8a16abb5f84',1,'AisACData::timestamp()']]],
-  ['totalharmonicdistortion_225',['totalHarmonicDistortion',['../struct_ais_a_c_data.html#a6c8fd36b8ded7b0f2d0f789758b4fcee',1,'AisACData']]]
+  ['unknown_226',['Unknown',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaf179845d1799253ed6be394310481173',1,'AisErrorCode']]],
+  ['uploadexperimenttochannel_227',['uploadExperimentToChannel',['../class_ais_instrument_handler.html#a5096c381f44458a8875cad033072be57',1,'AisInstrumentHandler::uploadExperimentToChannel(uint8_t channel, std::shared_ptr&lt; AisExperiment &gt; experiment) const'],['../class_ais_instrument_handler.html#ae32afd654a4d32a1d834a2bb5b5d6389',1,'AisInstrumentHandler::uploadExperimentToChannel(uint8_t channel, const AisExperiment &amp;experiment) const']]]
 ];

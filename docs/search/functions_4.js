@@ -22,7 +22,7 @@ var searchData=
   ['getendingpot_301',['getEndingPot',['../class_ais_d_c_potential_sweep_element.html#a35210e2c52a98fbaa6daa347dea32a31',1,'AisDCPotentialSweepElement']]],
   ['getendvoltage_302',['getEndVoltage',['../class_ais_cyclic_voltammetry_element.html#a84ff066c131a7a5cc5417a5d11a8858f',1,'AisCyclicVoltammetryElement::getEndVoltage()'],['../class_ais_diff_pulse_voltammetry_element.html#ad51b2fa525a0112a2fc04263d26ad79a',1,'AisDiffPulseVoltammetryElement::getEndVoltage()'],['../class_ais_normal_pulse_voltammetry_element.html#a7375006270a65ff57f4e54eec30c319c',1,'AisNormalPulseVoltammetryElement::getEndVoltage()'],['../class_ais_square_wave_voltammetry_element.html#a379a22c970c8cb478b0612d170ebaf54',1,'AisSquareWaveVoltammetryElement::getEndVoltage()']]],
   ['getexperimentname_303',['getExperimentName',['../class_ais_experiment.html#a413707edc89ce8c3eb87f267e1c5ba37',1,'AisExperiment']]],
-  ['getexperimentutcstarttime_304',['getExperimentUTCStartTime',['../class_ais_instrument_handler.html#ad292e6e40c16c392f9b4a92905f1e442',1,'AisInstrumentHandler']]],
+  ['getexperimentutcstarttime_304',['getExperimentUTCStartTime',['../class_ais_instrument_handler.html#a24961c98f6c20c5b21a93f7284ae0e63',1,'AisInstrumentHandler']]],
   ['getfirstvoltagelimit_305',['getFirstVoltageLimit',['../class_ais_cyclic_voltammetry_element.html#a32a26c3ebfbfd934cc046deda36c711f',1,'AisCyclicVoltammetryElement']]],
   ['getfreechannels_306',['getFreeChannels',['../class_ais_instrument_handler.html#ade2d5c7dc765688e01c0bde12da98658',1,'AisInstrumentHandler']]],
   ['getinstrumenthandler_307',['getInstrumentHandler',['../class_ais_device_tracker.html#a9150d683d3b82482ba0e77519b00d21d',1,'AisDeviceTracker']]],

@@ -1,0 +1,10 @@
+^C:\DEV\ADMIRALSQUIDSTATAPI\SQUIDSTATLIBRARY\OUT\BUILD\CMAKEFILES\F19A2036FA18AFC0F6E919D6218AE7EF\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Dev/AdmiralSquidstatAPI/SquidstatLibrary -BC:/Dev/AdmiralSquidstatAPI/SquidstatLibrary/out/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Dev/AdmiralSquidstatAPI/SquidstatLibrary/out/build/DemoApplications.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

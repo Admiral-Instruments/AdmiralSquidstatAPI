@@ -9,7 +9,7 @@ var class_ais_instrument_handler =
     [ "experimentPaused", "class_ais_instrument_handler.html#ab82d52f4f759b02162f6d047901cf192", null ],
     [ "experimentResumed", "class_ais_instrument_handler.html#abdc033f7c96d34728cf74f316c73c8f1", null ],
     [ "experimentStopped", "class_ais_instrument_handler.html#a391573a96037abefe0004b4a19c05bd3", null ],
-    [ "getExperimentUTCStartTime", "class_ais_instrument_handler.html#ad292e6e40c16c392f9b4a92905f1e442", null ],
+    [ "getExperimentUTCStartTime", "class_ais_instrument_handler.html#a24961c98f6c20c5b21a93f7284ae0e63", null ],
     [ "getFreeChannels", "class_ais_instrument_handler.html#ade2d5c7dc765688e01c0bde12da98658", null ],
     [ "getLinkedChannels", "class_ais_instrument_handler.html#af1ec0e7073b9efaccf1f3837f8222e00", null ],
     [ "getManualModeCurrentRangeList", "class_ais_instrument_handler.html#a2d4089c7758bcff0de7e5d90ec61000b", null ],
@@ -34,5 +34,6 @@ var class_ais_instrument_handler =
     [ "startManualExperiment", "class_ais_instrument_handler.html#a9b7aeac63a94c3caedd9147c5db9af97", null ],
     [ "startUploadedExperiment", "class_ais_instrument_handler.html#a6bec0de02593909d001fc73542de6e00", null ],
     [ "stopExperiment", "class_ais_instrument_handler.html#a24bbb734c05f490196f87ebf39eb0008", null ],
+    [ "uploadExperimentToChannel", "class_ais_instrument_handler.html#ae32afd654a4d32a1d834a2bb5b5d6389", null ],
     [ "uploadExperimentToChannel", "class_ais_instrument_handler.html#a5096c381f44458a8875cad033072be57", null ]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Squidstat Library API: AisInstrumentHandler Class Reference</title>
+<title>Squidstat API User Manual: AisInstrumentHandler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Admiral_Instruments_Logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Squidstat Library API
+   <div id="projectname">Squidstat API User Manual
    </div>
   </td>
  </tr>
@@ -148,6 +148,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5096c381f44458a8875cad033072be57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a5096c381f44458a8875cad033072be57">uploadExperimentToChannel</a> (uint8_t channel, std::shared_ptr&lt; <a class="el" href="class_ais_experiment.html">AisExperiment</a> &gt; experiment) const</td></tr>
 <tr class="memdesc:a5096c381f44458a8875cad033072be57"><td class="mdescLeft">&#160;</td><td class="mdescRight">upload an already created custom experiment to a specific channel on the device.  <a href="class_ais_instrument_handler.html#a5096c381f44458a8875cad033072be57">More...</a><br /></td></tr>
 <tr class="separator:a5096c381f44458a8875cad033072be57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae32afd654a4d32a1d834a2bb5b5d6389"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#ae32afd654a4d32a1d834a2bb5b5d6389">uploadExperimentToChannel</a> (uint8_t channel, const <a class="el" href="class_ais_experiment.html">AisExperiment</a> &amp;experiment) const</td></tr>
+<tr class="memdesc:ae32afd654a4d32a1d834a2bb5b5d6389"><td class="mdescLeft">&#160;</td><td class="mdescRight">upload an already created custom experiment to a specific channel on the device.  <a href="class_ais_instrument_handler.html#ae32afd654a4d32a1d834a2bb5b5d6389">More...</a><br /></td></tr>
+<tr class="separator:ae32afd654a4d32a1d834a2bb5b5d6389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bec0de02593909d001fc73542de6e00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a6bec0de02593909d001fc73542de6e00">startUploadedExperiment</a> (uint8_t channel) const</td></tr>
 <tr class="memdesc:a6bec0de02593909d001fc73542de6e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">start the previously uploaded experiment on the specific channel.  <a href="class_ais_instrument_handler.html#a6bec0de02593909d001fc73542de6e00">More...</a><br /></td></tr>
 <tr class="separator:a6bec0de02593909d001fc73542de6e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,9 +166,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a24bbb734c05f490196f87ebf39eb0008"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a24bbb734c05f490196f87ebf39eb0008">stopExperiment</a> (uint8_t channel) const</td></tr>
 <tr class="memdesc:a24bbb734c05f490196f87ebf39eb0008"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop a running or a paused experiment on the channel.  <a href="class_ais_instrument_handler.html#a24bbb734c05f490196f87ebf39eb0008">More...</a><br /></td></tr>
 <tr class="separator:a24bbb734c05f490196f87ebf39eb0008"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad292e6e40c16c392f9b4a92905f1e442"><td class="memItemLeft" align="right" valign="top">std::time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#ad292e6e40c16c392f9b4a92905f1e442">getExperimentUTCStartTime</a> (uint8_t channel) const</td></tr>
-<tr class="memdesc:ad292e6e40c16c392f9b4a92905f1e442"><td class="mdescLeft">&#160;</td><td class="mdescRight">get UTC time for the start of the experiment in seconds.  <a href="class_ais_instrument_handler.html#ad292e6e40c16c392f9b4a92905f1e442">More...</a><br /></td></tr>
-<tr class="separator:ad292e6e40c16c392f9b4a92905f1e442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24961c98f6c20c5b21a93f7284ae0e63"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a24961c98f6c20c5b21a93f7284ae0e63">getExperimentUTCStartTime</a> (uint8_t channel) const</td></tr>
+<tr class="memdesc:a24961c98f6c20c5b21a93f7284ae0e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">get UTC time for the start of the experiment in seconds.  <a href="class_ais_instrument_handler.html#a24961c98f6c20c5b21a93f7284ae0e63">More...</a><br /></td></tr>
+<tr class="separator:a24961c98f6c20c5b21a93f7284ae0e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc9c3c3c77662de2aefdee57088f0693"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#afc9c3c3c77662de2aefdee57088f0693">setIRComp</a> (uint8_t channel, double uncompensatedResistance, double compensationLevel) const</td></tr>
 <tr class="memdesc:afc9c3c3c77662de2aefdee57088f0693"><td class="mdescLeft">&#160;</td><td class="mdescRight">set IR compensation.  <a href="class_ais_instrument_handler.html#afc9c3c3c77662de2aefdee57088f0693">More...</a><br /></td></tr>
 <tr class="separator:afc9c3c3c77662de2aefdee57088f0693"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,14 +457,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad292e6e40c16c392f9b4a92905f1e442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad292e6e40c16c392f9b4a92905f1e442">&#9670;&nbsp;</a></span>getExperimentUTCStartTime()</h2>
+<a id="a24961c98f6c20c5b21a93f7284ae0e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24961c98f6c20c5b21a93f7284ae0e63">&#9670;&nbsp;</a></span>getExperimentUTCStartTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::time_t AisInstrumentHandler::getExperimentUTCStartTime </td>
+          <td class="memname">double AisInstrumentHandler::getExperimentUTCStartTime </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>channel</em></td><td>)</td>
@@ -1341,8 +1344,56 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae32afd654a4d32a1d834a2bb5b5d6389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae32afd654a4d32a1d834a2bb5b5d6389">&#9670;&nbsp;</a></span>uploadExperimentToChannel() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisInstrumentHandler::uploadExperimentToChannel </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_ais_experiment.html">AisExperiment</a> &amp;&#160;</td>
+          <td class="paramname"><em>experiment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>upload an already created custom experiment to a specific channel on the device. </p>
+<p>Any running experiment is run on a specific device on a specific channel. This function uploads an experiment to a channel so that you may start, pause, resume and stop the experiment. All of these four control functionalities and others require a channel number to control the experiment. Therefore, if we have several channels, we need to keep track of which experiment is on which channel.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>the channel number to upload the experiment to. </td></tr>
+    <tr><td class="paramname">experiment</td><td>the custom experiment to be uploaded to the channel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a> if the experiment was successfully uploaded to the channel. If not successful, possible returned errors are:<ul>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49">AisErrorCode::FailedToUploadExperiment</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa3a8c52eefe36c5e3160c12bf0b36b834">AisErrorCode::ExperimentIsEmpty</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">AisErrorCode::DeviceNotFound</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09">AisErrorCode::InvalidChannel</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f">AisErrorCode::BusyChannel</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2db4bc733c63671c5b85250a15d857e4">AisErrorCode::InvalidParameters</a></li>
+</ul>
+</dd></dl>
+<p>This returns <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a> only when given a valid channel number that is not busy on a connected device. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_instrument_handler.html#a7f64e4affb72934c8451d72a73b3e600" title="tells whether the given channel is busy or not.">isChannelBusy</a> </dd></dl>
+
+</div>
+</div>
 <a id="a5096c381f44458a8875cad033072be57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5096c381f44458a8875cad033072be57">&#9670;&nbsp;</a></span>uploadExperimentToChannel()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5096c381f44458a8875cad033072be57">&#9670;&nbsp;</a></span>uploadExperimentToChannel() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

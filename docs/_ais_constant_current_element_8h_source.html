@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Squidstat Library API: AisConstantCurrentElement.h Source File</title>
+<title>Squidstat API User Manual: AisConstantCurrentElement.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Admiral_Instruments_Logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Squidstat Library API
+   <div id="projectname">Squidstat API User Manual
    </div>
   </td>
  </tr>
@@ -95,58 +95,56 @@ $(document).ready(function(){initNavTree('_ais_constant_current_element_8h_sourc
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span>ConstantCurrentAdvElement;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html">   15</a></span>&#160;<span class="keyword">class </span>SQUIDSTATLIBRARY_EXPORT <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a> final: <span class="keyword">public</span> <a class="code" href="class_ais_abstract_element.html">AisAbstractElement</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html">   15</a></span>&#160;<span class="keyword">class </span>SQUIDSTATLIBRARY_EXPORT <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a> final : <span class="keyword">public</span> <a class="code" href="class_ais_abstract_element.html">AisAbstractElement</a> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#afbdd4ccd1a7d477467ee71b65d78c4f8">   24</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_ais_constant_current_element.html#afbdd4ccd1a7d477467ee71b65d78c4f8">AisConstantCurrentElement</a>(</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">double</span> current,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">double</span> samplingInterval,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">double</span> duration</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>(<span class="keyword">const</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>&amp;);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>&amp;);</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#afbdd4ccd1a7d477467ee71b65d78c4f8">   23</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_ais_constant_current_element.html#afbdd4ccd1a7d477467ee71b65d78c4f8">AisConstantCurrentElement</a>(</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">double</span> current,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">double</span> samplingInterval,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">double</span> duration);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>(<span class="keyword">const</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>&amp;);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>&amp;);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ~<a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ~<a class="code" href="class_ais_constant_current_element.html">AisConstantCurrentElement</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a28c932df2f2cc5cffd13a12b0c3b3e57">   38</a></span>&#160;    QString <a class="code" href="class_ais_constant_current_element.html#a28c932df2f2cc5cffd13a12b0c3b3e57">getName</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#aa987db0338a3c142887f8d89d8240323">   44</a></span>&#160;    QStringList <a class="code" href="class_ais_constant_current_element.html#aa987db0338a3c142887f8d89d8240323">getCategory</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#ac684afcbaea66a384116e99aa0e35611">   50</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#ac684afcbaea66a384116e99aa0e35611">getCurrent</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#adbfc07bf984900e3656d6b1ccff2b1e4">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#adbfc07bf984900e3656d6b1ccff2b1e4">setCurrent</a>(<span class="keywordtype">double</span> current);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a9eca65d792c636fda6d1a90220f5d24b">   62</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a9eca65d792c636fda6d1a90220f5d24b">getSamplingInterval</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a26565a0de5101621bfc56b24bd2b8965">   68</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a26565a0de5101621bfc56b24bd2b8965">setSamplingInterval</a>(<span class="keywordtype">double</span> samplingInterval);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a03a21fa99f7adc89e27e1c9bf58a975a">   76</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a03a21fa99f7adc89e27e1c9bf58a975a">getMaxVoltage</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a7010996e53d9add23cc08046e9106802">   86</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a7010996e53d9add23cc08046e9106802">setMaxVoltage</a>(<span class="keywordtype">double</span> maxVoltage);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#aca3fc3e0137b58794b7284c452841aa6">   93</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#aca3fc3e0137b58794b7284c452841aa6">getMinVoltage</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a92643077542bcec49014710980a2b6f9">  103</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a92643077542bcec49014710980a2b6f9">setMinVoltage</a>(<span class="keywordtype">double</span> minVoltage);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a49fa5eefbdda2f613583073f3d4bf487">  110</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a49fa5eefbdda2f613583073f3d4bf487">getMaxDuration</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a52e373f39320b58372577e86f04aacf3">  118</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a52e373f39320b58372577e86f04aacf3">setMaxDuration</a>(<span class="keywordtype">double</span> maxDuration);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a675ab61e7cac1a6d4942aab846c7b2f0">  125</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a675ab61e7cac1a6d4942aab846c7b2f0">getMaxCapacity</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a1492a1a664b6de94b060ba07ba919f9d">  135</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a1492a1a664b6de94b060ba07ba919f9d">setMaxCapacity</a>(<span class="keywordtype">double</span> maxCapacity);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#ad58fd1b9dd8021b7e24c304080fef4af">  141</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_ais_constant_current_element.html#ad58fd1b9dd8021b7e24c304080fef4af">isAutoRange</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a40560a5cb573891af0d522c6f1357f81">  148</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a40560a5cb573891af0d522c6f1357f81">setAutoRange</a>();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a37b05483a4cd30914f18e93851523c75">  155</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a37b05483a4cd30914f18e93851523c75">getApproxMaxCurrent</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a2e479c059a02631ca8bbaa7db5300bbe">  164</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a2e479c059a02631ca8bbaa7db5300bbe">setApproxMaxCurrent</a>(<span class="keywordtype">double</span> approxMaxCurrent);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::shared_ptr&lt;ConstantCurrentAdvElement&gt; m_dataDerived;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a28c932df2f2cc5cffd13a12b0c3b3e57">   36</a></span>&#160;    QString <a class="code" href="class_ais_constant_current_element.html#a28c932df2f2cc5cffd13a12b0c3b3e57">getName</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#aa987db0338a3c142887f8d89d8240323">   42</a></span>&#160;    QStringList <a class="code" href="class_ais_constant_current_element.html#aa987db0338a3c142887f8d89d8240323">getCategory</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#ac684afcbaea66a384116e99aa0e35611">   48</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#ac684afcbaea66a384116e99aa0e35611">getCurrent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#adbfc07bf984900e3656d6b1ccff2b1e4">   54</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#adbfc07bf984900e3656d6b1ccff2b1e4">setCurrent</a>(<span class="keywordtype">double</span> current);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a9eca65d792c636fda6d1a90220f5d24b">   60</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a9eca65d792c636fda6d1a90220f5d24b">getSamplingInterval</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a26565a0de5101621bfc56b24bd2b8965">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a26565a0de5101621bfc56b24bd2b8965">setSamplingInterval</a>(<span class="keywordtype">double</span> samplingInterval);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a03a21fa99f7adc89e27e1c9bf58a975a">   74</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a03a21fa99f7adc89e27e1c9bf58a975a">getMaxVoltage</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a7010996e53d9add23cc08046e9106802">   84</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a7010996e53d9add23cc08046e9106802">setMaxVoltage</a>(<span class="keywordtype">double</span> maxVoltage);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#aca3fc3e0137b58794b7284c452841aa6">   91</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#aca3fc3e0137b58794b7284c452841aa6">getMinVoltage</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a92643077542bcec49014710980a2b6f9">  101</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a92643077542bcec49014710980a2b6f9">setMinVoltage</a>(<span class="keywordtype">double</span> minVoltage);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a49fa5eefbdda2f613583073f3d4bf487">  108</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a49fa5eefbdda2f613583073f3d4bf487">getMaxDuration</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a52e373f39320b58372577e86f04aacf3">  116</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a52e373f39320b58372577e86f04aacf3">setMaxDuration</a>(<span class="keywordtype">double</span> maxDuration);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a675ab61e7cac1a6d4942aab846c7b2f0">  123</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a675ab61e7cac1a6d4942aab846c7b2f0">getMaxCapacity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a1492a1a664b6de94b060ba07ba919f9d">  133</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a1492a1a664b6de94b060ba07ba919f9d">setMaxCapacity</a>(<span class="keywordtype">double</span> maxCapacity);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#ad58fd1b9dd8021b7e24c304080fef4af">  139</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_ais_constant_current_element.html#ad58fd1b9dd8021b7e24c304080fef4af">isAutoRange</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a40560a5cb573891af0d522c6f1357f81">  146</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a40560a5cb573891af0d522c6f1357f81">setAutoRange</a>();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a37b05483a4cd30914f18e93851523c75">  153</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_ais_constant_current_element.html#a37b05483a4cd30914f18e93851523c75">getApproxMaxCurrent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="class_ais_constant_current_element.html#a2e479c059a02631ca8bbaa7db5300bbe">  162</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ais_constant_current_element.html#a2e479c059a02631ca8bbaa7db5300bbe">setApproxMaxCurrent</a>(<span class="keywordtype">double</span> approxMaxCurrent);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::shared_ptr&lt;ConstantCurrentAdvElement&gt; m_dataDerived;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
 <div class="ttc" id="aclass_ais_abstract_element_html"><div class="ttname"><a href="class_ais_abstract_element.html">AisAbstractElement</a></div><div class="ttdoc">This is an abstract class that has common code for other elements to inherent from.</div><div class="ttdef"><b>Definition:</b> AisAbstractElement.h:14</div></div>
 <div class="ttc" id="aclass_ais_constant_current_element_html"><div class="ttname"><a href="class_ais_constant_current_element.html">AisConstantCurrentElement</a></div><div class="ttdoc">an experiment that simulates a constant current flow with more advance options for stopping the exper...</div><div class="ttdef"><b>Definition:</b> AisConstantCurrentElement.h:15</div></div>
 <div class="ttc" id="aclass_ais_constant_current_element_html_a03a21fa99f7adc89e27e1c9bf58a975a"><div class="ttname"><a href="class_ais_constant_current_element.html#a03a21fa99f7adc89e27e1c9bf58a975a">AisConstantCurrentElement::getMaxVoltage</a></div><div class="ttdeci">double getMaxVoltage() const</div><div class="ttdoc">get the value set for the maximum voltage. The experiment will end when it reaches this value.</div></div>

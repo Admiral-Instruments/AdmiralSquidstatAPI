@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['newdeviceconnected_137',['newDeviceConnected',['../class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff',1,'AisDeviceTracker']]],
-  ['numberofcycles_138',['numberOfCycles',['../struct_ais_a_c_data.html#a5f1b607df42fe27eeb78c7cd5a239142',1,'AisACData']]]
+  ['operator_3d_139',['operator=',['../class_ais_experiment.html#aa14b13f0594594c2f84a353df1bd98a6',1,'AisExperiment']]]
 ];

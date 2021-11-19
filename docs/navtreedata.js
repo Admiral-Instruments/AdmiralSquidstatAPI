@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Squidstat Library API", "index.html", [
+  [ "Squidstat API User Manual", "index.html", [
     [ "The Basics of Running Experiments", "basics.html", null ],
     [ "Advanced Control Flow", "control_flow_demo.html", null ],
     [ "Manual Experiments", "manual_exp.html", null ],
@@ -50,7 +50,7 @@ var NAVTREEINDEX =
 [
 "_ais_abstract_element_8h_source.html",
 "class_ais_diff_pulse_voltammetry_element.html#a40a87087be879731e0a48b9d9d12016a",
-"manual_exp.html"
+"struct_ais_a_c_data.html#a5f1b607df42fe27eeb78c7cd5a239142"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Squidstat Library API: AisDeviceTracker Class Reference</title>
+<title>Squidstat API User Manual: AisDeviceTracker Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Admiral_Instruments_Logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Squidstat Library API
+   <div id="projectname">Squidstat API User Manual
    </div>
   </td>
  </tr>
@@ -153,7 +153,7 @@ static <a class="el" href="class_ais_device_tracker.html">AisDeviceTracker</a> *
 </div><div class="memdoc">
 
 <p>connect all devices physically plugged to the computer. </p>
-<p>This will automatically detect all the communication ports that have devices plugged in and establish a connection with each. </p><dl class="section return"><dt>Returns</dt><dd>the number of devices that have successfully established a connection with the computer. </dd></dl>
+<p>This will automatically detect all the communication ports that have devices plugged in and establish a connection with each. </p><dl class="section return"><dt>Returns</dt><dd>the number of <em>new</em> devices that have successfully established a connection with the computer. If a device has already been connected before calling this function, it will not be counted in the return value. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>emits <a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">newDeviceConnected()</a> signal with the device name for each successful connection. </dd></dl>
 
 </div>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Dev\AdmiralSquidstatAPI\SquidstatLibrary\examples\ControlFlowDemo\2_controlFlowDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Dev\AdmiralSquidstatAPI\SquidstatLibrary\examples\ControlFlowDemo\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{72425508-D96C-35B6-BA03-527A8107E9D2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

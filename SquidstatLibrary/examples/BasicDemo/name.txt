@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 3.10)
+project(EBSSI LANGUAGES CXX VERSION 0.1.0)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_DEBUG_POSTFIX d)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+add_subdirectory(${EXTERNALS}/pybind11)
+
+set(MODULE_FILE
+	src/hello.cpp)
+
+
+#add_executable(${PROJECT_NAME} ${MODULE_FILE})
+#add_library(${PROJECT_NAME} SHARED ${MODULE_FILE})
+
+target_link_libraries(${PROJECT_NAME} SquidstatLibrary Qt5::Core Qt5::SerialPort)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src/internal/global_typedefs)
+ 

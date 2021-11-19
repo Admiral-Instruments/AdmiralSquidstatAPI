@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Squidstat Library API: The Basics of Running Experiments</title>
+<title>Squidstat API User Manual: The Basics of Running Experiments</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Admiral_Instruments_Logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Squidstat Library API
+   <div id="projectname">Squidstat API User Manual
    </div>
   </td>
  </tr>
@@ -109,7 +109,7 @@ Creating A Custom Experiment</h2>
 <div class="line">    1, <span class="comment">// sampling interval: 1s</span></div>
 <div class="line">    10 <span class="comment">// duration: 10s</span></div>
 <div class="line">);</div>
-<div class="ttc" id="aclass_ais_constant_pot_element_html"><div class="ttname"><a href="class_ais_constant_pot_element.html">AisConstantPotElement</a></div><div class="ttdoc">an experiment that simulates a constant applied voltage.</div><div class="ttdef"><b>Definition:</b> AisConstantPotElement.h:16</div></div>
+<div class="ttc" id="aclass_ais_constant_pot_element_html"><div class="ttname"><a href="class_ais_constant_pot_element.html">AisConstantPotElement</a></div><div class="ttdoc">an experiment that simulates a constant applied voltage.</div><div class="ttdef"><b>Definition:</b> AisConstantPotElement.h:15</div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>for each element you use, you need to include its corresponding header file.</dd></dl>
 <p>We create another element of a different type.</p>
 <div class="fragment"><div class="line"><span class="comment">// constructing a constant current element with required arguments</span></div>
@@ -136,8 +136,6 @@ Creating A Custom Experiment</h2>
 <div class="line">    1, <span class="comment">// sampling interval: 1s</span></div>
 <div class="line">    10 <span class="comment">// duration: 10s</span></div>
 <div class="line">);</div>
-<div class="line"> </div>
-<div class="line">customExperiment-&gt;appendElement(cvElement_2, 1); <span class="comment">// this line appends to the main experiment the CV element and set it to run 1 time after the sub-experiment</span></div>
 </div><!-- fragment --><p>This concludes creating the experiment. Next is how to control the workflow of the experiment.</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Controlling The Experiment</h2>
@@ -145,7 +143,7 @@ Controlling The Experiment</h2>
 <p>Reading this document should still cover most of what is needed. Basically, a signal can be emitted when an event happens. If a slot is connected to that signal, whatever is inside that slot will be executed when the signal is emitted. You can think of a signal as a condition and a slot is what will be executed once a corresponding condition is met. The only difference is the order of execution. Normal execution have sequential order. However, a slot can be emitted at anytime. Whenever that happens, the slot will execute no matter where the connection has been made (as long as a connection has been made prior). That is how we can have extra control on how and when things are executed.</p>
 <p>An experiment is run on a specific channel of a device. You may have more than one device connected. A single device has up to 4 channels. Any channel on a specific device can run a single experiment at a time. To start an experiment, we specify the device and the channel and, then start it. To stop or pause that experiment, we need to specify its corresponding device and channel. We need to keep track of the device and channel for each experiment we start so we can control it later.</p>
 <p>We can control a device, including starting, pausing and stopping an experiment on a specific channel using an <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> A device/instrument handler can be created given a device name that we detect.</p>
-<p>We have two parts below: one that creates logic using signals and slots. The second part assigns that logic to an experiment handler which will discuss in a bit. The first part below is creating some control-flow logic that we can assign to a handler. We can also create other logics in the same way that can be assigned to different handlers which can be used to control different devices. If we only have one device, all the logic will be handled with one handler. We can then have further control within, based on channels.</p>
+<p>We have two parts below: one that creates logic using signals and slots. The second part assigns that logic to an instrument handler which will discuss in a bit. The first part below is creating some control-flow logic that we can assign to a handler. We can also create other logics in the same way that can be assigned to different handlers which can be used to control different devices. If we only have one device, all the logic will be handled with one handler. We can then have further control within, based on channels.</p>
 <h3><a class="anchor" id="autotoc_md2"></a>
 Creating Control Flow Logic Specific To A Handler</h3>
 <p>The first part is a lambda function called "connectHandlerSignals" which takes a handler as an argument and connects some of the handler signals to slots. We have other signals related to a handler you can add, which you can find in the <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> This example logic has four conditions on which we can perform other tasks. That is, when we assign this logic to a specific handler, this logic will execute for that handler. The four signals and slots below in the first part are examples for you to follow in order to add other connections.</p>
@@ -177,7 +175,7 @@ Creating Control Flow Logic Specific To A Handler</h3>
 <div class="line">        qDebug() &lt;&lt; <span class="stringliteral">&quot;Experiment Stopped Signal &quot;</span> &lt;&lt; channel;</div>
 <div class="line">    });</div>
 <div class="line">};</div>
-<div class="ttc" id="aclass_ais_instrument_handler_html"><div class="ttname"><a href="class_ais_instrument_handler.html">AisInstrumentHandler</a></div><div class="ttdoc">this class provides control of the device including starting, pausing, resuming and stopping an exper...</div><div class="ttdef"><b>Definition:</b> AisInstrumentHandler.h:28</div></div>
+<div class="ttc" id="aclass_ais_instrument_handler_html"><div class="ttname"><a href="class_ais_instrument_handler.html">AisInstrumentHandler</a></div><div class="ttdoc">this class provides control of the device including starting, pausing, resuming and stopping an exper...</div><div class="ttdef"><b>Definition:</b> AisInstrumentHandler.h:24</div></div>
 <div class="ttc" id="aclass_ais_instrument_handler_html_a2f319978ea32fc5cf0c5282857bfa405"><div class="ttname"><a href="class_ais_instrument_handler.html#a2f319978ea32fc5cf0c5282857bfa405">AisInstrumentHandler::activeACDataReady</a></div><div class="ttdeci">void activeACDataReady(uint8_t channel, const AisACData &amp;ACData)</div><div class="ttdoc">a signal that is emitted whenever new AC data for an active experiment are ready.</div></div>
 <div class="ttc" id="aclass_ais_instrument_handler_html_a391573a96037abefe0004b4a19c05bd3"><div class="ttname"><a href="class_ais_instrument_handler.html#a391573a96037abefe0004b4a19c05bd3">AisInstrumentHandler::experimentStopped</a></div><div class="ttdeci">void experimentStopped(uint8_t channel)</div><div class="ttdoc">a signal that is emitted whenever an experiment was stopped manually or has completed.</div></div>
 <div class="ttc" id="aclass_ais_instrument_handler_html_a3de1ee62bac5796ef2d4e24dfb75eebf"><div class="ttname"><a href="class_ais_instrument_handler.html#a3de1ee62bac5796ef2d4e24dfb75eebf">AisInstrumentHandler::activeDCDataReady</a></div><div class="ttdeci">void activeDCDataReady(uint8_t channel, const AisDCData &amp;DCData)</div><div class="ttdoc">a signal that is emitted whenever new DC data for an active experiment are ready.</div></div>
@@ -190,7 +188,7 @@ Creating Control Flow Logic Specific To A Handler</h3>
 <div class="ttc" id="astruct_ais_d_c_data_html_ae394dc60504aa5fdbc06604265d71881"><div class="ttname"><a href="struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881">AisDCData::timestamp</a></div><div class="ttdeci">double timestamp</div><div class="ttdoc">the time at which the DC data arrived.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:12</div></div>
 <div class="ttc" id="astruct_ais_experiment_node_html"><div class="ttname"><a href="struct_ais_experiment_node.html">AisExperimentNode</a></div><div class="ttdoc">a structure containing some information regarding the running element.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:107</div></div>
 </div><!-- fragment --><p>For a more complex logic for running a sequence of experiments, please refer to <a class="el" href="control_flow_demo.html">this example</a></p>
-<p>If you would like to output the incoming data to a file such as a CSV file, you may modify the previous block to something as follows:</p>
+<p>If you would like to output the incoming data to a file such as a CSV file, you may modify the last block to something as follows:</p>
 <div class="fragment"><div class="line">QString filePath;</div>
 <div class="line"><span class="keyword">auto</span> connectHandlerSignals = [=, &amp;filePath](<span class="keyword">const</span> <a class="code" href="class_ais_instrument_handler.html">AisInstrumentHandler</a>* handler) {</div>
 <div class="line"> </div>

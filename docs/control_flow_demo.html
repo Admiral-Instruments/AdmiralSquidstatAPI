@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Squidstat Library API: Advanced Control Flow</title>
+<title>Squidstat API User Manual: Advanced Control Flow</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="Admiral_Instruments_Logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Squidstat Library API
+   <div id="projectname">Squidstat API User Manual
    </div>
   </td>
  </tr>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('control_flow_demo.html',''); initResiz
 <div class="line"><span class="keyword">auto</span> experimentC = std::make_shared&lt;AisExperiment&gt;(); <span class="comment">// create a third experiment</span></div>
 <div class="line">experimentC-&gt;appendElement(cvElement, 2); <span class="comment">// append to experimentC, the created CV element and set it to run 2 times</span></div>
 <div class="ttc" id="aclass_ais_constant_current_element_html"><div class="ttname"><a href="class_ais_constant_current_element.html">AisConstantCurrentElement</a></div><div class="ttdoc">an experiment that simulates a constant current flow with more advance options for stopping the exper...</div><div class="ttdef"><b>Definition:</b> AisConstantCurrentElement.h:15</div></div>
-<div class="ttc" id="aclass_ais_constant_pot_element_html"><div class="ttname"><a href="class_ais_constant_pot_element.html">AisConstantPotElement</a></div><div class="ttdoc">an experiment that simulates a constant applied voltage.</div><div class="ttdef"><b>Definition:</b> AisConstantPotElement.h:16</div></div>
+<div class="ttc" id="aclass_ais_constant_pot_element_html"><div class="ttname"><a href="class_ais_constant_pot_element.html">AisConstantPotElement</a></div><div class="ttdoc">an experiment that simulates a constant applied voltage.</div><div class="ttdef"><b>Definition:</b> AisConstantPotElement.h:15</div></div>
 </div><!-- fragment --><p>Now we have the experiments set up. Next we will create the logic for the sequence of experiments. We will be using timers as external conditions to control the workflow. You may substitute that with your own conditions.</p>
 <p>The following lambda function creates a logic and assigns it to the given handler. We will call this function after the <a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff">AisDeviceTracker::newDeviceConnected</a> signal has been emitted and a handler has been created. The workflow will be as follows:</p><ul>
 <li>Start the first timer</li>
@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('control_flow_demo.html',''); initResiz
 <div class="line">        });</div>
 <div class="line">    });</div>
 <div class="line">};</div>
-<div class="ttc" id="aclass_ais_instrument_handler_html"><div class="ttname"><a href="class_ais_instrument_handler.html">AisInstrumentHandler</a></div><div class="ttdoc">this class provides control of the device including starting, pausing, resuming and stopping an exper...</div><div class="ttdef"><b>Definition:</b> AisInstrumentHandler.h:28</div></div>
+<div class="ttc" id="aclass_ais_instrument_handler_html"><div class="ttname"><a href="class_ais_instrument_handler.html">AisInstrumentHandler</a></div><div class="ttdoc">this class provides control of the device including starting, pausing, resuming and stopping an exper...</div><div class="ttdef"><b>Definition:</b> AisInstrumentHandler.h:24</div></div>
 <div class="ttc" id="aclass_ais_instrument_handler_html_a391573a96037abefe0004b4a19c05bd3"><div class="ttname"><a href="class_ais_instrument_handler.html#a391573a96037abefe0004b4a19c05bd3">AisInstrumentHandler::experimentStopped</a></div><div class="ttdeci">void experimentStopped(uint8_t channel)</div><div class="ttdoc">a signal that is emitted whenever an experiment was stopped manually or has completed.</div></div>
 </div><!-- fragment --><p>This logic we have shown demonstrates how to start and stop experiments based on external conditions/variables, and how to do so based on the behavior of other experiments as well.</p>
 <p>We then connect the tracker's signals as we have explained in more details <a class="el" href="basics.html">before</a>.</p>

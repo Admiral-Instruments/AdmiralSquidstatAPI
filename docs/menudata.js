@@ -38,7 +38,6 @@ var menudata={children:[
 {text:"e",url:"functions_e.html#index_e"},
 {text:"f",url:"functions_f.html#index_f"},
 {text:"g",url:"functions_g.html#index_g"},
-{text:"h",url:"functions_h.html#index_h"},
 {text:"i",url:"functions_i.html#index_i"},
 {text:"m",url:"functions_m.html#index_m"},
 {text:"n",url:"functions_n.html#index_n"},
