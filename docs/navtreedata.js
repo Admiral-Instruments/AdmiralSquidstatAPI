@@ -25,9 +25,9 @@
 var NAVTREE =
 [
   [ "Squidstat API User Manual", "index.html", [
-    [ "The Basics of Running Experiments", "basics.html", null ],
-    [ "Advanced Control Flow", "control_flow_demo.html", null ],
-    [ "Manual Experiments", "manual_exp.html", null ],
+    [ "The Basics of Running Experiments", "md_intro_and_examples_1_basics.html", null ],
+    [ "Advanced Control Flow", "md_intro_and_examples_2_control_flow_demo.html", null ],
+    [ "Manual Experiments", "md_intro_and_examples_3_manual_experiment.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -42,15 +42,15 @@ var NAVTREE =
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ]
-    ] ]
+    ] ],
+    [ "Download", "^https://github.com/Admiral-Instruments/AdmiralSquidstatAPI", null ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
 "_ais_abstract_element_8h_source.html",
-"class_ais_diff_pulse_voltammetry_element.html#a40a87087be879731e0a48b9d9d12016a",
-"struct_ais_a_c_data.html#a5f1b607df42fe27eeb78c7cd5a239142"
+"class_ais_e_i_s_potentiostatic_element.html#a753cbc86b8cac3a635c69ce889ba61e5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

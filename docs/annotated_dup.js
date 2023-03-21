@@ -1,16 +1,6 @@
 var annotated_dup =
 [
-    [ "Creating A Custom Experiment", "basics.html#autotoc_md0", null ],
-    [ "Controlling The Experiment", "basics.html#autotoc_md1", [
-      [ "Creating Control Flow Logic Specific To A Handler", "basics.html#autotoc_md2", null ],
-      [ "Connecting Slots To Device-Tracker Signals", "basics.html#autotoc_md3", [
-        [ "When a Device is Connected", "basics.html#autotoc_md4", null ],
-        [ "When a Device is Disconnected", "basics.html#autotoc_md5", null ]
-      ] ]
-    ] ],
-    [ "AisAbstractElement", "class_ais_abstract_element.html", "class_ais_abstract_element" ],
     [ "AisACData", "struct_ais_a_c_data.html", "struct_ais_a_c_data" ],
-    [ "AisBatteryCapacityElement", "class_ais_battery_capacity_element.html", "class_ais_battery_capacity_element" ],
     [ "AisCompRange", "class_ais_comp_range.html", "class_ais_comp_range" ],
     [ "AisConstantCurrentElement", "class_ais_constant_current_element.html", "class_ais_constant_current_element" ],
     [ "AisConstantPotElement", "class_ais_constant_pot_element.html", "class_ais_constant_pot_element" ],

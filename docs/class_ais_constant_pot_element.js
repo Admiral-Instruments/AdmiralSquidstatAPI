@@ -2,7 +2,6 @@ var class_ais_constant_pot_element =
 [
     [ "AisConstantPotElement", "class_ais_constant_pot_element.html#a15059162c4108d4d6e683b0e0ec671bc", null ],
     [ "AisConstantPotElement", "class_ais_constant_pot_element.html#a1c6b72b98efe2720a470788a784bbf38", null ],
-    [ "~AisConstantPotElement", "class_ais_constant_pot_element.html#a4c733a8ec16f20ae5447e4ccb54d080c", null ],
     [ "getApproxMaxCurrent", "class_ais_constant_pot_element.html#aed7412f05dd5fde6ce78533e79ed5070", null ],
     [ "getCategory", "class_ais_constant_pot_element.html#ab9748d041d19e27113e78332c03ccee1", null ],
     [ "getMaxCapacity", "class_ais_constant_pot_element.html#ad8106b78fe81d250d3bbdae0d7b79bd9", null ],
@@ -15,7 +14,7 @@ var class_ais_constant_pot_element =
     [ "getSamplingInterval", "class_ais_constant_pot_element.html#a71352ceea14f4dd0598cfe691f5800df", null ],
     [ "isAutoRange", "class_ais_constant_pot_element.html#a834234f6b8cae8ffbc42209912968f4f", null ],
     [ "isVoltageVsOCP", "class_ais_constant_pot_element.html#aa0612b12b7beae4b3b9bd313a60a7711", null ],
-    [ "operator=", "class_ais_constant_pot_element.html#a7e9e286f2d8ff656835d5991494a81be", null ],
+    [ "operator=", "class_ais_constant_pot_element.html#aac331355fd4e24e6161a5e40d0088538", null ],
     [ "setApproxMaxCurrent", "class_ais_constant_pot_element.html#ad79edd2913fa953e5bf48e049b1384fd", null ],
     [ "setAutoRange", "class_ais_constant_pot_element.html#a0728b847f42826b6c2d3648193330fef", null ],
     [ "setMaxCapacity", "class_ais_constant_pot_element.html#ae011863ff32e7f2505afdd0c76464540", null ],

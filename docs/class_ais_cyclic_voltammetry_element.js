@@ -2,7 +2,6 @@ var class_ais_cyclic_voltammetry_element =
 [
     [ "AisCyclicVoltammetryElement", "class_ais_cyclic_voltammetry_element.html#a46afa6f3da72822c5a8668615c47af44", null ],
     [ "AisCyclicVoltammetryElement", "class_ais_cyclic_voltammetry_element.html#a459acc0d4c93313b77acbb2a726e9f1a", null ],
-    [ "~AisCyclicVoltammetryElement", "class_ais_cyclic_voltammetry_element.html#a3273692fe5fc562cee46f52d7af371d8", null ],
     [ "getApproxMaxCurrent", "class_ais_cyclic_voltammetry_element.html#ac8d567933028016ea6fa22622618014c", null ],
     [ "getCategory", "class_ais_cyclic_voltammetry_element.html#afe396de0b822fee64d6e80e96729a480", null ],
     [ "getdEdt", "class_ais_cyclic_voltammetry_element.html#ab7e33c2ffc7c9c8fb189bd1119657b91", null ],
@@ -18,7 +17,7 @@ var class_ais_cyclic_voltammetry_element =
     [ "isFirstVoltageLimitVsOCP", "class_ais_cyclic_voltammetry_element.html#a681e93ba23f1b8c6be0c276b35480908", null ],
     [ "isSecondVoltageLimitVsOCP", "class_ais_cyclic_voltammetry_element.html#a0710df72b37cddf2cc990849478ac31d", null ],
     [ "isStartVoltageVsOCP", "class_ais_cyclic_voltammetry_element.html#ad813522155cf77eff66d955a995c56ea", null ],
-    [ "operator=", "class_ais_cyclic_voltammetry_element.html#ad273ef7018793997d41b530353b51187", null ],
+    [ "operator=", "class_ais_cyclic_voltammetry_element.html#a0529846c6ace83d3186dce5710447e7d", null ],
     [ "setApproxMaxCurrent", "class_ais_cyclic_voltammetry_element.html#a33e59a4fdd87b27baff17463944728f4", null ],
     [ "setAutoRange", "class_ais_cyclic_voltammetry_element.html#a2b3e2b4662a966bff05cd17cd05bdc2f", null ],
     [ "setdEdt", "class_ais_cyclic_voltammetry_element.html#a5716a80401bdd38c960e64c4d4dcfb44", null ],

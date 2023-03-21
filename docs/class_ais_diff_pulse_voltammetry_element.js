@@ -2,7 +2,6 @@ var class_ais_diff_pulse_voltammetry_element =
 [
     [ "AisDiffPulseVoltammetryElement", "class_ais_diff_pulse_voltammetry_element.html#a48993478cfda36ff5591be6e4a80f3f5", null ],
     [ "AisDiffPulseVoltammetryElement", "class_ais_diff_pulse_voltammetry_element.html#a94a8bc3e1c7e6607856b4770b7f89774", null ],
-    [ "~AisDiffPulseVoltammetryElement", "class_ais_diff_pulse_voltammetry_element.html#a611656b1b7b448be58ab3ac9f247dc19", null ],
     [ "getApproxMaxCurrent", "class_ais_diff_pulse_voltammetry_element.html#a7633a65c105375367278e7f0f67b1e07", null ],
     [ "getCategory", "class_ais_diff_pulse_voltammetry_element.html#af9dfad163613b3c59bc11b0452c589c7", null ],
     [ "getEndVoltage", "class_ais_diff_pulse_voltammetry_element.html#ad51b2fa525a0112a2fc04263d26ad79a", null ],
@@ -15,7 +14,7 @@ var class_ais_diff_pulse_voltammetry_element =
     [ "isAutoRange", "class_ais_diff_pulse_voltammetry_element.html#a135d42fd33567dda611e66bf017d568b", null ],
     [ "isEndVoltageVsOCP", "class_ais_diff_pulse_voltammetry_element.html#a3e729072f385c79ec1c5d4e4936be2c3", null ],
     [ "isStartVoltageVsOCP", "class_ais_diff_pulse_voltammetry_element.html#aa5fa1c6a7103eeb8956b917f938440ff", null ],
-    [ "operator=", "class_ais_diff_pulse_voltammetry_element.html#a348a2d7345ed4b9b7838390d188fec10", null ],
+    [ "operator=", "class_ais_diff_pulse_voltammetry_element.html#a7f304946bccd972c7a4937307d9424f0", null ],
     [ "setApproxMaxCurrent", "class_ais_diff_pulse_voltammetry_element.html#a81e7d4c8c16ec680925915bd049c115e", null ],
     [ "setAutoRange", "class_ais_diff_pulse_voltammetry_element.html#a5ee6dc92a432c7963903baf6c1f3c99f", null ],
     [ "setEndVoltage", "class_ais_diff_pulse_voltammetry_element.html#a53727aae8f8b59bf08f916962bde2458", null ],

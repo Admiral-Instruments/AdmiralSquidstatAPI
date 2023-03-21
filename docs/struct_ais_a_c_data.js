@@ -4,7 +4,7 @@ var struct_ais_a_c_data =
     [ "currentAmplitude", "struct_ais_a_c_data.html#aab971083ed04125ff9c2a542d12d39ce", null ],
     [ "DCCurrent", "struct_ais_a_c_data.html#a47c4e696f24ecc0296abd24b45d60c3c", null ],
     [ "frequency", "struct_ais_a_c_data.html#ac6b51ee0dfd56a5ad9f919a6c325aa4f", null ],
-    [ "imagImpendance", "struct_ais_a_c_data.html#ade67cbbe52a76c6c82c78ce6cb588bb6", null ],
+    [ "imagImpedance", "struct_ais_a_c_data.html#a64ba6d88f1f289fc4c8355dc4b21d0ac", null ],
     [ "numberOfCycles", "struct_ais_a_c_data.html#a5f1b607df42fe27eeb78c7cd5a239142", null ],
     [ "phaseAngle", "struct_ais_a_c_data.html#af1eb5d7ed33b0e383bb966548c82c640", null ],
     [ "realImpedance", "struct_ais_a_c_data.html#a21611faeb767eadec560492d54e79aae", null ],

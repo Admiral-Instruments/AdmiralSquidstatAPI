@@ -2,7 +2,6 @@ var class_ais_constant_power_element =
 [
     [ "AisConstantPowerElement", "class_ais_constant_power_element.html#afb94ef4bfa59c97f345f77cabe45a051", null ],
     [ "AisConstantPowerElement", "class_ais_constant_power_element.html#a9e72d5b43e6db36352e9f3ae9fa4715c", null ],
-    [ "~AisConstantPowerElement", "class_ais_constant_power_element.html#a48a51c24b784cd32515e00ae1555b136", null ],
     [ "getCategory", "class_ais_constant_power_element.html#a5902c9ef7ef33a0d0ad155d1cf235e7e", null ],
     [ "getMaxCapacity", "class_ais_constant_power_element.html#a8683ba3d0a9c377668e1028d98ce80fa", null ],
     [ "getMaxDuration", "class_ais_constant_power_element.html#ac4bc7f3b7c65d09022484d2f3034b9ff", null ],
@@ -12,7 +11,7 @@ var class_ais_constant_power_element =
     [ "getPower", "class_ais_constant_power_element.html#a518aebdafef7391fb2bc6d8d80bd34bc", null ],
     [ "getSamplingInterval", "class_ais_constant_power_element.html#ab16f4f000a7a4ac5a8673da4604fc59a", null ],
     [ "isCharge", "class_ais_constant_power_element.html#ad68057f687fa8a90b3a5485cc30bddc1", null ],
-    [ "operator=", "class_ais_constant_power_element.html#aebdcb7c8545443929a1ee37677c0eac6", null ],
+    [ "operator=", "class_ais_constant_power_element.html#aa49a16d4ed6db2ae618311ecdbaff579", null ],
     [ "setCharge", "class_ais_constant_power_element.html#a746f50db871d91fbc4826c49eb326408", null ],
     [ "setMaxCapacity", "class_ais_constant_power_element.html#ab62e0c9aae81a6936dcffb50da66f933", null ],
     [ "setMaxDuration", "class_ais_constant_power_element.html#afc17d7c11966c89ace27d8e3bbf0721d", null ],

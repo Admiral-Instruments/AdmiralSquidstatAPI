@@ -4,6 +4,9 @@ var class_ais_error_code =
       [ "Unknown", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaf179845d1799253ed6be394310481173", null ],
       [ "Success", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04", null ],
       [ "ConnectionFailed", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaeb42711ddc3e80059b824b01673e26cf", null ],
+      [ "FirmwareNotSupported", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaebaf047df011cabf7dfdf13f0c7299e0", null ],
+      [ "FirmwareFileNotFound", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa81a26157607b311e91adc23883cfc15d", null ],
+      [ "FirmwareUptodate", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa02893f79f785390f47c5309bbf3bf142", null ],
       [ "InvalidChannel", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09", null ],
       [ "BusyChannel", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f", null ],
       [ "DeviceNotFound", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa", null ],
@@ -22,10 +25,6 @@ var class_ais_error_code =
       [ "ExperimentAlreadyPaused", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9cf9ef9a02ea65108dd705e7400c0648", null ],
       [ "ExperimentAlreadyRun", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699", null ]
     ] ],
-    [ "AisErrorCode", "class_ais_error_code.html#a39387458fb5c335458f7c53e465a2936", null ],
-    [ "AisErrorCode", "class_ais_error_code.html#a1b87789d6c57fbd11085ead532339afa", null ],
-    [ "AisErrorCode", "class_ais_error_code.html#a4f2d4d5d907269f062a48d9ca62a9d4e", null ],
     [ "message", "class_ais_error_code.html#a25e4eef5129000305294ad761b9f2c5e", null ],
-    [ "operator ErrorCode", "class_ais_error_code.html#a6ff28f043ac39e43cc92a2ea15682b29", null ],
     [ "value", "class_ais_error_code.html#aea66d7dcd49f91ae7f219d16ef7fed22", null ]
 ];

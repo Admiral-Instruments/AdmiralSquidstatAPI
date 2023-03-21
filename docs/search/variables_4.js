@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['imagimpendance_443',['imagImpendance',['../struct_ais_a_c_data.html#ade67cbbe52a76c6c82c78ce6cb588bb6',1,'AisACData']]]
+  ['imagimpedance_0',['imagImpedance',['../struct_ais_a_c_data.html#a64ba6d88f1f289fc4c8355dc4b21d0ac',1,'AisACData']]]
 ];
