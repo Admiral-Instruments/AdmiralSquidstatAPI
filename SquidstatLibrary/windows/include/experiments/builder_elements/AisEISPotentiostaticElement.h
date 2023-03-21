@@ -4,7 +4,6 @@
 #include "AisSquidstatGlobal.h"
 #include <QString>
 
-
 class EISPotentiostaticElement;
 
 /**
@@ -20,7 +19,6 @@ class EISPotentiostaticElement;
  */
 class SQUIDSTATLIBRARY_EXPORT AisEISPotentiostaticElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the EIS potentiostatic element
      * @param startFrequency the value for the voltage starting frequency
@@ -34,10 +32,15 @@ public:
         double endFrequency,
         double stepsPerDecade,
         double voltageBias,
-        double voltageAamplitude
-    );
+        double voltageAamplitude);
+    /**
+ * @brief copy constructor for the AisEISPotentiostaticElement object.
+*/
     explicit AisEISPotentiostaticElement(const AisEISPotentiostaticElement&);
-    AisEISPotentiostaticElement& operator= (const AisEISPotentiostaticElement&);
+    /**
+* @brief overload equal to operator for the AisEISPotentiostaticElement object.
+*/
+    AisEISPotentiostaticElement& operator=(const AisEISPotentiostaticElement&);
 
     ~AisEISPotentiostaticElement() override;
 

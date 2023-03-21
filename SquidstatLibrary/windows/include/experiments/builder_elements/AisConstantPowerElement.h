@@ -14,7 +14,6 @@ class ConstantPowerElement;
 */
 class SQUIDSTATLIBRARY_EXPORT AisConstantPowerElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the constant power element constructor
      * @param isCharge true to set the experiment simulate charge and false to simulate discharge.
@@ -23,13 +22,20 @@ public:
      * @param smaplingInterval the data sampling interval value in seconds.
     */
     explicit AisConstantPowerElement(
-        bool isCharge, 
+        bool isCharge,
         double power,
         double duration,
-        double smaplingInterval
-    );
+        double smaplingInterval);
+
+    /**
+     * @brief copy constructor for the AisConstantPowerElement object.
+    */
     explicit AisConstantPowerElement(const AisConstantPowerElement&);
-    AisConstantPowerElement& operator= (const AisConstantPowerElement&);
+
+    /**
+     * @brief overload equal to operator for the AisConstantPowerElement object.
+    */
+    AisConstantPowerElement& operator=(const AisConstantPowerElement&);
 
     ~AisConstantPowerElement() override;
 
@@ -115,8 +121,7 @@ public:
     */
     void setMinVoltage(double minVoltage);
 
-
-   /**
+    /**
      * @brief get the maximum duration set for the experiment.
      * The experiment will end when the duration of the experiment reaches this value.
      * @return the maximum duration for the experiment in seconds.

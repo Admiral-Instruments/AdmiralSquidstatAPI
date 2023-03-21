@@ -111,6 +111,15 @@ public:
     Q_REQUIRED_RESULT Q_DECL_CONSTEXPR QLatin1Char front() const { return at(0); }
     Q_REQUIRED_RESULT Q_DECL_CONSTEXPR QLatin1Char back() const { return at(size() - 1); }
 
+    Q_REQUIRED_RESULT int compare(QStringView other, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
+    { return QtPrivate::compareStrings(*this, other, cs); }
+    Q_REQUIRED_RESULT int compare(QLatin1String other, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
+    { return QtPrivate::compareStrings(*this, other, cs); }
+    Q_REQUIRED_RESULT Q_DECL_CONSTEXPR int compare(QChar c) const noexcept
+    { return isEmpty() || front() == c ? size() - 1 : uchar(m_data[0]) - c.unicode() ; }
+    Q_REQUIRED_RESULT int compare(QChar c, Qt::CaseSensitivity cs) const noexcept
+    { return QtPrivate::compareStrings(*this, QStringView(&c, 1), cs); }
+
     Q_REQUIRED_RESULT bool startsWith(QStringView s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
     { return QtPrivate::startsWith(*this, s, cs); }
     Q_REQUIRED_RESULT bool startsWith(QLatin1String s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
@@ -233,6 +242,8 @@ Q_DECL_CONSTEXPR bool QtPrivate::isLatin1(QLatin1String) noexcept
 //
 // QStringView members that require QLatin1String:
 //
+int QStringView::compare(QLatin1String s, Qt::CaseSensitivity cs) const noexcept
+{ return QtPrivate::compareStrings(*this, s, cs); }
 bool QStringView::startsWith(QLatin1String s, Qt::CaseSensitivity cs) const noexcept
 { return QtPrivate::startsWith(*this, s, cs); }
 bool QStringView::endsWith(QLatin1String s, Qt::CaseSensitivity cs) const noexcept
@@ -530,17 +541,21 @@ public:
     QString &insert(int i, const QChar *uc, int len);
     inline QString &insert(int i, const QString &s) { return insert(i, s.constData(), s.length()); }
     inline QString &insert(int i, const QStringRef &s);
+    inline QString &insert(int i, QStringView s)
+    { return insert(i, s.data(), s.length()); }
     QString &insert(int i, QLatin1String s);
     QString &append(QChar c);
     QString &append(const QChar *uc, int len);
     QString &append(const QString &s);
     QString &append(const QStringRef &s);
     QString &append(QLatin1String s);
+    inline QString &append(QStringView s) { return append(s.data(), s.length()); }
     inline QString &prepend(QChar c) { return insert(0, c); }
     inline QString &prepend(const QChar *uc, int len) { return insert(0, uc, len); }
     inline QString &prepend(const QString &s) { return insert(0, s); }
     inline QString &prepend(const QStringRef &s) { return insert(0, s); }
     inline QString &prepend(QLatin1String s) { return insert(0, s); }
+    inline QString &prepend(QStringView s) { return insert(0, s); }
 
     inline QString &operator+=(QChar c) {
         if (d->ref.isShared() || uint(d->size) + 2u > d->alloc)
@@ -554,6 +569,7 @@ public:
     inline QString &operator+=(const QString &s) { return append(s); }
     inline QString &operator+=(const QStringRef &s) { return append(s); }
     inline QString &operator+=(QLatin1String s) { return append(s); }
+    inline QString &operator+=(QStringView s) { return append(s); }
 
     QString &remove(int i, int len);
     QString &remove(QChar c, Qt::CaseSensitivity cs = Qt::CaseSensitive);
@@ -582,45 +598,68 @@ public:
     { return replace(re, QString()); }
 #endif
 
-    enum SplitBehavior { KeepEmptyParts, SkipEmptyParts };
+#if QT_DEPRECATED_SINCE(5, 15)
+    enum SplitBehavior // ### Qt 6: replace with Qt:: version
+    {
+        KeepEmptyParts Q_DECL_ENUMERATOR_DEPRECATED,
+        SkipEmptyParts Q_DECL_ENUMERATOR_DEPRECATED
+    };
 
-    Q_REQUIRED_RESULT QStringList split(const QString &sep, SplitBehavior behavior = KeepEmptyParts,
-                      Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
-    Q_REQUIRED_RESULT QVector<QStringRef> splitRef(const QString &sep, SplitBehavior behavior = KeepEmptyParts,
-                      Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
-    Q_REQUIRED_RESULT QStringList split(QChar sep, SplitBehavior behavior = KeepEmptyParts,
-                      Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
-    Q_REQUIRED_RESULT QVector<QStringRef> splitRef(QChar sep, SplitBehavior behavior = KeepEmptyParts,
-                      Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QStringList split(const QString &sep, SplitBehavior behavior,
+                                        Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QVector<QStringRef> splitRef(const QString &sep, SplitBehavior behavior,
+                                                   Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QStringList split(QChar sep, SplitBehavior behavior,
+                                        Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QVector<QStringRef> splitRef(QChar sep, SplitBehavior behavior,
+                                                   Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
 #ifndef QT_NO_REGEXP
-    Q_REQUIRED_RESULT QStringList split(const QRegExp &sep, SplitBehavior behavior = KeepEmptyParts) const;
-    Q_REQUIRED_RESULT QVector<QStringRef> splitRef(const QRegExp &sep, SplitBehavior behavior = KeepEmptyParts) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QStringList split(const QRegExp &sep, SplitBehavior behavior) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QVector<QStringRef> splitRef(const QRegExp &sep, SplitBehavior behavior) const;
 #endif
 #if QT_CONFIG(regularexpression)
-    Q_REQUIRED_RESULT QStringList split(const QRegularExpression &sep, SplitBehavior behavior = KeepEmptyParts) const;
-    Q_REQUIRED_RESULT QVector<QStringRef> splitRef(const QRegularExpression &sep, SplitBehavior behavior = KeepEmptyParts) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QStringList split(const QRegularExpression &sep, SplitBehavior behavior) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QVector<QStringRef> splitRef(const QRegularExpression &sep, SplitBehavior behavior) const;
 #endif
+#endif // 5.15 deprecations
 
-private:
-    static Q_DECL_CONSTEXPR SplitBehavior _sb(Qt::SplitBehavior sb) Q_DECL_NOTHROW
-    { return sb & Qt::SkipEmptyParts ? SkipEmptyParts : KeepEmptyParts; }
 public:
-
-    Q_REQUIRED_RESULT inline QStringList split(const QString &sep, Qt::SplitBehavior behavior,
-                                               Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
-    Q_REQUIRED_RESULT inline QVector<QStringRef> splitRef(const QString &sep, Qt::SplitBehavior behavior,
-                                                          Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
-    Q_REQUIRED_RESULT inline QStringList split(QChar sep, Qt::SplitBehavior behavior,
-                                               Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
-    Q_REQUIRED_RESULT inline QVector<QStringRef> splitRef(QChar sep, Qt::SplitBehavior behavior,
-                                                          Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT
+    QStringList split(const QString &sep, Qt::SplitBehavior behavior = Qt::KeepEmptyParts,
+                      Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT
+    QVector<QStringRef> splitRef(const QString &sep,
+                                 Qt::SplitBehavior behavior = Qt::KeepEmptyParts,
+                                 Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT
+    QStringList split(QChar sep, Qt::SplitBehavior behavior = Qt::KeepEmptyParts,
+                      Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT
+    QVector<QStringRef> splitRef(QChar sep, Qt::SplitBehavior behavior = Qt::KeepEmptyParts,
+                                 Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
 #ifndef QT_NO_REGEXP
-    Q_REQUIRED_RESULT inline QStringList split(const QRegExp &sep, Qt::SplitBehavior behavior) const;
-    Q_REQUIRED_RESULT inline QVector<QStringRef> splitRef(const QRegExp &sep, Qt::SplitBehavior behavior) const;
+    Q_REQUIRED_RESULT
+    QStringList split(const QRegExp &sep,
+                      Qt::SplitBehavior behavior = Qt::KeepEmptyParts) const;
+    Q_REQUIRED_RESULT
+    QVector<QStringRef> splitRef(const QRegExp &sep,
+                                 Qt::SplitBehavior behavior = Qt::KeepEmptyParts) const;
 #endif
 #ifndef QT_NO_REGULAREXPRESSION
-    Q_REQUIRED_RESULT inline QStringList split(const QRegularExpression &sep, Qt::SplitBehavior behavior) const;
-    Q_REQUIRED_RESULT inline QVector<QStringRef> splitRef(const QRegularExpression &sep, Qt::SplitBehavior behavior) const;
+    Q_REQUIRED_RESULT
+    QStringList split(const QRegularExpression &sep,
+                      Qt::SplitBehavior behavior = Qt::KeepEmptyParts) const;
+    Q_REQUIRED_RESULT
+    QVector<QStringRef> splitRef(const QRegularExpression &sep,
+                                 Qt::SplitBehavior behavior = Qt::KeepEmptyParts) const;
 #endif
 
 
@@ -709,6 +748,8 @@ public:
 #endif
     int compare(QLatin1String other, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
     inline int compare(QStringView s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+    int compare(QChar ch, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
+    { return compare(QStringView{&ch, 1}, cs); }
 
     static inline int compare(const QString &s1, const QString &s2,
                               Qt::CaseSensitivity cs = Qt::CaseSensitive) noexcept
@@ -919,6 +960,8 @@ public:
 
     bool isSimpleText() const;
     bool isRightToLeft() const;
+    Q_REQUIRED_RESULT bool isValidUtf16() const noexcept
+    { return QStringView(*this).isValidUtf16(); }
 
     QString(int size, Qt::Initialization);
     Q_DECL_CONSTEXPR inline QString(QStringDataPtr dd) : d(dd.ptr) {}
@@ -1148,6 +1191,7 @@ QCharRef { // ### Qt 7: remove
         : s(str),i(idx) {}
     friend class QString;
 public:
+    QCharRef(const QCharRef &) = default;
 
     // most QChar operations repeated here
 
@@ -1456,9 +1500,10 @@ inline bool QByteArray::operator<=(const QString &s) const
 { return QString::compare_helper(s.constData(), s.size(), constData(), size()) >= 0; }
 inline bool QByteArray::operator>=(const QString &s) const
 { return QString::compare_helper(s.constData(), s.size(), constData(), size()) <= 0; }
+
 #endif // !defined(QT_NO_CAST_FROM_ASCII) && !defined(QT_RESTRICTED_CAST_FROM_ASCII)
 
-#ifndef QT_NO_CAST_TO_ASCII
+#if !defined(QT_NO_CAST_TO_ASCII) && QT_DEPRECATED_SINCE(5, 15)
 inline QByteArray &QByteArray::append(const QString &s)
 { return append(s.toUtf8()); }
 inline QByteArray &QByteArray::insert(int i, const QString &s)
@@ -1475,7 +1520,7 @@ inline int QByteArray::indexOf(const QString &s, int from) const
 { return indexOf(s.toUtf8(), from); }
 inline int QByteArray::lastIndexOf(const QString &s, int from) const
 { return lastIndexOf(s.toUtf8(), from); }
-#endif // QT_NO_CAST_TO_ASCII
+#endif // !defined(QT_NO_CAST_TO_ASCII) && QT_DEPRECATED_SINCE(5, 15)
 
 #if !defined(QT_USE_FAST_OPERATOR_PLUS) && !defined(QT_USE_QSTRINGBUILDER)
 inline const QString operator+(const QString &s1, const QString &s2)
@@ -1617,15 +1662,21 @@ public:
     int count(QChar c, Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
     int count(const QStringRef &s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
 
-    Q_REQUIRED_RESULT QVector<QStringRef> split(const QString &sep, QString::SplitBehavior behavior = QString::KeepEmptyParts,
-                      Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
-    Q_REQUIRED_RESULT QVector<QStringRef> split(QChar sep, QString::SplitBehavior behavior = QString::KeepEmptyParts,
-                      Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+#if QT_DEPRECATED_SINCE(5, 15)
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QVector<QStringRef> split(const QString &sep, QString::SplitBehavior behavior,
+                              Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT QT_DEPRECATED_VERSION_X_5_15("Use Qt::SplitBehavior variant instead")
+    QVector<QStringRef> split(QChar sep, QString::SplitBehavior behavior,
+                              Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+#endif // 5.15 deprecations
 
-    Q_REQUIRED_RESULT inline QVector<QStringRef> split(const QString &sep, Qt::SplitBehavior behavior,
-                                                       Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
-    Q_REQUIRED_RESULT inline QVector<QStringRef> split(QChar sep, Qt::SplitBehavior behavior,
-                                                       Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT
+    QVector<QStringRef> split(const QString &sep, Qt::SplitBehavior behavior = Qt::KeepEmptyParts,
+                              Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT
+    QVector<QStringRef> split(QChar sep, Qt::SplitBehavior behavior = Qt::KeepEmptyParts,
+                              Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
 
     Q_REQUIRED_RESULT QStringRef left(int n) const;
     Q_REQUIRED_RESULT QStringRef right(int n) const;
@@ -1718,6 +1769,8 @@ public:
 
     int compare(const QString &s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
     int compare(const QStringRef &s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+    int compare(QChar c, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
+    { return QtPrivate::compareStrings(*this, QStringView(&c, 1), cs); }
     int compare(QLatin1String s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
 #if !defined(QT_NO_CAST_FROM_ASCII) && !defined(QT_RESTRICTED_CAST_FROM_ASCII)
     int compare(const QByteArray &s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const
@@ -1732,8 +1785,10 @@ public:
 
     int localeAwareCompare(const QString &s) const;
     int localeAwareCompare(const QStringRef &s) const;
+    int localeAwareCompare(QStringView str) const;
     static int localeAwareCompare(const QStringRef &s1, const QString &s2);
     static int localeAwareCompare(const QStringRef &s1, const QStringRef &s2);
+    static int localeAwareCompare(QStringView s1, QStringView s2);
 
     Q_REQUIRED_RESULT QStringRef trimmed() const;
     short  toShort(bool *ok = nullptr, int base = 10) const;
@@ -1968,10 +2023,14 @@ inline int QStringRef::localeAwareCompare(const QString &s) const
 { return QString::localeAwareCompare_helper(constData(), length(), s.constData(), s.length()); }
 inline int QStringRef::localeAwareCompare(const QStringRef &s) const
 { return QString::localeAwareCompare_helper(constData(), length(), s.constData(), s.length()); }
+inline int QStringRef::localeAwareCompare(QStringView s) const
+{ return QString::localeAwareCompare_helper(constData(), length(), s.data(), s.size()); }
 inline int QStringRef::localeAwareCompare(const QStringRef &s1, const QString &s2)
 { return QString::localeAwareCompare_helper(s1.constData(), s1.length(), s2.constData(), s2.length()); }
 inline int QStringRef::localeAwareCompare(const QStringRef &s1, const QStringRef &s2)
 { return QString::localeAwareCompare_helper(s1.constData(), s1.length(), s2.constData(), s2.length()); }
+inline int QStringRef::localeAwareCompare(QStringView s1, QStringView s2)
+{ return QString::localeAwareCompare_helper(s1.data(), s1.size(), s2.data(), s2.size()); }
 
 #if QT_STRINGVIEW_LEVEL < 2
 inline bool QStringRef::contains(const QString &s, Qt::CaseSensitivity cs) const
@@ -2072,6 +2131,32 @@ QString QLatin1String::arg(Args &&...args) const
 {
     return QtPrivate::argToQStringDispatch(*this, QtPrivate::qStringLikeToArg(args)...);
 }
+
+inline qsizetype QStringView::count(QChar c, Qt::CaseSensitivity cs) const noexcept
+{ return toString().count(c, cs); }
+inline qsizetype QStringView::count(QStringView s, Qt::CaseSensitivity cs) const noexcept
+{ return toString().count(s.toString(), cs); }
+
+inline short QStringView::toShort(bool *ok, int base) const
+{ return toString().toShort(ok, base); }
+inline ushort QStringView::toUShort(bool *ok, int base) const
+{ return toString().toUShort(ok, base); }
+inline int QStringView::toInt(bool *ok, int base) const
+{ return toString().toInt(ok, base); }
+inline uint QStringView::toUInt(bool *ok, int base) const
+{ return toString().toUInt(ok, base); }
+inline long QStringView::toLong(bool *ok, int base) const
+{ return toString().toLong(ok, base); }
+inline ulong QStringView::toULong(bool *ok, int base) const
+{ return toString().toULong(ok, base); }
+inline qlonglong QStringView::toLongLong(bool *ok, int base) const
+{ return toString().toLongLong(ok, base); }
+inline qulonglong QStringView::toULongLong(bool *ok, int base) const
+{ return toString().toULongLong(ok, base); }
+inline float QStringView::toFloat(bool *ok) const
+{ return toString().toFloat(ok); }
+inline double QStringView::toDouble(bool *ok) const
+{ return toString().toDouble(ok); }
 
 QT_END_NAMESPACE
 

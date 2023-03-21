@@ -21,10 +21,15 @@ public:
     */
     explicit AisOpenCircuitElement(
         double duration,
-        double samplingInterval
-    );
+        double samplingInterval);
+    /**
+* @brief copy constructor for the AisOpenCircuitElement object.
+*/
     explicit AisOpenCircuitElement(const AisOpenCircuitElement&);
-    AisOpenCircuitElement& operator= (const AisOpenCircuitElement&);
+    /**
+* @brief overload equal to operator for the AisOpenCircuitElement object.
+*/
+    AisOpenCircuitElement& operator=(const AisOpenCircuitElement&);
 
     ~AisOpenCircuitElement() override;
 
@@ -56,7 +61,7 @@ public:
      * @brief get the value set for the duration of the experiment.
      * @return the value set for the duration of the experiment in seconds.
     */
-    double getMaxDuration() const; 
+    double getMaxDuration() const;
 
     /**
      * @brief set the value set for the duration of the experiment.
@@ -116,6 +121,35 @@ public:
      * @param mindVdt the minimum value for the voltage rate of change with respect to time (minimum dV/dt).
     */
     void setMindVdt(double mindVdt);
+
+    /**
+    * @brief tells whether the voltage range is set to auto-select or not.
+    * @return true if the voltage range is set to auto-select and false if a range has been selected.
+   */
+    bool isAutoVoltageRange() const;
+
+    /**
+     * @brief set to auto-select the voltage range.
+     *
+     * This option is set by default. There is no need to call this function to auto-select if the range was not manually set.
+    */
+    void setAutoVoltageRange();
+
+    /**
+    * @brief get the value set for the expected maximum voltage.
+    * @return the value set for the expected maximum Voltage in volt.
+    * @note if nothing was manually set, the device will auto-select the voltage range and the return value will be positive infinity.
+   */
+    double getApproxMaxVoltage() const;
+
+    /**
+     * @brief set maximum voltage expected, for manual voltage range selection.
+     *
+     * The is an <strong>optional</strong> parameter.
+     * If nothing is set, the device will auto-select the voltage range.
+     * @param approxMaxVoltage the value for the maximum current expected in V.
+    */
+    void setApproxMaxVoltage(double approxMaxVoltage);
 
 private:
     std::shared_ptr<OpenCircuitElement> m_dataDerived;

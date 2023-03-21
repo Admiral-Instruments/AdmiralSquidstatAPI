@@ -1,6 +1,4 @@
 
-
-#include "AisCustomExperiment.h"
 #include "AisDeviceTracker.h"
 #include "AisInstrumentHandler.h"
 #include <QCoreApplication>

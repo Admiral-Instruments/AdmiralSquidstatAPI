@@ -384,22 +384,30 @@ inline int QStringList::lastIndexOf(const QRegularExpression &rx, int from) cons
 #endif // QT_CONFIG(regularexpression)
 #endif // Q_QDOC
 
-//
-// QString inline functions:
-//
+// those methods need to be here, so they can be implemented inline
+inline
+QList<QStringView> QStringView::split(QStringView sep, Qt::SplitBehavior behavior, Qt::CaseSensitivity cs) const
+{
+    Q_ASSERT(int(m_size) == m_size);
+    QString s = QString::fromRawData(data(), int(m_size));
+    const auto split = s.splitRef(sep.toString(), behavior, cs);
+    QList<QStringView> result;
+    for (const QStringRef &r : split)
+        result.append(QStringView(m_data + r.position(), r.size()));
+    return result;
+}
 
-QStringList QString::split(const QString &sep, Qt::SplitBehavior behavior, Qt::CaseSensitivity cs) const
-{ return split(sep, _sb(behavior), cs); }
-QStringList QString::split(QChar sep, Qt::SplitBehavior behavior, Qt::CaseSensitivity cs) const
-{ return split(sep, _sb(behavior), cs); }
-#ifndef QT_NO_REGEXP
-QStringList QString::split(const QRegExp &sep, Qt::SplitBehavior behavior) const
-{ return split(sep, _sb(behavior)); }
-#endif
-#if QT_CONFIG(regularexpression)
-QStringList QString::split(const QRegularExpression &sep, Qt::SplitBehavior behavior) const
-{ return split(sep, _sb(behavior)); }
-#endif
+inline
+QList<QStringView> QStringView::split(QChar sep, Qt::SplitBehavior behavior, Qt::CaseSensitivity cs) const
+{
+    Q_ASSERT(int(m_size) == m_size);
+    QString s = QString::fromRawData(data(), int(m_size));
+    const auto split = s.splitRef(sep, behavior, cs);
+    QList<QStringView> result;
+    for (const QStringRef &r : split)
+        result.append(QStringView(m_data + r.position(), r.size()));
+    return result;
+}
 
 QT_END_NAMESPACE
 

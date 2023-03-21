@@ -55,6 +55,7 @@ QT_BEGIN_NAMESPACE
 
 class QString;
 class QStringRef;
+class QRegularExpression;
 
 namespace QtPrivate {
 template <typename Char>
@@ -211,7 +212,7 @@ public:
 #endif
 
     template <typename StdBasicString, if_compatible_string<StdBasicString> = true>
-    QStringView(const StdBasicString &str) noexcept
+    Q_DECL_CONSTEXPR QStringView(const StdBasicString &str) noexcept
         : QStringView(str.data(), qsizetype(str.size())) {}
 
     Q_REQUIRED_RESULT inline QString toString() const; // defined in qstring.h
@@ -238,13 +239,21 @@ public:
     Q_REQUIRED_RESULT Q_DECL_CONSTEXPR QChar at(qsizetype n) const { return (*this)[n]; }
 
     Q_REQUIRED_RESULT Q_DECL_CONSTEXPR QStringView mid(qsizetype pos) const
-    { return Q_ASSERT(pos >= 0), Q_ASSERT(pos <= size()), QStringView(m_data + pos, m_size - pos); }
+    {
+        return QStringView(m_data + qBound(qsizetype(0), pos, m_size), m_size - qBound(qsizetype(0), pos, m_size));
+    }
     Q_REQUIRED_RESULT Q_DECL_CONSTEXPR QStringView mid(qsizetype pos, qsizetype n) const
-    { return Q_ASSERT(pos >= 0), Q_ASSERT(n >= 0), Q_ASSERT(pos + n <= size()), QStringView(m_data + pos, n); }
+    {
+        return QStringView(m_data + qBound(qsizetype(0), pos, m_size), qBound(qsizetype(0), pos + n, m_size) - qBound(qsizetype(0), pos, m_size));
+    }
     Q_REQUIRED_RESULT Q_DECL_CONSTEXPR QStringView left(qsizetype n) const
-    { return Q_ASSERT(n >= 0), Q_ASSERT(n <= size()), QStringView(m_data, n); }
+    {
+        return QStringView(m_data, (size_t(n) > size_t(m_size) ? m_size : n));
+    }
     Q_REQUIRED_RESULT Q_DECL_CONSTEXPR QStringView right(qsizetype n) const
-    { return Q_ASSERT(n >= 0), Q_ASSERT(n <= size()), QStringView(m_data + m_size - n, n); }
+    {
+        return QStringView(m_data + m_size - (size_t(n) > size_t(m_size) ? m_size : n), (size_t(n) > size_t(m_size) ? m_size : n));
+    }
     Q_REQUIRED_RESULT Q_DECL_CONSTEXPR QStringView chopped(qsizetype n) const
     { return Q_ASSERT(n >= 0), Q_ASSERT(n <= size()), QStringView(m_data, m_size - n); }
 
@@ -257,6 +266,11 @@ public:
 
     Q_REQUIRED_RESULT int compare(QStringView other, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
     { return QtPrivate::compareStrings(*this, other, cs); }
+    Q_REQUIRED_RESULT inline int compare(QLatin1String other, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+    Q_REQUIRED_RESULT Q_DECL_CONSTEXPR int compare(QChar c) const noexcept
+    { return size() >= 1 ? compare_single_char_helper(*utf16() - c.unicode()) : -1; }
+    Q_REQUIRED_RESULT int compare(QChar c, Qt::CaseSensitivity cs) const noexcept
+    { return QtPrivate::compareStrings(*this, QStringView(&c, 1), cs); }
 
     Q_REQUIRED_RESULT bool startsWith(QStringView s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
     { return QtPrivate::startsWith(*this, s, cs); }
@@ -286,6 +300,9 @@ public:
     { return indexOf(s, 0, cs) != qsizetype(-1); }
     Q_REQUIRED_RESULT inline bool contains(QLatin1String s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
 
+    Q_REQUIRED_RESULT inline qsizetype count(QChar c, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+    Q_REQUIRED_RESULT inline qsizetype count(QStringView s, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept;
+
     Q_REQUIRED_RESULT qsizetype lastIndexOf(QChar c, qsizetype from = -1, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
     { return QtPrivate::lastIndexOf(*this, from, QStringView(&c, 1), cs); }
     Q_REQUIRED_RESULT qsizetype lastIndexOf(QStringView s, qsizetype from = -1, Qt::CaseSensitivity cs = Qt::CaseSensitive) const noexcept
@@ -294,8 +311,34 @@ public:
 
     Q_REQUIRED_RESULT bool isRightToLeft() const noexcept
     { return QtPrivate::isRightToLeft(*this); }
+    Q_REQUIRED_RESULT bool isValidUtf16() const noexcept
+    { return QtPrivate::isValidUtf16(*this); }
+
+    Q_REQUIRED_RESULT inline short toShort(bool *ok = nullptr, int base = 10) const;
+    Q_REQUIRED_RESULT inline ushort toUShort(bool *ok = nullptr, int base = 10) const;
+    Q_REQUIRED_RESULT inline int toInt(bool *ok = nullptr, int base = 10) const;
+    Q_REQUIRED_RESULT inline uint toUInt(bool *ok = nullptr, int base = 10) const;
+    Q_REQUIRED_RESULT inline long toLong(bool *ok = nullptr, int base = 10) const;
+    Q_REQUIRED_RESULT inline ulong toULong(bool *ok = nullptr, int base = 10) const;
+    Q_REQUIRED_RESULT inline qlonglong toLongLong(bool *ok = nullptr, int base = 10) const;
+    Q_REQUIRED_RESULT inline qulonglong toULongLong(bool *ok = nullptr, int base = 10) const;
+    Q_REQUIRED_RESULT inline float toFloat(bool *ok = nullptr) const;
+    Q_REQUIRED_RESULT inline double toDouble(bool *ok = nullptr) const;
 
     Q_REQUIRED_RESULT inline int toWCharArray(wchar_t *array) const; // defined in qstring.h
+
+    Q_REQUIRED_RESULT inline
+    QList<QStringView> split(QStringView sep,
+                             Qt::SplitBehavior behavior = Qt::KeepEmptyParts,
+                             Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+    Q_REQUIRED_RESULT inline
+    QList<QStringView> split(QChar sep, Qt::SplitBehavior behavior = Qt::KeepEmptyParts,
+                             Qt::CaseSensitivity cs = Qt::CaseSensitive) const;
+
+#if QT_CONFIG(regularexpression)
+    Q_REQUIRED_RESULT inline
+    QList<QStringView> split(const QRegularExpression &sep, Qt::SplitBehavior behavior = Qt::KeepEmptyParts) const;
+#endif
 
     //
     // STL compatibility API:
@@ -325,6 +368,9 @@ public:
 private:
     qsizetype m_size;
     const storage_type *m_data;
+
+    Q_DECL_CONSTEXPR int compare_single_char_helper(int diff) const noexcept
+    { return diff ? diff : size() > 1 ? 1 : 0; }
 };
 Q_DECLARE_TYPEINFO(QStringView, Q_PRIMITIVE_TYPE);
 

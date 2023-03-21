@@ -4,8 +4,6 @@
 #include "AisSquidstatGlobal.h"
 #include <QString>
 
-
-
 class DCCurrentSweepElement;
 
 /**
@@ -18,7 +16,6 @@ class DCCurrentSweepElement;
 */
 class SQUIDSTATLIBRARY_EXPORT AisDCCurrentSweepElement : public AisAbstractElement {
 public:
-
     /**
      * @brief the DC current sweep element.
      * @param startCurrent the value for the starting current in Amps.
@@ -31,13 +28,18 @@ public:
         double endCurrent,
         double scanRate,
         double samplingInterval
-    
+
     );
+    /**
+    * @brief copy constructor for the AisDCCurrentSweepElement object.
+   */
     explicit AisDCCurrentSweepElement(const AisDCCurrentSweepElement&);
-    AisDCCurrentSweepElement& operator= (const AisDCCurrentSweepElement&);
+    /**
+    * @brief overload equal to operator for the AisDCCurrentSweepElement object.
+    */
+    AisDCCurrentSweepElement& operator=(const AisDCCurrentSweepElement&);
 
     ~AisDCCurrentSweepElement() override;
-
 
     /**
      * @brief get the name of the element.
@@ -107,7 +109,7 @@ public:
     */
     void setSamplingInterval(double samplingInterval);
 
-   /**
+    /**
      * @brief get the value set for the maximum voltage.
      * The experiment will end when it reaches this value.
      * @return the value set for the maximum voltage.

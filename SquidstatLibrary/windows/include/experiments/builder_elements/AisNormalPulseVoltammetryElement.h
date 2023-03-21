@@ -18,9 +18,8 @@ class NormalPulseVoltammetryElement;
  * @image html NormalPulseVoltammetry.png
  * @image latex NormalPulseVoltammetry.png
 */
-class SQUIDSTATLIBRARY_EXPORT AisNormalPulseVoltammetryElement final : public AisAbstractElement{
+class SQUIDSTATLIBRARY_EXPORT AisNormalPulseVoltammetryElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the normal-pulse-voltammetry element constructor
      * @param startVoltage the value of the starting potential in volts
@@ -34,10 +33,15 @@ public:
         double endVoltage,
         double voltageStep,
         double pulseWidth,
-        double pulsePeriod
-    );
+        double pulsePeriod);
+    /**
+* @brief copy constructor for the AisNormalPulseVoltammetryElement object.
+*/
     explicit AisNormalPulseVoltammetryElement(const AisNormalPulseVoltammetryElement&);
-    AisNormalPulseVoltammetryElement& operator= (const AisNormalPulseVoltammetryElement&);
+    /**
+* @brief overload equal to operator for the AisNormalPulseVoltammetryElement object.
+*/
+    AisNormalPulseVoltammetryElement& operator=(const AisNormalPulseVoltammetryElement&);
 
     ~AisNormalPulseVoltammetryElement() override;
 
@@ -63,7 +67,7 @@ public:
      * @brief set the value for the start voltage.
      * @param startVoltage the value of the start voltage in volts
     */
-    void setStartVoltage(double startVoltage); 
+    void setStartVoltage(double startVoltage);
 
     /**
      * @brief tells whether the start voltage is set against the open-circuit voltage or the reference terminal.
@@ -71,7 +75,7 @@ public:
      * @note if nothing is set, the default is false.
      * @see setStartVoltageVsOCP
     */
-    bool isStartVoltageVsOCP() const; 
+    bool isStartVoltageVsOCP() const;
 
     /**
      * @brief set whether to reference the start voltage against the open-circuit voltage or the reference terminal.

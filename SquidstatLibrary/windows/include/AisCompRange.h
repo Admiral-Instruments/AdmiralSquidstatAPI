@@ -2,9 +2,8 @@
 #define SQUIDSTATLIBRARY_AISCOMPRANGE_H
 
 #include "AisSquidstatGlobal.h"
-#include <memory>
 #include <QString>
-
+#include <memory>
 
 class AisCompRangePrivate;
 
@@ -15,7 +14,6 @@ class AisCompRangePrivate;
 */
 class SQUIDSTATLIBRARY_EXPORT AisCompRange final {
 public:
-
     /**
      * @brief constructor for the compensation-range object.
      * @param compRangeName a name to set for the compensation range for reference purposes.
@@ -26,6 +24,12 @@ public:
     */
     explicit AisCompRange(const QString& compRangeName, uint8_t bandwidthIndex, uint8_t stabilityFactor);
 
+    /**
+     * @brief copy constructor for the compensation-range object.
+    */
+    AisCompRange(const AisCompRange&);
+
+    
     /**
      * @brief get the value set for the bandwidth index.
      * @return the set value for the bandwidth index.

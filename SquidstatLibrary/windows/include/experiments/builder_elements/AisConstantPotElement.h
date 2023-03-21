@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "AisAbstractElement.h"
 #include "AisSquidstatGlobal.h"
 #include <QString>
@@ -15,7 +14,6 @@ class ConstantPotAdvElement;
 */
 class SQUIDSTATLIBRARY_EXPORT AisConstantPotElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the constant potential element constructor.
      * @param voltage the value set for the voltage/potential in volts.
@@ -25,10 +23,16 @@ public:
     explicit AisConstantPotElement(
         double voltage,
         double samplingInterval,
-        double duration
-        );
+        double duration);
+    /**
+     * @brief copy constructor for the AisConstantPotElement object.
+    */
     explicit AisConstantPotElement(const AisConstantPotElement&);
-    AisConstantPotElement& operator= (const AisConstantPotElement&);
+
+    /**
+     * @brief overload equal to operator for the AisConstantPotElement object.
+    */
+    AisConstantPotElement& operator=(const AisConstantPotElement&);
 
     ~AisConstantPotElement() override;
 

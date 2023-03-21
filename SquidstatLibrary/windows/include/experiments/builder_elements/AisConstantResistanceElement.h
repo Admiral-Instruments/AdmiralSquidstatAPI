@@ -14,7 +14,6 @@ class ConstantResistanceElement;
 */
 class SQUIDSTATLIBRARY_EXPORT AisConstantResistanceElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the constant resistance element constructor.
      * @param resistance the value in ohm of the load resistance
@@ -24,10 +23,15 @@ public:
     explicit AisConstantResistanceElement(
         double resistance,
         double duration,
-        double samplingInterval
-    );
+        double samplingInterval);
+    /**
+     * @brief copy constructor for the AisConstantResistanceElement object.
+    */
     explicit AisConstantResistanceElement(const AisConstantResistanceElement&);
-    AisConstantResistanceElement& operator= (const AisConstantResistanceElement&);
+    /**
+    * @brief overload equal to operator for the AisConstantResistanceElement object.
+   */
+    AisConstantResistanceElement& operator=(const AisConstantResistanceElement&);
 
     ~AisConstantResistanceElement() override;
 

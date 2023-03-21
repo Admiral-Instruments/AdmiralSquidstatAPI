@@ -14,9 +14,8 @@ class DCPotentialSweepElement;
  * @image html DCPotentialSweep.png
  * @image latex DCPotentialSweep.png
 */
-class SQUIDSTATLIBRARY_EXPORT AisDCPotentialSweepElement final : public AisAbstractElement{
+class SQUIDSTATLIBRARY_EXPORT AisDCPotentialSweepElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the potential sweep element constructor.
      * @param startPotential the value of the starting potential in volts
@@ -28,10 +27,15 @@ public:
         double startPotential,
         double endPotential,
         double scanRate,
-        double samplingInterval
-    );
+        double samplingInterval);
+    /**
+    * @brief copy constructor for the AisDCPotentialSweepElement object.
+   */
     explicit AisDCPotentialSweepElement(const AisDCPotentialSweepElement&);
-    AisDCPotentialSweepElement& operator= (const AisDCPotentialSweepElement&);
+    /**
+   * @brief overload equal to operator for the AisDCPotentialSweepElement object.
+   */
+    AisDCPotentialSweepElement& operator=(const AisDCPotentialSweepElement&);
 
     ~AisDCPotentialSweepElement() override;
 
@@ -138,7 +142,7 @@ public:
     */
     void setSamplingInterval(double samplingInterval);
 
-   /**
+    /**
      * @brief tells whether the current range is set to auto-select or not.
      * @return true if the current range is set to auto-select and false if a rage has been selected.
     */

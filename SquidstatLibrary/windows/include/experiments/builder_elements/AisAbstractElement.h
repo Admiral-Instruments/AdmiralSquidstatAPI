@@ -1,8 +1,8 @@
 #ifndef SQUIDSTATLIBRARY_AISABSTRACTELEMENT_H
 #define SQUIDSTATLIBRARY_AISABSTRACTELEMENT_H
 
-#include <QString>
 #include "AisSquidstatGlobal.h"
+#include <QString>
 #include <memory>
 
 class AbstractBuilderElement;
@@ -11,6 +11,7 @@ class AbstractBuilderElement;
  * @brief This is an abstract class that has common code for other elements to inherent from.
  * @note This class is not meant for stand-alone use.
 */
+/// @private
 class SQUIDSTATLIBRARY_EXPORT AisAbstractElement {
 public:
     virtual ~AisAbstractElement();
@@ -30,11 +31,10 @@ public:
     virtual QStringList getCategory() const = 0;
 
 protected:
+    /// @private
     std::shared_ptr<AbstractBuilderElement> m_data;
-
-    
+    /// @private
     friend class AisExperiment;
 };
-
 
 #endif //SQUIDSTATLIBRARY_AISABSTRACTELEMENT_H

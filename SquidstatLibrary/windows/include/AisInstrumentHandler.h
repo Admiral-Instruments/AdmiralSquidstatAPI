@@ -1,23 +1,19 @@
 #ifndef SQUIDSTATLIBRARY_AISINSTRUMENTHANDLER_H
 #define SQUIDSTATLIBRARY_AISINSTRUMENTHANDLER_H
 
-
 #include <ctime>
 
 #include <QObject>
 
-#include "AisSquidstatGlobal.h"
-#include "AisDataPoints.h"
 #include "AisCompRange.h"
+#include "AisDataPoints.h"
 #include "AisErrorCode.h"
-
-
+#include "AisSquidstatGlobal.h"
 
 class AisInstrumentHandlerPrivate;
 class AisExperiment;
 
-
-/**
+    /**
  * @brief this class provides control of the device including starting, pausing, resuming and stopping an experiment on a channel
  * as well as reading the data and other controls of the device. 
  * 
@@ -27,9 +23,11 @@ class AisExperiment;
 */
 class SQUIDSTATLIBRARY_EXPORT AisInstrumentHandler final : public QObject {
     Q_OBJECT
+    AisInstrumentHandlerPrivate* m_data;
 public:
-
-    explicit AisInstrumentHandler(AisInstrumentHandlerPrivate *privateData);
+    /// @private
+    explicit AisInstrumentHandler(AisInstrumentHandlerPrivate* privateData);
+    /// @private
     ~AisInstrumentHandler();
 
     /**
@@ -55,13 +53,37 @@ public:
      * @see isChannelBusy
     */
     AisErrorCode uploadExperimentToChannel(uint8_t channel, std::shared_ptr<AisExperiment> experiment) const;
-    
+
+    /**
+    * @brief upload an already created custom experiment to a specific channel on the device.
+    *
+    * Any running experiment is run on a specific device on a specific channel.
+    * This function uploads an experiment to a channel so that you may start, pause, resume and stop the experiment.
+    * All of these four control functionalities and others require a channel number to control the experiment.
+    * Therefore, if we have several channels, we need to keep track of which experiment is on which channel.
+    *
+    * @param channel the channel number to upload the experiment to.
+    * @param experiment the custom experiment to be uploaded to the channel.
+    * @return AisErrorCode::Success if the experiment was successfully uploaded to the channel.
+    * If not successful, possible returned errors are:
+    * - AisErrorCode::FailedToUploadExperiment
+    * - AisErrorCode::ExperimentIsEmpty
+    * - AisErrorCode::DeviceNotFound
+    * - AisErrorCode::InvalidChannel
+    * - AisErrorCode::BusyChannel
+    * - AisErrorCode::InvalidParameters
+    *
+    * This returns AisErrorCode::Success only when given a valid channel number that is not busy on a connected device.
+    * @see isChannelBusy
+    */
+    AisErrorCode uploadExperimentToChannel(uint8_t channel, const AisExperiment& experiment) const;
+
     /**
      * @brief start the previously uploaded experiment on the specific channel. 
      * @param channel the channel number to start the experiment on.
      * @return AisErrorCode::Success if the experiment was successfully started on the channel.
      * If not successful, possible returned errors are: 
-     * - AisErrorCode::FailedToStartExperiment
+     * - AisErrorCode::DeviceCommunicationFailed
      * - AisErrorCode::ExperimentNotUploaded
      * - AisErrorCode::DeviceNotFound
      * - AisErrorCode::InvalidChannel
@@ -130,7 +152,7 @@ public:
      * This will only return AisErrorCode::Success if there is currently a running or a paused experiment on a valid channel on a connected device.
     */
     AisErrorCode stopExperiment(uint8_t channel) const;
-    
+
     /**
      * @brief get UTC time for the start of the experiment in seconds.
      *
@@ -138,7 +160,7 @@ public:
      * @param channel the channel for which to get the start time of the experiment.
      * @return the Unix Epoch up to the start of the experiment in seconds.
     */
-    std::time_t getExperimentUTCStartTime(uint8_t channel) const;
+    double getExperimentUTCStartTime(uint8_t channel) const;
 
     /**
      * @brief set IR compensation.
@@ -211,6 +233,15 @@ public:
      * @return the number of channels on the connected device. If no device found, -1 will be returned.
     */
     int getNumberOfChannels() const;
+
+    /**
+     * @brief delete the recover data from device.
+     * @return AisErrorCode::Success if request is sucessfully send for delete the data.
+     * If not successful, possible returned errors are: 
+     * - AisErrorCode::DeviceNotFound
+     * - AisErrorCode::DeviceCommunicationFailed
+    */
+    AisErrorCode eraseRecoverData() const;
 
     /**
      * @brief start a manual experiment.
@@ -308,11 +339,11 @@ public:
     */
     std::vector<std::pair<double, double>> getManualModeCurrentRangeList(uint8_t channel) const;
 
-
 signals:
-    
+
     /**
      * @brief a signal that is emitted if the device associated with this handler has been disconnected.
+     * 
     */
     void deviceDisconnected();
 
@@ -366,7 +397,7 @@ signals:
      * @param ACData the AC data that just arrived.
     */
     void recoveryACDataReady(uint8_t channel, const AisACData& ACData);
-    
+
     /**
      * @brief a signal that is emitted whenever an experiment was stopped manually or has completed.
      * @param channel the channel on which the experiment has stopped.
@@ -385,13 +416,18 @@ signals:
     */
     void experimentResumed(uint8_t channel);
 
+    /**
+     * @brief a signal that is emitted whenever data erase process is completed.
+     * @param successful is true on erased correctly, and false on data is not erased.
+    */
+    void recoverDataErased(bool successful);
+
 private slots:
     void onActiveExperimentNodeBeginning(uint8_t channel, const AisExperimentNode&);
     void onRecoveryExperimentNodeBeginning(uint8_t channel, const AisExperimentNode&);
     void onDeviceDisconnected();
 
 private:
-    AisInstrumentHandlerPrivate *m_data;
     void connectWithOperatorSignals();
 };
 

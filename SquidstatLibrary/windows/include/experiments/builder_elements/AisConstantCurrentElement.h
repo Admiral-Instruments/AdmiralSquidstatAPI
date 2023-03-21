@@ -12,9 +12,8 @@ class ConstantCurrentAdvElement;
  * @image html ConstantCurrent.png
  * @image latex ConstantCurrent.png
 */
-class SQUIDSTATLIBRARY_EXPORT AisConstantCurrentElement final: public AisAbstractElement {
+class SQUIDSTATLIBRARY_EXPORT AisConstantCurrentElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the constant current element constructor.
      * @param current the value for the current in Amps.
@@ -24,13 +23,18 @@ public:
     explicit AisConstantCurrentElement(
         double current,
         double samplingInterval,
-        double duration
-    );
+        double duration);
+    /**
+* @brief copy constructor for the AisConstantCurrentElement object.
+*/
     explicit AisConstantCurrentElement(const AisConstantCurrentElement&);
-    AisConstantCurrentElement& operator= (const AisConstantCurrentElement&);
+    /**
+* @brief overload equal to operator for the AisConstantCurrentElement object.
+*/
+    AisConstantCurrentElement& operator=(const AisConstantCurrentElement&);
 
     ~AisConstantCurrentElement() override;
-    
+
     /**
      * @brief get the name of the element.
      * @return The name of the element: "Constant Current, Advanced".
@@ -67,7 +71,31 @@ public:
     */
     void setSamplingInterval(double samplingInterval);
 
-   /**
+    /**
+     * @brief get the minimum sampling voltage difference for reporting the data.
+     *
+     * get the value set for the minimum sampling voltage difference.
+     * @return the value set for the minimum sampling voltage difference.
+     * @see setMinSamplingVoltageDifference
+     * @note this is an optional parameter. If no value has been set, the default value is negative infinity.
+    */
+    double getMinSamplingVoltageDifference() const;
+
+    /**
+    * @brief set a minimum sampling voltage difference for reporting the voltage.
+    *
+    * The is an <strong>optional</strong> condition.
+    * If nothing is set, then the experiment will report the data at time sampling interval.
+    * When this is set, then the voltage is reported when there is a voltage difference of at least the given minimum sampling voltage difference.
+    * So, when one voltage data point is reported (at the minimum possible time sampling interval), the next data point is not reported unless the difference
+    * between the two voltage data points exceeds this given minimum sampling voltage difference value.
+
+    * @note when this is set, this overrides the set value for the sampling interval.
+    * @param minVoltageDifference the minimum sampling voltage difference value in volts.
+   */
+    void setMinSamplingVoltageDifference(double minVoltageDifference);
+
+    /**
      * @brief get the value set for the maximum voltage.
      * The experiment will end when it reaches this value.
      * @return the value set for the maximum voltage.
@@ -136,7 +164,7 @@ public:
 
     /**
      * @brief tells whether the current range is set to auto-select or not.
-     * @return true if the current range is set to auto-select and false if a rage has been selected.
+     * @return true if the current range is set to auto-select and false if a range has been selected.
     */
     bool isAutoRange() const;
 
@@ -162,6 +190,36 @@ public:
      * @param approxMaxCurrent the value for the maximum current expected in Amps.
     */
     void setApproxMaxCurrent(double approxMaxCurrent);
+
+    /**
+     * @brief tells whether the voltage range is set to auto-select or not.
+     * @return true if the voltage range is set to auto-select and false if a range has been selected.
+    */
+    bool isAutoVoltageRange() const;
+
+    /**
+     * @brief set to auto-select the voltage range.
+     *
+     * This option is set by default. There is no need to call this function to auto-select if the range was not manually set.
+    */
+    void setAutoVoltageRange();
+
+
+    /**
+    * @brief get the value set for the expected maximum voltage.
+    * @return the value set for the expected maximum Voltage in volt.
+    * @note if nothing was manually set, the device will auto-select the voltage range and the return value will be positive infinity.
+   */
+    double getApproxMaxVoltage() const;
+
+    /**
+     * @brief set maximum voltage expected, for manual voltage range selection.
+     *
+     * The is an <strong>optional</strong> parameter.
+     * If nothing is set, the device will auto-select the voltage range.
+     * @param approxMaxVoltage the value for the maximum current expected in V.
+    */
+    void setApproxMaxVoltage(double approxMaxVoltage);
 
 private:
     std::shared_ptr<ConstantCurrentAdvElement> m_dataDerived;

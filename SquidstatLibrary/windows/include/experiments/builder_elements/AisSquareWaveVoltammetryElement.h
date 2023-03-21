@@ -4,7 +4,6 @@
 #include "AisSquidstatGlobal.h"
 #include <QString>
 
-
 class SquareWaveVoltammetryElement;
 
 /**
@@ -21,9 +20,8 @@ class SquareWaveVoltammetryElement;
  * @image html SqrWaveVoltammetry.png
  * @image latex SqrWaveVoltammetry.png
 */
-class SQUIDSTATLIBRARY_EXPORT AisSquareWaveVoltammetryElement final : public AisAbstractElement{
+class SQUIDSTATLIBRARY_EXPORT AisSquareWaveVoltammetryElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the square wave element constructor
      * @param startVoltage the value of the starting potential in volts
@@ -37,10 +35,16 @@ public:
         double endVoltage,
         double voltageStep,
         double pulseAmp,
-        double pulseFrequency
-    );
+        double pulseFrequency);
+
+    /**
+* @brief copy constructor for the AisSquareWaveVoltammetryElement object.
+*/
     explicit AisSquareWaveVoltammetryElement(const AisSquareWaveVoltammetryElement&);
-    AisSquareWaveVoltammetryElement& operator= (const AisSquareWaveVoltammetryElement&);
+    /**
+* @brief overload equal to operator for the AisSquareWaveVoltammetryElement object.
+*/
+    AisSquareWaveVoltammetryElement& operator=(const AisSquareWaveVoltammetryElement&);
 
     ~AisSquareWaveVoltammetryElement() override;
 
@@ -160,7 +164,7 @@ public:
     */
     void setPulseFreq(double pulseFreq);
 
-   /**
+    /**
      * @brief tells whether the current range is set to auto-select or not.
      * @return true if the current range is set to auto-select and false if a rage has been selected.
     */

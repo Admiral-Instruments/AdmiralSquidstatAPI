@@ -1,10 +1,8 @@
 #pragma once
 
-
 #include "AisAbstractElement.h"
 #include "AisSquidstatGlobal.h"
 #include <QString>
-
 
 class EISGalvanostaticElement;
 
@@ -21,7 +19,6 @@ class EISGalvanostaticElement;
 */
 class SQUIDSTATLIBRARY_EXPORT AisEISGalvanostaticElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the EIS galvanostatic element constructor.
      * @param startFrequency the value for the current starting frequency
@@ -35,13 +32,17 @@ public:
         double endFrequency,
         double stepsPerDecade,
         double currentBias,
-        double currentAamplitude
-    );
+        double currentAamplitude);
+    /**
+  * @brief copy constructor for the AisEISGalvanostaticElement object.
+ */
     explicit AisEISGalvanostaticElement(const AisEISGalvanostaticElement&);
-    AisEISGalvanostaticElement& operator= (const AisEISGalvanostaticElement&);
+    /**
+* @brief overload equal to operator for the AisEISGalvanostaticElement object.
+*/
+    AisEISGalvanostaticElement& operator=(const AisEISGalvanostaticElement&);
 
     ~AisEISGalvanostaticElement() override;
-
 
     /**
      * @brief get the name of the element.

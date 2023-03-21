@@ -254,7 +254,7 @@ public:
 #if QT_DEPRECATED_SINCE(5, 14)
     QT_DEPRECATED_VERSION_X(5, 14, "Use intersects() instead")
     IntersectType intersect(const QLineF &l, QPointF *intersectionPoint) const;
-    QT_DEPRECATED_X("Use angleTo() instead, take care that the return value is between 0 and 360 degree.")
+    QT_DEPRECATED_X("Use qMin(l1.angleTo(l2), l2.angleTo(l1)) instead")
     qreal angle(const QLineF &l) const;
 #endif
 
@@ -380,8 +380,10 @@ inline void QLineF::setLength(qreal len)
 {
     if (isNull())
         return;
-    QLineF v = unitVector();
-    pt2 = QPointF(pt1.x() + v.dx() * len, pt1.y() + v.dy() * len);
+    Q_ASSERT(length() > 0);
+    const QLineF v = unitVector();
+    len /= v.length(); // In case it's not quite exactly 1.
+    pt2 = QPointF(pt1.x() + len * v.dx(), pt1.y() + len * v.dy());
 }
 
 Q_DECL_CONSTEXPR inline QPointF QLineF::pointAt(qreal t) const

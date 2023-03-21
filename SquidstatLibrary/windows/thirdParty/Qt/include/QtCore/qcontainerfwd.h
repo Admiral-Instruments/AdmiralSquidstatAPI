@@ -47,7 +47,7 @@ QT_BEGIN_NAMESPACE
 
 template <class Key, class T> class QCache;
 template <class Key, class T> class QHash;
-#ifndef QT_NO_LINKED_LIST
+#if !defined(QT_NO_LINKED_LIST) && QT_DEPRECATED_SINCE(5, 15)
 template <class T> class QLinkedList;
 #endif
 template <class T> class QList;
@@ -60,6 +60,8 @@ template <class T> class QSet;
 template <class T> class QStack;
 template<class T, int Prealloc = 256> class QVarLengthArray;
 template <class T> class QVector;
+using QByteArrayList = QList<QByteArray>;
+class QStringList;
 
 QT_END_NAMESPACE
 

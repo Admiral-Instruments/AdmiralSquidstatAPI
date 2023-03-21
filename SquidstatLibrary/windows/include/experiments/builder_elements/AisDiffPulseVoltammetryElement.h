@@ -18,9 +18,8 @@ class DiffPulseVoltammetryElement;
  * @image html DiffPulseVoltammetry.png
  * @image latex DiffPulseVoltammetry.png
 */
-class SQUIDSTATLIBRARY_EXPORT AisDiffPulseVoltammetryElement final : public AisAbstractElement{
+class SQUIDSTATLIBRARY_EXPORT AisDiffPulseVoltammetryElement final : public AisAbstractElement {
 public:
-
     /**
      * @brief the differential pulse element constructor.
      * @param startVoltage the value of the starting potential in volts
@@ -36,10 +35,15 @@ public:
         double voltageStep,
         double pulseHeight,
         double pulseWidth,
-        double pulsePeriod
-    );
+        double pulsePeriod);
+    /**
+   * @brief copy constructor for the AisDiffPulseVoltammetryElement object.
+  */
     explicit AisDiffPulseVoltammetryElement(const AisDiffPulseVoltammetryElement&);
-    AisDiffPulseVoltammetryElement& operator= (const AisDiffPulseVoltammetryElement&);
+    /**
+  * @brief overload equal to operator for the AisDiffPulseVoltammetryElement object.
+  */
+    AisDiffPulseVoltammetryElement& operator=(const AisDiffPulseVoltammetryElement&);
 
     ~AisDiffPulseVoltammetryElement() override;
 

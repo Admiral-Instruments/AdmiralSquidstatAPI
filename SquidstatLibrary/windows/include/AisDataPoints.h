@@ -60,7 +60,7 @@ struct AisACData {
     /**
      * @brief the imaginary part of the complex impedance.
     */
-    double imagImpendance;
+    double imagImpedance;
 
     /**
      * @brief the phase angle between the real and the imaginary parts of the impedance. 

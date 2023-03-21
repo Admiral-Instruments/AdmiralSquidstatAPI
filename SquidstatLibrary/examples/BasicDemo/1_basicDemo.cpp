@@ -15,7 +15,7 @@
 *
 */
 
-#include "AisCustomExperiment.h"
+#include "AisExperiment.h"
 #include "AisDeviceTracker.h"
 #include "AisInstrumentHandler.h"
 #include "experiments/builder_elements/AisConstantCurrentElement.h"
@@ -173,9 +173,21 @@ int main()
         // before starting an experiment, you have the option of linking channels (cycler only) so that you can share the current over multiple channels
         // if using paralleled channels, setLinkedChannels MUST be called before each experiment that uses paralleled channels
         auto masterchannel = handler.setLinkedChannels({ 0, 1 }); // this does two things, first links the given channels and second returns the masterchannel used to control the combined output.
-        handler.uploadExperimentToChannel(masterchannel, customExperiment); // upload to a specific channel (first arg) an experiment (second arg) on the given device
-        handler.startUploadedExperiment(masterchannel); // start the previously uploaded experiment on a specific channel. The argument is the channel number
+        auto error = handler.uploadExperimentToChannel(masterchannel, customExperiment); // upload to a specific channel (first arg) an experiment (second arg) on the given device
+        if (error) {
+            qDebug() << error.message();
+            return;
+        }
+        error = handler.startUploadedExperiment(masterchannel); // start the previously uploaded experiment on a specific channel. The argument is the channel number
         // you may still use a single channel and change the 'masterchannel' to the channel number as such: handler->uploadExperimentToChannel(0, experiment);
+        if (error) {
+            qDebug() << error.message();
+            return;
+        }
+
+        // Please refer to \ref AisInstrumentHandler for possible errors that may occur when performing operations such as uploading and starting an experiment.
+        // For example, when uploading an experiment, AisInstrumentHandler::uploadExperimentToChannel may return an AisErrorCode::InvalidParameters error
+        // if the parameters are out of range where you can display the message to check which parameter was not supported for your device.
     });
 
     /* This connects a slot to the device tracker's "deviceDisconnected" signal with the device name. */

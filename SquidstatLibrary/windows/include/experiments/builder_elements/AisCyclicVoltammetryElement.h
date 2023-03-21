@@ -36,10 +36,17 @@ public:
         double secondVoltageLimit,
         double endVoltage,
         double dEdt,
-        double samplingInterval
-    );
+        double samplingInterval);
+
+    /**
+    * @brief copy constructor for the AisCyclicVoltammetryElement object.
+   */
     explicit AisCyclicVoltammetryElement(const AisCyclicVoltammetryElement&);
-    AisCyclicVoltammetryElement& operator= (const AisCyclicVoltammetryElement&);
+
+    /**
+    * @brief overload equal to operator for the AisCyclicVoltammetryElement object.
+    */
+    AisCyclicVoltammetryElement& operator=(const AisCyclicVoltammetryElement&);
 
     ~AisCyclicVoltammetryElement() override;
 
@@ -216,7 +223,7 @@ public:
     */
     void setSamplingInterval(double sampInterval);
 
-   /**
+    /**
      * @brief tells whether the current range is set to auto-select or not.
      * @return true if the current range is set to auto-select and false if a rage has been selected.
     */

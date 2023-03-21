@@ -7,7 +7,7 @@
 * We will just focus on running and controlling the workflow of different experiments.
 */
 
-#include "AisCustomExperiment.h"
+#include "AisExperiment.h"
 #include "AisDeviceTracker.h"
 #include "AisInstrumentHandler.h"
 #include "experiments/builder_elements/AisConstantCurrentElement.h"
@@ -32,9 +32,9 @@ int main()
 
     // constructing a constant current element with required arguments
     AisConstantCurrentElement ccElement(
-        2, // current: 2A
-        1, // sampling interval: 1s
-        10 // duration: 10s
+        0.002,  // current: 2mA
+        1,      // sampling interval: 1s
+        10      // duration: 10s
     );
 
     auto experimentA = std::make_shared<AisExperiment>(); // create a custom experiment

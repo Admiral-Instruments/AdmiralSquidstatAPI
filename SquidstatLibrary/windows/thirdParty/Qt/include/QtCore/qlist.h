@@ -221,7 +221,7 @@ public:
     void move(int from, int to);
     void swapItemsAt(int i, int j);
 #if QT_DEPRECATED_SINCE(5, 13) && QT_VERSION < QT_VERSION_CHECK(6,0,0)
-    QT_DEPRECATED_X("Use QList<T>::swapItemsAt()")
+    QT_DEPRECATED_VERSION_X_5_13("Use QList<T>::swapItemsAt()")
     void swap(int i, int j) { swapItemsAt(i, j); }
 #endif
     int indexOf(const T &t, int from = 0) const;
@@ -407,15 +407,15 @@ public:
     QVector<T> toVector() const;
 
 #if QT_DEPRECATED_SINCE(5, 14) && QT_VERSION < QT_VERSION_CHECK(6,0,0)
-    QT_DEPRECATED_X("Use QList<T>(set.begin(), set.end()) instead.")
+    QT_DEPRECATED_VERSION_X_5_14("Use QList<T>(set.begin(), set.end()) instead.")
     static QList<T> fromSet(const QSet<T> &set);
-    QT_DEPRECATED_X("Use QSet<T>(list.begin(), list.end()) instead.")
+    QT_DEPRECATED_VERSION_X_5_14("Use QSet<T>(list.begin(), list.end()) instead.")
     QSet<T> toSet() const;
 
-    QT_DEPRECATED_X("Use QList<T>(list.begin(), list.end()) instead.")
+    QT_DEPRECATED_VERSION_X_5_14("Use QList<T>(list.begin(), list.end()) instead.")
     static inline QList<T> fromStdList(const std::list<T> &list)
     { return QList<T>(list.begin(), list.end()); }
-    QT_DEPRECATED_X("Use std::list<T>(list.begin(), list.end()) instead.")
+    QT_DEPRECATED_VERSION_X_5_14("Use std::list<T>(list.begin(), list.end()) instead.")
     inline std::list<T> toStdList() const
     { return std::list<T>(begin(), end()); }
 #endif
@@ -580,8 +580,19 @@ inline T &QList<T>::operator[](int i)
   detach(); return reinterpret_cast<Node *>(p.at(i))->t(); }
 template <typename T>
 inline void QList<T>::removeAt(int i)
-{ if(i >= 0 && i < p.size()) { detach();
- node_destruct(reinterpret_cast<Node *>(p.at(i))); p.remove(i); } }
+{
+#if !QT_DEPRECATED_SINCE(5, 15)
+    Q_ASSERT_X(i >= 0 && i < p.size(), "QList<T>::removeAt", "index out of range");
+#endif
+    if (i < 0 || i >= p.size()) {
+#if !defined(QT_NO_DEBUG)
+        qWarning("QList::removeAt(): Index out of range.");
+#endif
+        return;
+    }
+    detach();
+    node_destruct(reinterpret_cast<Node *>(p.at(i))); p.remove(i);
+}
 template <typename T>
 inline T QList<T>::takeAt(int i)
 { Q_ASSERT_X(i >= 0 && i < p.size(), "QList<T>::take", "index out of range");
@@ -676,6 +687,12 @@ inline void QList<T>::prepend(const T &t)
 template <typename T>
 inline void QList<T>::insert(int i, const T &t)
 {
+#if !QT_DEPRECATED_SINCE(5, 15)
+    Q_ASSERT_X(i >= 0 && i <= p.size(), "QList<T>::insert", "index out of range");
+#elif !defined(QT_NO_DEBUG)
+    if (i < 0 || i > p.size())
+        qWarning("QList::insert(): Index out of range.");
+#endif
     if (d->ref.isShared()) {
         Node *n = detach_helper_grow(i, 1);
         QT_TRY {
