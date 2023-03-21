@@ -28,6 +28,7 @@ var NAVTREE =
     [ "The Basics of Running Experiments", "md_intro_and_examples_1_basics.html", null ],
     [ "Advanced Control Flow", "md_intro_and_examples_2_control_flow_demo.html", null ],
     [ "Manual Experiments", "md_intro_and_examples_3_manual_experiment.html", null ],
+    [ "PythonExample", "md_intro_and_examples_4__python_example.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
