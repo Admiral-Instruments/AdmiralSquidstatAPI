@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['use_20python_20wrapper_0',['Use Python Wrapper',['../python_example.html',1,'']]]
+  ['squidstat_20api_20user_20manual_0',['Squidstat API User Manual',['../index.html',1,'']]]
 ];

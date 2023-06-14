@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['the_20basics_20of_20running_20experiments_0',['The Basics of Running Experiments',['../md_intro_and_examples_1_basics.html',1,'']]]
+  ['remote_20access_20to_20squidstat_0',['Remote access to Squidstat',['../md_intro_and_examples_6__squidstat_on_remote_computer.html',1,'']]]
 ];

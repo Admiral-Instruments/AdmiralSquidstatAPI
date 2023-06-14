@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['manual_20experiments_0',['Manual Experiments',['../md_intro_and_examples_3_manual_experiment.html',1,'']]]
+  ['firmwareupdate_0',['FirmwareUpdate',['../md_intro_and_examples_5__firmware_update.html',1,'']]]
 ];
