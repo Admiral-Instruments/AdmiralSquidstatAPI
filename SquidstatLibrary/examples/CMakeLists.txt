@@ -1,7 +1,7 @@
 set(CMAKE_DEBUG_POSTFIX d)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTORCC ON)
+#set(CMAKE_AUTOMOC ON)
+#set(CMAKE_AUTOUIC ON)
+#set(CMAKE_AUTORCC ON)
 
 if(WIN32)
 	include_directories(
