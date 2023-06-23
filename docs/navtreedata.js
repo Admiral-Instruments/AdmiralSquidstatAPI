@@ -31,6 +31,13 @@ var NAVTREE =
     [ "PythonExample", "md_intro_and_examples_4__python_example.html", null ],
     [ "FirmwareUpdate", "md_intro_and_examples_5__firmware_update.html", null ],
     [ "Remote access to Squidstat", "md_intro_and_examples_6__squidstat_on_remote_computer.html", null ],
+    [ "Use API in Qt", "md_intro_and_examples__use__a_p_i_in__qt.html", [
+      [ "Set Up The SquidstatLibrary API in Qt Creator", "md_intro_and_examples__use__a_p_i_in__qt.html#autotoc_md26", [
+        [ "Clone API from Git", "md_intro_and_examples__use__a_p_i_in__qt.html#autotoc_md27", null ],
+        [ "Qt Installation.", "md_intro_and_examples__use__a_p_i_in__qt.html#autotoc_md28", null ],
+        [ "Open Project with Qt and Cmake", "md_intro_and_examples__use__a_p_i_in__qt.html#autotoc_md29", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
