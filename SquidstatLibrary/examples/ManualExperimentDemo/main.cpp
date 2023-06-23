@@ -51,10 +51,10 @@ int main()
         qDebug() << error.message();
     }
 
-    // set sampling interval 2 s on channel 1.
+    // set sampling interval 2 s on channel 2.
     handler.setManualModeSamplingInterval(1, 2);
 
-    // set 2 V on channel 1.
+    // set 2 V on channel 2.
     handler.setManualModeConstantVoltage(1, 2);
 
     // after 25 s Manual Experiment is stop.
