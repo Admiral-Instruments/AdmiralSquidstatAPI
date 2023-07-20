@@ -115,7 +115,10 @@ int main()
     });
 
     //tracker->connectToDeviceOnComPort("COM5"); // change the port number to your device. For example, in windows, you can find it from the device manager
-    tracker->connectAllPluggedInDevices();
+    int connectedDeviceNum = tracker->connectAllPluggedInDevices();
+    if (connectedDeviceNum == 0) {
+        qDebug() << "No devices were found. Ensure that all Squidstats are connected and powered on. If the problem persists, run 'FirmwareUpdateDemo' to update all connected Squidstats.";
+    }
 
     a.exec();
 }

@@ -5,6 +5,8 @@
 #include <qdebug.h>
 #include <qtimer.h>
 
+#define SQUIDSTAT_NAME "Cycler1460"
+
 int main()
 {
 
@@ -41,7 +43,12 @@ int main()
     });
 
     auto connectdevices = tracker->connectAllPluggedInDevices();
-    auto& handler = tracker->getInstrumentHandler("Cycler1460");
+    auto& handler = tracker->getInstrumentHandler(SQUIDSTAT_NAME);
+    //If number of channels is -1, the device was not found.
+    if (handler.getNumberOfChannels() == -1) {
+        qDebug() << "Unable to connect to" << SQUIDSTAT_NAME << ". Ensure that it is connected and powered on. If the problem persists, run 'FirmwareUpdateDemo' to update all connected Squidstats.";
+        return(-1);
+    }
 
     connectSignals(&handler);
 
@@ -51,10 +58,10 @@ int main()
         qDebug() << error.message();
     }
 
-    // set sampling interval 2 s on channel 2.
+    // set sampling interval 2 s on channel 1.
     handler.setManualModeSamplingInterval(1, 2);
 
-    // set 2 V on channel 2.
+    // set 2 V on channel 1.
     handler.setManualModeConstantVoltage(1, 2);
 
     // after 25 s Manual Experiment is stop.

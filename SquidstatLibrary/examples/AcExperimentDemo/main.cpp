@@ -208,7 +208,9 @@ int main()
 	*   As a result, the slot we connected earlier (newDeviceConnected) will execute (connecting the additional signals and running the experiment).
 	*/
 
-    tracker->connectToDeviceOnComPort("COM14"); // change the port number to yours. For example, in windows, you can find it from the device manager
-
+    AisErrorCode error = tracker->connectToDeviceOnComPort("COM14"); // change the port number to yours. For example, in windows, you can find it from the device manager
+    if (error != error.Success) {
+        qDebug() << error.message();
+    }
     a.exec();
 }

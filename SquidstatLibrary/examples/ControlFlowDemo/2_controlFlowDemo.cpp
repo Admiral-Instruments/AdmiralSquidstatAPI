@@ -140,7 +140,9 @@ int main()
         qDebug() << deviceName << "is disconnected ";
     });
 
-    tracker->connectToDeviceOnComPort("COM18"); // change the port number to your device. For example, in windows, you can find it from the device manager
-
+    AisErrorCode error = tracker->connectToDeviceOnComPort("COM18"); // change the port number to your device. For example, in windows, you can find it from the device manager
+    if (error != error.Success) {
+        qDebug() << error.message();
+    }
     a.exec();
 }

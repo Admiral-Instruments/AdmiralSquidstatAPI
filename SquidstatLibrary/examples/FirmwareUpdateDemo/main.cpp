@@ -29,11 +29,11 @@ int main(int argc, char* argv[])
         });
 
     if (argc == 1) { 
-        auto nmberOfDevice = tracker->updateFirmwareOnAllAvailableDevices();
-        if (nmberOfDevice == 0) {
-            qInfo() << "Firmware update is not start in any of device";
+        auto numberOfDevices = tracker->updateFirmwareOnAllAvailableDevices();
+        if (numberOfDevices == 0) {
+            qInfo() << "No devices need to be updated at this time. If this is incorrect, ensure all devices are connected and powered on.";
         } else {
-            qInfo() << "Firmware update start in " << nmberOfDevice << "device.";
+            qInfo() << "Firmware update starting on " << numberOfDevices << "devices.";
         }
         
     } else {
@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
             
             QRegExp rx("^[Cc][Oo][Mm][0-9]+$");
             if (rx.exactMatch(comPort) == false) {
-                qInfo() << " Arguments is not valid. Example: " << QFileInfo(QCoreApplication::applicationFilePath()).fileName() << " COM3";
+                qInfo() << " Arguments are not valid. Example: " << QFileInfo(QCoreApplication::applicationFilePath()).fileName() << " COM3";
           
             } else {
                 auto error = tracker->updateFirmwareOnComPort(comPort);

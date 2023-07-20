@@ -147,7 +147,6 @@ public:
      * - AisErrorCode::FailedToStopExperiment
      * - AisErrorCode::DeviceNotFound
      * - AisErrorCode::InvalidChannel
-     * - AisErrorCode::ChannelNotBusy
      * 
      * This will only return AisErrorCode::Success if there is currently a running or a paused experiment on a valid channel on a connected device.
     */
@@ -190,7 +189,7 @@ public:
     AisErrorCode setCompRange(uint8_t channel, const AisCompRange& compRange) const;
 
     /**
-     * @brief connect several channels together.
+     * @brief connect several channels together in parallel mode.
      * 
      * You may connect a list of channels so you can get a higher combined output current of all channels. 
      * Note that this is only applicable to the cycler model.
@@ -200,6 +199,27 @@ public:
      * @note this functionality is only applicable to the cycler model.
     */
     int8_t setLinkedChannels(std::vector<uint8_t> channels) const;
+
+    /**
+     * @brief connect two channels together in bipolar mode.
+     *
+     * You may combine two channels to expand the voltage range to include negative voltages.
+     * Note that this is only applicable to the cycler model. For 4 channel Cycler models, you can combine channels 1 and 2 or channels 3 and 4. You cannot use any other channel combinations.
+     * @param channels a list of two channels to be oprate in bipolar mode.
+     * @return the master channel out of the given list of two channels.
+     * The master channel is your interface to upload an experiment to and then control it.
+     * If not successful set in bipolar mode, possible returned errors as -1.
+     * @note this functionality is only applicable to the cycler model.
+    */
+    int8_t setBipolarLinkedChannels(std::vector<uint8_t> channels) const;
+
+
+    /**
+     * @brief tells whether the given channel is bipolar mode
+     * @param channel the channel number to check if it is bipolar mode
+     * @return true only if given a valid channel number that has bipolar mode.
+    */
+    bool hasBipolarMode(uint8_t channel) const;
 
     /**
      * @brief get a list of channels linked to the given channel.

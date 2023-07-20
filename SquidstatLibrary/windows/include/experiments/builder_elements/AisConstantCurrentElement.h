@@ -10,7 +10,7 @@ class ConstantCurrentAdvElement;
  * @brief an experiment that simulates a constant current flow with more advance options for stopping the experiment.
  * <br>
  * @image html ConstantCurrent.png
- * @image latex ConstantCurrent.png
+ * @image latex ConstantCurrent.png "ConstantCurrent"
 */
 class SQUIDSTATLIBRARY_EXPORT AisConstantCurrentElement final : public AisAbstractElement {
 public:
