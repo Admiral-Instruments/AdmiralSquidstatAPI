@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['unknown_0',['Unknown',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaf179845d1799253ed6be394310481173',1,'AisErrorCode']]],
-  ['updatefirmwareonallavailabledevices_1',['updateFirmwareOnAllAvailableDevices',['../class_ais_device_tracker.html#a9a42add8e62f171ef0280b8df3c3beed',1,'AisDeviceTracker']]],
-  ['updatefirmwareoncomport_2',['updateFirmwareOnComPort',['../class_ais_device_tracker.html#a02ff1a10eb2a8143a9c7d02cea4fd277',1,'AisDeviceTracker']]],
-  ['uploadexperimenttochannel_3',['uploadExperimentToChannel',['../class_ais_instrument_handler.html#a5096c381f44458a8875cad033072be57',1,'AisInstrumentHandler::uploadExperimentToChannel(uint8_t channel, std::shared_ptr&lt; AisExperiment &gt; experiment) const'],['../class_ais_instrument_handler.html#ae32afd654a4d32a1d834a2bb5b5d6389',1,'AisInstrumentHandler::uploadExperimentToChannel(uint8_t channel, const AisExperiment &amp;experiment) const']]],
-  ['use_20api_20in_20qt_4',['Use API in Qt',['../md_intro_and_examples__use__a_p_i_in__qt.html',1,'']]]
+  ['temperature_0',['temperature',['../struct_ais_d_c_data.html#ae686c0ad102816793735a760312ab5e0',1,'AisDCData']]],
+  ['the_20basics_20of_20running_20experiments_1',['The Basics of Running Experiments',['../md_intro_and_examples_5_basics.html',1,'']]],
+  ['timestamp_2',['timestamp',['../struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881',1,'AisDCData::timestamp()'],['../struct_ais_a_c_data.html#a32f8820d4b38867f1329d8a16abb5f84',1,'AisACData::timestamp()']]],
+  ['totalharmonicdistortion_3',['totalHarmonicDistortion',['../struct_ais_a_c_data.html#a6c8fd36b8ded7b0f2d0f789758b4fcee',1,'AisACData']]]
 ];

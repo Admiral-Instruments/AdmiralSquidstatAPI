@@ -182,8 +182,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aced63c449fed05687bc86763aaccbce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">set a compensation range with stability factor and bandwidth index.  <a href="class_ais_instrument_handler.html#aced63c449fed05687bc86763aaccbce7">More...</a><br /></td></tr>
 <tr class="separator:aced63c449fed05687bc86763aaccbce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1a5a72c7ba4b72af7965e86d53cb427"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#ac1a5a72c7ba4b72af7965e86d53cb427">setLinkedChannels</a> (std::vector&lt; uint8_t &gt; channels) const</td></tr>
-<tr class="memdesc:ac1a5a72c7ba4b72af7965e86d53cb427"><td class="mdescLeft">&#160;</td><td class="mdescRight">connect several channels together.  <a href="class_ais_instrument_handler.html#ac1a5a72c7ba4b72af7965e86d53cb427">More...</a><br /></td></tr>
+<tr class="memdesc:ac1a5a72c7ba4b72af7965e86d53cb427"><td class="mdescLeft">&#160;</td><td class="mdescRight">connect several channels together in parallel mode.  <a href="class_ais_instrument_handler.html#ac1a5a72c7ba4b72af7965e86d53cb427">More...</a><br /></td></tr>
 <tr class="separator:ac1a5a72c7ba4b72af7965e86d53cb427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a563efb5c334b2ab94691ad150847f638"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a563efb5c334b2ab94691ad150847f638">setBipolarLinkedChannels</a> (std::vector&lt; uint8_t &gt; channels) const</td></tr>
+<tr class="memdesc:a563efb5c334b2ab94691ad150847f638"><td class="mdescLeft">&#160;</td><td class="mdescRight">connect two channels together in bipolar mode.  <a href="class_ais_instrument_handler.html#a563efb5c334b2ab94691ad150847f638">More...</a><br /></td></tr>
+<tr class="separator:a563efb5c334b2ab94691ad150847f638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e5f83db1d8d04701176d0266c097a6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a2e5f83db1d8d04701176d0266c097a6e">hasBipolarMode</a> (uint8_t channel) const</td></tr>
+<tr class="memdesc:a2e5f83db1d8d04701176d0266c097a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">tells whether the given channel is bipolar mode  <a href="class_ais_instrument_handler.html#a2e5f83db1d8d04701176d0266c097a6e">More...</a><br /></td></tr>
+<tr class="separator:a2e5f83db1d8d04701176d0266c097a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a055010e5db324a7577c411fc63812834"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a055010e5db324a7577c411fc63812834">getLinkedChannels</a> (uint8_t channel) const</td></tr>
 <tr class="memdesc:a055010e5db324a7577c411fc63812834"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a list of channels linked to the given channel.  <a href="class_ais_instrument_handler.html#a055010e5db324a7577c411fc63812834">More...</a><br /></td></tr>
 <tr class="separator:a055010e5db324a7577c411fc63812834"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -672,6 +678,33 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2e5f83db1d8d04701176d0266c097a6e" name="a2e5f83db1d8d04701176d0266c097a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e5f83db1d8d04701176d0266c097a6e">&#9670;&#160;</a></span>hasBipolarMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AisInstrumentHandler::hasBipolarMode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>tells whether the given channel is bipolar mode </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>the channel number to check if it is bipolar mode </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true only if given a valid channel number that has bipolar mode. </dd></dl>
+
+</div>
+</div>
 <a id="a9aada0fe7dd3e8a2ca28e13e34847042" name="a9aada0fe7dd3e8a2ca28e13e34847042"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9aada0fe7dd3e8a2ca28e13e34847042">&#9670;&#160;</a></span>idleDCDataReady</h2>
 
@@ -963,6 +996,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a563efb5c334b2ab94691ad150847f638" name="a563efb5c334b2ab94691ad150847f638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563efb5c334b2ab94691ad150847f638">&#9670;&#160;</a></span>setBipolarLinkedChannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t AisInstrumentHandler::setBipolarLinkedChannels </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>channels</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>connect two channels together in bipolar mode. </p>
+<p >You may combine two channels to expand the voltage range to include negative voltages. Note that this is only applicable to the cycler model. For 4 channel Cycler models, you can combine channels 1 and 2 or channels 3 and 4. You cannot use any other channel combinations. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channels</td><td>a list of two channels to be oprate in bipolar mode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the master channel out of the given list of two channels. The master channel is your interface to upload an experiment to and then control it. If not successful set in bipolar mode, possible returned errors as -1. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>this functionality is only applicable to the cycler model. </dd></dl>
+
+</div>
+</div>
 <a id="aced63c449fed05687bc86763aaccbce7" name="aced63c449fed05687bc86763aaccbce7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aced63c449fed05687bc86763aaccbce7">&#9670;&#160;</a></span>setCompRange()</h2>
 
@@ -1073,7 +1134,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>connect several channels together. </p>
+<p>connect several channels together in parallel mode. </p>
 <p >You may connect a list of channels so you can get a higher combined output current of all channels. Note that this is only applicable to the cycler model. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">channels</td><td>a list of channels to be linked. </td></tr>
@@ -1431,7 +1492,6 @@ Public Member Functions</h2></td></tr>
 <li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba">AisErrorCode::FailedToStopExperiment</a></li>
 <li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">AisErrorCode::DeviceNotFound</a></li>
 <li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09">AisErrorCode::InvalidChannel</a></li>
-<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa118077e5c7b1e3b3791f56f141a1fbbe">AisErrorCode::ChannelNotBusy</a></li>
 </ul>
 </dd></dl>
 <p>This will only return <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a> if there is currently a running or a paused experiment on a valid channel on a connected device. </p>

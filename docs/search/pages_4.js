@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['remote_20access_20to_20squidstat_0',['Remote access to Squidstat',['../md_intro_and_examples_6__squidstat_on_remote_computer.html',1,'']]]
+  ['operating_20squidstats_20remotely_0',['Operating Squidstats Remotely',['../md_intro_and_examples__squidstat_on_remote_computer.html',1,'']]]
 ];

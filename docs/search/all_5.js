@@ -7,6 +7,5 @@ var searchData=
   ['failedtostopexperiment_4',['FailedToStopExperiment',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba',1,'AisErrorCode']]],
   ['failedtouploadexperiment_5',['FailedToUploadExperiment',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49',1,'AisErrorCode']]],
   ['firmwarenotsupported_6',['FirmwareNotSupported',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaebaf047df011cabf7dfdf13f0c7299e0',1,'AisErrorCode']]],
-  ['firmwareupdate_7',['FirmwareUpdate',['../md_intro_and_examples_5__firmware_update.html',1,'']]],
-  ['frequency_8',['frequency',['../struct_ais_a_c_data.html#ac6b51ee0dfd56a5ad9f919a6c325aa4f',1,'AisACData']]]
+  ['frequency_7',['frequency',['../struct_ais_a_c_data.html#ac6b51ee0dfd56a5ad9f919a6c325aa4f',1,'AisACData']]]
 ];

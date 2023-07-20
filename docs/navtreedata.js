@@ -25,19 +25,16 @@
 var NAVTREE =
 [
   [ "Squidstat API User Manual", "index.html", [
-    [ "The Basics of Running Experiments", "md_intro_and_examples_1_basics.html", null ],
-    [ "Advanced Control Flow", "md_intro_and_examples_2_control_flow_demo.html", null ],
-    [ "Manual Experiments", "md_intro_and_examples_3_manual_experiment.html", null ],
-    [ "PythonExample", "md_intro_and_examples_4__python_example.html", null ],
-    [ "FirmwareUpdate", "md_intro_and_examples_5__firmware_update.html", null ],
-    [ "Remote access to Squidstat", "md_intro_and_examples_6__squidstat_on_remote_computer.html", null ],
-    [ "Use API in Qt", "md_intro_and_examples__use__a_p_i_in__qt.html", [
-      [ "Set Up The SquidstatLibrary API in Qt Creator", "md_intro_and_examples__use__a_p_i_in__qt.html#autotoc_md26", [
-        [ "Clone API from Git", "md_intro_and_examples__use__a_p_i_in__qt.html#autotoc_md27", null ],
-        [ "Qt Installation.", "md_intro_and_examples__use__a_p_i_in__qt.html#autotoc_md28", null ],
-        [ "Open Project with Qt and Cmake", "md_intro_and_examples__use__a_p_i_in__qt.html#autotoc_md29", null ]
-      ] ]
-    ] ],
+    [ "Identifying USB Serial Ports", "md_intro_and_examples_1__find__comport.html", null ],
+    [ "Building API using CMake", "md_intro_and_examples_2__build__a_p_i_using__cmake.html", null ],
+    [ "Running the API with Qt", "md_intro_and_examples_3__use__a_p_i_in__qt.html", null ],
+    [ "Updating Firmware", "md_intro_and_examples_4__firmware_update.html", null ],
+    [ "The Basics of Running Experiments", "md_intro_and_examples_5_basics.html", null ],
+    [ "Manual Experiments", "md_intro_and_examples_6_manual_experiment.html", null ],
+    [ "Automatically Update Firmware", "md_intro_and_examples_7__automatic_firmware_update.html", null ],
+    [ "Advanced Control Flow", "md_intro_and_examples_8_control_flow_demo.html", null ],
+    [ "Python Example", "md_intro_and_examples_9__python_example.html", null ],
+    [ "Operating Squidstats Remotely", "md_intro_and_examples__squidstat_on_remote_computer.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

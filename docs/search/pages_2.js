@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['manual_20experiments_0',['Manual Experiments',['../md_intro_and_examples_3_manual_experiment.html',1,'']]]
+  ['identifying_20usb_20serial_20ports_0',['Identifying USB Serial Ports',['../md_intro_and_examples_1__find__comport.html',1,'']]]
 ];
