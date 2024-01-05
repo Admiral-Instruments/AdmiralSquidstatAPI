@@ -19,13 +19,13 @@ public:
      * @param isCharge true to set the experiment simulate charge and false to simulate discharge.
      * @param power the value set for the power in watts.
      * @param duration the maximum duration for the experiment in seconds.
-     * @param smaplingInterval the data sampling interval value in seconds.
+     * @param samplingInterval the data sampling interval value in seconds.
     */
     explicit AisConstantPowerElement(
         bool isCharge,
         double power,
         double duration,
-        double smaplingInterval);
+        double samplingInterval);
 
     /**
      * @brief copy constructor for the AisConstantPowerElement object.

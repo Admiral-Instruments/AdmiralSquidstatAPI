@@ -2,7 +2,7 @@
 #include "AisDeviceTracker.h"
 #include "AisExperiment.h"
 
-#include "experiments/builder_elements/AisConstantCurrentElement.h"
+#include "experiments/builder_elements/AisOpenCircuitElement.h"
 
 #include <QCoreApplication>
 #include <QTimer>
@@ -21,8 +21,8 @@ int main()
 
     // Custom Experiment with one constant current element
     std::shared_ptr<AisExperiment> experiment = std::make_shared<AisExperiment>();
-    AisConstantCurrentElement ccElement(1, 1, 10);
-    experiment->appendElement(ccElement, 1);
+    AisOpenCircuitElement opencircuitElement(10,1);
+    experiment->appendElement(opencircuitElement, 1);
 
     // This set up the signals and slots for each device that gets connected
     auto createLogic = [=](const AisInstrumentHandler* handler) {

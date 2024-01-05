@@ -1,6 +1,8 @@
 #ifndef SQUIDSTATLIBRARY_AISDATAPOINTS_H
 #define SQUIDSTATLIBRARY_AISDATAPOINTS_H
 
+#include <qstring.h>
+
 /**
  * @brief a structure containing DC data information.
 */

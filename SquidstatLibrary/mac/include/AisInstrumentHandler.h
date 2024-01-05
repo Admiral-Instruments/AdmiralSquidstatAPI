@@ -94,6 +94,19 @@ public:
     AisErrorCode startUploadedExperiment(uint8_t channel) const;
 
     /**
+     * @brief start idle sampling when an experiment is neither uploaded nor running on the specified channel.
+     * @param channel the channel number to start collecting idle data on.
+     * @return AisErrorCode::Success if the request to start idle data was sent.
+     * If not successful, possible returned errors are: 
+     * - AisErrorCode::ExperimentUploaded
+     * - AisErrorCode::DeviceNotFound
+     * - AisErrorCode::InvalidChannel
+     * - AisErrorCode::BusyChannel
+     * @see isChannelBusy
+    */
+    AisErrorCode startIdleSampling(uint8_t channel) const;
+
+    /**
      * @brief skip the current experiment step and proceed to the next.
      * 
      * When running an element that has several steps like going from CC to CV, 
@@ -302,7 +315,6 @@ public:
      * - AisErrorCode::DeviceNotFound
      * - AisErrorCode::InvalidChannel
      * - AisErrorCode::DeviceCommunicationFailed
-
     */
     AisErrorCode setManualModeOCP(uint8_t channel) const;
 
@@ -333,7 +345,66 @@ public:
      * - AisErrorCode::DeviceNotFound
      * - AisErrorCode::InvalidChannel
     */
+    [[deprecated("This has been replaced by setManualModeCurrentRange().")]]
     AisErrorCode setManualModeConstantVoltage(uint8_t channel, double value, int currentRangeIndex) const;
+
+    /**
+     * @brief set the current range for the manual experiment. Once a range is set, autoranging capability is turned off. That means
+     *      that during potentiostatic control, the current range may range up if necessary, but it will not drop below the user-set range.
+     *      During galvanostatic control, the lowest current range that contains the designated setpoint will be chosen, provided it is not
+     *      lower than the user-set range.
+     * @param channel a valid channel number to set the current range for.
+     * @param currentRangeIndex the index of the desired current range.
+     * @return AisErrorCode::Success if setting the current range was successful.
+     * You can get a list of the available ranges for your model by calling \ref getManualModeCurrentRangeList.
+     * If not successful, possible returned errors are:
+     * - AisErrorCode::FailedToSetManualModeCurrentRange
+     * - AisErrorCode::ManualExperimentNotRunning
+     * - AisErrorCode::DeviceNotFound
+     * - AisErrorCode::InvalidChannel
+     */
+    AisErrorCode setManualModeCurrentRange(uint8_t channel, int currentRangeIndex) const;
+
+    /**
+     * @brief enable current autoranging for the manual experiment.
+     * @param channel a valid channel number to enable current autoranging for.
+     * @return AisErrorCode::Success if enabling current autoranging successful.
+     * If not successful, possible returned errors are:
+     * - AisErrorCode::FailedToSetManualModeCurrentRange
+     * - AisErrorCode::ManualExperimentNotRunning
+     * - AisErrorCode::DeviceNotFound
+     * - AisErrorCode::InvalidChannel
+     */
+    AisErrorCode setManualModeCurrentAutorange(uint8_t channel) const;
+
+    /**
+     * @brief set the voltage range for the manual experiment. Once a range is set, autoranging capability is turned off. That means
+     *      that during galvanostatic control, the voltage range may range up if necessary, but it will not drop below the user-set range.
+     *      During potentiostatic control, the lowest voltage range that contains the designated setpoint will be chosen, provided it is not
+     *      lower than the user-set range.
+     * @param channel a valid channel number to set the voltage range for.
+     * @param voltageRangeIndex the index of the desired voltage range.
+     * @return AisErrorCode::Success if setting the voltage rnage was successful.
+     * You can get a list of the available ranges for your model by calling \ref getManualModeVoltageRangeList.
+     * If not successful, possible returned errors are:
+     * - AisErrorCode::FailedToSetManualModeVoltageRange
+     * - AisErrorCode::ManualExperimentNotRunning
+     * - AisErrorCode::DeviceNotFound
+     * - AisErrorCode::InvalidChannel
+     */
+    AisErrorCode setManualModeVoltageRange(uint8_t channel, int voltageRangeIndex) const;
+
+    /**
+     * @brief enable voltage autoranging for the manual experiment.
+     * @param channel a valid channel number to enable voltage autoranging for.
+     * @return AisErrorCode::Success if enabling voltage autoranging successful.
+     * If not successful, possible returned errors are:
+     * - AisErrorCode::FailedToSetManualModeVoltageRange
+     * - AisErrorCode::ManualExperimentNotRunning
+     * - AisErrorCode::DeviceNotFound
+     * - AisErrorCode::InvalidChannel
+     */
+    AisErrorCode setManualModeVoltageAutorange(uint8_t channel) const;
 
     /**
      * @brief set constant current for the manual experiment.
@@ -345,7 +416,6 @@ public:
      * - AisErrorCode::DeviceNotFound
      * - AisErrorCode::InvalidChannel
      * - AisErrorCode::DeviceCommunicationFailed
-
     */
     AisErrorCode setManualModeConstantCurrent(uint8_t channel, double value) const;
 
@@ -353,11 +423,22 @@ public:
      * @brief get a list of the applicable current ranges to the given channel specific to your device.
      * 
      * The list is indexed, with each index containing a range with minimum and maximum current for the range.
-     * You can pass the index of the desired current range to setManualModeConstantVoltage. 
+     * You can pass the index of the desired current range to setManualModeConstantVoltage or setManualModeConstantCurrent. 
      * @param channel a valid channel number for which to check the current range.
      * @return a list of the of the applicable current ranges to the given channel specific to your device.
     */
     std::vector<std::pair<double, double>> getManualModeCurrentRangeList(uint8_t channel) const;
+
+     /**
+     * @brief get a list of the applicable voltage ranges to the given channel specific to your device.
+     *
+     * The list is indexed, with each index containing a range with minimum and maximum voltage for the range.
+     * You can pass the index of the desired current range to setManualModeConstantVoltage or setManualModeConstantCurrent.
+     * @param channel a valid channel number for which to check the current range.
+     * @return a list of the of the applicable current ranges to the given channel specific to your device.
+     */
+    std::vector<std::pair<double, double>> getManualModeVoltageRangeList(uint8_t channel) const;
+
 
 signals:
 
@@ -441,6 +522,15 @@ signals:
      * @param successful is true on erased correctly, and false on data is not erased.
     */
     void recoverDataErased(bool successful);
+
+    /**
+     * @brief a signal that is emitted whenever device send any critical error.
+     * @param channel the channel number at which error rise.
+     * @param error information about error message.
+     * @note stop experiment command will automatilcally send on channel.
+    */
+    void deviceError(uint8_t channel, const QString& error);
+
 
 private slots:
     void onActiveExperimentNodeBeginning(uint8_t channel, const AisExperimentNode&);

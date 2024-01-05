@@ -130,6 +130,18 @@ public:
     */
     void setAmplitude(double amplitude);
 
+    /**
+     * @brief set the minimum number of period of applied sinusoidal current at each frequency.
+     * @param numberOfCycle set number of cycles Sampled.
+    */
+    void setMinimumCycles(int numberOfCycle);
+
+    /**
+     * @brief the value to setted for mimimum number of cycle Sampled.
+     * @return the value set for the minimum number of cycles.
+    */
+    int getMinimumCycles() const;
+
 private:
     std::shared_ptr<EISPotentiostaticElement> m_dataDerived;
 };

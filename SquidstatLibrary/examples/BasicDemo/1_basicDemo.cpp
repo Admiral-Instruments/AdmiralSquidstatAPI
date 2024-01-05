@@ -62,7 +62,7 @@ int main()
 
     // We create another element of a different type
     AisConstantCurrentElement ccElement( // construct a constant current element and assign it to "ccElement"
-        1, // current: 1A
+        0.01, // current: 10mA
         1, // sampling interval: 1s
         60 // duration: 60s
     );

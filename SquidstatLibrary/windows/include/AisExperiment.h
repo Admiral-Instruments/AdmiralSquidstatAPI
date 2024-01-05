@@ -9,11 +9,11 @@ class CustomExperimentRunner;
 class AisExperimentPrivate;
 
 /**
- * @brief this class is used to create custom experiments. A custom experiment has a container of contains one or more elements.
- * Once you create elements are set their parameters, you can add them to the container
+ * @brief this class is used to create custom experiments. A custom experiment contains one or more elements.
+ * Once you create elements and set their parameters, you can add them to the container.
  *
  * @note we call the basic experiments -that are used to build more complex custom experiments- elements.
- * In contexts where both elements and custom experiments are used, elements will be referred to as elements to make the digestion.
+ * In contexts where both elements and custom experiments are used, elements will be referred to as elements to make the distinction.
  * In other contexts, elements may also be referred to as experiments as they may indeed be used as experiments.
 */
 class SQUIDSTATLIBRARY_EXPORT AisExperiment final {

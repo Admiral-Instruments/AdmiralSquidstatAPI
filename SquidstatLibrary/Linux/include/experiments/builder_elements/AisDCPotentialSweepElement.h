@@ -171,6 +171,51 @@ public:
     */
     void setApproxMaxCurrent(double approxMaxCurrent);
 
+
+     /**
+     * @brief get the value set for the maximum Current.
+     * The experiment will end when it reaches this value.
+     * @return the value set for the maximum Current.
+     * @note this is an optional parameter. If no value has been set, the default value is positive infinity
+    */
+    double getMaxAbsoluteCurrent() const;
+
+    /**
+     * @brief set a maximum Current to stop the experiment.
+     * 
+     * The is an <strong>optional</strong> condition. 
+     * If nothing is set, then the experiment will not stop based on an upper-limit Current value.
+     * If a maximum Current is set, the experiment will continue to run as long as the measured Current is below that value with the harware current limitation.
+     * @param maxCurrent the maximum Current value in volts at which the experiment will stop.
+    */
+    void setMaxAbsoluteCurrent(double maxCurrent);
+
+    /**
+     * @brief get the value set minimum for the Current in amps.
+     * @return the value set for the minimum Current in amps.
+     * @note this is an optional parameter. If no value has been set, the default value is negative infinity
+    */
+    double getMinAbsoluteCurrent() const;
+
+    /**
+     * @brief set a minimum Current to stop the experiment.
+     * 
+     * The is an <strong>optional</strong> condition. 
+     * If nothing is set, then the experiment will not stop based on an lower-limit Current value.
+     * If a maximum Current is set, the experiment will continue to run as long as the measured voltage is above that value.
+     * @param minCurrent the minimum Current value in volts at which the experiment will stop.
+    */
+    void setMinAbsoluteCurrent(double minCurrent);
+
+    /**
+     * @brief alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
+     *
+     * The is an <strong>optional</strong> parameter.
+     * If nothing is set, the device will use the default value of 75.
+     * @param alphafactor the value for the alphafactor ranges from 0 to 100.
+    */
+    void setAlphaFactor(double alphafactor);
+
 private:
     std::shared_ptr<DCPotentialSweepElement> m_dataDerived;
 };

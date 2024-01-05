@@ -17,6 +17,8 @@ class NormalPulseVoltammetryElement;
  * <br>
  * @image html NormalPulseVoltammetry.png
  * @image latex NormalPulseVoltammetry.png
+ * 
+ * Advanced control of data output for pulse experiments can be performed using the class @see AisDataManipulator
 */
 class SQUIDSTATLIBRARY_EXPORT AisNormalPulseVoltammetryElement final : public AisAbstractElement {
 public:
@@ -25,8 +27,8 @@ public:
      * @param startVoltage the value of the starting potential in volts
      * @param endVoltage the value of the ending potential in volts
      * @param voltageStep the value set for the voltage step in volts.
-     * @param pulseWidth the value for the pulse width in volts.
-     * @param pulsePeriod the value for the pulse period in volts.
+     * @param pulseWidth the value for the pulse width in seconds.
+     * @param pulsePeriod the value for the pulse period in seconds.
     */
     explicit AisNormalPulseVoltammetryElement(
         double startVoltage,
@@ -134,15 +136,15 @@ public:
     void setVStep(double vStep);
 
     /**
-     * @brief get the value for the voltage pulse width.
-     * @return the value for the voltage pulse width in seconds.
+     * @brief get the value set for the pulse width
+     * @return the value of the pulse width in seconds.
      * @see setPulseWidth
      * 
     */
     double getPulseWidth() const;
 
     /**
-     * @brief set the value for the voltage pulse width.
+     * @brief set the value in seconds for pulse width.
      * 
      * The pulse width is the value in seconds for the time spent at the same voltage set for the pulse height.
      * @param pulseWidth the value to set for the pulse width in seconds.
@@ -151,7 +153,7 @@ public:
 
     /**
      * @brief get the value set for the pulse period.
-     * @return the value set for the pulse period in seconds.
+     * @return the value for the pulse period in seconds.
      * @see setPulsePeriod
     */
     double getPulsePeriod() const;
@@ -192,6 +194,16 @@ public:
      * @param approxMaxCurrent the value for the maximum current expected in Amps.
     */
     void setApproxMaxCurrent(double approxMaxCurrent);
+
+    
+    /**
+    * @brief alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
+    *
+    * The is an <strong>optional</strong> parameter.
+    * If nothing is set, the device will use the default value of 75.
+    * @param alphafactor the value for the alphafactor ranges from 0 to 100.
+   */
+    void setAlphaFactor(double alphafactor);
 
 private:
     std::shared_ptr<NormalPulseVoltammetryElement> m_dataDerived;

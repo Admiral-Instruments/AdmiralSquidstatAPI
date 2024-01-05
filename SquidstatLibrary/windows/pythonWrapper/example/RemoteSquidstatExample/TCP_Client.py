@@ -48,7 +48,7 @@ print("Connected to the server.")
 duration = 0
 while duration == 0:
     try:
-        duration = int(input("Enter a duration for the Open Circuit Potential: "))
+        duration = int(input("Enter a duration for Open Circuit Potential: "))
     except ValueError:
         duration = 0
     if(duration < 1):

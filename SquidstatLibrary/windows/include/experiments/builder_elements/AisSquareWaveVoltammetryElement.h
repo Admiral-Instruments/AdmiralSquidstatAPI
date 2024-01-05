@@ -19,6 +19,8 @@ class SquareWaveVoltammetryElement;
  * <br>
  * @image html SqrWaveVoltammetry.png
  * @image latex SqrWaveVoltammetry.png
+ * 
+ * Advanced control of data output for pulse experiments can be performed using the class @see AisDataManipulator
 */
 class SQUIDSTATLIBRARY_EXPORT AisSquareWaveVoltammetryElement final : public AisAbstractElement {
 public:
@@ -192,6 +194,16 @@ public:
      * @param approxMaxCurrent the value for the maximum current expected in Amps.
     */
     void setApproxMaxCurrent(double approxMaxCurrent);
+
+    
+    /**
+    * @brief alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
+    *
+    * The is an <strong>optional</strong> parameter.
+    * If nothing is set, the device will use the default value of 75.
+    * @param alphafactor the value for the alphafactor ranges from 0 to 100.
+   */
+    void setAlphaFactor(double alphafactor);
 
 private:
     std::shared_ptr<SquareWaveVoltammetryElement> m_dataDerived;

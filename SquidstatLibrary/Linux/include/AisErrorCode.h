@@ -24,7 +24,7 @@ public:
         FirmwareUptodate = 4,
 
         InvalidChannel = 10, /*!< indicates that the given channel number is not valid.*/
-        BusyChannel = 11, /*!< indicates that failure was due to the channel being busy.*/
+        BusyChannel = 11, /*!< indicates that the failure was due to the channel being busy.*/
         DeviceNotFound = 13, /*!< indicates that no device was detected to be connected.*/
 
         ManualExperimentNotRunning = 51, /*!< indicates that the given command applies when there is a manual experiment running on the channel but there is none.*/
@@ -32,17 +32,22 @@ public:
         ExperimentIsEmpty = 53, /*!< indicates that the given experiment has no elements. It need to contain at least one.*/
         InvalidParameters = 54, /*!< indicates that a given parameter is invalid. For example, it is out of the allowed range.*/
         ChannelNotBusy = 55, /*!< indicates that the given command applies when there is an experiment running or paused on the channel but there is none.*/
+        ExperimentUploaded = 56, /*!< indicates that the given command could not be completed because an experiment is already uploaded to the channel.*/
 
         DeviceCommunicationFailed = 100, /*!< indicates that there was failure in communication with the device.*/
 
-        FailedToSetManualModeCurrentRange = 101, /*!< indicates failure of setting manual Mode current range for possible communication failure with the device.*/
-        FailedToSetManualModeConstantVoltage = 102, /*!< indicates failure of setting manual Mode constant voltage for possible communication failure with the device.*/
-        FailedToPauseExperiment = 103, /*!< indicates that pausing the experiment failed because either there is no running experiment or for possible communication failure with the device.*/
-        FailedToResumeExperiment = 104, /*!< indicates that resuming the experiment failed because either there is no paused experiment or for possible communication failure with the device.*/
-        FailedToStopExperiment = 105, /*!< indicates that stopping the experiment failed because either there is no running or paused experiment or for possible communication failure with the device.*/
+        FailedToSetManualModeCurrentRange = 101, /*!< indicates failure to set manual mode current range due to a possible communication failure with the device.*/
+        FailedToSetManualModeConstantVoltage = 102, /*!< indicates failure to set manual mode constant voltage due to a possible communication failure with the device*/
+        FailedToPauseExperiment = 103, /*!< indicates that pausing the experiment failed because either there is no active experiment or due to a possible communication failure with the device.*/
+        FailedToResumeExperiment = 104, /*!< indicates that resuming the experiment failed because either there is no paused experiment or due to a possible communication failure with the device.*/
+        FailedToStopExperiment = 105, /*!< indicates that stopping the experiment failed because either there is no experiment running, the experiment is paused, or due to a possible communication failure with the device.*/
         FailedToUploadExperiment = 106, /*!< indicates failure to communicate with the device to upload the experiment.*/
-        ExperimentAlreadyPaused = 107, /*!< indicates that pausing the experiment failed because experiment is already pause.*/
-        ExperimentAlreadyRun = 108, /*!< indicates that resuming the experiment failed because experiment is already running. it is not in pause state.*/
+        ExperimentAlreadyPaused = 107, /*!< indicates that pausing the experiment failed because the experiment is already paused.*/
+        ExperimentAlreadyRun = 108, /*!< indicates that resuming the experiment failed because an experiment is already running.*/
+        FailedToSetManualModeVoltageRange = 109, /* !< indicates failure to set manual mode voltage range due to a possible communication failure with the device.*/
+        FailedToSetManualModeConstantCurrent = 110, /*!< indicates failure to set manual mode constant current due to a possible communication failure with the device.*/
+   
+        FailedRequest = 254 /* !< indicates a failed request to the device. */
     };
 
     AisErrorCode();

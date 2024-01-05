@@ -11,6 +11,7 @@
 class AisDeviceTrackerPrivate;
 class AisInstrumentHandler;
 
+
 /**
  * @brief This class is used track device connections to the computer. It can establish connection with plugged-in devices.
  * It also provides instrument handlers specific to each connected device which can provide control of the specific device like starting experiments.
@@ -77,7 +78,7 @@ public:
      * An example would be "COM15".
     */
 
-    AisErrorCode updateFirmwareOnComPort(QString comport) const;
+    AisErrorCode updateFirmwareOnComPort(const QString& comport) const;
 
     /**
      * @brief request firmware update for all available devices.
@@ -91,6 +92,25 @@ public:
      * @see updateFirmwareOnComPort
     */
     int updateFirmwareOnAllAvailableDevices();
+
+    /**
+     * @brief Allow to collect device error message in file for debugging purpose.
+     * @note by default it will be true.
+     * @param save When set to 'false,' it will not write logs to the file. When set to 'true,' it will begin writing device error logs to the file.
+     * @see setLogFilePath
+    */
+    
+    void saveLogToFile(bool save);
+
+    /**
+     * @brief This will help to change the log file directory.
+     * @note by default it will be Document/Admiral Instrument/API
+     * @param path Set the path value at which you want to save the log file.
+     * @note If you set 'false' for 'saveLogToFile,' it will not generate the log file. It is recommended to set it to 'true' or leave the permission as the default setting.
+     * @see saveLogToFile
+    */
+    
+    void setLogFilePath(const QString& path);
 
 signals:
     /**
@@ -113,9 +133,8 @@ private:
     AisDeviceTracker(const AisDeviceTracker &);
     void operator=(const AisDeviceTracker &);
 
-    std::unique_ptr<AisDeviceTrackerPrivate> m_data;
 
-   
+    std::unique_ptr<AisDeviceTrackerPrivate> m_data;
 };
 
 #endif

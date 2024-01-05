@@ -203,6 +203,15 @@ public:
     */
     void setApproxMaxCurrent(double approxMaxCurrent);
 
+    /**
+     * @brief manually set the voltage control range.
+     *
+     * This is an <strong>optional</strong> parameter.
+     * If this function is not called, the device will auto-select the voltage range by default.
+     * @param idx the corresponding voltage range index (see AisInstrumentHandler::getManualModeVoltageRangeList())
+    */
+    void setVoltageRange(int idx);
+
 private:
     std::shared_ptr<ConstantPotAdvElement> m_dataDerived;
 };
