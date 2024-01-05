@@ -172,6 +172,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f7cbcd3dec937b80ac54c4a012d2dcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_d_c_potential_sweep_element.html#a5f7cbcd3dec937b80ac54c4a012d2dcf">setApproxMaxCurrent</a> (double approxMaxCurrent)</td></tr>
 <tr class="memdesc:a5f7cbcd3dec937b80ac54c4a012d2dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">set maximum current expected, for manual current range selection.  <a href="class_ais_d_c_potential_sweep_element.html#a5f7cbcd3dec937b80ac54c4a012d2dcf">More...</a><br /></td></tr>
 <tr class="separator:a5f7cbcd3dec937b80ac54c4a012d2dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e3ab34e231d96a5d342e9bf525775c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_d_c_potential_sweep_element.html#a09e3ab34e231d96a5d342e9bf525775c">getMaxAbsoluteCurrent</a> () const</td></tr>
+<tr class="memdesc:a09e3ab34e231d96a5d342e9bf525775c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the value set for the maximum Current. The experiment will end when it reaches this value.  <a href="class_ais_d_c_potential_sweep_element.html#a09e3ab34e231d96a5d342e9bf525775c">More...</a><br /></td></tr>
+<tr class="separator:a09e3ab34e231d96a5d342e9bf525775c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b23f9e99cb629ffe05d46315bb4ab10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_d_c_potential_sweep_element.html#a8b23f9e99cb629ffe05d46315bb4ab10">setMaxAbsoluteCurrent</a> (double maxCurrent)</td></tr>
+<tr class="memdesc:a8b23f9e99cb629ffe05d46315bb4ab10"><td class="mdescLeft">&#160;</td><td class="mdescRight">set a maximum Current to stop the experiment.  <a href="class_ais_d_c_potential_sweep_element.html#a8b23f9e99cb629ffe05d46315bb4ab10">More...</a><br /></td></tr>
+<tr class="separator:a8b23f9e99cb629ffe05d46315bb4ab10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ac5cf8cdd4fac8a13b4d44469293f0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_d_c_potential_sweep_element.html#a98ac5cf8cdd4fac8a13b4d44469293f0">getMinAbsoluteCurrent</a> () const</td></tr>
+<tr class="memdesc:a98ac5cf8cdd4fac8a13b4d44469293f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the value set minimum for the Current in amps.  <a href="class_ais_d_c_potential_sweep_element.html#a98ac5cf8cdd4fac8a13b4d44469293f0">More...</a><br /></td></tr>
+<tr class="separator:a98ac5cf8cdd4fac8a13b4d44469293f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4260e3a01719f1595082363477ca3c14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_d_c_potential_sweep_element.html#a4260e3a01719f1595082363477ca3c14">setMinAbsoluteCurrent</a> (double minCurrent)</td></tr>
+<tr class="memdesc:a4260e3a01719f1595082363477ca3c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">set a minimum Current to stop the experiment.  <a href="class_ais_d_c_potential_sweep_element.html#a4260e3a01719f1595082363477ca3c14">More...</a><br /></td></tr>
+<tr class="separator:a4260e3a01719f1595082363477ca3c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f518b7431485b0007c64f8e372ba012"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_d_c_potential_sweep_element.html#a6f518b7431485b0007c64f8e372ba012">setAlphaFactor</a> (double alphafactor)</td></tr>
+<tr class="memdesc:a6f518b7431485b0007c64f8e372ba012"><td class="mdescLeft">&#160;</td><td class="mdescRight">alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.  <a href="class_ais_d_c_potential_sweep_element.html#a6f518b7431485b0007c64f8e372ba012">More...</a><br /></td></tr>
+<tr class="separator:a6f518b7431485b0007c64f8e372ba012"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >this experiment performs a DC potential sweep from the <b>starting current</b> to the <b>ending current</b> which progresses linearly according to the <b>scan rate</b>. </p>
@@ -307,6 +322,48 @@ Public Member Functions</h2></td></tr>
 
 <p>get the value set for the ending potential value. </p>
 <p >This is the value of the voltage at which the experiment will stop. </p><dl class="section return"><dt>Returns</dt><dd>the value set for the ending voltage in volts. </dd></dl>
+
+</div>
+</div>
+<a id="a09e3ab34e231d96a5d342e9bf525775c" name="a09e3ab34e231d96a5d342e9bf525775c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e3ab34e231d96a5d342e9bf525775c">&#9670;&#160;</a></span>getMaxAbsoluteCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AisDCPotentialSweepElement::getMaxAbsoluteCurrent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the value set for the maximum Current. The experiment will end when it reaches this value. </p>
+<dl class="section return"><dt>Returns</dt><dd>the value set for the maximum Current. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>this is an optional parameter. If no value has been set, the default value is positive infinity </dd></dl>
+
+</div>
+</div>
+<a id="a98ac5cf8cdd4fac8a13b4d44469293f0" name="a98ac5cf8cdd4fac8a13b4d44469293f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ac5cf8cdd4fac8a13b4d44469293f0">&#9670;&#160;</a></span>getMinAbsoluteCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AisDCPotentialSweepElement::getMinAbsoluteCurrent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the value set minimum for the Current in amps. </p>
+<dl class="section return"><dt>Returns</dt><dd>the value set for the minimum Current in amps. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>this is an optional parameter. If no value has been set, the default value is negative infinity </dd></dl>
 
 </div>
 </div>
@@ -461,6 +518,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6f518b7431485b0007c64f8e372ba012" name="a6f518b7431485b0007c64f8e372ba012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f518b7431485b0007c64f8e372ba012">&#9670;&#160;</a></span>setAlphaFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisDCPotentialSweepElement::setAlphaFactor </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>alphafactor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval. </p>
+<p >The is an <b>optional</b> parameter. If nothing is set, the device will use the default value of 75. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alphafactor</td><td>the value for the alphafactor ranges from 0 to 100. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5f7cbcd3dec937b80ac54c4a012d2dcf" name="a5f7cbcd3dec937b80ac54c4a012d2dcf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f7cbcd3dec937b80ac54c4a012d2dcf">&#9670;&#160;</a></span>setApproxMaxCurrent()</h2>
 
@@ -557,6 +640,58 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>by default, this is set to false. </dd></dl>
+
+</div>
+</div>
+<a id="a8b23f9e99cb629ffe05d46315bb4ab10" name="a8b23f9e99cb629ffe05d46315bb4ab10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b23f9e99cb629ffe05d46315bb4ab10">&#9670;&#160;</a></span>setMaxAbsoluteCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisDCPotentialSweepElement::setMaxAbsoluteCurrent </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxCurrent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set a maximum Current to stop the experiment. </p>
+<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit Current value. If a maximum Current is set, the experiment will continue to run as long as the measured Current is below that value with the harware current limitation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxCurrent</td><td>the maximum Current value in volts at which the experiment will stop. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4260e3a01719f1595082363477ca3c14" name="a4260e3a01719f1595082363477ca3c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4260e3a01719f1595082363477ca3c14">&#9670;&#160;</a></span>setMinAbsoluteCurrent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisDCPotentialSweepElement::setMinAbsoluteCurrent </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>minCurrent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set a minimum Current to stop the experiment. </p>
+<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an lower-limit Current value. If a maximum Current is set, the experiment will continue to run as long as the measured voltage is above that value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">minCurrent</td><td>the minimum Current value in volts at which the experiment will stop. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

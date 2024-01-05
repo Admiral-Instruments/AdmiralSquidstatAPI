@@ -1,0 +1,27 @@
+var class_ais_stepped_voltage_element =
+[
+    [ "AisSteppedVoltageElement", "class_ais_stepped_voltage_element.html#acf9423b618e1547e2639ef2f51907740", null ],
+    [ "AisSteppedVoltageElement", "class_ais_stepped_voltage_element.html#a43e41beda69ddd506709aafd41ac4046", null ],
+    [ "~AisSteppedVoltageElement", "class_ais_stepped_voltage_element.html#a15928788cc33b8fc7c89b58b4954ff3a", null ],
+    [ "getApproxMaxCurrent", "class_ais_stepped_voltage_element.html#a9846ef45ce3bd406c15d7150bb7fbca8", null ],
+    [ "getCategory", "class_ais_stepped_voltage_element.html#acd30bb3b2fa714844e9fe7fbe9196048", null ],
+    [ "getEndVoltage", "class_ais_stepped_voltage_element.html#a5e8dda6cd8e7caf2f1c16d23becd2f16", null ],
+    [ "getName", "class_ais_stepped_voltage_element.html#a7056c003ec794ac4a08b751f8e5d3749", null ],
+    [ "getSamplingInterval", "class_ais_stepped_voltage_element.html#aed2462666885642278a852c84b5b8780", null ],
+    [ "getStartVoltage", "class_ais_stepped_voltage_element.html#a602fb051fe765bbdf2ac918d4ff9ee11", null ],
+    [ "getStepDuration", "class_ais_stepped_voltage_element.html#a5049dbd80f7550b423c3380bd0b7d464", null ],
+    [ "getStepSize", "class_ais_stepped_voltage_element.html#a52d2109f20f025d33a7eb8e338da3ced", null ],
+    [ "isAutoRange", "class_ais_stepped_voltage_element.html#a146769ae8e018bde5cbfca6fe7f805fd", null ],
+    [ "isEndVoltageVsOCP", "class_ais_stepped_voltage_element.html#a9dcc70e8b920df972e47c7760ed79c9a", null ],
+    [ "isStartVoltageVsOCP", "class_ais_stepped_voltage_element.html#a9f3074cae714a2ceac62fa07fa6a6440", null ],
+    [ "operator=", "class_ais_stepped_voltage_element.html#a644d5c16c15d8addac7801ac2d92073c", null ],
+    [ "setApproxMaxCurrent", "class_ais_stepped_voltage_element.html#a449d67107a47dd9497d7da0560fca2f7", null ],
+    [ "setCurrentAutorange", "class_ais_stepped_voltage_element.html#a26adca87c4c4bb59cc70a9a5422959f9", null ],
+    [ "setEndVoltage", "class_ais_stepped_voltage_element.html#a63e65f9d75eca359ee5f051ca1541c28", null ],
+    [ "setEndVoltageVsOCP", "class_ais_stepped_voltage_element.html#a6d05f106900f9a40eb9161950e5d1455", null ],
+    [ "setSamplingInterval", "class_ais_stepped_voltage_element.html#a8a0e6ea557040dc35d6141788c0ffe7e", null ],
+    [ "setStartVoltage", "class_ais_stepped_voltage_element.html#a0cde791f9fe90f2aa2e9b6f79ac99b48", null ],
+    [ "setStartVoltageVsOCP", "class_ais_stepped_voltage_element.html#abbfc47717a5337503b209d02551d920b", null ],
+    [ "setStepDuration", "class_ais_stepped_voltage_element.html#ae3b711b105a9d590043f723fe5922889", null ],
+    [ "setStepSize", "class_ais_stepped_voltage_element.html#ae4d5e5f2fd10163db36fdeb4ead82496", null ]
+];

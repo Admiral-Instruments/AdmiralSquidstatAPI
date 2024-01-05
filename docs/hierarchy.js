@@ -7,6 +7,7 @@ var hierarchy =
     [ "AisConstantPowerElement", "class_ais_constant_power_element.html", null ],
     [ "AisConstantResistanceElement", "class_ais_constant_resistance_element.html", null ],
     [ "AisCyclicVoltammetryElement", "class_ais_cyclic_voltammetry_element.html", null ],
+    [ "AisDataManipulator", "class_ais_data_manipulator.html", null ],
     [ "AisDCCurrentSweepElement", "class_ais_d_c_current_sweep_element.html", null ],
     [ "AisDCData", "struct_ais_d_c_data.html", null ],
     [ "AisDCPotentialSweepElement", "class_ais_d_c_potential_sweep_element.html", null ],
@@ -19,6 +20,9 @@ var hierarchy =
     [ "AisNormalPulseVoltammetryElement", "class_ais_normal_pulse_voltammetry_element.html", null ],
     [ "AisOpenCircuitElement", "class_ais_open_circuit_element.html", null ],
     [ "AisSquareWaveVoltammetryElement", "class_ais_square_wave_voltammetry_element.html", null ],
+    [ "AisStaircasePotentialVoltammetryElement", "class_ais_staircase_potential_voltammetry_element.html", null ],
+    [ "AisSteppedCurrentElement", "class_ais_stepped_current_element.html", null ],
+    [ "AisSteppedVoltageElement", "class_ais_stepped_voltage_element.html", null ],
     [ "QObject", null, [
       [ "AisDeviceTracker", "class_ais_device_tracker.html", null ],
       [ "AisInstrumentHandler", "class_ais_instrument_handler.html", null ]

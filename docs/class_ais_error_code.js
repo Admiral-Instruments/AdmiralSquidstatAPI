@@ -15,6 +15,7 @@ var class_ais_error_code =
       [ "ExperimentIsEmpty", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa3a8c52eefe36c5e3160c12bf0b36b834", null ],
       [ "InvalidParameters", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2db4bc733c63671c5b85250a15d857e4", null ],
       [ "ChannelNotBusy", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa118077e5c7b1e3b3791f56f141a1fbbe", null ],
+      [ "ExperimentUploaded", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac81e3fd4ad428f9c703132a8923fc1f8", null ],
       [ "DeviceCommunicationFailed", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa90ea3954794670766b633a5dc73fd264", null ],
       [ "FailedToSetManualModeCurrentRange", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5", null ],
       [ "FailedToSetManualModeConstantVoltage", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3", null ],
@@ -23,7 +24,10 @@ var class_ais_error_code =
       [ "FailedToStopExperiment", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba", null ],
       [ "FailedToUploadExperiment", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49", null ],
       [ "ExperimentAlreadyPaused", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9cf9ef9a02ea65108dd705e7400c0648", null ],
-      [ "ExperimentAlreadyRun", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699", null ]
+      [ "ExperimentAlreadyRun", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699", null ],
+      [ "FailedToSetManualModeVoltageRange", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa8af152b0aa89377d47446d29bca4b418", null ],
+      [ "FailedToSetManualModeConstantCurrent", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa0df9dcedc2de58bf1c5ab8652bd0791e", null ],
+      [ "FailedRequest", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac8b0013063ccf0647d5d16bad1ece9b2", null ]
     ] ],
     [ "message", "class_ais_error_code.html#a25e4eef5129000305294ad761b9f2c5e", null ],
     [ "value", "class_ais_error_code.html#aea66d7dcd49f91ae7f219d16ef7fed22", null ]

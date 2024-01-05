@@ -137,12 +137,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb8abce4de564252066d06925e25d13d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d">connectAllPluggedInDevices</a> ()</td></tr>
 <tr class="memdesc:abb8abce4de564252066d06925e25d13d"><td class="mdescLeft">&#160;</td><td class="mdescRight">connect all devices physically plugged to the computer.  <a href="class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d">More...</a><br /></td></tr>
 <tr class="separator:abb8abce4de564252066d06925e25d13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02ff1a10eb2a8143a9c7d02cea4fd277"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#a02ff1a10eb2a8143a9c7d02cea4fd277">updateFirmwareOnComPort</a> (QString comport) const</td></tr>
-<tr class="memdesc:a02ff1a10eb2a8143a9c7d02cea4fd277"><td class="mdescLeft">&#160;</td><td class="mdescRight">update firmware on connected device at USB port.  <a href="class_ais_device_tracker.html#a02ff1a10eb2a8143a9c7d02cea4fd277">More...</a><br /></td></tr>
-<tr class="separator:a02ff1a10eb2a8143a9c7d02cea4fd277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c591fc7cd998e7dcc4f05b508593adb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#a8c591fc7cd998e7dcc4f05b508593adb">updateFirmwareOnComPort</a> (const QString &amp;comport) const</td></tr>
+<tr class="memdesc:a8c591fc7cd998e7dcc4f05b508593adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">update firmware on connected device at USB port.  <a href="class_ais_device_tracker.html#a8c591fc7cd998e7dcc4f05b508593adb">More...</a><br /></td></tr>
+<tr class="separator:a8c591fc7cd998e7dcc4f05b508593adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a42add8e62f171ef0280b8df3c3beed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#a9a42add8e62f171ef0280b8df3c3beed">updateFirmwareOnAllAvailableDevices</a> ()</td></tr>
 <tr class="memdesc:a9a42add8e62f171ef0280b8df3c3beed"><td class="mdescLeft">&#160;</td><td class="mdescRight">request firmware update for all available devices.  <a href="class_ais_device_tracker.html#a9a42add8e62f171ef0280b8df3c3beed">More...</a><br /></td></tr>
 <tr class="separator:a9a42add8e62f171ef0280b8df3c3beed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696013276e83951e6c4ef7bab1805936"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#a696013276e83951e6c4ef7bab1805936">saveLogToFile</a> (bool save)</td></tr>
+<tr class="memdesc:a696013276e83951e6c4ef7bab1805936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow to collect device error message in file for debugging purpose.  <a href="class_ais_device_tracker.html#a696013276e83951e6c4ef7bab1805936">More...</a><br /></td></tr>
+<tr class="separator:a696013276e83951e6c4ef7bab1805936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96eb0487b0200ae4308b539ae9d90996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_device_tracker.html#a96eb0487b0200ae4308b539ae9d90996">setLogFilePath</a> (const QString &amp;path)</td></tr>
+<tr class="memdesc:a96eb0487b0200ae4308b539ae9d90996"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will help to change the log file directory.  <a href="class_ais_device_tracker.html#a96eb0487b0200ae4308b539ae9d90996">More...</a><br /></td></tr>
+<tr class="separator:a96eb0487b0200ae4308b539ae9d90996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -331,6 +337,63 @@ You need to specify the communication port specific to your computer. For exampl
 
 </div>
 </div>
+<a id="a696013276e83951e6c4ef7bab1805936" name="a696013276e83951e6c4ef7bab1805936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a696013276e83951e6c4ef7bab1805936">&#9670;&#160;</a></span>saveLogToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisDeviceTracker::saveLogToFile </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>save</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allow to collect device error message in file for debugging purpose. </p>
+<dl class="section note"><dt>Note</dt><dd>by default it will be true. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">save</td><td>When set to 'false,' it will not write logs to the file. When set to 'true,' it will begin writing device error logs to the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_device_tracker.html#a96eb0487b0200ae4308b539ae9d90996" title="This will help to change the log file directory.">setLogFilePath</a> </dd></dl>
+
+</div>
+</div>
+<a id="a96eb0487b0200ae4308b539ae9d90996" name="a96eb0487b0200ae4308b539ae9d90996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96eb0487b0200ae4308b539ae9d90996">&#9670;&#160;</a></span>setLogFilePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisDeviceTracker::setLogFilePath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This will help to change the log file directory. </p>
+<dl class="section note"><dt>Note</dt><dd>by default it will be Document/Admiral Instrument/API </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Set the path value at which you want to save the log file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>If you set 'false' for 'saveLogToFile,' it will not generate the log file. It is recommended to set it to 'true' or leave the permission as the default setting. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_device_tracker.html#a696013276e83951e6c4ef7bab1805936" title="Allow to collect device error message in file for debugging purpose.">saveLogToFile</a> </dd></dl>
+
+</div>
+</div>
 <a id="a9a42add8e62f171ef0280b8df3c3beed" name="a9a42add8e62f171ef0280b8df3c3beed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a42add8e62f171ef0280b8df3c3beed">&#9670;&#160;</a></span>updateFirmwareOnAllAvailableDevices()</h2>
 
@@ -351,12 +414,12 @@ You need to specify the communication port specific to your computer. For exampl
 <dl class="section note"><dt>Note</dt><dd>emits firmwareUpdateNotification() signal will provide notification regarding firmware update of all devices. </dd>
 <dd>
 You can update firmware when you reset the device physically through reset button. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_device_tracker.html#a02ff1a10eb2a8143a9c7d02cea4fd277" title="update firmware on connected device at USB port.">updateFirmwareOnComPort</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_device_tracker.html#a8c591fc7cd998e7dcc4f05b508593adb" title="update firmware on connected device at USB port.">updateFirmwareOnComPort</a> </dd></dl>
 
 </div>
 </div>
-<a id="a02ff1a10eb2a8143a9c7d02cea4fd277" name="a02ff1a10eb2a8143a9c7d02cea4fd277"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02ff1a10eb2a8143a9c7d02cea4fd277">&#9670;&#160;</a></span>updateFirmwareOnComPort()</h2>
+<a id="a8c591fc7cd998e7dcc4f05b508593adb" name="a8c591fc7cd998e7dcc4f05b508593adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c591fc7cd998e7dcc4f05b508593adb">&#9670;&#160;</a></span>updateFirmwareOnComPort()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -364,7 +427,7 @@ You can update firmware when you reset the device physically through reset butto
         <tr>
           <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisDeviceTracker::updateFirmwareOnComPort </td>
           <td>(</td>
-          <td class="paramtype">QString&#160;</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>comport</em></td><td>)</td>
           <td> const</td>
         </tr>

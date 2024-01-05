@@ -14,6 +14,7 @@ var class_ais_square_wave_voltammetry_element =
     [ "isEndVoltageVsOCP", "class_ais_square_wave_voltammetry_element.html#af30fb42eaadbe820f108db41fbcad82a", null ],
     [ "isStartVoltageVsOCP", "class_ais_square_wave_voltammetry_element.html#a364896079c6fb4ee9d8d6180376708f9", null ],
     [ "operator=", "class_ais_square_wave_voltammetry_element.html#ad9f3bfef11605a150462dc10ec76f2a9", null ],
+    [ "setAlphaFactor", "class_ais_square_wave_voltammetry_element.html#a2a4ffaae99ae4de152cb65343fd61e67", null ],
     [ "setApproxMaxCurrent", "class_ais_square_wave_voltammetry_element.html#a81cb76d4faa21d11a4a4b705dfeafd06", null ],
     [ "setAutoRange", "class_ais_square_wave_voltammetry_element.html#a2b559cd23f05da42665da3ce7cabc407", null ],
     [ "setEndVoltage", "class_ais_square_wave_voltammetry_element.html#ae8d12dca37bb26d568731b5c392db71e", null ],

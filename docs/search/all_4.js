@@ -9,5 +9,6 @@ var searchData=
   ['experimentnotuploaded_6',['ExperimentNotUploaded',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac78c6f0163a0eb87c087208342f4f40b',1,'AisErrorCode']]],
   ['experimentpaused_7',['experimentPaused',['../class_ais_instrument_handler.html#ab82d52f4f759b02162f6d047901cf192',1,'AisInstrumentHandler']]],
   ['experimentresumed_8',['experimentResumed',['../class_ais_instrument_handler.html#abdc033f7c96d34728cf74f316c73c8f1',1,'AisInstrumentHandler']]],
-  ['experimentstopped_9',['experimentStopped',['../class_ais_instrument_handler.html#a391573a96037abefe0004b4a19c05bd3',1,'AisInstrumentHandler']]]
+  ['experimentstopped_9',['experimentStopped',['../class_ais_instrument_handler.html#a391573a96037abefe0004b4a19c05bd3',1,'AisInstrumentHandler']]],
+  ['experimentuploaded_10',['ExperimentUploaded',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac81e3fd4ad428f9c703132a8923fc1f8',1,'AisErrorCode']]]
 ];

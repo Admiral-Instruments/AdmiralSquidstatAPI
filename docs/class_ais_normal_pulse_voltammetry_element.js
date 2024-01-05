@@ -14,6 +14,7 @@ var class_ais_normal_pulse_voltammetry_element =
     [ "isEndVoltageVsOCP", "class_ais_normal_pulse_voltammetry_element.html#a26afa1f35d29f0d64c7dc3b4c8867dcd", null ],
     [ "isStartVoltageVsOCP", "class_ais_normal_pulse_voltammetry_element.html#a5288209946cb9864b1387f9c8e52ecdd", null ],
     [ "operator=", "class_ais_normal_pulse_voltammetry_element.html#ab92b47ac751a65307ab95ec2568b79a6", null ],
+    [ "setAlphaFactor", "class_ais_normal_pulse_voltammetry_element.html#a5316f0a54a9f4c34943ee93b0b9708d9", null ],
     [ "setApproxMaxCurrent", "class_ais_normal_pulse_voltammetry_element.html#a1909df339eaa736ec6f8e28367954a5a", null ],
     [ "setAutoRange", "class_ais_normal_pulse_voltammetry_element.html#a1fc1f88a0ae80a93938b4538b2ed72f3", null ],
     [ "setEndVoltage", "class_ais_normal_pulse_voltammetry_element.html#a762b91047c2c54fa85e3a965133ad6b4", null ],

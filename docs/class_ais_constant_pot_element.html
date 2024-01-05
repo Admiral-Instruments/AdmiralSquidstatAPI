@@ -185,6 +185,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad79edd2913fa953e5bf48e049b1384fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_constant_pot_element.html#ad79edd2913fa953e5bf48e049b1384fd">setApproxMaxCurrent</a> (double approxMaxCurrent)</td></tr>
 <tr class="memdesc:ad79edd2913fa953e5bf48e049b1384fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">set maximum current expected, for manual current range selection.  <a href="class_ais_constant_pot_element.html#ad79edd2913fa953e5bf48e049b1384fd">More...</a><br /></td></tr>
 <tr class="separator:ad79edd2913fa953e5bf48e049b1384fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c8727cdb77a5741a24a8550ec08f1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_constant_pot_element.html#a85c8727cdb77a5741a24a8550ec08f1a">setVoltageRange</a> (int idx)</td></tr>
+<tr class="memdesc:a85c8727cdb77a5741a24a8550ec08f1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">manually set the voltage control range.  <a href="class_ais_constant_pot_element.html#a85c8727cdb77a5741a24a8550ec08f1a">More...</a><br /></td></tr>
+<tr class="separator:a85c8727cdb77a5741a24a8550ec08f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >an experiment that simulates a constant applied voltage. <br  />
@@ -730,6 +733,32 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">samplingInterval</td><td>the data sampling interval value in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a85c8727cdb77a5741a24a8550ec08f1a" name="a85c8727cdb77a5741a24a8550ec08f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85c8727cdb77a5741a24a8550ec08f1a">&#9670;&#160;</a></span>setVoltageRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisConstantPotElement::setVoltageRange </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>manually set the voltage control range. </p>
+<p >This is an <b>optional</b> parameter. If this function is not called, the device will auto-select the voltage range by default. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx</td><td>the corresponding voltage range index (see <a class="el" href="class_ais_instrument_handler.html#a6fdc0ef180d1954d77ddf643baa21602" title="get a list of the applicable voltage ranges to the given channel specific to your device.">AisInstrumentHandler::getManualModeVoltageRangeList()</a>) </td></tr>
   </table>
   </dd>
 </dl>

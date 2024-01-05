@@ -7,6 +7,7 @@ var annotated_dup =
     [ "AisConstantPowerElement", "class_ais_constant_power_element.html", "class_ais_constant_power_element" ],
     [ "AisConstantResistanceElement", "class_ais_constant_resistance_element.html", "class_ais_constant_resistance_element" ],
     [ "AisCyclicVoltammetryElement", "class_ais_cyclic_voltammetry_element.html", "class_ais_cyclic_voltammetry_element" ],
+    [ "AisDataManipulator", "class_ais_data_manipulator.html", "class_ais_data_manipulator" ],
     [ "AisDCCurrentSweepElement", "class_ais_d_c_current_sweep_element.html", "class_ais_d_c_current_sweep_element" ],
     [ "AisDCData", "struct_ais_d_c_data.html", "struct_ais_d_c_data" ],
     [ "AisDCPotentialSweepElement", "class_ais_d_c_potential_sweep_element.html", "class_ais_d_c_potential_sweep_element" ],
@@ -20,5 +21,8 @@ var annotated_dup =
     [ "AisInstrumentHandler", "class_ais_instrument_handler.html", "class_ais_instrument_handler" ],
     [ "AisNormalPulseVoltammetryElement", "class_ais_normal_pulse_voltammetry_element.html", "class_ais_normal_pulse_voltammetry_element" ],
     [ "AisOpenCircuitElement", "class_ais_open_circuit_element.html", "class_ais_open_circuit_element" ],
-    [ "AisSquareWaveVoltammetryElement", "class_ais_square_wave_voltammetry_element.html", "class_ais_square_wave_voltammetry_element" ]
+    [ "AisSquareWaveVoltammetryElement", "class_ais_square_wave_voltammetry_element.html", "class_ais_square_wave_voltammetry_element" ],
+    [ "AisStaircasePotentialVoltammetryElement", "class_ais_staircase_potential_voltammetry_element.html", "class_ais_staircase_potential_voltammetry_element" ],
+    [ "AisSteppedCurrentElement", "class_ais_stepped_current_element.html", "class_ais_stepped_current_element" ],
+    [ "AisSteppedVoltageElement", "class_ais_stepped_voltage_element.html", "class_ais_stepped_voltage_element" ]
 ];

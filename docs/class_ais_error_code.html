@@ -124,17 +124,22 @@ Public Types</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2db4bc733c63671c5b85250a15d857e4">InvalidParameters</a> = 54
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa118077e5c7b1e3b3791f56f141a1fbbe">ChannelNotBusy</a> = 55
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac81e3fd4ad428f9c703132a8923fc1f8">ExperimentUploaded</a> = 56
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa90ea3954794670766b633a5dc73fd264">DeviceCommunicationFailed</a> = 100
-, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5">FailedToSetManualModeCurrentRange</a> = 101
 , <br />
-&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3">FailedToSetManualModeConstantVoltage</a> = 102
+&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5">FailedToSetManualModeCurrentRange</a> = 101
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3">FailedToSetManualModeConstantVoltage</a> = 102
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa98629f29f502f3d174cea01eb2d024a0">FailedToPauseExperiment</a> = 103
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaf98ea21b4079500d9ca7ff7ddc13f8cd">FailedToResumeExperiment</a> = 104
-, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba">FailedToStopExperiment</a> = 105
 , <br />
-&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49">FailedToUploadExperiment</a> = 106
+&#160;&#160;<a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba">FailedToStopExperiment</a> = 105
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49">FailedToUploadExperiment</a> = 106
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa9cf9ef9a02ea65108dd705e7400c0648">ExperimentAlreadyPaused</a> = 107
 , <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699">ExperimentAlreadyRun</a> = 108
+, <br />
+&#160;&#160;<b>FailedToSetManualModeVoltageRange</b> = 109
+, <a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa0df9dcedc2de58bf1c5ab8652bd0791e">FailedToSetManualModeConstantCurrent</a> = 110
+, <b>FailedRequest</b> = 254
 <br />
  }</td></tr>
 <tr class="separator:aa1d7e88850560cfd6229469c60e3311a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,7 +188,7 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09" name="aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09"></a>InvalidChannel&#160;</td><td class="fielddoc"><p >indicates that the given channel number is not valid. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f" name="aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f"></a>BusyChannel&#160;</td><td class="fielddoc"><p >indicates that failure was due to the channel being busy. </p>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f" name="aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f"></a>BusyChannel&#160;</td><td class="fielddoc"><p >indicates that the failure was due to the channel being busy. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa" name="aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa"></a>DeviceNotFound&#160;</td><td class="fielddoc"><p >indicates that no device was detected to be connected. </p>
 </td></tr>
@@ -197,23 +202,27 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa118077e5c7b1e3b3791f56f141a1fbbe" name="aa1d7e88850560cfd6229469c60e3311aa118077e5c7b1e3b3791f56f141a1fbbe"></a>ChannelNotBusy&#160;</td><td class="fielddoc"><p >indicates that the given command applies when there is an experiment running or paused on the channel but there is none. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aac81e3fd4ad428f9c703132a8923fc1f8" name="aa1d7e88850560cfd6229469c60e3311aac81e3fd4ad428f9c703132a8923fc1f8"></a>ExperimentUploaded&#160;</td><td class="fielddoc"><p >indicates that the given command could not be completed because an experiment is already uploaded to the channel. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa90ea3954794670766b633a5dc73fd264" name="aa1d7e88850560cfd6229469c60e3311aa90ea3954794670766b633a5dc73fd264"></a>DeviceCommunicationFailed&#160;</td><td class="fielddoc"><p >indicates that there was failure in communication with the device. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5" name="aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5"></a>FailedToSetManualModeCurrentRange&#160;</td><td class="fielddoc"><p >indicates failure of setting manual Mode current range for possible communication failure with the device. </p>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5" name="aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5"></a>FailedToSetManualModeCurrentRange&#160;</td><td class="fielddoc"><p >indicates failure to set manual mode current range due to a possible communication failure with the device. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3" name="aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3"></a>FailedToSetManualModeConstantVoltage&#160;</td><td class="fielddoc"><p >indicates failure of setting manual Mode constant voltage for possible communication failure with the device. </p>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3" name="aa1d7e88850560cfd6229469c60e3311aad0b300598e5ca9c6107649851e37bdb3"></a>FailedToSetManualModeConstantVoltage&#160;</td><td class="fielddoc"><p >indicates failure to set manual mode constant voltage due to a possible communication failure with the device </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa98629f29f502f3d174cea01eb2d024a0" name="aa1d7e88850560cfd6229469c60e3311aa98629f29f502f3d174cea01eb2d024a0"></a>FailedToPauseExperiment&#160;</td><td class="fielddoc"><p >indicates that pausing the experiment failed because either there is no running experiment or for possible communication failure with the device. </p>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa98629f29f502f3d174cea01eb2d024a0" name="aa1d7e88850560cfd6229469c60e3311aa98629f29f502f3d174cea01eb2d024a0"></a>FailedToPauseExperiment&#160;</td><td class="fielddoc"><p >indicates that pausing the experiment failed because either there is no active experiment or due to a possible communication failure with the device. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aaf98ea21b4079500d9ca7ff7ddc13f8cd" name="aa1d7e88850560cfd6229469c60e3311aaf98ea21b4079500d9ca7ff7ddc13f8cd"></a>FailedToResumeExperiment&#160;</td><td class="fielddoc"><p >indicates that resuming the experiment failed because either there is no paused experiment or for possible communication failure with the device. </p>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aaf98ea21b4079500d9ca7ff7ddc13f8cd" name="aa1d7e88850560cfd6229469c60e3311aaf98ea21b4079500d9ca7ff7ddc13f8cd"></a>FailedToResumeExperiment&#160;</td><td class="fielddoc"><p >indicates that resuming the experiment failed because either there is no paused experiment or due to a possible communication failure with the device. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba" name="aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba"></a>FailedToStopExperiment&#160;</td><td class="fielddoc"><p >indicates that stopping the experiment failed because either there is no running or paused experiment or for possible communication failure with the device. </p>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba" name="aa1d7e88850560cfd6229469c60e3311aa9b1434e879bfaeff72553892a98c48ba"></a>FailedToStopExperiment&#160;</td><td class="fielddoc"><p >indicates that stopping the experiment failed because either there is no experiment running, the experiment is paused, or due to a possible communication failure with the device. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49" name="aa1d7e88850560cfd6229469c60e3311aa46cb63bc39da0abd89b6d967924a0f49"></a>FailedToUploadExperiment&#160;</td><td class="fielddoc"><p >indicates failure to communicate with the device to upload the experiment. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa9cf9ef9a02ea65108dd705e7400c0648" name="aa1d7e88850560cfd6229469c60e3311aa9cf9ef9a02ea65108dd705e7400c0648"></a>ExperimentAlreadyPaused&#160;</td><td class="fielddoc"><p >indicates that pausing the experiment failed because experiment is already pause. </p>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa9cf9ef9a02ea65108dd705e7400c0648" name="aa1d7e88850560cfd6229469c60e3311aa9cf9ef9a02ea65108dd705e7400c0648"></a>ExperimentAlreadyPaused&#160;</td><td class="fielddoc"><p >indicates that pausing the experiment failed because the experiment is already paused. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699" name="aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699"></a>ExperimentAlreadyRun&#160;</td><td class="fielddoc"><p >indicates that resuming the experiment failed because experiment is already running. it is not in pause state. </p>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699" name="aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699"></a>ExperimentAlreadyRun&#160;</td><td class="fielddoc"><p >indicates that resuming the experiment failed because an experiment is already running. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa1d7e88850560cfd6229469c60e3311aa0df9dcedc2de58bf1c5ab8652bd0791e" name="aa1d7e88850560cfd6229469c60e3311aa0df9dcedc2de58bf1c5ab8652bd0791e"></a>FailedToSetManualModeConstantCurrent&#160;</td><td class="fielddoc"><p >indicates failure to set manual mode constant current due to a possible communication failure with the device. </p>
 </td></tr>
 </table>
 

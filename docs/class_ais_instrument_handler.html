@@ -148,6 +148,9 @@ Signals</h2></td></tr>
 <tr class="memitem:aa317edad11cdcf87b8391186d2943bf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#aa317edad11cdcf87b8391186d2943bf8">recoverDataErased</a> (bool successful)</td></tr>
 <tr class="memdesc:aa317edad11cdcf87b8391186d2943bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">a signal that is emitted whenever data erase process is completed.  <a href="class_ais_instrument_handler.html#aa317edad11cdcf87b8391186d2943bf8">More...</a><br /></td></tr>
 <tr class="separator:aa317edad11cdcf87b8391186d2943bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3afc68c0dbadd6433b8a79470ba007aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a3afc68c0dbadd6433b8a79470ba007aa">deviceError</a> (uint8_t channel, const QString &amp;error)</td></tr>
+<tr class="memdesc:a3afc68c0dbadd6433b8a79470ba007aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">a signal that is emitted whenever device send any critical error.  <a href="class_ais_instrument_handler.html#a3afc68c0dbadd6433b8a79470ba007aa">More...</a><br /></td></tr>
+<tr class="separator:a3afc68c0dbadd6433b8a79470ba007aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -160,6 +163,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6bec0de02593909d001fc73542de6e00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a6bec0de02593909d001fc73542de6e00">startUploadedExperiment</a> (uint8_t channel) const</td></tr>
 <tr class="memdesc:a6bec0de02593909d001fc73542de6e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">start the previously uploaded experiment on the specific channel.  <a href="class_ais_instrument_handler.html#a6bec0de02593909d001fc73542de6e00">More...</a><br /></td></tr>
 <tr class="separator:a6bec0de02593909d001fc73542de6e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cc5283bda06b3d8c01f1afbc16e981b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a0cc5283bda06b3d8c01f1afbc16e981b">startIdleSampling</a> (uint8_t channel) const</td></tr>
+<tr class="memdesc:a0cc5283bda06b3d8c01f1afbc16e981b"><td class="mdescLeft">&#160;</td><td class="mdescRight">start idle sampling when an experiment is neither uploaded nor running on the specified channel.  <a href="class_ais_instrument_handler.html#a0cc5283bda06b3d8c01f1afbc16e981b">More...</a><br /></td></tr>
+<tr class="separator:a0cc5283bda06b3d8c01f1afbc16e981b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcf17a1523299f00b0a9907331e03da5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#abcf17a1523299f00b0a9907331e03da5">skipExperimentStep</a> (uint8_t channel) const</td></tr>
 <tr class="memdesc:abcf17a1523299f00b0a9907331e03da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">skip the current experiment step and proceed to the next.  <a href="class_ais_instrument_handler.html#abcf17a1523299f00b0a9907331e03da5">More...</a><br /></td></tr>
 <tr class="separator:abcf17a1523299f00b0a9907331e03da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,12 +229,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a994f2d0dd53242f31d9fd5009cb38f23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a994f2d0dd53242f31d9fd5009cb38f23">setManualModeConstantVoltage</a> (uint8_t channel, double value, int currentRangeIndex) const</td></tr>
 <tr class="memdesc:a994f2d0dd53242f31d9fd5009cb38f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">set constant voltage for the manual experiment and also set a manual current range.  <a href="class_ais_instrument_handler.html#a994f2d0dd53242f31d9fd5009cb38f23">More...</a><br /></td></tr>
 <tr class="separator:a994f2d0dd53242f31d9fd5009cb38f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa919b750f18a3cb73b85281cba47b912"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#aa919b750f18a3cb73b85281cba47b912">setManualModeCurrentRange</a> (uint8_t channel, int currentRangeIndex) const</td></tr>
+<tr class="memdesc:aa919b750f18a3cb73b85281cba47b912"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the current range for the manual experiment. Once a range is set, autoranging capability is turned off. That means that during potentiostatic control, the current range may range up if necessary, but it will not drop below the user-set range. During galvanostatic control, the lowest current range that contains the designated setpoint will be chosen, provided it is not lower than the user-set range.  <a href="class_ais_instrument_handler.html#aa919b750f18a3cb73b85281cba47b912">More...</a><br /></td></tr>
+<tr class="separator:aa919b750f18a3cb73b85281cba47b912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ccd3ccaf4c420c42b2263cd741c90a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#ae8ccd3ccaf4c420c42b2263cd741c90a">setManualModeCurrentAutorange</a> (uint8_t channel) const</td></tr>
+<tr class="memdesc:ae8ccd3ccaf4c420c42b2263cd741c90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable current autoranging for the manual experiment.  <a href="class_ais_instrument_handler.html#ae8ccd3ccaf4c420c42b2263cd741c90a">More...</a><br /></td></tr>
+<tr class="separator:ae8ccd3ccaf4c420c42b2263cd741c90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed4da2b60a7206364d6e080211018f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#aaed4da2b60a7206364d6e080211018f0">setManualModeVoltageRange</a> (uint8_t channel, int voltageRangeIndex) const</td></tr>
+<tr class="memdesc:aaed4da2b60a7206364d6e080211018f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the voltage range for the manual experiment. Once a range is set, autoranging capability is turned off. That means that during galvanostatic control, the voltage range may range up if necessary, but it will not drop below the user-set range. During potentiostatic control, the lowest voltage range that contains the designated setpoint will be chosen, provided it is not lower than the user-set range.  <a href="class_ais_instrument_handler.html#aaed4da2b60a7206364d6e080211018f0">More...</a><br /></td></tr>
+<tr class="separator:aaed4da2b60a7206364d6e080211018f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a3dfb61f329619fb2d5000eee47df2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a19a3dfb61f329619fb2d5000eee47df2">setManualModeVoltageAutorange</a> (uint8_t channel) const</td></tr>
+<tr class="memdesc:a19a3dfb61f329619fb2d5000eee47df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable voltage autoranging for the manual experiment.  <a href="class_ais_instrument_handler.html#a19a3dfb61f329619fb2d5000eee47df2">More...</a><br /></td></tr>
+<tr class="separator:a19a3dfb61f329619fb2d5000eee47df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af68118f3671f26b655e5d29e43f6f3b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#af68118f3671f26b655e5d29e43f6f3b4">setManualModeConstantCurrent</a> (uint8_t channel, double value) const</td></tr>
 <tr class="memdesc:af68118f3671f26b655e5d29e43f6f3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">set constant current for the manual experiment.  <a href="class_ais_instrument_handler.html#af68118f3671f26b655e5d29e43f6f3b4">More...</a><br /></td></tr>
 <tr class="separator:af68118f3671f26b655e5d29e43f6f3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a225f58154b49121ad66bb1030173306c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a225f58154b49121ad66bb1030173306c">getManualModeCurrentRangeList</a> (uint8_t channel) const</td></tr>
 <tr class="memdesc:a225f58154b49121ad66bb1030173306c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a list of the applicable current ranges to the given channel specific to your device.  <a href="class_ais_instrument_handler.html#a225f58154b49121ad66bb1030173306c">More...</a><br /></td></tr>
 <tr class="separator:a225f58154b49121ad66bb1030173306c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fdc0ef180d1954d77ddf643baa21602"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_instrument_handler.html#a6fdc0ef180d1954d77ddf643baa21602">getManualModeVoltageRangeList</a> (uint8_t channel) const</td></tr>
+<tr class="memdesc:a6fdc0ef180d1954d77ddf643baa21602"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a list of the applicable voltage ranges to the given channel specific to your device.  <a href="class_ais_instrument_handler.html#a6fdc0ef180d1954d77ddf643baa21602">More...</a><br /></td></tr>
+<tr class="separator:a6fdc0ef180d1954d77ddf643baa21602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >this class provides control of the device including starting, pausing, resuming and stopping an experiment on a channel as well as reading the data and other controls of the device. </p>
@@ -348,6 +369,52 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>a signal that is emitted if the device associated with this handler has been disconnected. </p>
+
+</div>
+</div>
+<a id="a3afc68c0dbadd6433b8a79470ba007aa" name="a3afc68c0dbadd6433b8a79470ba007aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3afc68c0dbadd6433b8a79470ba007aa">&#9670;&#160;</a></span>deviceError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisInstrumentHandler::deviceError </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a signal that is emitted whenever device send any critical error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>the channel number at which error rise. </td></tr>
+    <tr><td class="paramname">error</td><td>information about error message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>stop experiment command will automatilcally send on channel. </dd></dl>
 
 </div>
 </div>
@@ -614,7 +681,34 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>get a list of the applicable current ranges to the given channel specific to your device. </p>
-<p >The list is indexed, with each index containing a range with minimum and maximum current for the range. You can pass the index of the desired current range to setManualModeConstantVoltage. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >The list is indexed, with each index containing a range with minimum and maximum current for the range. You can pass the index of the desired current range to setManualModeConstantVoltage or setManualModeConstantCurrent. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>a valid channel number for which to check the current range. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of the of the applicable current ranges to the given channel specific to your device. </dd></dl>
+
+</div>
+</div>
+<a id="a6fdc0ef180d1954d77ddf643baa21602" name="a6fdc0ef180d1954d77ddf643baa21602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fdc0ef180d1954d77ddf643baa21602">&#9670;&#160;</a></span>getManualModeVoltageRangeList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::pair&lt; double, double &gt; &gt; AisInstrumentHandler::getManualModeVoltageRangeList </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get a list of the applicable voltage ranges to the given channel specific to your device. </p>
+<p >The list is indexed, with each index containing a range with minimum and maximum voltage for the range. You can pass the index of the desired current range to setManualModeConstantVoltage or setManualModeConstantCurrent. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">channel</td><td>a valid channel number for which to check the current range. </td></tr>
   </table>
@@ -1286,6 +1380,83 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae8ccd3ccaf4c420c42b2263cd741c90a" name="ae8ccd3ccaf4c420c42b2263cd741c90a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ccd3ccaf4c420c42b2263cd741c90a">&#9670;&#160;</a></span>setManualModeCurrentAutorange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisInstrumentHandler::setManualModeCurrentAutorange </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>enable current autoranging for the manual experiment. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>a valid channel number to enable current autoranging for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a> if enabling current autoranging successful. If not successful, possible returned errors are:<ul>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5">AisErrorCode::FailedToSetManualModeCurrentRange</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa171244d3a99f7534bfde26c14d062c1">AisErrorCode::ManualExperimentNotRunning</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">AisErrorCode::DeviceNotFound</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09">AisErrorCode::InvalidChannel</a> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="aa919b750f18a3cb73b85281cba47b912" name="aa919b750f18a3cb73b85281cba47b912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa919b750f18a3cb73b85281cba47b912">&#9670;&#160;</a></span>setManualModeCurrentRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisInstrumentHandler::setManualModeCurrentRange </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>currentRangeIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set the current range for the manual experiment. Once a range is set, autoranging capability is turned off. That means that during potentiostatic control, the current range may range up if necessary, but it will not drop below the user-set range. During galvanostatic control, the lowest current range that contains the designated setpoint will be chosen, provided it is not lower than the user-set range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>a valid channel number to set the current range for. </td></tr>
+    <tr><td class="paramname">currentRangeIndex</td><td>the index of the desired current range. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a> if setting the current range was successful. You can get a list of the available ranges for your model by calling <a class="el" href="class_ais_instrument_handler.html#a225f58154b49121ad66bb1030173306c">getManualModeCurrentRangeList</a>. If not successful, possible returned errors are:<ul>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa94c89dbaba609c1b028a62e6ba3017b5">AisErrorCode::FailedToSetManualModeCurrentRange</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa171244d3a99f7534bfde26c14d062c1">AisErrorCode::ManualExperimentNotRunning</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">AisErrorCode::DeviceNotFound</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09">AisErrorCode::InvalidChannel</a> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 <a id="a958144aed818b8682646b5b0169556af" name="a958144aed818b8682646b5b0169556af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a958144aed818b8682646b5b0169556af">&#9670;&#160;</a></span>setManualModeOCP()</h2>
 
@@ -1362,6 +1533,83 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a19a3dfb61f329619fb2d5000eee47df2" name="a19a3dfb61f329619fb2d5000eee47df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a3dfb61f329619fb2d5000eee47df2">&#9670;&#160;</a></span>setManualModeVoltageAutorange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisInstrumentHandler::setManualModeVoltageAutorange </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>enable voltage autoranging for the manual experiment. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>a valid channel number to enable voltage autoranging for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a> if enabling voltage autoranging successful. If not successful, possible returned errors are:<ul>
+<li>AisErrorCode::FailedToSetManualModeVoltageRange</li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa171244d3a99f7534bfde26c14d062c1">AisErrorCode::ManualExperimentNotRunning</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">AisErrorCode::DeviceNotFound</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09">AisErrorCode::InvalidChannel</a> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="aaed4da2b60a7206364d6e080211018f0" name="aaed4da2b60a7206364d6e080211018f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed4da2b60a7206364d6e080211018f0">&#9670;&#160;</a></span>setManualModeVoltageRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisInstrumentHandler::setManualModeVoltageRange </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>voltageRangeIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set the voltage range for the manual experiment. Once a range is set, autoranging capability is turned off. That means that during galvanostatic control, the voltage range may range up if necessary, but it will not drop below the user-set range. During potentiostatic control, the lowest voltage range that contains the designated setpoint will be chosen, provided it is not lower than the user-set range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>a valid channel number to set the voltage range for. </td></tr>
+    <tr><td class="paramname">voltageRangeIndex</td><td>the index of the desired voltage range. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a> if setting the voltage rnage was successful. You can get a list of the available ranges for your model by calling <a class="el" href="class_ais_instrument_handler.html#a6fdc0ef180d1954d77ddf643baa21602">getManualModeVoltageRangeList</a>. If not successful, possible returned errors are:<ul>
+<li>AisErrorCode::FailedToSetManualModeVoltageRange</li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa171244d3a99f7534bfde26c14d062c1">AisErrorCode::ManualExperimentNotRunning</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">AisErrorCode::DeviceNotFound</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09">AisErrorCode::InvalidChannel</a> </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 <a id="abcf17a1523299f00b0a9907331e03da5" name="abcf17a1523299f00b0a9907331e03da5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcf17a1523299f00b0a9907331e03da5">&#9670;&#160;</a></span>skipExperimentStep()</h2>
 
@@ -1392,6 +1640,40 @@ Public Member Functions</h2></td></tr>
 <li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa90ea3954794670766b633a5dc73fd264">AisErrorCode::DeviceCommunicationFailed</a> </li>
 </ul>
 </dd></dl>
+
+</div>
+</div>
+<a id="a0cc5283bda06b3d8c01f1afbc16e981b" name="a0cc5283bda06b3d8c01f1afbc16e981b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cc5283bda06b3d8c01f1afbc16e981b">&#9670;&#160;</a></span>startIdleSampling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisInstrumentHandler::startIdleSampling </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>start idle sampling when an experiment is neither uploaded nor running on the specified channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>the channel number to start collecting idle data on. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a> if the request to start idle data was sent. If not successful, possible returned errors are:<ul>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac81e3fd4ad428f9c703132a8923fc1f8">AisErrorCode::ExperimentUploaded</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">AisErrorCode::DeviceNotFound</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aade1898a53682259d7ccf8f3d8d69be09">AisErrorCode::InvalidChannel</a></li>
+<li><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa2cefd9adf0d4a32dc946888367735c0f">AisErrorCode::BusyChannel</a> </li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_instrument_handler.html#a7f64e4affb72934c8451d72a73b3e600" title="tells whether the given channel is busy or not.">isChannelBusy</a> </dd></dl>
 
 </div>
 </div>

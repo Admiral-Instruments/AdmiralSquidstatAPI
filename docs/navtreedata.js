@@ -57,7 +57,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_ais_abstract_element_8h_source.html",
-"class_ais_e_i_s_potentiostatic_element.html#a753cbc86b8cac3a635c69ce889ba61e5"
+"class_ais_diff_pulse_voltammetry_element.html#aba946a5ba253d3e0b146d45b9f73508b",
+"class_ais_stepped_current_element.html#acc0922ea8175be6c9a867756fd180af6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -178,6 +178,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a81cb76d4faa21d11a4a4b705dfeafd06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_square_wave_voltammetry_element.html#a81cb76d4faa21d11a4a4b705dfeafd06">setApproxMaxCurrent</a> (double approxMaxCurrent)</td></tr>
 <tr class="memdesc:a81cb76d4faa21d11a4a4b705dfeafd06"><td class="mdescLeft">&#160;</td><td class="mdescRight">set maximum current expected, for manual current range selection.  <a href="class_ais_square_wave_voltammetry_element.html#a81cb76d4faa21d11a4a4b705dfeafd06">More...</a><br /></td></tr>
 <tr class="separator:a81cb76d4faa21d11a4a4b705dfeafd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4ffaae99ae4de152cb65343fd61e67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_square_wave_voltammetry_element.html#a2a4ffaae99ae4de152cb65343fd61e67">setAlphaFactor</a> (double alphafactor)</td></tr>
+<tr class="memdesc:a2a4ffaae99ae4de152cb65343fd61e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.  <a href="class_ais_square_wave_voltammetry_element.html#a2a4ffaae99ae4de152cb65343fd61e67">More...</a><br /></td></tr>
+<tr class="separator:a2a4ffaae99ae4de152cb65343fd61e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This experiment holds the working electrode at the <b>starting potential</b> during the <b>quiet time</b>. Then it applies a train of square pulses superimposed on a staircase waveform with a uniform <b>potential step</b> magnitude. </p>
@@ -186,7 +189,8 @@ Public Member Functions</h2></td></tr>
  </p><div class="image">
 <img src="SqrWaveVoltammetry.png" alt=""/>
 </div>
-  </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+ <p >Advanced control of data output for pulse experiments can be performed using the <a class="el" href="class_ais_data_manipulator.html" title="The AisDataManipulator class offers advanced control over pulse data collection and manipulation....">AisDataManipulator</a> class. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_data_manipulator.html" title="The AisDataManipulator class offers advanced control over pulse data collection and manipulation....">AisDataManipulator</a> </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac0de348c1591af30b6beec2eb83896d3" name="ac0de348c1591af30b6beec2eb83896d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0de348c1591af30b6beec2eb83896d3">&#9670;&#160;</a></span>AisSquareWaveVoltammetryElement()</h2>
 
@@ -493,6 +497,32 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if the start voltage is set against the open-circuit voltage and false if it is set against the reference terminal. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>if nothing is set, the default is false. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_square_wave_voltammetry_element.html#ab0b9c931e69f56cf9d0a20236f1a439f" title="set whether to reference the start voltage against the open-circuit voltage or the reference terminal...">setStartVoltageVsOCP</a> </dd></dl>
+
+</div>
+</div>
+<a id="a2a4ffaae99ae4de152cb65343fd61e67" name="a2a4ffaae99ae4de152cb65343fd61e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4ffaae99ae4de152cb65343fd61e67">&#9670;&#160;</a></span>setAlphaFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisSquareWaveVoltammetryElement::setAlphaFactor </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>alphafactor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval. </p>
+<p >The is an <b>optional</b> parameter. If nothing is set, the device will use the default value of 75. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alphafactor</td><td>the value for the alphafactor ranges from 0 to 100. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

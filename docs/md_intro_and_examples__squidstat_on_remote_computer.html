@@ -128,7 +128,7 @@ Server Implementation</h3>
 <div class="line"> </div>
 <div class="line">    <span class="comment"># Start the experiment</span></div>
 <div class="line">    return(handler.startUploadedExperiment(0))</div>
-<div class="ttc" id="aclass_ais_experiment_html"><div class="ttname"><a href="class_ais_experiment.html">AisExperiment</a></div><div class="ttdoc">this class is used to create custom experiments. A custom experiment has a container of contains one ...</div><div class="ttdef"><b>Definition:</b> AisExperiment.h:19</div></div>
+<div class="ttc" id="aclass_ais_experiment_html"><div class="ttname"><a href="class_ais_experiment.html">AisExperiment</a></div><div class="ttdoc">this class is used to create custom experiments. A custom experiment contains one or more elements....</div><div class="ttdef"><b>Definition:</b> AisExperiment.h:19</div></div>
 <div class="ttc" id="aclass_ais_open_circuit_element_html"><div class="ttname"><a href="class_ais_open_circuit_element.html">AisOpenCircuitElement</a></div><div class="ttdoc">This experiment observes the open circuit potential of the working electrode for a specific period of...</div><div class="ttdef"><b>Definition:</b> AisOpenCircuitElement.h:15</div></div>
 </div><!-- fragment --><p> <code>start_ocp_experiment</code> will create and start an Open Circuit Potential experiment on channel 1 of the Squidstat. The duration is passed in via the duration variable. This function will be called when the client sends a <code>startExperiment</code> command.</p>
 <div class="fragment"><div class="line"><span class="comment"># Send a specified command to our Squidstat</span></div>

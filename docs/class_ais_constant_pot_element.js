@@ -24,5 +24,6 @@ var class_ais_constant_pot_element =
     [ "setMindIdt", "class_ais_constant_pot_element.html#a98e333566c66a486f393b3d4aafbb351", null ],
     [ "setPotential", "class_ais_constant_pot_element.html#acfce2f9d112f089d4d2a04832c635389", null ],
     [ "setSamplingInterval", "class_ais_constant_pot_element.html#a5805d80a1c46dd1aa3589fc69bb0494d", null ],
+    [ "setVoltageRange", "class_ais_constant_pot_element.html#a85c8727cdb77a5741a24a8550ec08f1a", null ],
     [ "setVoltageVsOCP", "class_ais_constant_pot_element.html#ad18f538271267715b2bffcc95d085db4", null ]
 ];

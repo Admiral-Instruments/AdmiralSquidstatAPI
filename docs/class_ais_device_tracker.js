@@ -6,6 +6,8 @@ var class_ais_device_tracker =
     [ "getConnectedDevices", "class_ais_device_tracker.html#adb8ae66667e1e99a617f82ca9bf8d571", null ],
     [ "getInstrumentHandler", "class_ais_device_tracker.html#a5aad6e927602f641f60ad8942af0a5f3", null ],
     [ "newDeviceConnected", "class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff", null ],
+    [ "saveLogToFile", "class_ais_device_tracker.html#a696013276e83951e6c4ef7bab1805936", null ],
+    [ "setLogFilePath", "class_ais_device_tracker.html#a96eb0487b0200ae4308b539ae9d90996", null ],
     [ "updateFirmwareOnAllAvailableDevices", "class_ais_device_tracker.html#a9a42add8e62f171ef0280b8df3c3beed", null ],
-    [ "updateFirmwareOnComPort", "class_ais_device_tracker.html#a02ff1a10eb2a8143a9c7d02cea4fd277", null ]
+    [ "updateFirmwareOnComPort", "class_ais_device_tracker.html#a8c591fc7cd998e7dcc4f05b508593adb", null ]
 ];

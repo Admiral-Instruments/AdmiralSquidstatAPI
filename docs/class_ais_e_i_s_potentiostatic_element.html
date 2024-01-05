@@ -160,6 +160,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a21cb6f6574347974402a08aa97e1eca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_e_i_s_potentiostatic_element.html#a21cb6f6574347974402a08aa97e1eca6">setAmplitude</a> (double amplitude)</td></tr>
 <tr class="memdesc:a21cb6f6574347974402a08aa97e1eca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the value for the AC voltage amplitude.  <a href="class_ais_e_i_s_potentiostatic_element.html#a21cb6f6574347974402a08aa97e1eca6">More...</a><br /></td></tr>
 <tr class="separator:a21cb6f6574347974402a08aa97e1eca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07afeda14d056d124664f9a2f8a57b15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_e_i_s_potentiostatic_element.html#a07afeda14d056d124664f9a2f8a57b15">setMinimumCycles</a> (int numberOfCycle)</td></tr>
+<tr class="memdesc:a07afeda14d056d124664f9a2f8a57b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the minimum number of period of applied sinusoidal current at each frequency.  <a href="class_ais_e_i_s_potentiostatic_element.html#a07afeda14d056d124664f9a2f8a57b15">More...</a><br /></td></tr>
+<tr class="separator:a07afeda14d056d124664f9a2f8a57b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b91c4bf82121513209c08f89160ffa8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_e_i_s_potentiostatic_element.html#a6b91c4bf82121513209c08f89160ffa8">getMinimumCycles</a> () const</td></tr>
+<tr class="memdesc:a6b91c4bf82121513209c08f89160ffa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">the value to setted for mimimum number of cycle Sampled.  <a href="class_ais_e_i_s_potentiostatic_element.html#a6b91c4bf82121513209c08f89160ffa8">More...</a><br /></td></tr>
+<tr class="separator:a6b91c4bf82121513209c08f89160ffa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This experiment records the complex impedance of the experimental cell in potentiostatic mode, starting from the <b>start frequency</b> and sweeping through towards the <b>end frequency</b>, with a fixed number of frequency <b>steps per decade</b>. </p>
@@ -321,6 +327,26 @@ Public Member Functions</h2></td></tr>
 
 <p>the value set for the voltage ending frequency. </p>
 <dl class="section return"><dt>Returns</dt><dd>the value set for the voltage end frequency in Hz </dd></dl>
+
+</div>
+</div>
+<a id="a6b91c4bf82121513209c08f89160ffa8" name="a6b91c4bf82121513209c08f89160ffa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b91c4bf82121513209c08f89160ffa8">&#9670;&#160;</a></span>getMinimumCycles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AisEISPotentiostaticElement::getMinimumCycles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the value to setted for mimimum number of cycle Sampled. </p>
+<dl class="section return"><dt>Returns</dt><dd>the value set for the minimum number of cycles. </dd></dl>
 
 </div>
 </div>
@@ -510,6 +536,32 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">endFreq</td><td>the value to set for the voltage end frequency in Hz </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a07afeda14d056d124664f9a2f8a57b15" name="a07afeda14d056d124664f9a2f8a57b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07afeda14d056d124664f9a2f8a57b15">&#9670;&#160;</a></span>setMinimumCycles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisEISPotentiostaticElement::setMinimumCycles </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numberOfCycle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set the minimum number of period of applied sinusoidal current at each frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numberOfCycle</td><td>set number of cycles Sampled. </td></tr>
   </table>
   </dd>
 </dl>

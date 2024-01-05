@@ -97,79 +97,80 @@ $(document).ready(function(){initNavTree('md_intro_and_examples_4__firmware_upda
 <div class="textblock"><p ><a class="anchor" id="firmwareupdate"></a></p>
 <h3><a class="anchor" id="autotoc_md12"></a>
 Introduction</h3>
-<p >The following example will help illustrate the use of the Squidstatlibrary for updating the firmware of Device</p>
-<p >We will go through an example.</p>
-<h3><a class="anchor" id="autotoc_md13"></a>
-Building a Custom Experiment with Python</h3>
-<h4><a class="anchor" id="autotoc_md14"></a>
-Import all the required basic class from SquidstatLibrary, and Qt Library.</h4>
+<p >When connecting a new Squidstat or switching to a different version of the API, users may be required to update the firmware of the device. The following example will walk through the FirmwareUpdateDemo to demonstrate how to update the firmware for all connected Squidstats or select Squidstats.</p>
+<p >&gt;Note: If you are a Linux user and are having issues updating the firmware with your Squidstat, please refer to the announcement posted on the discussions page of our <a href="https://github.com/Admiral-Instruments/AdmiralSquidstatAPI/discussions">GitHub</a> for troubleshooting guidelines.</p>
+<h4><a class="anchor" id="autotoc_md13"></a>
+Import all required classes from SquidstatLibrary and Qt Library</h4>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;AisDeviceTracker.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qdebug.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;qfileinfo.h&gt;</span></div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md15"></a>
-Connect the Notification signal.</h4>
-<div class="fragment"><div class="line">QObject::connect(tracker, &amp;AisDeviceTracker::firmwareUpdateNotification, &amp;a, [=](const QString&amp; message) {</div>
-<div class="line">          qInfo() &lt;&lt; message;</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md14"></a>
+Connect to the firmware progress notification</h4>
+<p >As the device updates the firmware, it will periodically send a notification that will include a percentage representing its progress. Here we will directly relay that message to the command line via the standard QT message handler <code>qInfo</code>. Because it is connected to a signal, it will be handled asynchronously. </p><div class="fragment"><div class="line">QObject::connect(tracker, &amp;AisDeviceTracker::firmwareUpdateNotification, &amp;a, [=](<span class="keyword">const</span> QString&amp; message) {</div>
+<div class="line">           qInfo() &lt;&lt; message;</div>
 <div class="line">});</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md16"></a>
-request to update the firmware to all connected device.</h4>
-<div class="fragment"><div class="line">auto nmberOfDevice = tracker-&gt;updateFirmwareOnAllAvailableDevices();</div>
-<div class="line">if (nmberOfDevice == 0) {</div>
-<div class="line">     qInfo() &lt;&lt; &quot;Firmware update is not start in any of device&quot;;</div>
-<div class="line">} else {</div>
-<div class="line">     qInfo() &lt;&lt; &quot;Firmware update start in &quot; &lt;&lt; nmberOfDevice &lt;&lt; &quot;device.&quot;;</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md15"></a>
+Request to update the firmware in all connected devices</h4>
+<p >At the point where we call <code>tracker-&gt;updateFirmwareOnAllAvailableDevices()</code>, the API will look for all devices connected and send them the signal to update their firmware. <code>numberOfDevices</code> will hold the number of devices that responded that their firmware was out of date. Once we call <code>exec</code> on our QT application, it will begin updating the firmware and reporting the update progress via the <code>firmwareUpdateNotification</code> signal that we connected to earlier. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> numberOfDevices = tracker-&gt;updateFirmwareOnAllAvailableDevices();</div>
+<div class="line"><span class="keywordflow">if</span> (numberOfDevices == 0) {</div>
+<div class="line">      qInfo() &lt;&lt; <span class="stringliteral">&quot;No devices need to be updated at this time. If this is incorrect, ensure all devices are connected and powered on.&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">     qInfo() &lt;&lt; <span class="stringliteral">&quot;Firmware update starting on &quot;</span> &lt;&lt; numberOfDevices &lt;&lt; <span class="stringliteral">&quot;devices.&quot;</span>;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md17"></a>
-request to update the firmware to specific device using comport.</h4>
-<div class="fragment"><div class="line">QRegExp rx(&quot;^[Cc][Oo][Mm][0-9]+$&quot;);</div>
-<div class="line">if (rx.exactMatch(comPort) == false) {</div>
-<div class="line">   qInfo() &lt;&lt; &quot; Arguments is not valid. Example: &quot; &lt;&lt; QFileInfo(QCoreApplication::applicationFilePath()).fileName() &lt;&lt; &quot; COM3&quot;;</div>
-<div class="line">} else {</div>
-<div class="line">   auto error = tracker-&gt;updateFirmwareOnComPort(comPort);</div>
-<div class="line">   if (error) {</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md16"></a>
+Request to update the firmware to a specific device by comport</h4>
+<p >If the user wishes to specify a comport to update a specific Squidstat, that can be put in as an argument in this script. Here we check that the value follows the proper format via regex, and if it does, we begin the update via <code>tracker-&gt;updateFirmwareOnComPort(comPort)</code>. We will also report any error that may have occurred during this process.</p>
+<div class="fragment"><div class="line">QRegExp rx(<span class="stringliteral">&quot;^[Cc][Oo][Mm][0-9]+$&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (rx.exactMatch(comPort) == <span class="keyword">false</span>) {</div>
+<div class="line">   qInfo() &lt;&lt; <span class="stringliteral">&quot; Arguments are not valid. Example: &quot;</span> &lt;&lt; QFileInfo(QCoreApplication::applicationFilePath()).fileName() &lt;&lt; <span class="stringliteral">&quot; COM3&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">   <span class="keyword">auto</span> error = tracker-&gt;updateFirmwareOnComPort(comPort);</div>
+<div class="line">   <span class="keywordflow">if</span> (error) {</div>
 <div class="line">      qInfo() &lt;&lt; error.message();                </div>
 <div class="line">   }</div>
 <div class="line">}</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md17"></a>
+Start the QT Application</h4>
+<p >Once we call <code>exec</code> on our QT application, it will begin reporting the update progress via the <code>firmwareUpdateNotification</code> signal that we connected to earlier. </p><div class="fragment"><div class="line">a.exec();</div>
 </div><!-- fragment --><h4><a class="anchor" id="autotoc_md18"></a>
 Full Example</h4>
-<p >Here is everything put together, and complete working examples.</p>
-<div class="fragment"><div class="line">#include &quot;AisDeviceTracker.h&quot;</div>
-<div class="line">#include &lt;QCoreApplication&gt;</div>
-<div class="line">#include &lt;qdebug.h&gt;</div>
-<div class="line">#include &lt;qfileinfo.h&gt;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;AisDeviceTracker.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;qdebug.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;qfileinfo.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line">int main(int argc, char* argv[])</div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])</div>
 <div class="line">{</div>
 <div class="line">    QCoreApplication a(argc, argv);</div>
-<div class="line">    auto tracker = AisDeviceTracker::Instance();</div>
-<div class="line">    QObject::connect(tracker, &amp;AisDeviceTracker::firmwareUpdateNotification, &amp;a, [=](const QString&amp; message) {</div>
+<div class="line">    <span class="keyword">auto</span> tracker = AisDeviceTracker::Instance();</div>
+<div class="line">    QObject::connect(tracker, &amp;AisDeviceTracker::firmwareUpdateNotification, &amp;a, [=](<span class="keyword">const</span> QString&amp; message) {</div>
 <div class="line">           qInfo() &lt;&lt; message;</div>
 <div class="line">        });</div>
 <div class="line"> </div>
-<div class="line">    if (argc == 1) { </div>
-<div class="line">        auto nmberOfDevice = tracker-&gt;updateFirmwareOnAllAvailableDevices();</div>
-<div class="line">        if (nmberOfDevice == 0) {</div>
-<div class="line">            qInfo() &lt;&lt; &quot;Firmware update is not start in any of device&quot;;</div>
-<div class="line">        } else {</div>
-<div class="line">            qInfo() &lt;&lt; &quot;Firmware update start in &quot; &lt;&lt; nmberOfDevice &lt;&lt; &quot;device.&quot;;</div>
+<div class="line">    <span class="keywordflow">if</span> (argc == 1) { </div>
+<div class="line">        <span class="keyword">auto</span> numberOfDevices = tracker-&gt;updateFirmwareOnAllAvailableDevices();</div>
+<div class="line">        <span class="keywordflow">if</span> (numberOfDevices == 0) {</div>
+<div class="line">            qInfo() &lt;&lt; <span class="stringliteral">&quot;No devices need to be updated at this time. If this is incorrect, ensure all devices are connected and powered on.&quot;</span>;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            qInfo() &lt;&lt; <span class="stringliteral">&quot;Firmware update starting on &quot;</span> &lt;&lt; numberOfDevices &lt;&lt; <span class="stringliteral">&quot;devices.&quot;</span>;</div>
 <div class="line">        }</div>
 <div class="line">        </div>
-<div class="line">    } else {</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
 <div class="line"> </div>
-<div class="line">        if (argc == 2) {</div>
-<div class="line">            auto comPort = argv[1];</div>
+<div class="line">        <span class="keywordflow">if</span> (argc == 2) {</div>
+<div class="line">            <span class="keyword">auto</span> comPort = argv[1];</div>
 <div class="line">            </div>
-<div class="line">            QRegExp rx(&quot;^[Cc][Oo][Mm][0-9]+$&quot;);</div>
-<div class="line">            if (rx.exactMatch(comPort) == false) {</div>
-<div class="line">                qInfo() &lt;&lt; &quot; Arguments is not valid. Example: &quot; &lt;&lt; QFileInfo(QCoreApplication::applicationFilePath()).fileName() &lt;&lt; &quot; COM3&quot;;</div>
+<div class="line">            QRegExp rx(<span class="stringliteral">&quot;^[Cc][Oo][Mm][0-9]+$&quot;</span>);</div>
+<div class="line">            <span class="keywordflow">if</span> (rx.exactMatch(comPort) == <span class="keyword">false</span>) {</div>
+<div class="line">                qInfo() &lt;&lt; <span class="stringliteral">&quot; Arguments are not valid. Example: &quot;</span> &lt;&lt; QFileInfo(QCoreApplication::applicationFilePath()).fileName() &lt;&lt; <span class="stringliteral">&quot; COM3&quot;</span>;</div>
 <div class="line">          </div>
-<div class="line">            } else {</div>
-<div class="line">                auto error = tracker-&gt;updateFirmwareOnComPort(comPort);</div>
-<div class="line">                if (error) {</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                <span class="keyword">auto</span> error = tracker-&gt;updateFirmwareOnComPort(comPort);</div>
+<div class="line">                <span class="keywordflow">if</span> (error) {</div>
 <div class="line">                    qInfo() &lt;&lt; error.message();</div>
 <div class="line">                    </div>
 <div class="line">                }</div>
