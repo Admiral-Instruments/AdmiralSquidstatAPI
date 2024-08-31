@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('md_intro_and_examples_5_basics.html','
 <div class="textblock"><p ><a class="anchor" id="basics"></a></p>
 <p >The basic building block of a custom experiment are the elements. An element is an elementary experiment such as Constant Voltage/Potential (CV) or Constant Current (CC). A custom experiment can have one or more elements. The elements inside could be run one or more times. A custom experiment can also contain another custom experiment as a sub-experiment. The sub-experiment can be run one or more times as well.</p>
 <p >We will go through an example of building and running an experiment.</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Creating A Custom Experiment</h2>
 <p >First, we will have some environment setup by creating our application:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;AisDeviceTracker.h&quot;</span></div>
@@ -145,14 +145,14 @@ Creating A Custom Experiment</h2>
 <div class="line">    10 <span class="comment">// duration: 10s</span></div>
 <div class="line">);</div>
 </div><!-- fragment --><p >This concludes creating the experiment. Next is how to control the workflow of the experiment.</p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Controlling The Experiment</h2>
 <p >So far, we have only created the experiment. But we need to start it and control it. The next code section employs a callback mechanism specific to Qt, called signals and slots. Callbacks are used to take an action when a specified condition is met i.e. control the workflow. For simplicity, we provided some common slots related to our API with comments inside, on what you can do. You can read more about Qt signals and slots in the following link: <a href="https://doc.qt.io/qt-5/signalsandslots.html">https://doc.qt.io/qt-5/signalsandslots.html</a></p>
 <p >Reading this document should still cover most of what is needed. Basically, a signal can be emitted when an event happens. If a slot is connected to that signal, whatever is inside that slot will be executed when the signal is emitted. You can think of a signal as a condition and a slot is what will be executed once a corresponding condition is met. The only difference is the order of execution. Normal execution have sequential order. However, a slot can be emitted at anytime. Whenever that happens, the slot will execute no matter where the connection has been made (as long as a connection has been made prior). That is how we can have extra control on how and when things are executed.</p>
 <p >An experiment is run on a specific channel of a device. You may have more than one device connected. A single device has up to 4 channels. Any channel on a specific device can run a single experiment at a time. To start an experiment, we specify the device and the channel and, then start it. To stop or pause that experiment, we need to specify its corresponding device and channel. We need to keep track of the device and channel for each experiment we start so we can control it later.</p>
 <p >We can control a device, including starting, pausing and stopping an experiment on a specific channel using an <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> A device/instrument handler can be created given a device name that we detect.</p>
 <p >We have two parts below: one that creates logic using signals and slots. The second part assigns that logic to an instrument handler which will discuss in a bit. The first part below is creating some control-flow logic that we can assign to a handler. We can also create other logics in the same way that can be assigned to different handlers which can be used to control different devices. If we only have one device, all the logic will be handled with one handler. We can then have further control within, based on channels.</p>
-<h3><a class="anchor" id="autotoc_md21"></a>
+<h3><a class="anchor" id="autotoc_md22"></a>
 Creating Control Flow Logic Specific To A Handler</h3>
 <p >The first part is a lambda function called "connectHandlerSignals" which takes a handler as an argument and connects some of the handler signals to slots. We have other signals related to a handler you can add, which you can find in the <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> This example logic has four conditions on which we can perform other tasks. That is, when we assign this logic to a specific handler, this logic will execute for that handler. The four signals and slots below in the first part are examples for you to follow in order to add other connections.</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> connectHandlerSignals = [=](<a class="code hl_class" href="class_ais_instrument_handler.html">AisInstrumentHandler</a>* handler) {</div>
@@ -251,10 +251,10 @@ Creating Control Flow Logic Specific To A Handler</h3>
 <div class="ttc" id="astruct_ais_experiment_node_html_a7cee5797e9099af54630461cf1b4cbec"><div class="ttname"><a href="struct_ais_experiment_node.html#a7cee5797e9099af54630461cf1b4cbec">AisExperimentNode::stepNumber</a></div><div class="ttdeci">int stepNumber</div><div class="ttdoc">this number is the order of the element within the custom experiment.</div><div class="ttdef"><b>Definition:</b> AisDataPoints.h:119</div></div>
 </div><!-- fragment --><p >Here we output the DC data to a CSV file but, you may do that for AC data as well in the same manner.</p>
 <p >You may also find it useful to refer to C++ lambdas documentation: <a href="https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp">https://docs.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp</a></p>
-<h3><a class="anchor" id="autotoc_md22"></a>
+<h3><a class="anchor" id="autotoc_md23"></a>
 Connecting Slots To Device-Tracker Signals</h3>
 <p >There are two signals related to a device tracker: when a device is connected and second, when a device is disconnected.</p>
-<h4><a class="anchor" id="autotoc_md23"></a>
+<h4><a class="anchor" id="autotoc_md24"></a>
 When a Device is Connected</h4>
 <p >This connects a slot to the device tracker's <a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">AisDeviceTracker::newDeviceConnected</a> signal that provides the device name. Because we have the device name, we can create a device handler and do whatever a handler can do. In this slot example, we are creating a handler, assigning the previously created logic to this handler and then starting an experiment.</p>
 <div class="fragment"><div class="line">QObject::connect(tracker, &amp;<a class="code hl_signal" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff">AisDeviceTracker::newDeviceConnected</a>, &amp;app, [=](<span class="keyword">const</span> QString&amp; deviceName) {</div>
@@ -281,7 +281,7 @@ When a Device is Connected</h4>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> masterchannel = handler-&gt;setLinkedChannels({ 0, 1 }); <span class="comment">// this does two things, first links the given channels and second returns the masterchannel used to control the combined output.</span></div>
 <div class="line">handler-&gt;uploadExperimentToChannel(masterchannel, customExperiment);</div>
 <div class="line">handler-&gt;startUploadedExperiment(masterchannel);</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md24"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md25"></a>
 When a Device is Disconnected</h4>
 <p >The following code connects a slot to the device tracker's <a class="el" href="class_ais_device_tracker.html#a10daf47917dabe80b74b362e0a4416db" title="a signal to be emitted whenever a device has been disconnected.">AisDeviceTracker::deviceDisconnected</a> signal with the device name.</p>
 <div class="fragment"><div class="line">QObject::connect(tracker, &amp;<a class="code hl_signal" href="class_ais_device_tracker.html#a10daf47917dabe80b74b362e0a4416db">AisDeviceTracker::deviceDisconnected</a>, &amp;app, [=](<span class="keyword">const</span> QString&amp; deviceName) {</div>

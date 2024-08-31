@@ -11,6 +11,7 @@ var dir_dcba106d9258d0d70453000fc6947d17 =
     [ "AisDiffPulseVoltammetryElement.h", "_ais_diff_pulse_voltammetry_element_8h_source.html", null ],
     [ "AisEISGalvanostaticElement.h", "_ais_e_i_s_galvanostatic_element_8h_source.html", null ],
     [ "AisEISPotentiostaticElement.h", "_ais_e_i_s_potentiostatic_element_8h_source.html", null ],
+    [ "AisMottSchottkyElement.h", "_ais_mott_schottky_element_8h_source.html", null ],
     [ "AisNormalPulseVoltammetryElement.h", "_ais_normal_pulse_voltammetry_element_8h_source.html", null ],
     [ "AisOpenCircuitElement.h", "_ais_open_circuit_element_8h_source.html", null ],
     [ "AisSquareWaveVoltammetryElement.h", "_ais_square_wave_voltammetry_element_8h_source.html", null ],

@@ -27,6 +27,10 @@ var class_ais_error_code =
       [ "ExperimentAlreadyRun", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa19d8b2c3692c32811932b5ef059c2699", null ],
       [ "FailedToSetManualModeVoltageRange", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa8af152b0aa89377d47446d29bca4b418", null ],
       [ "FailedToSetManualModeConstantCurrent", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa0df9dcedc2de58bf1c5ab8652bd0791e", null ],
+      [ "FailedToSetManualModeInOCP", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aa194689be781a57acd7b19945c5230de8", null ],
+      [ "FailedToSetManualModeSamplingInterval", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aab822034bd61c06548c7952d21a6ae021", null ],
+      [ "FailedToSetIRComp", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa5c093ce8f9a4d934f5e93cbe11c91f1", null ],
+      [ "FailedToSetCompRange", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aabe6dfa2f59266cb8885f22689138b405", null ],
       [ "FailedRequest", "class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac8b0013063ccf0647d5d16bad1ece9b2", null ]
     ] ],
     [ "message", "class_ais_error_code.html#a25e4eef5129000305294ad761b9f2c5e", null ],

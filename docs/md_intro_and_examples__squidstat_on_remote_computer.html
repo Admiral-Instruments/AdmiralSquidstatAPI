@@ -95,10 +95,10 @@ $(document).ready(function(){initNavTree('md_intro_and_examples__squidstat_on_re
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="remotesquidstat"></a></p>
-<h3><a class="anchor" id="autotoc_md36"></a>
+<h3><a class="anchor" id="autotoc_md37"></a>
 Introduction</h3>
 <p >Although the Squidstat cannot directly communicate over a network, it is possible to create a simple server-client interface that can allow a remote computer to configure and run experiments over a network. In this example, we will set up a server and client via Python's socket library and run a predefined Open Circuit Potential experiment with a variable <code>duration</code> specified by a client. The server will be responsible for managing the Squidstat. When the experiment finishes, both the client and the server terminate. The full example can be found <a class="el" href="md_intro_and_examples__squidstat_on_remote_computer.html#full-example">at both the bottom of this page</a> and in the example folder of the API. <em>Note: This example assumes that the Squidstat is already running the appropriate firmware already and so it does not cover updating the firmware.</em> <a class="anchor" id="server-implementation"></a></p>
-<h3><a class="anchor" id="autotoc_md37"></a>
+<h3><a class="anchor" id="autotoc_md38"></a>
 Server Implementation</h3>
 <p >Toward the beginning of our server file, we have some definitions that you will need to change accordingly to match your settings: </p><div class="fragment"><div class="line"><span class="comment"># Define the server address and port</span></div>
 <div class="line">HOST = <span class="stringliteral">&#39;localhost&#39;</span></div>
@@ -235,7 +235,7 @@ Server Implementation</h3>
 <div class="line">listening_thread = threading.Thread(target=handle_client, args=(handler, client_socket))</div>
 <div class="line">listening_thread.start()</div>
 </div><!-- fragment --><p> We then open the server port, accept our client, and set up the QT connections. Our client listener <code>handle_client</code> is sent to execute on its own thread. <a class="anchor" id="client-implementation"></a></p>
-<h3><a class="anchor" id="autotoc_md38"></a>
+<h3><a class="anchor" id="autotoc_md39"></a>
 Client Implementation</h3>
 <p >In this section we will go over some of the functional aspects of the client.</p>
 <div class="fragment"><div class="line">SERVER_HOST = <span class="stringliteral">&quot;localhost&quot;</span></div>
@@ -281,9 +281,9 @@ Client Implementation</h3>
 <div class="line">    if(<span class="stringliteral">&quot;Experiment Completed: &quot;</span> <span class="keywordflow">in</span> data):</div>
 <div class="line">        <span class="keywordflow">break</span></div>
 </div><!-- fragment --><p> Finally, we start a loop that will listen to the server, which at this point will be transmitting the experiment data and the stop response. When we get the data we will simply print it, but this could be modified to any other data handling function. When we get the stop response we can break the loop which will terminate the program. <a class="anchor" id="full-example"></a></p>
-<h3><a class="anchor" id="autotoc_md39"></a>
+<h3><a class="anchor" id="autotoc_md40"></a>
 Full Example</h3>
-<h4><a class="anchor" id="autotoc_md40"></a>
+<h4><a class="anchor" id="autotoc_md41"></a>
 TCP_Server.py</h4>
 <div class="fragment"><div class="line"><span class="keyword">import</span> os</div>
 <div class="line"><span class="keyword">import</span> socket</div>
@@ -457,7 +457,7 @@ TCP_Server.py</h4>
 <div class="line"> </div>
 <div class="line"><span class="comment"># Start the QT event loop</span></div>
 <div class="line">app.exec_()</div>
-</div><!-- fragment --> <h4><a class="anchor" id="autotoc_md41"></a>
+</div><!-- fragment --> <h4><a class="anchor" id="autotoc_md42"></a>
 TCP_Client.py</h4>
 <div class="fragment"><div class="line"><span class="keyword">import</span> os</div>
 <div class="line"><span class="keyword">import</span> socket</div>

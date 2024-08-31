@@ -19,10 +19,11 @@ var searchData=
   ['aisexperiment_16',['AisExperiment',['../class_ais_experiment.html',1,'']]],
   ['aisexperimentnode_17',['AisExperimentNode',['../struct_ais_experiment_node.html',1,'']]],
   ['aisinstrumenthandler_18',['AisInstrumentHandler',['../class_ais_instrument_handler.html',1,'']]],
-  ['aisnormalpulsevoltammetryelement_19',['AisNormalPulseVoltammetryElement',['../class_ais_normal_pulse_voltammetry_element.html',1,'']]],
-  ['aisopencircuitelement_20',['AisOpenCircuitElement',['../class_ais_open_circuit_element.html',1,'']]],
-  ['aissquarewavevoltammetryelement_21',['AisSquareWaveVoltammetryElement',['../class_ais_square_wave_voltammetry_element.html',1,'']]],
-  ['aisstaircasepotentialvoltammetryelement_22',['AisStaircasePotentialVoltammetryElement',['../class_ais_staircase_potential_voltammetry_element.html',1,'']]],
-  ['aissteppedcurrentelement_23',['AisSteppedCurrentElement',['../class_ais_stepped_current_element.html',1,'']]],
-  ['aissteppedvoltageelement_24',['AisSteppedVoltageElement',['../class_ais_stepped_voltage_element.html',1,'']]]
+  ['aismottschottkyelement_19',['AisMottSchottkyElement',['../class_ais_mott_schottky_element.html',1,'']]],
+  ['aisnormalpulsevoltammetryelement_20',['AisNormalPulseVoltammetryElement',['../class_ais_normal_pulse_voltammetry_element.html',1,'']]],
+  ['aisopencircuitelement_21',['AisOpenCircuitElement',['../class_ais_open_circuit_element.html',1,'']]],
+  ['aissquarewavevoltammetryelement_22',['AisSquareWaveVoltammetryElement',['../class_ais_square_wave_voltammetry_element.html',1,'']]],
+  ['aisstaircasepotentialvoltammetryelement_23',['AisStaircasePotentialVoltammetryElement',['../class_ais_staircase_potential_voltammetry_element.html',1,'']]],
+  ['aissteppedcurrentelement_24',['AisSteppedCurrentElement',['../class_ais_stepped_current_element.html',1,'']]],
+  ['aissteppedvoltageelement_25',['AisSteppedVoltageElement',['../class_ais_stepped_voltage_element.html',1,'']]]
 ];

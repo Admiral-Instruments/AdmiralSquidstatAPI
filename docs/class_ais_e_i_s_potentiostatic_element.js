@@ -8,6 +8,8 @@ var class_ais_e_i_s_potentiostatic_element =
     [ "getEndFreq", "class_ais_e_i_s_potentiostatic_element.html#a5cdd503cf9c75a742d379759089bf4f5", null ],
     [ "getMinimumCycles", "class_ais_e_i_s_potentiostatic_element.html#a6b91c4bf82121513209c08f89160ffa8", null ],
     [ "getName", "class_ais_e_i_s_potentiostatic_element.html#ad05d1f67eee01d5f25e2653fef8fb022", null ],
+    [ "getQuietTime", "class_ais_e_i_s_potentiostatic_element.html#ac13dcfc97e156c7f620f51a57ab64b2f", null ],
+    [ "getQuietTimeSamplingInterval", "class_ais_e_i_s_potentiostatic_element.html#af89e5a5ab9f75bf5e9679f407d55218e", null ],
     [ "getStartFreq", "class_ais_e_i_s_potentiostatic_element.html#aa472fb0b25955f1d48d621aac0a91eab", null ],
     [ "getStepsPerDecade", "class_ais_e_i_s_potentiostatic_element.html#ab3e65ce655e63cfdbedb9e079d36c458", null ],
     [ "isBiasVoltageVsOCP", "class_ais_e_i_s_potentiostatic_element.html#a1c6e50f4378296e155799e54fe4f9de7", null ],
@@ -17,6 +19,8 @@ var class_ais_e_i_s_potentiostatic_element =
     [ "setBiasVoltageVsOCP", "class_ais_e_i_s_potentiostatic_element.html#aefca48d78f31f70566d0c6fb2cfe5753", null ],
     [ "setEndFreq", "class_ais_e_i_s_potentiostatic_element.html#a3018a553fc4c11c6bc963c1823c817a2", null ],
     [ "setMinimumCycles", "class_ais_e_i_s_potentiostatic_element.html#a07afeda14d056d124664f9a2f8a57b15", null ],
+    [ "setQuietTime", "class_ais_e_i_s_potentiostatic_element.html#ac8ca110b3226c89e33ee4433aede595e", null ],
+    [ "setQuietTimeSamplingInterval", "class_ais_e_i_s_potentiostatic_element.html#aac99c60c6ecaee35c2102766dddddb6b", null ],
     [ "setStartFreq", "class_ais_e_i_s_potentiostatic_element.html#ad628fdbc04bb61c5121c99d584c3bbb0", null ],
     [ "setStepsPerDecade", "class_ais_e_i_s_potentiostatic_element.html#afe1b7159ceecd1638598205811dc3a2d", null ]
 ];

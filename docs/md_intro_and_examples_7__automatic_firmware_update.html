@@ -95,10 +95,10 @@ $(document).ready(function(){initNavTree('md_intro_and_examples_7__automatic_fir
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="autofirmware"></a></p>
-<h3><a class="anchor" id="autotoc_md25"></a>
+<h3><a class="anchor" id="autotoc_md26"></a>
 Introduction</h3>
 <p >Normally, when introducing a new Squidstat or switching to a different version of the API, we recommend that the user runs the Firmware Update example which will ensure that all connected Squidstats are up to date. However, there may be reasons that a user wishes to only operate on a single Squidstat or to simply increase the portability of their own program and eliminate this step. This example will take you through one way to automatically update an out of date Squidstat and then start the experiment when the update finishes.</p>
-<h3><a class="anchor" id="autotoc_md26"></a>
+<h3><a class="anchor" id="autotoc_md27"></a>
 Implementation</h3>
 <p >For this example, rather than describing the program top to bottom, we will only be covering the relevant parts for making the firmware automatically update. We will also follow the program's logical flow, meaning we will be starting just before the QT application starts at the bottom of the code and then move to our signal definition in the middle.</p>
 <div class="fragment"><div class="line"><span class="comment">// Attempt to connect to the device just before starting the QT app.</span></div>
@@ -134,7 +134,7 @@ Implementation</h3>
 <div class="ttc" id="aclass_ais_error_code_html_aa1d7e88850560cfd6229469c60e3311aaeb42711ddc3e80059b824b01673e26cf"><div class="ttname"><a href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaeb42711ddc3e80059b824b01673e26cf">AisErrorCode::ConnectionFailed</a></div><div class="ttdeci">@ ConnectionFailed</div><div class="ttdef"><b>Definition:</b> AisErrorCode.h:21</div></div>
 </div><!-- fragment --><p> This is the crux of our automatic updating. We connect to our signal which will be sending us our firmware notifications. Each one is sent as a string by the API as the device is updating. We will print all of the messages, but the only relevant one to us is the one that contains the string "firmware is updated.". This will indicate that our firmware updating process is completed. At this step it is important to note that the API will not automatically re-establish connection with the device, so we will need to do that manually here using the same <code>tracker-&gt;connectToDeviceOnComPort(COMPORT);</code> call from earlier. It can take a little time for the updated Squidstat to return to its comport, so we use a wait time of 1 second, and try to reconnect 3 times. This should give the Squidstat enough time, but if you are getting the <code><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaeb42711ddc3e80059b824b01673e26cf">AisErrorCode::ConnectionFailed</a></code> error after the retries are exhausted you may wish to increase either the retry count or the sleep time. If the issue persists, ensure that the device is still on the expected comport. Once the device reconnects, the tracker will emit the <code><a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">AisDeviceTracker::newDeviceConnected</a></code> signal as it would if the firmware had been updated to begin with.</p>
 <p >The remainder of the program will function as it does for most of the other examples, starting a small experiment and running it to completion.</p>
-<h3><a class="anchor" id="autotoc_md27"></a>
+<h3><a class="anchor" id="autotoc_md28"></a>
 Full Example</h3>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;AisInstrumentHandler.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;AisDeviceTracker.h&quot;</span></div>

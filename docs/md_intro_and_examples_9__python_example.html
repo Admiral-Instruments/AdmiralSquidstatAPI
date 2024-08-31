@@ -95,10 +95,10 @@ $(document).ready(function(){initNavTree('md_intro_and_examples_9__python_exampl
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="pythonExample"></a></p>
-<h3><a class="anchor" id="autotoc_md28"></a>
+<h3><a class="anchor" id="autotoc_md29"></a>
 Introduction</h3>
 <p >The following example will help illustrate the use of the SquidstatPyLibrary with Python. SquidstatPyLibrary is currently supported on windows platform.</p>
-<h3><a class="anchor" id="autotoc_md29"></a>
+<h3><a class="anchor" id="autotoc_md30"></a>
 How To Use Squidstatlibrary with Python.</h3>
 <ol type="1">
 <li>To use the SquidstatPyLibrary library, you need to install Python version &gt;= 3.7 and &lt; 3.11.<ul>
@@ -119,9 +119,9 @@ How To Use Squidstatlibrary with Python.</h3>
 </ol>
 <p >The necessary Python library files are also located inside the <a href="https://github.com/Admiral-Instruments/AdmiralSquidstatAPI/tree/main/SquidstatLibrary/windows/pythonWrapper/Release">pythonWrapper</a> directory.</p>
 <p >Now We will go through an example of building and running an experiment.</p>
-<h3><a class="anchor" id="autotoc_md30"></a>
+<h3><a class="anchor" id="autotoc_md31"></a>
 Building a Custom Experiment with Python</h3>
-<h4><a class="anchor" id="autotoc_md31"></a>
+<h4><a class="anchor" id="autotoc_md32"></a>
 Import all the required basic modules from SquidstatPyLibrary.</h4>
 <div class="fragment"><div class="line"><span class="keyword">import</span> sys</div>
 <div class="line"><span class="keyword">import</span> struct</div>
@@ -134,12 +134,12 @@ Import all the required basic modules from SquidstatPyLibrary.</h4>
 <div class="line"><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisErrorCode</div>
 <div class="line"><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisExperiment</div>
 <div class="line"><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisInstrumentHandler</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md32"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md33"></a>
 Import experiment modules depeneding on the requirement.</h4>
 <div class="fragment"><div class="line">from SquidstatPyLibrary import AisConstantPotElement</div>
 <div class="line">from SquidstatPyLibrary import AisEISPotentiostaticElement</div>
 <div class="line">from SquidstatPyLibrary import AisConstantCurrentElement</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md33"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md34"></a>
 Create the custom experiment.</h4>
 <div class="fragment"><div class="line">experiment = AisExperiment();</div>
 <div class="line">cvElement = AisConstantPotElement(5, 1, 10)</div>
@@ -157,7 +157,7 @@ Create the custom experiment.</h4>
 <div class="line">experiment.appendElement(cvElement,1)</div>
 <div class="line">experiment.appendSubExperiment(subExperiment, 2)  # Here we repeating sub experiment 2 times</div>
 <div class="line">experiment.appendElement(eisElement,1)</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md34"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md35"></a>
 Get the Instrument Handler and connect the required signal to receive data from the Device.</h4>
 <div class="fragment"><div class="line">app = QApplication()</div>
 <div class="line"> </div>
@@ -178,7 +178,7 @@ Get the Instrument Handler and connect the required signal to receive data from 
 <div class="line">handler.startUploadedExperiment(0)</div>
 <div class="line"> </div>
 <div class="line">sys.exit(app.exec_())</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md35"></a>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md36"></a>
 Full Example</h4>
 <p >Here is everything put together. You can also find this in the pythonWrapper directory.</p>
 <div class="fragment"><div class="line">import sys</div>

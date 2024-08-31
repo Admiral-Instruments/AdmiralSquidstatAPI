@@ -17,6 +17,7 @@ var hierarchy =
     [ "AisErrorCode", "class_ais_error_code.html", null ],
     [ "AisExperiment", "class_ais_experiment.html", null ],
     [ "AisExperimentNode", "struct_ais_experiment_node.html", null ],
+    [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html", null ],
     [ "AisNormalPulseVoltammetryElement", "class_ais_normal_pulse_voltammetry_element.html", null ],
     [ "AisOpenCircuitElement", "class_ais_open_circuit_element.html", null ],
     [ "AisSquareWaveVoltammetryElement", "class_ais_square_wave_voltammetry_element.html", null ],

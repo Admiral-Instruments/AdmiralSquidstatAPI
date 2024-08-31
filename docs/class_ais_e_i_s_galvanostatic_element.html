@@ -118,6 +118,18 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="class_ais_e_i_s_galvanostatic_element.html">AisEISGalvanostaticElement</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_ais_e_i_s_galvanostatic_element.html">AisEISGalvanostaticElement</a> &amp;)</td></tr>
 <tr class="memdesc:a2737de74f424f9d4d561d166c1bfcb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload equal to operator for the <a class="el" href="class_ais_e_i_s_galvanostatic_element.html" title="This experiment records the complex impedance of the experimental cell in galvanostatic mode,...">AisEISGalvanostaticElement</a> object. <br /></td></tr>
 <tr class="separator:a2737de74f424f9d4d561d166c1bfcb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e6989812654a84b688bd322495c37c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_e_i_s_galvanostatic_element.html#a35e6989812654a84b688bd322495c37c">getQuietTime</a> () const</td></tr>
+<tr class="memdesc:a35e6989812654a84b688bd322495c37c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the quiet time duration.  <a href="class_ais_e_i_s_galvanostatic_element.html#a35e6989812654a84b688bd322495c37c">More...</a><br /></td></tr>
+<tr class="separator:a35e6989812654a84b688bd322495c37c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ca107fefa9c445952af07d846dbade"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_e_i_s_galvanostatic_element.html#a67ca107fefa9c445952af07d846dbade">setQuietTime</a> (double quietTime)</td></tr>
+<tr class="memdesc:a67ca107fefa9c445952af07d846dbade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the quiet time duration.  <a href="class_ais_e_i_s_galvanostatic_element.html#a67ca107fefa9c445952af07d846dbade">More...</a><br /></td></tr>
+<tr class="separator:a67ca107fefa9c445952af07d846dbade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd089ef27fa3503ab576ee268667cd39"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_e_i_s_galvanostatic_element.html#abd089ef27fa3503ab576ee268667cd39">getQuietTimeSamplingInterval</a> () const</td></tr>
+<tr class="memdesc:abd089ef27fa3503ab576ee268667cd39"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the quiet time sampling interval.  <a href="class_ais_e_i_s_galvanostatic_element.html#abd089ef27fa3503ab576ee268667cd39">More...</a><br /></td></tr>
+<tr class="separator:abd089ef27fa3503ab576ee268667cd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57413f07cf1df06b73df698f9890c8d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_e_i_s_galvanostatic_element.html#a57413f07cf1df06b73df698f9890c8d3">setQuietTimeSamplingInterval</a> (double quietTimeSamplingInterval)</td></tr>
+<tr class="memdesc:a57413f07cf1df06b73df698f9890c8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the quiet time sampling interval.  <a href="class_ais_e_i_s_galvanostatic_element.html#a57413f07cf1df06b73df698f9890c8d3">More...</a><br /></td></tr>
+<tr class="separator:a57413f07cf1df06b73df698f9890c8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afff62d9c8c4032ee20e62ff37fef4d9e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_e_i_s_galvanostatic_element.html#afff62d9c8c4032ee20e62ff37fef4d9e">getName</a> () const override</td></tr>
 <tr class="memdesc:afff62d9c8c4032ee20e62ff37fef4d9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the name of the element.  <a href="class_ais_e_i_s_galvanostatic_element.html#afff62d9c8c4032ee20e62ff37fef4d9e">More...</a><br /></td></tr>
 <tr class="separator:afff62d9c8c4032ee20e62ff37fef4d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -300,8 +312,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>get a list of applicable categories of the element. </p>
-<dl class="section return"><dt>Returns</dt><dd>A list of applicable categories: ("Galvanostatic Control", "Impedance Methods", "Basic Experiments").</dd></dl>
-<p>get a list of applicable categories of the element. </p><dl class="section return"><dt>Returns</dt><dd>A list of applicable categories: ("Galvanostatic Control", "Impedance Methods", "Basic Experiments"). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A list of applicable categories: ("Galvanostatic Control", "Impedance Methods", "Basic Experiments"). </dd></dl>
 
 </div>
 </div>
@@ -370,6 +381,46 @@ Public Member Functions</h2></td></tr>
 
 <p>get the name of the element. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the element: "Galvanostatic EIS". </dd></dl>
+
+</div>
+</div>
+<a id="a35e6989812654a84b688bd322495c37c" name="a35e6989812654a84b688bd322495c37c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e6989812654a84b688bd322495c37c">&#9670;&#160;</a></span>getQuietTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AisEISGalvanostaticElement::getQuietTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the quiet time duration. </p>
+<dl class="section return"><dt>Returns</dt><dd>The quiet time duration in seconds. </dd></dl>
+
+</div>
+</div>
+<a id="abd089ef27fa3503ab576ee268667cd39" name="abd089ef27fa3503ab576ee268667cd39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd089ef27fa3503ab576ee268667cd39">&#9670;&#160;</a></span>getQuietTimeSamplingInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double AisEISGalvanostaticElement::getQuietTimeSamplingInterval </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets the quiet time sampling interval. </p>
+<dl class="section return"><dt>Returns</dt><dd>samplingInterval The quiet time sampling interval to set in seconds. </dd></dl>
 
 </div>
 </div>
@@ -511,6 +562,58 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">numberOfCycle</td><td>set number of cycles Sampled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a67ca107fefa9c445952af07d846dbade" name="a67ca107fefa9c445952af07d846dbade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67ca107fefa9c445952af07d846dbade">&#9670;&#160;</a></span>setQuietTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisEISGalvanostaticElement::setQuietTime </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>quietTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the quiet time duration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quietTime</td><td>The quiet time duration to set in seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a57413f07cf1df06b73df698f9890c8d3" name="a57413f07cf1df06b73df698f9890c8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57413f07cf1df06b73df698f9890c8d3">&#9670;&#160;</a></span>setQuietTimeSamplingInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisEISGalvanostaticElement::setQuietTimeSamplingInterval </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>quietTimeSamplingInterval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the quiet time sampling interval. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quietTimeSamplingInterval</td><td>The quiet time sampling interval to set in seconds. </td></tr>
   </table>
   </dd>
 </dl>

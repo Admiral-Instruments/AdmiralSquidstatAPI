@@ -129,6 +129,20 @@ Clone API from Git</h3>
 </div><!-- fragment --><p >If you check in your directory, you will find a new directory named "AdmiralSquidstatAPI" which contains the Admiral Instruments API.</p>
 <p ><img src="API_Directory_structure.png" alt="API Bundler Directory Structure" class="inline"/> </p>
 <h3><a class="anchor" id="autotoc_md6"></a>
+Mac ARM64 (Apple Silicon)</h3>
+<p >If the device you are on is a newer Mac with an ARM64 processor (M1, M2, etc), you will need to do an additional set of steps to include the Squidstat API.</p><ol type="1">
+<li>Open a new Finder window in the cloned repository and navigate to <code>AdmiralSquidstatAPI/SquidstatLibrary/</code><ul>
+<li>In this folder you should see <code>Linux</code>, <code>mac</code>, <code>windows</code>, and <code>mac.tar.gz</code>.</li>
+</ul>
+</li>
+<li>Delete the <code>mac</code> directory. It contains the library for Intel based mac processors.</li>
+<li>Extract the tar file by double clicking <code>mac.tar.gz</code> in the Finder window.<ul>
+<li>You should see a new <code>mac/</code> directory get automatically created.</li>
+</ul>
+</li>
+<li>At this point your build environment is set up, and you can proceed with the next steps as normal.</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md7"></a>
 Cmake Installtion</h3>
 <ol type="1">
 <li>To utilize the CMakeLists.txt file, you need to install CMake. You can download CMake from <a href="https://cmake.org/">here</a>.</li>
@@ -136,7 +150,7 @@ Cmake Installtion</h3>
 <li>To verify if Cmake is installed correctly, type <code>cmake</code> in the command prompt and press Enter.</li>
 <li>Once the installation is complete, start the build.</li>
 </ol>
-<h3><a class="anchor" id="autotoc_md7"></a>
+<h3><a class="anchor" id="autotoc_md8"></a>
 Build project</h3>
 <ol type="1">
 <li>Go to the directory using cd <code>AdmiralAPI</code>.</li>

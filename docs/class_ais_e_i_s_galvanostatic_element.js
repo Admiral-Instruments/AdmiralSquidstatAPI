@@ -8,6 +8,8 @@ var class_ais_e_i_s_galvanostatic_element =
     [ "getEndFreq", "class_ais_e_i_s_galvanostatic_element.html#a81f0779dd6351bb31f8680a90c10640e", null ],
     [ "getMinimumCycles", "class_ais_e_i_s_galvanostatic_element.html#ab2e39d217bf0d833ba468baebc2d2526", null ],
     [ "getName", "class_ais_e_i_s_galvanostatic_element.html#afff62d9c8c4032ee20e62ff37fef4d9e", null ],
+    [ "getQuietTime", "class_ais_e_i_s_galvanostatic_element.html#a35e6989812654a84b688bd322495c37c", null ],
+    [ "getQuietTimeSamplingInterval", "class_ais_e_i_s_galvanostatic_element.html#abd089ef27fa3503ab576ee268667cd39", null ],
     [ "getStartFreq", "class_ais_e_i_s_galvanostatic_element.html#ad39ea737beab6875442631fb251d2ee0", null ],
     [ "getStepsPerDecade", "class_ais_e_i_s_galvanostatic_element.html#a3f438508d86043dde874d409fa7759da", null ],
     [ "operator=", "class_ais_e_i_s_galvanostatic_element.html#a2737de74f424f9d4d561d166c1bfcb07", null ],
@@ -15,6 +17,8 @@ var class_ais_e_i_s_galvanostatic_element =
     [ "setBiasCurrent", "class_ais_e_i_s_galvanostatic_element.html#acea4b76a9379ab58f8d7c04c80ceec95", null ],
     [ "setEndFreq", "class_ais_e_i_s_galvanostatic_element.html#ab929315c6b0bbe9f63adbf3228d09102", null ],
     [ "setMinimumCycles", "class_ais_e_i_s_galvanostatic_element.html#ad5b4e861210526f67b9131588116be08", null ],
+    [ "setQuietTime", "class_ais_e_i_s_galvanostatic_element.html#a67ca107fefa9c445952af07d846dbade", null ],
+    [ "setQuietTimeSamplingInterval", "class_ais_e_i_s_galvanostatic_element.html#a57413f07cf1df06b73df698f9890c8d3", null ],
     [ "setStartFreq", "class_ais_e_i_s_galvanostatic_element.html#a8ee3bd1379dd3b2416c80553527fe369", null ],
     [ "setStepsPerDecade", "class_ais_e_i_s_galvanostatic_element.html#a49ab675dd1ceebe96809a9d9a602dfbf", null ]
 ];

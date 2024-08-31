@@ -19,6 +19,7 @@ var annotated_dup =
     [ "AisExperiment", "class_ais_experiment.html", "class_ais_experiment" ],
     [ "AisExperimentNode", "struct_ais_experiment_node.html", "struct_ais_experiment_node" ],
     [ "AisInstrumentHandler", "class_ais_instrument_handler.html", "class_ais_instrument_handler" ],
+    [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html", "class_ais_mott_schottky_element" ],
     [ "AisNormalPulseVoltammetryElement", "class_ais_normal_pulse_voltammetry_element.html", "class_ais_normal_pulse_voltammetry_element" ],
     [ "AisOpenCircuitElement", "class_ais_open_circuit_element.html", "class_ais_open_circuit_element" ],
     [ "AisSquareWaveVoltammetryElement", "class_ais_square_wave_voltammetry_element.html", "class_ais_square_wave_voltammetry_element" ],
