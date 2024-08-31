@@ -45,6 +45,30 @@ public:
     ~AisEISGalvanostaticElement() override;
 
     /**
+    * @brief Gets the quiet time duration
+    * @return The quiet time duration in seconds.
+    */
+    double getQuietTime() const;
+
+    /**
+    * @brief Sets the quiet time duration.
+    * @param quietTime The quiet time duration to set in seconds.
+    */
+    void setQuietTime(double quietTime);
+
+    /**
+     * @brief gets the quiet time sampling interval.
+     * @return samplingInterval The quiet time sampling interval to set in seconds.
+     */
+    double getQuietTimeSamplingInterval() const;
+
+    /**
+    * @brief Sets the quiet time sampling interval.
+    * @param quietTimeSamplingInterval The quiet time sampling interval to set in seconds.
+    */
+    void setQuietTimeSamplingInterval(double quietTimeSamplingInterval);
+
+    /**
      * @brief get the name of the element.
      * @return The name of the element: "Galvanostatic EIS".
     */
@@ -54,12 +78,8 @@ public:
      * @brief get a list of applicable categories of the element.
      * @return A list of applicable categories: ("Galvanostatic Control", "Impedance Methods", "Basic Experiments").
     */
-
-    /**
-     * @brief get a list of applicable categories of the element.
-     * @return A list of applicable categories: ("Galvanostatic Control", "Impedance Methods", "Basic Experiments").
-    */
     QStringList getCategory() const override;
+
 
     /**
      * @brief get the value set for the current starting frequency

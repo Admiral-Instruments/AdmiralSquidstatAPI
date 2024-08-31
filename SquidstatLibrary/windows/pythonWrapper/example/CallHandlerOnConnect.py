@@ -115,7 +115,7 @@ def onNewDeviceConnected(deviceName):
 
         # start desired experiment list
         # print error if there is an issue
-        handler.startUploadedExperiment(0)
+        error = handler.startUploadedExperiment(0)
         if error:
             print(error.message())
 

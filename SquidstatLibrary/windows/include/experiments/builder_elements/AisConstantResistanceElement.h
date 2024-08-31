@@ -87,6 +87,87 @@ public:
      * @param minVoltage the minimum voltage value in volts at which the experiment will stop.
     */
     void setMinVoltage(double minVoltage);
+    
+    /**
+     * @brief tells whether the specified minimum voltage is set against the open-circuit voltage or the reference terminal.
+     * @return true if the specified voltage is set against the open-circuit minimum voltage and false if it is set against the reference terminal.
+     * @see setVsOcp
+    */
+    bool isMinimumVoltageVsOCP() const;
+
+    /**
+     * @brief set whether to reference the specified minimum voltage against the open-circuit voltage or the reference terminal.
+     *
+     * The reference terminal is for you to connect to any reference point you like. Connect it to the working electrode to reference ground.
+     * @param vsOCP true to set the specified minimum voltage to reference the open-circuit voltage and false to set against the reference terminal.
+    */
+    void setMinimumVoltageVsOCP(bool vsOCP);
+
+    /**
+     * @brief get the value set maximum for the voltage in volts.
+    * @return the value set for the maximum voltage in volts.
+    * @note this is an optional parameter. If no value has been set, the default value is positive infinity
+    */
+    double getMaxVoltage() const;
+
+    /**
+     * @brief set a maximum voltage to stop the experiment.
+     *
+     * The is an <strong>optional</strong> condition.
+     * If nothing is set, then the experiment will not stop based on an upper-limit voltage value.
+     * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value.
+     * @param minVoltage the maximum voltage value in volts at which the experiment will stop.
+    */
+    void setMaxVoltage(double maxVoltage);
+
+    /**
+     * @brief tells whether the specified maximum voltage is set against the open-circuit voltage or the reference terminal.
+     * @return true if the specified maximum voltage is set against the open-circuit voltage and false if it is set against the reference terminal.
+     * @see setVsOcp
+    */
+    bool isMaximumVoltageVsOCP() const;
+
+    /**
+     * @brief set whether to reference the specified maximum voltage against the open-circuit voltage or the reference terminal.
+     *
+     * The reference terminal is for you to connect to any reference point you like. Connect it to the working electrode to reference ground.
+     * @param vsOCP true to set the specified maximum voltage to reference the open-circuit voltage and false to set against the reference terminal.
+    */
+    void setMaximumVoltageVsOCP(bool vsOCP);
+
+    /**
+     * @brief get the value set maximum for the current in amps.
+    * @return the value set for the maximum current in amps.
+    * @note this is an optional parameter. If no value has been set, the default value is positive infinity.
+    */
+    double getMaxCurrent() const;
+
+    /**
+     * @brief set a maximum current to stop the experiment.
+     *
+     * The is an <strong>optional</strong> condition.
+     * If nothing is set, then the experiment will not stop based on an uper-limit Current value.
+     * If a maximum current is set, the experiment will continue to run as long as the measured current is above that value.
+     * @param maxCurrent the maximum current value in amps at which the experiment will stop.
+    */
+    void setMaxCurrent(double maxCurrent);
+
+    /**
+     * @brief get the value set minimum for the current in amps.
+    * @return the value set for the minimum current in amps.
+    * @note this is an optional parameter. If no value has been set, the default value is 0.
+    */
+    double getMinCurrent() const;
+
+    /**
+     * @brief set a minimum current to stop the experiment.
+     *
+     * The is an <strong>optional</strong> condition.
+     * If nothing is set, then the experiment will not stop based on an lower-limit Current value.
+     * If a minimum current is set, the experiment will continue to run as long as the measured current is below that value.
+     * @param maxCurrent the minimum current value in amps at which the experiment will stop.
+    */
+    void setMinCurrent(double maxCurrent);
 
     /**
      * @brief get the maximum duration set for the experiment.

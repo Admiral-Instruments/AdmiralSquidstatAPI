@@ -65,6 +65,30 @@ public:
     QStringList getCategory() const override;
 
     /**
+    * @brief Gets the quiet time duration
+    * @return The quiet time duration in seconds.
+    */
+    double getQuietTime() const;
+
+    /**
+    * @brief Sets the quiet time duration.
+    * @param quietTime The quiet time duration to set in seconds.
+    */
+    void setQuietTime(double quietTime);
+
+    /**
+     * @brief gets the quiet time sampling interval.
+     * @return samplingInterval The quiet time sampling interval to set in seconds.
+     */
+    double getQuietTimeSamplingInterval() const;
+
+    /**
+    * @brief Sets the quiet time sampling interval.
+    * @param quietTimeSamplingInterval The quiet time sampling interval to set in seconds.
+    */
+    void setQuietTimeSamplingInterval(double quietTimeSamplingInterval);
+
+    /**
      * @brief Gets the starting voltage.
      * @return The starting voltage in volts.
      */
@@ -218,6 +242,18 @@ public:
      * @param approxMaxCurrent The approximate maximum current to set.
      */
     void setApproxMaxCurrent(double approxMaxCurrent);
+
+    /**
+     * @brief get the value set for the number of cycles
+     * @return the number of cycles set.
+    */
+    double getNumberOfCycles();
+
+    /**
+     * @brief set the number of cycles to oscillate between the first voltage-limit and the second voltage-limit.
+     * @param cycles the number of cycles to set
+    */
+    void setNumberOfCycles(int cycles);
 
 private:
     std::shared_ptr<StaircasePotentialVoltammetryElement> m_dataDerived; ///< Shared pointer to the StaircasePotentialVoltammetryElement data.

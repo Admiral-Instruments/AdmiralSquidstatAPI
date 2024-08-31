@@ -1,6 +1,8 @@
 #ifndef SQUIDSTATLIBRARY_AISDATAPOINTS_H
 #define SQUIDSTATLIBRARY_AISDATAPOINTS_H
 
+#include <qstring.h>
+
 /**
  * @brief a structure containing DC data information.
 */
@@ -120,6 +122,12 @@ struct AisExperimentNode {
      * @brief this number is the order of the step within the element.
     */
     int substepNumber;
+
+
+    /**
+     * @brief this number is cycle within the element.
+    */
+    int cycle;
 };
 
 #endif //SQUIDSTATLIBRARY_AISDATAPOINTS_H

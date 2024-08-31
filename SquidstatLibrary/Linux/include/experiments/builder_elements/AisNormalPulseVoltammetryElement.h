@@ -37,12 +37,12 @@ public:
         double pulseWidth,
         double pulsePeriod);
     /**
-* @brief copy constructor for the AisNormalPulseVoltammetryElement object.
-*/
+    * @brief copy constructor for the AisNormalPulseVoltammetryElement object.
+    */
     explicit AisNormalPulseVoltammetryElement(const AisNormalPulseVoltammetryElement&);
     /**
-* @brief overload equal to operator for the AisNormalPulseVoltammetryElement object.
-*/
+    * @brief overload equal to operator for the AisNormalPulseVoltammetryElement object.
+    */
     AisNormalPulseVoltammetryElement& operator=(const AisNormalPulseVoltammetryElement&);
 
     ~AisNormalPulseVoltammetryElement() override;
@@ -58,6 +58,30 @@ public:
      * @return A list of applicable categories: ("Potentiostatic Control", "Basic Voltammetry", "Pulse Voltammetry").
     */
     QStringList getCategory() const override;
+
+    /**
+    * @brief Gets the quiet time duration
+    * @return The quiet time duration in seconds.
+    */
+    double getQuietTime() const;
+
+    /**
+    * @brief Sets the quiet time duration.
+    * @param quietTime The quiet time duration to set in seconds.
+    */
+    void setQuietTime(double quietTime);
+
+    /**
+     * @brief gets the quiet time sampling interval.
+     * @return quiet time The quiet time sampling interval to set in seconds.
+     */
+    double getQuietTimeSamplingInterval() const;
+
+    /**
+    * @brief Sets the quiet time sampling interval.
+    * @param quietTimeSamplingInterval The quiet time sampling interval to set in seconds.
+    */
+    void setQuietTimeSamplingInterval(double quietTimeSamplingInterval);
 
     /**
      * @brief get the value set for the start voltage.
@@ -195,15 +219,22 @@ public:
     */
     void setApproxMaxCurrent(double approxMaxCurrent);
 
+    /**
+     * @brief Get the value set for the alpha factor
+     *
+     * @return The value for the alpha factor is represented as a percent between 0 and 100.
+     * @note If nothing is set, this function will return a default value of 75.
+    */
+    double getAlphaFactor();
     
     /**
-    * @brief alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
+    * @brief alpha factor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
     *
     * The is an <strong>optional</strong> parameter.
     * If nothing is set, the device will use the default value of 75.
-    * @param alphafactor the value for the alphafactor ranges from 0 to 100.
+    * @param alphaFactor the value for the alphaFactor ranges from 0 to 100.
    */
-    void setAlphaFactor(double alphafactor);
+    void setAlphaFactor(double alphaFactor);
 
 private:
     std::shared_ptr<NormalPulseVoltammetryElement> m_dataDerived;

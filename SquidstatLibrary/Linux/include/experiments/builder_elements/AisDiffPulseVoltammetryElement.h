@@ -59,12 +59,31 @@ public:
      * @brief get a list of applicable categories of the element.
      * @return A list of applicable categories: ("Potentiostatic Control", "Basic Voltammetry", "Pulse Voltammetry").
     */
+    QStringList getCategory() const override;
 
     /**
-     * @brief get a list of applicable categories of the element.
-     * @return A list of applicable categories: ("Potentiostatic Control", "Basic Voltammetry", "Pulse Voltammetry").
+    * @brief Gets the quiet time duration
+    * @return The quiet time duration in seconds.
     */
-    QStringList getCategory() const override;
+    double getQuietTime() const;
+
+    /**
+    * @brief Sets the quiet time duration.
+    * @param quietTime The quiet time duration to set in seconds.
+    */
+    void setQuietTime(double quietTime);
+
+    /**
+     * @brief gets the quiet time sampling interval.
+     * @return samplingInterval The quiet time sampling interval to set in seconds.
+     */
+    double getQuietTimeSamplingInterval() const;
+
+    /**
+    * @brief Sets the quiet time sampling interval.
+    * @param quietTimeSamplingInterval The quiet time sampling interval to set in seconds.
+    */
+    void setQuietTimeSamplingInterval(double quietTimeSamplingInterval);
 
     /**
      * @brief get the value set for the start voltage.
@@ -216,16 +235,25 @@ public:
      * If nothing is set, the device will auto-select the current range.
      * @param approxMaxCurrent the value for the maximum current expected in Amps.
     */
+
     void setApproxMaxCurrent(double approxMaxCurrent);
 
     /**
-    * @brief alphafactor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
+     * @brief Get the value set for the alpha factor
+     *
+     * @return The value for the alpha factor is represented as a percent between 0 and 100.
+     * @note If nothing is set, this function will return a default value of 75.
+    */
+    double getAlphaFactor();
+
+    /**
+    * @brief alpha factor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
     *
     * The is an <strong>optional</strong> parameter.
     * If nothing is set, the device will use the default value of 75.
-    * @param alphafactor the value for the alphafactor ranges from 0 to 100.
+    * @param alphaFactor the value for the alphaFactor ranges from 0 to 100.
    */
-    void setAlphaFactor(double alphafactor);
+    void setAlphaFactor(double alphaFactor);
 
 private:
     std::shared_ptr<DiffPulseVoltammetryElement> m_dataDerived;

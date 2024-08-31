@@ -416,6 +416,7 @@ public:
      * - AisErrorCode::DeviceNotFound
      * - AisErrorCode::InvalidChannel
      * - AisErrorCode::DeviceCommunicationFailed
+     * - AisErrorCode::FailedToSetManualModeConstantCurrent
     */
     AisErrorCode setManualModeConstantCurrent(uint8_t channel, double value) const;
 

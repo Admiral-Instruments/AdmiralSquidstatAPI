@@ -57,6 +57,30 @@ public:
     QStringList getCategory() const override;
 
     /**
+    * @brief Gets the quiet time duration
+    * @return The quiet time duration in seconds.
+    */
+    double getQuietTime() const;
+
+    /**
+    * @brief Sets the quiet time duration.
+    * @param quietTime The quiet time duration to set in seconds.
+    */
+    void setQuietTime(double quietTime);
+
+    /**
+     * @brief gets the quiet time sampling interval.
+     * @return samplingInterval The quiet time sampling interval to set in seconds.
+     */
+    double getQuietTimeSamplingInterval() const;
+
+    /**
+    * @brief Sets the quiet time sampling interval.
+    * @param quietTimeSamplingInterval The quiet time sampling interval to set in seconds.
+    */
+    void setQuietTimeSamplingInterval(double quietTimeSamplingInterval);
+
+    /**
      * @brief get the value set for the voltage starting frequency
      * @return the value set for the start frequency in Hz
     */

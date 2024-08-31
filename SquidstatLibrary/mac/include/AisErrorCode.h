@@ -46,7 +46,11 @@ public:
         ExperimentAlreadyRun = 108, /*!< indicates that resuming the experiment failed because an experiment is already running.*/
         FailedToSetManualModeVoltageRange = 109, /* !< indicates failure to set manual mode voltage range due to a possible communication failure with the device.*/
         FailedToSetManualModeConstantCurrent = 110, /*!< indicates failure to set manual mode constant current due to a possible communication failure with the device.*/
-   
+        FailedToSetManualModeInOCP = 111, /*!< indicates failure of setting manual mode in open circuit mode for possible communication failure with the device.*/
+        FailedToSetManualModeSamplingInterval = 112, /*!< indicates failure of setting manual mode sampling interval. possible communication failure with the device.*/
+        FailedToSetIRComp = 113, /*!< indicates failure of setting IR Compensation. Possible communication failure with the device.*/
+        FailedToSetCompRange = 114, /*!< indicates failure of setting Compensation Range. Possible communication failure with the device.*/
+
         FailedRequest = 254 /* !< indicates a failed request to the device. */
     };
 
