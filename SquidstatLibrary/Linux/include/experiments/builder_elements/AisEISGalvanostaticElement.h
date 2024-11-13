@@ -32,41 +32,19 @@ public:
         double endFrequency,
         double stepsPerDecade,
         double currentBias,
-        double currentAamplitude);
+        double currentAmplitude);
+
     /**
-  * @brief copy constructor for the AisEISGalvanostaticElement object.
- */
+    * @brief copy constructor for the AisEISGalvanostaticElement object.
+    */
     explicit AisEISGalvanostaticElement(const AisEISGalvanostaticElement&);
+
     /**
-* @brief overload equal to operator for the AisEISGalvanostaticElement object.
-*/
+    * @brief overload equal to operator for the AisEISGalvanostaticElement object.
+    */
     AisEISGalvanostaticElement& operator=(const AisEISGalvanostaticElement&);
 
     ~AisEISGalvanostaticElement() override;
-
-    /**
-    * @brief Gets the quiet time duration
-    * @return The quiet time duration in seconds.
-    */
-    double getQuietTime() const;
-
-    /**
-    * @brief Sets the quiet time duration.
-    * @param quietTime The quiet time duration to set in seconds.
-    */
-    void setQuietTime(double quietTime);
-
-    /**
-     * @brief gets the quiet time sampling interval.
-     * @return samplingInterval The quiet time sampling interval to set in seconds.
-     */
-    double getQuietTimeSamplingInterval() const;
-
-    /**
-    * @brief Sets the quiet time sampling interval.
-    * @param quietTimeSamplingInterval The quiet time sampling interval to set in seconds.
-    */
-    void setQuietTimeSamplingInterval(double quietTimeSamplingInterval);
 
     /**
      * @brief get the name of the element.
@@ -80,6 +58,29 @@ public:
     */
     QStringList getCategory() const override;
 
+    /**
+     * @brief Gets the quiet time duration
+     * @return The quiet time duration in seconds.
+     */
+    double getQuietTime() const;
+
+    /**
+     * @brief Sets the quiet time duration.
+     * @param quietTime The quiet time duration to set in seconds.
+     */
+    void setQuietTime(double quietTime);
+
+    /**
+     * @brief gets the quiet time sampling interval.
+     * @return samplingInterval The quiet time sampling interval to set in seconds.
+     */
+    double getQuietTimeSamplingInterval() const;
+
+    /**
+     * @brief Sets the quiet time sampling interval.
+     * @param quietTimeSamplingInterval The quiet time sampling interval to set in seconds.
+     */
+    void setQuietTimeSamplingInterval(double quietTimeSamplingInterval);
 
     /**
      * @brief get the value set for the current starting frequency
@@ -142,16 +143,16 @@ public:
     void setAmplitude(double amplitude);
 
     /**
-     * @brief set the minimum number of period of applied sinusoidal current at each frequency.
-     * @param numberOfCycle set number of cycles Sampled.
+     * @brief get the minimum number of periods of applied sinusoidal current to sample at each frequency.
+     * @return get number of cycles to sample at each frequency.
     */
-    void setMinimumCycles(int numberOfCycle);
+    unsigned int getMinimumCycles() const;
 
     /**
-     * @brief the value to setted for mimimum number of cycle Sampled.
-     * @return the value set for the minimum number of cycles.
+     * @brief set the minimum number of periods of applied sinusoidal current to sample at each frequency.
+     * @param numberOfCycle number of cycles to sample at each frequency.
     */
-    int getMinimumCycles() const;
+    void setMinimumCycles(unsigned int numberOfCycle);
 
 private:
     std::shared_ptr<EISGalvanostaticElement> m_dataDerived;

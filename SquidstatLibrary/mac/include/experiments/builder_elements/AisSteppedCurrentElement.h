@@ -105,6 +105,7 @@ public:
     * @brief Sets the size of each current step in the stepped experiment.
     *
     * @param iStep The size of each current step in amperes.
+    * @note Regardless of iStep's sign, the device will determine the step direction based on the start and end current.
     */
     void setStepSize(double iStep);
 

@@ -147,7 +147,7 @@ public:
      *
      * The is an <strong>optional</strong> parameter.
      * If nothing is set, the device will auto-select the voltage range.
-     * @param approxMaxVoltage the value for the maximum current expected in V.
+     * @param approxMaxVoltage the value for the maximum voltage expected in V.
     */
     void setApproxMaxVoltage(double approxMaxVoltage);
 

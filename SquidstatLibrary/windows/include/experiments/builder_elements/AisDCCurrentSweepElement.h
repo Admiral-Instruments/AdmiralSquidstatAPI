@@ -169,7 +169,7 @@ public:
      * @return The value for the alpha factor is represented as a percent between 0 and 100.
      * @note If nothing is set, this function will return a default value of 75.
     */
-    double getAlphaFactor();
+    double getAlphaFactor() const;
 
     /**
     * @brief alpha factor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.

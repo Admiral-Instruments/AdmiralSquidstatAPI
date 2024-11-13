@@ -247,13 +247,13 @@ public:
      * @brief get the value set for the number of cycles
      * @return the number of cycles set.
     */
-    double getNumberOfCycles();
+    unsigned int getNumberOfCycles();
 
     /**
      * @brief set the number of cycles to oscillate between the first voltage-limit and the second voltage-limit.
      * @param cycles the number of cycles to set
     */
-    void setNumberOfCycles(int cycles);
+    void setNumberOfCycles(unsigned int cycles);
 
 private:
     std::shared_ptr<StaircasePotentialVoltammetryElement> m_dataDerived; ///< Shared pointer to the StaircasePotentialVoltammetryElement data.

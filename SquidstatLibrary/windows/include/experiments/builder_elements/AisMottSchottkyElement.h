@@ -38,7 +38,7 @@ public:
      */
     explicit AisMottSchottkyElement(double startingPotential, double endingPotential, double voltageStep,
                                     double startFrequency, double endFrequency, double stepsPerDecade,
-                                    double amplitude, double minCycles);
+                                    double amplitude, unsigned int minCycles);
 
     /**
      * @brief Copy constructor for the AisMottSchottkyElement object.
@@ -160,13 +160,13 @@ public:
      * @brief Get the minimum number of cycles per frequency step.
      * @return The minimum number of cycles.
      */
-    double getMinCycles() const;
+    unsigned int getMinCycles() const;
 
     /**
      * @brief Set the minimum number of cycles per frequency step.
      * @param minCycles The minimum number of cycles.
      */
-    void setMinCycles(double minCycles);
+    void setMinCycles(unsigned int minCycles);
 
     /**
      * @brief Get the quiet time before starting the EIS measurement.

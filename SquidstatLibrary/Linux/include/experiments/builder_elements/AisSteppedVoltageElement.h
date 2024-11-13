@@ -136,8 +136,9 @@ public:
     /**
      * @brief Set the voltage step for each iteration.
      * @param vStep The voltage step in volts.
+     * @note Regardless of vStep's sign, the device will determine the step direction based on the start and end voltage.
      */
-    void setStepSize(double stepsize);
+    void setStepSize(double vStep);
 
     /**
      * @brief Set the time step for each iteration.

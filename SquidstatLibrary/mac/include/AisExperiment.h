@@ -78,7 +78,7 @@ public:
      * @note although an element is an experiment, in the context of custom experiments, it is referred to as an element to make a distinction between the two.
      * In other contexts where such distinction is not needed, an element may still be referred to as an experiment.
     */
-    bool appendElement(AisAbstractElement& element, uint repeat = 1);
+    bool appendElement(AisAbstractElement& element, unsigned int repeat = 1);
 
     /**
      * @brief append a sub experiment to this/(the calling) custom experiment.
@@ -86,7 +86,7 @@ public:
      * @param repeat the number of times this sub experiment is to be repeated. This is an optional parameter and is defaulted to equal 1 when not set.
      * @return true if appending the sub experiment was successful and false otherwise.
     */
-    bool appendSubExperiment(const AisExperiment& subExp, uint repeat = 1);
+    bool appendSubExperiment(const AisExperiment& subExp, unsigned int repeat = 1);
 
 private:
     friend class AisInstrumentHandler;

@@ -204,6 +204,12 @@ public:
     void setApproxMaxCurrent(double approxMaxCurrent);
 
     /**
+     * @brief get the value set for the voltage range.
+     * @return the index set for the voltage range. (see AisInstrumentHandler::getManualModeVoltageRangeList())
+     */
+    int getVoltageRange() const;
+
+    /**
      * @brief manually set the voltage control range.
      *
      * This is an <strong>optional</strong> parameter.

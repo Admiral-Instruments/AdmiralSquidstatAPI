@@ -25,14 +25,14 @@ public:
      * @param endFrequency the value for the voltage ending frequency
      * @param stepsPerDecade the value for the voltage frequency steps per decade.
      * @param voltageBias the value for the DC bias (DC offset).
-     * @param voltageAamplitude the AC voltage amplitude.
+     * @param voltageAmplitude the AC voltage amplitude.
     */
     explicit AisEISPotentiostaticElement(
         double startFrequency,
         double endFrequency,
         double stepsPerDecade,
         double voltageBias,
-        double voltageAamplitude);
+        double voltageAmplitude);
     /**
  * @brief copy constructor for the AisEISPotentiostaticElement object.
 */
@@ -155,16 +155,16 @@ public:
     void setAmplitude(double amplitude);
 
     /**
-     * @brief set the minimum number of period of applied sinusoidal current at each frequency.
-     * @param numberOfCycle set number of cycles Sampled.
+     * @brief get the minimum number of periods of applied sinusoidal voltage to sample at each frequency.
+     * @return get number of cycles to sample at each frequency.
     */
-    void setMinimumCycles(int numberOfCycle);
+    unsigned int getMinimumCycles() const;
 
     /**
-     * @brief the value to setted for mimimum number of cycle Sampled.
-     * @return the value set for the minimum number of cycles.
+     * @brief set the minimum number of periods of applied sinusoidal voltage to sample at each frequency.
+     * @param numberOfCycle number of cycles to sample at each frequency.
     */
-    int getMinimumCycles() const;
+    void setMinimumCycles(unsigned int numberOfCycle);
 
 private:
     std::shared_ptr<EISPotentiostaticElement> m_dataDerived;

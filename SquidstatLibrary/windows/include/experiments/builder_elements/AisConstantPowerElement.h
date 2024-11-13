@@ -16,11 +16,26 @@ class SQUIDSTATLIBRARY_EXPORT AisConstantPowerElement final : public AisAbstract
 public:
     /**
      * @brief the constant power element constructor
-     * @param isCharge true to set the experiment simulate charge and false to simulate discharge.
      * @param power the value set for the power in watts.
      * @param duration the maximum duration for the experiment in seconds.
      * @param samplingInterval the data sampling interval value in seconds.
     */
+    explicit AisConstantPowerElement(
+        double power,
+        double duration,
+        double samplingInterval);
+
+    /**
+     * @brief the constant power element constructor that supports the isCharge parameter
+     * @param isCharge true to set the experiment simulate charge and false to simulate discharge.
+     * @param power the value set for the power in watts.
+     * @param duration the maximum duration for the experiment in seconds.
+     * @param samplingInterval the data sampling interval value in seconds.
+     * @attention Deprecation Warning: the isCharge parameter will be deprecated in a future version.
+     * Using the alternative constructor is highly recommended to avoid compilation errors in a future version.
+     * @important If this constructor is used, the sign of the power will be ignored and 'isCharge' state will be used to determine it instead.
+    */
+    [[deprecated("Future versions will no longer support the AisConstantPowerElement with the 'isCharge' parameter. Power can be set to a positive or negative value instead.")]]
     explicit AisConstantPowerElement(
         bool isCharge,
         double power,
@@ -60,7 +75,11 @@ public:
     /**
      * @brief set whether the experiment is to simulate charge or discharge.
      * @param isCharge if the given argument is true, the experiment will simulate charge and discharge if given false.
+     * @attention Deprecation Warning: setCharge will be deprecated in a future version.
+     * Avoid using this function, and instead set the power to a positive or negative value.
+     * @important If the isCharge constructor is used, you must use this function to set the charge/discharge state.
     */
+    [[deprecated("Future versions will no longer support setCharge. Power can be set to a positive or negative value instead.")]]
     void setCharge(bool isCharge);
 
     /**
