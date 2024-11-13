@@ -12,6 +12,7 @@ var class_ais_constant_pot_element =
     [ "getName", "class_ais_constant_pot_element.html#aa1d33e3952c8c18e54f97d3276b6cab3", null ],
     [ "getPotential", "class_ais_constant_pot_element.html#ac848aac1d3ea7707d22aeaf72823af3c", null ],
     [ "getSamplingInterval", "class_ais_constant_pot_element.html#a71352ceea14f4dd0598cfe691f5800df", null ],
+    [ "getVoltageRange", "class_ais_constant_pot_element.html#a04ef30c1ff34f5af407f8a8ff9f5fa80", null ],
     [ "isAutoRange", "class_ais_constant_pot_element.html#a834234f6b8cae8ffbc42209912968f4f", null ],
     [ "isVoltageVsOCP", "class_ais_constant_pot_element.html#aa0612b12b7beae4b3b9bd313a60a7711", null ],
     [ "operator=", "class_ais_constant_pot_element.html#aac331355fd4e24e6161a5e40d0088538", null ],

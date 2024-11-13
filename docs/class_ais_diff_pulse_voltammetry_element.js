@@ -2,7 +2,7 @@ var class_ais_diff_pulse_voltammetry_element =
 [
     [ "AisDiffPulseVoltammetryElement", "class_ais_diff_pulse_voltammetry_element.html#a48993478cfda36ff5591be6e4a80f3f5", null ],
     [ "AisDiffPulseVoltammetryElement", "class_ais_diff_pulse_voltammetry_element.html#a94a8bc3e1c7e6607856b4770b7f89774", null ],
-    [ "getAlphaFactor", "class_ais_diff_pulse_voltammetry_element.html#a67acd8838a3593a112a29d2ef59b65e4", null ],
+    [ "getAlphaFactor", "class_ais_diff_pulse_voltammetry_element.html#a8dc61a89149b49fbe442e3dc204ebb5b", null ],
     [ "getApproxMaxCurrent", "class_ais_diff_pulse_voltammetry_element.html#a7633a65c105375367278e7f0f67b1e07", null ],
     [ "getCategory", "class_ais_diff_pulse_voltammetry_element.html#af9dfad163613b3c59bc11b0452c589c7", null ],
     [ "getEndVoltage", "class_ais_diff_pulse_voltammetry_element.html#ad51b2fa525a0112a2fc04263d26ad79a", null ],

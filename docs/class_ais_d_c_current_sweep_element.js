@@ -2,7 +2,7 @@ var class_ais_d_c_current_sweep_element =
 [
     [ "AisDCCurrentSweepElement", "class_ais_d_c_current_sweep_element.html#afe01ca484cd3dc4f9012562401e7a49c", null ],
     [ "AisDCCurrentSweepElement", "class_ais_d_c_current_sweep_element.html#a59e4d6f4b55e234d7ac096187e52c84e", null ],
-    [ "getAlphaFactor", "class_ais_d_c_current_sweep_element.html#a63260594c0aedc789080818a2d5c755a", null ],
+    [ "getAlphaFactor", "class_ais_d_c_current_sweep_element.html#aae26b02c6bec7b1abae17c6a174d82bf", null ],
     [ "getCategory", "class_ais_d_c_current_sweep_element.html#ae6d9a90771078628529a472eabed3d87", null ],
     [ "getEndingCurrent", "class_ais_d_c_current_sweep_element.html#a9a07aae8f46f2957f08ab8fdddf5ccd2", null ],
     [ "getMaxVoltage", "class_ais_d_c_current_sweep_element.html#aa4b4427dec5869df39e9fb50af511045", null ],

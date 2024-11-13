@@ -2,7 +2,7 @@ var class_ais_normal_pulse_voltammetry_element =
 [
     [ "AisNormalPulseVoltammetryElement", "class_ais_normal_pulse_voltammetry_element.html#a603b381181b18d9323f14fd22f1468de", null ],
     [ "AisNormalPulseVoltammetryElement", "class_ais_normal_pulse_voltammetry_element.html#a167bf79711feccccdffde32212a9dcb4", null ],
-    [ "getAlphaFactor", "class_ais_normal_pulse_voltammetry_element.html#af05a72439b42e841172c718b59c7d41d", null ],
+    [ "getAlphaFactor", "class_ais_normal_pulse_voltammetry_element.html#af456320ae52b28d31c6abb747670a6f9", null ],
     [ "getApproxMaxCurrent", "class_ais_normal_pulse_voltammetry_element.html#a3babedeaed3bab5125a3a32aa432ddf9", null ],
     [ "getCategory", "class_ais_normal_pulse_voltammetry_element.html#a1f6466a9ccb89f46849c93deab4e655a", null ],
     [ "getEndVoltage", "class_ais_normal_pulse_voltammetry_element.html#a7375006270a65ff57f4e54eec30c319c", null ],

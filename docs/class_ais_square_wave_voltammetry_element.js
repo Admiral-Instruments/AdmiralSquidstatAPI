@@ -2,7 +2,7 @@ var class_ais_square_wave_voltammetry_element =
 [
     [ "AisSquareWaveVoltammetryElement", "class_ais_square_wave_voltammetry_element.html#ac0de348c1591af30b6beec2eb83896d3", null ],
     [ "AisSquareWaveVoltammetryElement", "class_ais_square_wave_voltammetry_element.html#ae2c07c6554247aa2624a2c277cba122b", null ],
-    [ "getAlphaFactor", "class_ais_square_wave_voltammetry_element.html#a8fdb6b3ae27909fc03854c3dbf806e63", null ],
+    [ "getAlphaFactor", "class_ais_square_wave_voltammetry_element.html#aa5b388b8ddc6706bbfc40d022a89f3ed", null ],
     [ "getApproxMaxCurrent", "class_ais_square_wave_voltammetry_element.html#a82dda51b07973c2bac20f19e265b9f4e", null ],
     [ "getCategory", "class_ais_square_wave_voltammetry_element.html#af3da49b68380492fcf42115ece72610c", null ],
     [ "getEndVoltage", "class_ais_square_wave_voltammetry_element.html#a379a22c970c8cb478b0612d170ebaf54", null ],

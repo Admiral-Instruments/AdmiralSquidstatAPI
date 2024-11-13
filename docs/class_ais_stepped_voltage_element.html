@@ -159,9 +159,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a63e65f9d75eca359ee5f051ca1541c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_stepped_voltage_element.html#a63e65f9d75eca359ee5f051ca1541c28">setEndVoltage</a> (double vEnd)</td></tr>
 <tr class="memdesc:a63e65f9d75eca359ee5f051ca1541c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the ending voltage for the experiment.  <a href="class_ais_stepped_voltage_element.html#a63e65f9d75eca359ee5f051ca1541c28">More...</a><br /></td></tr>
 <tr class="separator:a63e65f9d75eca359ee5f051ca1541c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4d5e5f2fd10163db36fdeb4ead82496"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_stepped_voltage_element.html#ae4d5e5f2fd10163db36fdeb4ead82496">setStepSize</a> (double stepsize)</td></tr>
-<tr class="memdesc:ae4d5e5f2fd10163db36fdeb4ead82496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the voltage step for each iteration.  <a href="class_ais_stepped_voltage_element.html#ae4d5e5f2fd10163db36fdeb4ead82496">More...</a><br /></td></tr>
-<tr class="separator:ae4d5e5f2fd10163db36fdeb4ead82496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c1af998618967c3e486ce56208f45a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_stepped_voltage_element.html#a22c1af998618967c3e486ce56208f45a">setStepSize</a> (double vStep)</td></tr>
+<tr class="memdesc:a22c1af998618967c3e486ce56208f45a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the voltage step for each iteration.  <a href="class_ais_stepped_voltage_element.html#a22c1af998618967c3e486ce56208f45a">More...</a><br /></td></tr>
+<tr class="separator:a22c1af998618967c3e486ce56208f45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3b711b105a9d590043f723fe5922889"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_stepped_voltage_element.html#ae3b711b105a9d590043f723fe5922889">setStepDuration</a> (double duration)</td></tr>
 <tr class="memdesc:ae3b711b105a9d590043f723fe5922889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time step for each iteration.  <a href="class_ais_stepped_voltage_element.html#ae3b711b105a9d590043f723fe5922889">More...</a><br /></td></tr>
 <tr class="separator:ae3b711b105a9d590043f723fe5922889"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -736,8 +736,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setCurrentAutorange</
 
 </div>
 </div>
-<a id="ae4d5e5f2fd10163db36fdeb4ead82496" name="ae4d5e5f2fd10163db36fdeb4ead82496"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4d5e5f2fd10163db36fdeb4ead82496">&#9670;&#160;</a></span>setStepSize()</h2>
+<a id="a22c1af998618967c3e486ce56208f45a" name="a22c1af998618967c3e486ce56208f45a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c1af998618967c3e486ce56208f45a">&#9670;&#160;</a></span>setStepSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -746,7 +746,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setCurrentAutorange</
           <td class="memname">void AisSteppedVoltageElement::setStepSize </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>stepsize</em></td><td>)</td>
+          <td class="paramname"><em>vStep</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -759,6 +759,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setCurrentAutorange</
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Regardless of vStep's sign, the device will determine the step direction based on the start and end voltage. </dd></dl>
 
 </div>
 </div>

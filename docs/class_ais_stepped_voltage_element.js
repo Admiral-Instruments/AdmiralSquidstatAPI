@@ -23,5 +23,5 @@ var class_ais_stepped_voltage_element =
     [ "setStartVoltage", "class_ais_stepped_voltage_element.html#a0cde791f9fe90f2aa2e9b6f79ac99b48", null ],
     [ "setStartVoltageVsOCP", "class_ais_stepped_voltage_element.html#abbfc47717a5337503b209d02551d920b", null ],
     [ "setStepDuration", "class_ais_stepped_voltage_element.html#ae3b711b105a9d590043f723fe5922889", null ],
-    [ "setStepSize", "class_ais_stepped_voltage_element.html#ae4d5e5f2fd10163db36fdeb4ead82496", null ]
+    [ "setStepSize", "class_ais_stepped_voltage_element.html#a22c1af998618967c3e486ce56208f45a", null ]
 ];

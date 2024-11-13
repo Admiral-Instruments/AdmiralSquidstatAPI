@@ -2,7 +2,7 @@ var class_ais_d_c_potential_sweep_element =
 [
     [ "AisDCPotentialSweepElement", "class_ais_d_c_potential_sweep_element.html#ab8455309f8f548caa246277ad65e33a8", null ],
     [ "AisDCPotentialSweepElement", "class_ais_d_c_potential_sweep_element.html#a16fe99a65fea8b9f147821f6c7826989", null ],
-    [ "getAlphaFactor", "class_ais_d_c_potential_sweep_element.html#a81413fd3ef103b488a993f30a20e577d", null ],
+    [ "getAlphaFactor", "class_ais_d_c_potential_sweep_element.html#a9ea1556584d5f612986c85bd319dd70a", null ],
     [ "getApproxMaxCurrent", "class_ais_d_c_potential_sweep_element.html#a8e75436e9bf6945f3e3021a374e6f4b4", null ],
     [ "getCategory", "class_ais_d_c_potential_sweep_element.html#a545e66720a156c887930196f61061ce4", null ],
     [ "getEndingPot", "class_ais_d_c_potential_sweep_element.html#a35210e2c52a98fbaa6daa347dea32a31", null ],

@@ -190,9 +190,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1909df339eaa736ec6f8e28367954a5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_normal_pulse_voltammetry_element.html#a1909df339eaa736ec6f8e28367954a5a">setApproxMaxCurrent</a> (double approxMaxCurrent)</td></tr>
 <tr class="memdesc:a1909df339eaa736ec6f8e28367954a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">set maximum current expected, for manual current range selection.  <a href="class_ais_normal_pulse_voltammetry_element.html#a1909df339eaa736ec6f8e28367954a5a">More...</a><br /></td></tr>
 <tr class="separator:a1909df339eaa736ec6f8e28367954a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af05a72439b42e841172c718b59c7d41d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_normal_pulse_voltammetry_element.html#af05a72439b42e841172c718b59c7d41d">getAlphaFactor</a> ()</td></tr>
-<tr class="memdesc:af05a72439b42e841172c718b59c7d41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value set for the alpha factor.  <a href="class_ais_normal_pulse_voltammetry_element.html#af05a72439b42e841172c718b59c7d41d">More...</a><br /></td></tr>
-<tr class="separator:af05a72439b42e841172c718b59c7d41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af456320ae52b28d31c6abb747670a6f9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_normal_pulse_voltammetry_element.html#af456320ae52b28d31c6abb747670a6f9">getAlphaFactor</a> () const</td></tr>
+<tr class="memdesc:af456320ae52b28d31c6abb747670a6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value set for the alpha factor.  <a href="class_ais_normal_pulse_voltammetry_element.html#af456320ae52b28d31c6abb747670a6f9">More...</a><br /></td></tr>
+<tr class="separator:af456320ae52b28d31c6abb747670a6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12120c3cbe36bd05f59ee61008b06c17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ais_normal_pulse_voltammetry_element.html#a12120c3cbe36bd05f59ee61008b06c17">setAlphaFactor</a> (double alphaFactor)</td></tr>
 <tr class="memdesc:a12120c3cbe36bd05f59ee61008b06c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">alpha factor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.  <a href="class_ais_normal_pulse_voltammetry_element.html#a12120c3cbe36bd05f59ee61008b06c17">More...</a><br /></td></tr>
 <tr class="separator:a12120c3cbe36bd05f59ee61008b06c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,8 +273,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af05a72439b42e841172c718b59c7d41d" name="af05a72439b42e841172c718b59c7d41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af05a72439b42e841172c718b59c7d41d">&#9670;&#160;</a></span>getAlphaFactor()</h2>
+<a id="af456320ae52b28d31c6abb747670a6f9" name="af456320ae52b28d31c6abb747670a6f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af456320ae52b28d31c6abb747670a6f9">&#9670;&#160;</a></span>getAlphaFactor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,7 +283,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">double AisNormalPulseVoltammetryElement::getAlphaFactor </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -882,6 +882,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Regardless of vStep's sign, the device will determine the step direction based on the start and end voltage. </dd></dl>
 
 </div>
 </div>

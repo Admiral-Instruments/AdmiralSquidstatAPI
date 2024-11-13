@@ -1,12 +1,12 @@
 var class_ais_e_i_s_potentiostatic_element =
 [
-    [ "AisEISPotentiostaticElement", "class_ais_e_i_s_potentiostatic_element.html#aa8b1c65c9860838fb1b9918842f70abe", null ],
+    [ "AisEISPotentiostaticElement", "class_ais_e_i_s_potentiostatic_element.html#a22b6c94463a3aedb3d1d2c84e2a465e2", null ],
     [ "AisEISPotentiostaticElement", "class_ais_e_i_s_potentiostatic_element.html#ac5cacaab4623ab9ae69d389ccaa6feb6", null ],
     [ "getAmplitude", "class_ais_e_i_s_potentiostatic_element.html#a753cbc86b8cac3a635c69ce889ba61e5", null ],
     [ "getBiasVoltage", "class_ais_e_i_s_potentiostatic_element.html#a572803da32cbaa52c68b8f0b7ff79d48", null ],
     [ "getCategory", "class_ais_e_i_s_potentiostatic_element.html#a89e8a88aaa6e3dd2842317cd73535aba", null ],
     [ "getEndFreq", "class_ais_e_i_s_potentiostatic_element.html#a5cdd503cf9c75a742d379759089bf4f5", null ],
-    [ "getMinimumCycles", "class_ais_e_i_s_potentiostatic_element.html#a6b91c4bf82121513209c08f89160ffa8", null ],
+    [ "getMinimumCycles", "class_ais_e_i_s_potentiostatic_element.html#a73c1fbef340fcb16ac845e0a7030ba73", null ],
     [ "getName", "class_ais_e_i_s_potentiostatic_element.html#ad05d1f67eee01d5f25e2653fef8fb022", null ],
     [ "getQuietTime", "class_ais_e_i_s_potentiostatic_element.html#ac13dcfc97e156c7f620f51a57ab64b2f", null ],
     [ "getQuietTimeSamplingInterval", "class_ais_e_i_s_potentiostatic_element.html#af89e5a5ab9f75bf5e9679f407d55218e", null ],
@@ -18,7 +18,7 @@ var class_ais_e_i_s_potentiostatic_element =
     [ "setBiasVoltage", "class_ais_e_i_s_potentiostatic_element.html#af308fae22d8195685fa5779b8f3ad929", null ],
     [ "setBiasVoltageVsOCP", "class_ais_e_i_s_potentiostatic_element.html#aefca48d78f31f70566d0c6fb2cfe5753", null ],
     [ "setEndFreq", "class_ais_e_i_s_potentiostatic_element.html#a3018a553fc4c11c6bc963c1823c817a2", null ],
-    [ "setMinimumCycles", "class_ais_e_i_s_potentiostatic_element.html#a07afeda14d056d124664f9a2f8a57b15", null ],
+    [ "setMinimumCycles", "class_ais_e_i_s_potentiostatic_element.html#a27c35921147b0feffaffb2c031087545", null ],
     [ "setQuietTime", "class_ais_e_i_s_potentiostatic_element.html#ac8ca110b3226c89e33ee4433aede595e", null ],
     [ "setQuietTimeSamplingInterval", "class_ais_e_i_s_potentiostatic_element.html#aac99c60c6ecaee35c2102766dddddb6b", null ],
     [ "setStartFreq", "class_ais_e_i_s_potentiostatic_element.html#ad628fdbc04bb61c5121c99d584c3bbb0", null ],
