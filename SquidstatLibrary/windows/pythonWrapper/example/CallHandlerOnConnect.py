@@ -1,7 +1,7 @@
 import sys
-from PySide2.QtCore import QIODevice, QDataStream, QByteArray, QThread, QObject, Signal
-from PySide2.QtSerialPort import QSerialPort, QSerialPortInfo
-from PySide2.QtWidgets import QApplication
+from PySide6.QtCore import QIODevice, QDataStream, QByteArray, QThread, QObject, Signal
+from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
+from PySide6.QtWidgets import QApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisCompRange
 from SquidstatPyLibrary import AisDCData
@@ -136,4 +136,4 @@ serialPortReader.moveToThread(serialPortThread)
 # start the sub thread
 serialPortThread.start()
 # exit program
-sys.exit(app.exec_())
+sys.exit(app.exec())

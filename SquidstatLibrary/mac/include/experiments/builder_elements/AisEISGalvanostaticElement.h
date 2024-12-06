@@ -25,7 +25,7 @@ public:
      * @param endFrequency the value for the current ending frequency
      * @param stepsPerDecade the value for the current frequency steps per decade.
      * @param currentBias the value for the DC bias (DC offset).
-     * @param currentAamplitude the AC current amplitude.
+     * @param currentAmplitude the AC current amplitude.
     */
     explicit AisEISGalvanostaticElement(
         double startFrequency,

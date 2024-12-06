@@ -69,7 +69,7 @@ public:
 
     /**
      * @brief set whether to reference the specified voltage against the open-circuit voltage or the reference terminal.
-     * 
+     *
      * The reference terminal is for you to connect to any reference point you like. Connect it to the working electrode to reference ground.
      * @param vsOCP true to set the specified voltage to reference the open-circuit voltage and false to set against the reference terminal.
     */
@@ -96,8 +96,8 @@ public:
 
     /**
      * @brief set the maximum duration for the experiment.
-     * 
-     * The is an <strong>optional</strong> condition. 
+     *
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an duration.
      * If a maximum duration is set, the experiment will continue to run as long as the passed time is less than that value.
      * @param maxDuration the maximum duration for the experiment in seconds.
@@ -107,37 +107,81 @@ public:
     /**
      * @brief get the maximum value set for the absolute current in Amps.
      * The experiment will end when the absolute current reaches this value.
+     * @return the maximum absolute current value in Amps.
+     * @note this is an optional parameter. If no value has been set, the default value is positive infinity.
+     */
+    double getMaxAbsoluteCurrent() const;
+
+    /**
+     * @brief set the maximum value for the absolute current in Amps.
+     *
+     * This is an <strong>optional</strong> condition.
+     * If nothing is set, then the experiment will not stop based on an upper-limit current value.
+     * If a maximum absolute current is set, the experiment will continue to run as long as the absolute measured current is below that value.
+     * @param maxCurrent the maximum absolute current value in Amps.
+    */
+    void setMaxAbsoluteCurrent(double maxCurrent);
+
+    /**
+     * @brief get the maximum value set for the absolute current in Amps.
+     * The experiment will end when the absolute current reaches this value.
      * @return the maximum current value in Amps.
      * @note this is an optional parameter. If no value has been set, the default value is positive infinity.
+     * @attention Deprecation Warning: This function may be modified or changed in a future version. Use getMaxAbsoluteCurrent instead.
     */
+    [[deprecated("getMaxCurrent has been renamed getMaxAbsoluteCurrent for description accuracy. In future versions this function may be removed or modified.")]]
     double getMaxCurrent() const;
 
     /**
      * @brief set the maximum value for the absolute current in Amps.
-     *  
-     * The is an <strong>optional</strong> condition. 
+     *
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an upper-limit current value.
      * If a maximum current is set, the experiment will continue to run as long as the measured current is below that value.
      * @param maxCurrent the maximum current value in Amps.
+     * @attention Deprecation Warning: This function may be modified or changed in a future version. Use setMaxAbsoluteCurrent instead.
     */
+    [[deprecated("setMaxCurrent has been renamed setMaxAbsoluteCurrent for description accuracy. In future versions this function may be removed or modified.")]]
     void setMaxCurrent(double maxCurrent);
 
     /**
      * @brief get the minimum value set for the absolute current in Amps.
      * The experiment will end when the absolute current falls down to this value.
-     * @return the minimum current value in Amps.
+     * @return the minimum absolute current value in Amps.
      * @note this is an optional parameter. If no value has been set, the default value is zero.
     */
+    double getMinAbsoluteCurrent() const;
+
+    /**
+     * @brief set the minimum value for the absolute current in Amps.
+     *
+     * This is an <strong>optional</strong> condition.
+     * If nothing is set, then the experiment will not stop based on an lower-limit current value.
+     * If a minimum absolute current is set, the experiment will continue to run as long as the measured absolute current is above that value.
+     * @param minCurrent the value to set for the minimum absolute current.
+    */
+    void setMinAbsoluteCurrent(double minCurrent);
+
+    /**
+     * @brief get the minimum value set for the absolute current in Amps.
+     * The experiment will end when the absolute current falls down to this value.
+     * @return the minimum absolute current value in Amps.
+     * @note this is an optional parameter. If no value has been set, the default value is zero.
+     * @attention Deprecation Warning: This function may be modified or changed in a future version. Use getMinAbsoluteCurrent instead.
+    */
+    [[deprecated("getMinCurrent has been renamed getMinAbsoluteCurrent for description accuracy. In future versions this function may be removed or modified.")]]
     double getMinCurrent() const;
 
     /**
      * @brief set the minimum value for the absolute current in Amps.
-     * 
-     * The is an <strong>optional</strong> condition. 
+     *
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an lower-limit current value.
-     * If a maximum current is set, the experiment will continue to run as long as the measured current is above that value.
-     * @param minCurrent the value to set for the absolute minimum current.
+     * If a minimum absolute current is set, the experiment will continue to run as long as the measured absolute current is above that value.
+     * @param minCurrent the value to set for the minimum absolute current.
+     * @attention Deprecation Warning: This function may be modified or changed in a future version. Use setMinAbsoluteCurrent instead.
     */
+    [[deprecated("setMinCurrent has been renamed setMinAbsoluteCurrent for description accuracy. In future versions this function may be removed or modified.")]]
     void setMinCurrent(double minCurrent);
 
     /**
@@ -150,7 +194,7 @@ public:
     /**
      * @brief set the value for the maximum capacity / cumulative charge in Coulomb.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an upper-limit cumulative charge value.
      * If a maximum capacity is set, the experiment will continue to run as long as the cumulative charge is below that value.
      * @param maxCapacity the value to set for the cell maximum capacity.
@@ -167,7 +211,7 @@ public:
     /**
      * @brief set the minimum value for the current rate of change with respect to time (minimum di/dt).
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an lower-limit rate of change value.
      * If a minimum value is set, the experiment will continue to run as long as the rage of change is above that value.
      * @param mindIdt the minimum value for the current rate of change with respect to time (minimum di/dt).
@@ -197,7 +241,7 @@ public:
     /**
      * @brief set maximum current expected, for manual current range selection.
      * 
-     * The is an <strong>optional</strong> parameter. 
+     * This is an <strong>optional</strong> parameter. 
      * If nothing is set, the device will auto-select the current range.
      * @param approxMaxCurrent the value for the maximum current expected in Amps.
     */

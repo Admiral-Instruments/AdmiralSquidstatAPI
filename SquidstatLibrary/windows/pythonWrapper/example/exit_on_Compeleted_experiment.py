@@ -1,7 +1,7 @@
 import sys
-from PySide2.QtCore import QIODevice, QThread, QObject, Signal
-from PySide2.QtSerialPort import QSerialPort
-from PySide2.QtWidgets import QApplication
+from PySide6.QtCore import QIODevice, QThread, QObject, Signal
+from PySide6.QtSerialPort import QSerialPort
+from PySide6.QtWidgets import QApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisCompRange
 from SquidstatPyLibrary import AisDCData
@@ -274,4 +274,4 @@ if error.value() != AisErrorCode.ErrorCode.Success:
     print(error.message())
 
 # exit application
-sys.exit(app.exec_())
+sys.exit(app.exec())

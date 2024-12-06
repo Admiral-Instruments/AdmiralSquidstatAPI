@@ -133,7 +133,7 @@ public:
     /**
      * @brief set maximum voltage expected, for manual voltage range selection.
      *
-     * The is an <strong>optional</strong> parameter.
+     * This is an <strong>optional</strong> parameter.
      * If nothing is set, the device will auto-select the voltage range.
      * @param approxMaxVoltage the value for the maximum current expected in V.
     */
@@ -149,7 +149,7 @@ public:
     /**
      * @brief set minimum voltage expected, for manual voltage range selection.
      *
-     * The is an <strong>optional</strong> parameter.
+     * This is an <strong>optional</strong> parameter.
      * If nothing is set, the device will auto-select the voltage range.
      * @param approxMaxVoltage the value for the maximum current expected in V.
      */

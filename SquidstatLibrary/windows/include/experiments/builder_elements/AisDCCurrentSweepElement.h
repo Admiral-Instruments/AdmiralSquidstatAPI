@@ -139,7 +139,7 @@ public:
     /**
      * @brief set a maximum voltage to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an upper-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is below that value.
      * @param maxVoltage the maximum voltage value in volts at which the experiment will stop.
@@ -156,7 +156,7 @@ public:
     /**
      * @brief set a minimum voltage to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an lower-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value.
      * @param minVoltage the minimum voltage value in volts at which the experiment will stop.
@@ -174,7 +174,7 @@ public:
     /**
     * @brief alpha factor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
     *
-    * The is an <strong>optional</strong> parameter.
+    * This is an <strong>optional</strong> parameter.
     * If nothing is set, the device will use the default value of 75.
     * @param alphaFactor the value for the alphaFactor ranges from 0 to 100.
    */

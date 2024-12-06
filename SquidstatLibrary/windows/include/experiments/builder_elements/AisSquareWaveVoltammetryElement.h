@@ -213,7 +213,7 @@ public:
     /**
      * @brief set maximum current expected, for manual current range selection.
      * 
-     * The is an <strong>optional</strong> parameter. 
+     * This is an <strong>optional</strong> parameter. 
      * If nothing is set, the device will auto-select the current range.
      * @param approxMaxCurrent the value for the maximum current expected in Amps.
     */
@@ -230,7 +230,7 @@ public:
     /**
     * @brief alpha factor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
     *
-    * The is an <strong>optional</strong> parameter.
+    * This is an <strong>optional</strong> parameter.
     * If nothing is set, the device will use the default value of 75.
     * @param alphaFactor the value for the alphaFactor ranges from 0 to 100.
    */

@@ -80,7 +80,7 @@ public:
     /**
      * @brief set a maximum voltage to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an upper-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is below that value.
      * @param maxVoltage the maximum voltage value in volts at which the experiment will stop.
@@ -97,7 +97,7 @@ public:
     /**
      * @brief set a minimum voltage to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an lower-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value.
      * @param minVoltage the minimum voltage value in volts at which the experiment will stop.
@@ -115,7 +115,7 @@ public:
     /**
      * @brief set the minimum value for the voltage rate of change with respect to time (minimum dV/dt).
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an lower-limit rate of change value.
      * If a minimum value is set, the experiment will continue to run as long as the rage of change is above that value.
      * @param mindVdt the minimum value for the voltage rate of change with respect to time (minimum dV/dt).
@@ -145,7 +145,7 @@ public:
     /**
      * @brief set maximum voltage expected, for manual voltage range selection.
      *
-     * The is an <strong>optional</strong> parameter.
+     * This is an <strong>optional</strong> parameter.
      * If nothing is set, the device will auto-select the voltage range.
      * @param approxMaxVoltage the value for the maximum voltage expected in V.
     */

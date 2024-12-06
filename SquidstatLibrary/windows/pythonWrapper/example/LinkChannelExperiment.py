@@ -1,6 +1,6 @@
 import sys
 import struct
-from PySide2.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisCompRange
 from SquidstatPyLibrary import AisDCData
@@ -79,4 +79,4 @@ handler.uploadExperimentToChannel(masterchannel,experiment)
 handler.startUploadedExperiment(masterchannel)
 
 # exit application
-sys.exit(app.exec_())
+sys.exit(app.exec())

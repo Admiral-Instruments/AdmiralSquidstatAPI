@@ -1,7 +1,7 @@
 import os
 import socket
 import threading
-from PySide2.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisExperiment
 from SquidstatPyLibrary import AisOpenCircuitElement
@@ -169,4 +169,4 @@ listening_thread = threading.Thread(target=handle_client, args=(handler, client_
 listening_thread.start()
 
 # Start the QT event loop
-app.exec_()
+app.exec()

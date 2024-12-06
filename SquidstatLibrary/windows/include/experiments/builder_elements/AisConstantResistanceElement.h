@@ -81,7 +81,7 @@ public:
     /**
      * @brief set a minimum voltage to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an lower-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value.
      * @param minVoltage the minimum voltage value in volts at which the experiment will stop.
@@ -113,7 +113,7 @@ public:
     /**
      * @brief set a maximum voltage to stop the experiment.
      *
-     * The is an <strong>optional</strong> condition.
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an upper-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value.
      * @param minVoltage the maximum voltage value in volts at which the experiment will stop.
@@ -145,7 +145,7 @@ public:
     /**
      * @brief set a maximum current to stop the experiment.
      *
-     * The is an <strong>optional</strong> condition.
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an uper-limit Current value.
      * If a maximum current is set, the experiment will continue to run as long as the measured current is above that value.
      * @param maxCurrent the maximum current value in amps at which the experiment will stop.
@@ -162,7 +162,7 @@ public:
     /**
      * @brief set a minimum current to stop the experiment.
      *
-     * The is an <strong>optional</strong> condition.
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an lower-limit Current value.
      * If a minimum current is set, the experiment will continue to run as long as the measured current is below that value.
      * @param maxCurrent the minimum current value in amps at which the experiment will stop.
@@ -194,7 +194,7 @@ public:
     /**
      * @brief set the value for the maximum capacity / cumulative charge in Coulomb.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an upper-limit cumulative charge value.
      * If a maximum capacity is set, the experiment will continue to run as long as the cumulative charge is below that value.
      * @param maxCapacity the value to set for the cell maximum capacity.

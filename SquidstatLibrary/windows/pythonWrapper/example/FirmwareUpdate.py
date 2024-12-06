@@ -1,5 +1,5 @@
 import sys
-from PySide2.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication
 from SquidstatPyLibrary import AisDeviceTracker
 
 # initialize the application
@@ -26,4 +26,4 @@ else:
     print("Firmware update started on " + str(number_of_devices) + " device(s).")
 
 # quit app when complete
-sys.exit(app.exec_())
+sys.exit(app.exec())

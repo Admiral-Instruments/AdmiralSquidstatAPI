@@ -84,7 +84,7 @@ public:
     /**
     * @brief set a minimum sampling voltage difference for reporting the voltage.
     *
-    * The is an <strong>optional</strong> condition.
+    * This is an <strong>optional</strong> condition.
     * If nothing is set, then the experiment will report the data at time sampling interval.
     * When this is set, then the voltage is reported when there is a voltage difference of at least the given minimum sampling voltage difference.
     * So, when one voltage data point is reported (at the minimum possible time sampling interval), the next data point is not reported unless the difference
@@ -106,7 +106,7 @@ public:
     /**
      * @brief set a maximum voltage to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an upper-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is below that value.
      * @param maxVoltage the maximum voltage value in volts at which the experiment will stop.
@@ -123,7 +123,7 @@ public:
     /**
      * @brief set a minimum voltage to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an lower-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value.
      * @param minVoltage the minimum voltage value in volts at which the experiment will stop.
@@ -155,7 +155,7 @@ public:
     /**
      * @brief set the value for the maximum capacity / cumulative charge in Coulomb.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an upper-limit cumulative charge value.
      * If a maximum capacity is set, the experiment will continue to run as long as the cumulative charge is below that value.
      * @param maxCapacity the value to set for the cell maximum capacity.
@@ -185,7 +185,7 @@ public:
     /**
      * @brief set maximum current expected, for manual current range selection.
      * 
-     * The is an <strong>optional</strong> parameter. 
+     * This is an <strong>optional</strong> parameter. 
      * If nothing is set, the device will auto-select the current range.
      * @param approxMaxCurrent the value for the maximum current expected in Amps.
     */
@@ -215,7 +215,7 @@ public:
     /**
      * @brief set maximum voltage expected, for manual voltage range selection.
      *
-     * The is an <strong>optional</strong> parameter.
+     * This is an <strong>optional</strong> parameter.
      * If nothing is set, the device will auto-select the voltage range.
      * @param approxMaxVoltage the value for the maximum current expected in V.
     */

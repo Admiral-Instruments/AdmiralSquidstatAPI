@@ -1,7 +1,7 @@
 import sys
 import struct
 import asyncio
-from PySide2.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisCompRange
 from SquidstatPyLibrary import AisDCData
@@ -98,5 +98,5 @@ dd = main()
 asyncio.run(dd)
 
 # exit application
-sys.exit(app.exec_())  # Start the event loop
+sys.exit(app.exec())  # Start the event loop
 

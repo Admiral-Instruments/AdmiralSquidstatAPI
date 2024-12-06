@@ -33,7 +33,7 @@ public:
      * @param samplingInterval the data sampling interval value in seconds.
      * @attention Deprecation Warning: the isCharge parameter will be deprecated in a future version.
      * Using the alternative constructor is highly recommended to avoid compilation errors in a future version.
-     * @important If this constructor is used, the sign of the power will be ignored and 'isCharge' state will be used to determine it instead.
+     * If this constructor is used, the sign of the power will be ignored and #isCharge state will be used to determine it instead.
     */
     [[deprecated("Future versions will no longer support the AisConstantPowerElement with the 'isCharge' parameter. Power can be set to a positive or negative value instead.")]]
     explicit AisConstantPowerElement(
@@ -77,7 +77,7 @@ public:
      * @param isCharge if the given argument is true, the experiment will simulate charge and discharge if given false.
      * @attention Deprecation Warning: setCharge will be deprecated in a future version.
      * Avoid using this function, and instead set the power to a positive or negative value.
-     * @important If the isCharge constructor is used, you must use this function to set the charge/discharge state.
+     * If #AisConstantPowerElement(bool, double, double, double) is used, you must use this function to set the charge/discharge state.
     */
     [[deprecated("Future versions will no longer support setCharge. Power can be set to a positive or negative value instead.")]]
     void setCharge(bool isCharge);
@@ -117,7 +117,7 @@ public:
     /**
      * @brief set a maximum voltage to stop the experiment.
      *
-     * The is an <strong>optional</strong> condition.
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an upper-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is below that value.
      * @param maxVoltage the maximum voltage value in volts at which the experiment will stop.
@@ -182,7 +182,7 @@ public:
     /**
      * @brief set a maximum current to stop the experiment.
      *
-     * The is an <strong>optional</strong> condition.
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an uper-limit Current value.
      * If a maximum current is set, the experiment will continue to run as long as the measured current is above that value.
      * @param maxCurrent the maximum current value in amps at which the experiment will stop.
@@ -199,7 +199,7 @@ public:
     /**
      * @brief set a minimum current to stop the experiment.
      *
-     * The is an <strong>optional</strong> condition.
+     * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an lower-limit Current value.
      * If a minimum current is set, the experiment will continue to run as long as the measured current is below that value.
      * @param maxCurrent the minimum current value in amps at which the experiment will stop.
@@ -231,7 +231,7 @@ public:
     /**
      * @brief set the value for the maximum capacity / cumulative charge in Coulomb.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an upper-limit cumulative charge value.
      * If a maximum capacity is set, the experiment will continue to run as long as the cumulative charge is below that value.
      * @param maxCapacity the value to set for the cell maximum capacity.

@@ -185,7 +185,7 @@ public:
     /**
      * @brief set maximum current expected, for manual current range selection.
      * 
-     * The is an <strong>optional</strong> parameter. 
+     * This is an <strong>optional</strong> parameter. 
      * If nothing is set, the device will auto-select the current range.
      * @param approxMaxCurrent the value for the maximum current expected in Amps.
     */
@@ -203,7 +203,7 @@ public:
     /**
      * @brief set a maximum Current to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an upper-limit Current value.
      * If a maximum Current is set, the experiment will continue to run as long as the measured Current is below that value with the harware current limitation.
      * @param maxCurrent the maximum Current value in volts at which the experiment will stop.
@@ -220,7 +220,7 @@ public:
     /**
      * @brief set a minimum Current to stop the experiment.
      * 
-     * The is an <strong>optional</strong> condition. 
+     * This is an <strong>optional</strong> condition. 
      * If nothing is set, then the experiment will not stop based on an lower-limit Current value.
      * If a maximum Current is set, the experiment will continue to run as long as the measured voltage is above that value.
      * @param minCurrent the minimum Current value in volts at which the experiment will stop.
@@ -238,7 +238,7 @@ public:
     /**
      * @brief alpha factor controls the percentage of data sampled during a given interval. Data will be averaged over the last n% of the sampling interval.
      *
-     * The is an <strong>optional</strong> parameter.
+     * This is an <strong>optional</strong> parameter.
      * If nothing is set, the device will use the default value of 75.
      * @param alphaFactor the value for the alphaFactor ranges from 0 to 100.
     */
