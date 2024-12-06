@@ -310,7 +310,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section attention"><dt>Attention</dt><dd>Deprecation Warning: the isCharge parameter will be deprecated in a future version. Using the alternative constructor is highly recommended to avoid compilation errors in a future version. @important If this constructor is used, the sign of the power will be ignored and 'isCharge' state will be used to determine it instead. </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Deprecation Warning: the isCharge parameter will be deprecated in a future version. Using the alternative constructor is highly recommended to avoid compilation errors in a future version. If this constructor is used, the sign of the power will be ignored and <a class="el" href="class_ais_constant_power_element.html#ad68057f687fa8a90b3a5485cc30bddc1" title="tells whether the experiment is set to simulate charge or discharge.">isCharge</a> state will be used to determine it instead. </dd></dl>
 
 </div>
 </div>
@@ -621,7 +621,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section attention"><dt>Attention</dt><dd>Deprecation Warning: setCharge will be deprecated in a future version. Avoid using this function, and instead set the power to a positive or negative value. @important If the isCharge constructor is used, you must use this function to set the charge/discharge state. </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Deprecation Warning: setCharge will be deprecated in a future version. Avoid using this function, and instead set the power to a positive or negative value. If <a class="el" href="class_ais_constant_power_element.html#aaa5fb4a67f9cd1b0707dd04381f1af15" title="the constant power element constructor that supports the isCharge parameter">AisConstantPowerElement(bool, double, double, double)</a> is used, you must use this function to set the charge/discharge state. </dd></dl>
 
 </div>
 </div>
@@ -642,7 +642,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set the value for the maximum capacity / cumulative charge in Coulomb. </p>
-<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit cumulative charge value. If a maximum capacity is set, the experiment will continue to run as long as the cumulative charge is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit cumulative charge value. If a maximum capacity is set, the experiment will continue to run as long as the cumulative charge is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxCapacity</td><td>the value to set for the cell maximum capacity. </td></tr>
   </table>
@@ -668,7 +668,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set a maximum current to stop the experiment. </p>
-<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an uper-limit Current value. If a maximum current is set, the experiment will continue to run as long as the measured current is above that value. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an uper-limit Current value. If a maximum current is set, the experiment will continue to run as long as the measured current is above that value. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxCurrent</td><td>the maximum current value in amps at which the experiment will stop. </td></tr>
   </table>
@@ -746,7 +746,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set a maximum voltage to stop the experiment. </p>
-<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit voltage value. If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit voltage value. If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxVoltage</td><td>the maximum voltage value in volts at which the experiment will stop. </td></tr>
   </table>
@@ -772,7 +772,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set a minimum current to stop the experiment. </p>
-<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an lower-limit Current value. If a minimum current is set, the experiment will continue to run as long as the measured current is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an lower-limit Current value. If a minimum current is set, the experiment will continue to run as long as the measured current is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxCurrent</td><td>the minimum current value in amps at which the experiment will stop. </td></tr>
   </table>

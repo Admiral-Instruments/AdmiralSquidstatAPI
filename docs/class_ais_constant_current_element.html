@@ -552,7 +552,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set maximum current expected, for manual current range selection. </p>
-<p >The is an <b>optional</b> parameter. If nothing is set, the device will auto-select the current range. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> parameter. If nothing is set, the device will auto-select the current range. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">approxMaxCurrent</td><td>the value for the maximum current expected in Amps. </td></tr>
   </table>
@@ -578,7 +578,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set maximum voltage expected, for manual voltage range selection. </p>
-<p >The is an <b>optional</b> parameter. If nothing is set, the device will auto-select the voltage range. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> parameter. If nothing is set, the device will auto-select the voltage range. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">approxMaxVoltage</td><td>the value for the maximum current expected in V. </td></tr>
   </table>
@@ -670,7 +670,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set the value for the maximum capacity / cumulative charge in Coulomb. </p>
-<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit cumulative charge value. If a maximum capacity is set, the experiment will continue to run as long as the cumulative charge is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit cumulative charge value. If a maximum capacity is set, the experiment will continue to run as long as the cumulative charge is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxCapacity</td><td>the value to set for the cell maximum capacity. </td></tr>
   </table>
@@ -722,7 +722,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set a maximum voltage to stop the experiment. </p>
-<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit voltage value. If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an upper-limit voltage value. If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is below that value. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxVoltage</td><td>the maximum voltage value in volts at which the experiment will stop. </td></tr>
   </table>
@@ -748,7 +748,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set a minimum sampling voltage difference for reporting the voltage. </p>
-<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will report the data at time sampling interval. When this is set, then the voltage is reported when there is a voltage difference of at least the given minimum sampling voltage difference. So, when one voltage data point is reported (at the minimum possible time sampling interval), the next data point is not reported unless the difference between the two voltage data points exceeds this given minimum sampling voltage difference value.</p>
+<p >This is an <b>optional</b> condition. If nothing is set, then the experiment will report the data at time sampling interval. When this is set, then the voltage is reported when there is a voltage difference of at least the given minimum sampling voltage difference. So, when one voltage data point is reported (at the minimum possible time sampling interval), the next data point is not reported unless the difference between the two voltage data points exceeds this given minimum sampling voltage difference value.</p>
 <dl class="section note"><dt>Note</dt><dd>when this is set, this overrides the set value for the sampling interval. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -776,7 +776,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set a minimum voltage to stop the experiment. </p>
-<p >The is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an lower-limit voltage value. If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >This is an <b>optional</b> condition. If nothing is set, then the experiment will not stop based on an lower-limit voltage value. If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">minVoltage</td><td>the minimum voltage value in volts at which the experiment will stop. </td></tr>
   </table>

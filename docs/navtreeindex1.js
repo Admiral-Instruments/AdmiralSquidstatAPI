@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"class_ais_data_manipulator.html#a5db03f9c911861333fcdab45edf238dc":[10,0,7,11],
+"class_ais_data_manipulator.html#a8e90d222be90b72162e039f9ff682209":[10,0,7,1],
+"class_ais_data_manipulator.html#a95dc590d91d654da78376196122b90d5":[10,0,7,8],
+"class_ais_data_manipulator.html#a9781905cfd2150cf28636bd09300f1a2":[10,0,7,0],
 "class_ais_data_manipulator.html#a9e03e907366943ecb8975870ea09e780":[10,0,7,6],
 "class_ais_data_manipulator.html#aa40b1e3a62adebe343843dbb49988a17":[10,0,7,10],
 "class_ais_data_manipulator.html#aa46c776b453a110f5ccf0c45c43ac3f8":[10,0,7,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "class_ais_normal_pulse_voltammetry_element.html#a9fd68b240297c091f83be960b479921a":[10,0,20,21],
 "class_ais_normal_pulse_voltammetry_element.html#aa933826a94014ea258972e90eab51140":[10,0,20,6],
 "class_ais_normal_pulse_voltammetry_element.html#aae180a4a9e556ddbd74eaf5dfdd272c3":[10,0,20,7],
-"class_ais_normal_pulse_voltammetry_element.html#ab92b47ac751a65307ab95ec2568b79a6":[10,0,20,16],
-"class_ais_normal_pulse_voltammetry_element.html#abcb86888974ebea23bac32f18ddb5466":[10,0,20,28],
-"class_ais_normal_pulse_voltammetry_element.html#addf1de74e346e56b3ea2856e695cca02":[10,0,20,26],
-"class_ais_normal_pulse_voltammetry_element.html#ae886af36b016e98d9b13b91cd470f8e4":[10,0,20,22],
-"class_ais_normal_pulse_voltammetry_element.html#af456320ae52b28d31c6abb747670a6f9":[10,0,20,2]
+"class_ais_normal_pulse_voltammetry_element.html#ab92b47ac751a65307ab95ec2568b79a6":[10,0,20,16]
 };
