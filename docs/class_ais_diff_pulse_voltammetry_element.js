@@ -1,5 +1,6 @@
 var class_ais_diff_pulse_voltammetry_element =
 [
+    [ "AisDiffPulseVoltammetryElement", "class_ais_diff_pulse_voltammetry_element.html#a13423f4ec2431a5275252642ffaf0575", null ],
     [ "AisDiffPulseVoltammetryElement", "class_ais_diff_pulse_voltammetry_element.html#a48993478cfda36ff5591be6e4a80f3f5", null ],
     [ "AisDiffPulseVoltammetryElement", "class_ais_diff_pulse_voltammetry_element.html#a94a8bc3e1c7e6607856b4770b7f89774", null ],
     [ "getAlphaFactor", "class_ais_diff_pulse_voltammetry_element.html#a8dc61a89149b49fbe442e3dc204ebb5b", null ],

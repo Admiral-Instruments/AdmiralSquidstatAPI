@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['newdeviceconnected_0',['newDeviceConnected',['../class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff',1,'AisDeviceTracker']]]
+  ['message_0',['message',['../class_ais_error_code.html#a25e4eef5129000305294ad761b9f2c5e',1,'AisErrorCode']]]
 ];

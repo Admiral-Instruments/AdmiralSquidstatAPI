@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['the_20basics_20of_20running_20experiments_0',['The Basics of Running Experiments',['../md_intro_and_examples_5_basics.html',1,'']]]
+  ['list_0',['Deprecated List',['../deprecated.html',1,'']]],
+  ['logic_1',['Advanced Experiment Logic',['../md__markdown_files_2_advanced_experiment_logic.html',1,'']]]
 ];

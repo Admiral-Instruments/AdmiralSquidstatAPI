@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['workingelectrodedcvoltage_0',['workingElectrodeDCVoltage',['../struct_ais_a_c_data.html#adbaec4445a396c47ba073ab79d9cee79',1,'AisACData']]],
-  ['workingelectrodevoltage_1',['workingElectrodeVoltage',['../struct_ais_d_c_data.html#ad49c1bb5b6e60fe631e174f64f40afbe',1,'AisDCData']]]
+  ['value_0',['value',['../class_ais_error_code.html#aea66d7dcd49f91ae7f219d16ef7fed22',1,'AisErrorCode']]],
+  ['voltageamplitude_1',['voltageAmplitude',['../struct_ais_a_c_data.html#aa268ce20a2179cacbef0c6f2be1fd9d8',1,'AisACData']]]
 ];

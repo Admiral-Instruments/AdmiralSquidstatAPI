@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operating_20squidstats_20remotely_0',['Operating Squidstats Remotely',['../md_intro_and_examples__squidstat_on_remote_computer.html',1,'']]]
+  ['finding_20com_20ports_0',['Finding COM Ports',['../md__markdown_files_2_comports.html',1,'']]],
+  ['firmware_1',['Updating Firmware',['../md__markdown_files_2_firmware_update.html',1,'']]]
 ];

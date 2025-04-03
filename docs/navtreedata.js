@@ -25,30 +25,51 @@
 var NAVTREE =
 [
   [ "Squidstat API User Manual", "index.html", [
-    [ "Identifying USB Serial Ports", "md_intro_and_examples_1__find__comport.html", null ],
-    [ "Building API using CMake", "md_intro_and_examples_2__build__a_p_i_using__cmake.html", null ],
-    [ "Running the API with Qt", "md_intro_and_examples_3__use__a_p_i_in__qt.html", null ],
-    [ "Updating Firmware", "md_intro_and_examples_4__firmware_update.html", null ],
-    [ "The Basics of Running Experiments", "md_intro_and_examples_5_basics.html", null ],
-    [ "Manual Experiments", "md_intro_and_examples_6_manual_experiment.html", null ],
-    [ "Automatically Update Firmware", "md_intro_and_examples_7__automatic_firmware_update.html", null ],
-    [ "Advanced Control Flow", "md_intro_and_examples_8_control_flow_demo.html", null ],
-    [ "Python Example", "md_intro_and_examples_9__python_example.html", null ],
-    [ "Operating Squidstats Remotely", "md_intro_and_examples__squidstat_on_remote_computer.html", null ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
-        [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ]
-      ] ]
+    [ "Getting Started", null, [
+      [ "Getting Started: C++", "md__markdown_files_2_setup.html", null ],
+      [ "Getting Started: Python", "md__markdown_files_2_setup_python.html", null ],
+      [ "Finding COM Ports", "md__markdown_files_2_comports.html", null ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+    [ "Guided Examples", "md__markdown_files_2_guided_examples_intro.html", [
+      [ "Updating Firmware", "md__markdown_files_2_firmware_update.html", null ],
+      [ "Running an Experiment", "md__markdown_files_2_run_experiment.html", null ],
+      [ "Handling Signals", "md__markdown_files_2_signals.html", null ],
+      [ "Advanced Experiment Logic", "md__markdown_files_2_advanced_experiment_logic.html", null ],
+      [ "Manual Experiments", "md__markdown_files_2_manual_experiments.html", null ],
+      [ "Extra Examples", "md__markdown_files_2_extra_examples.html", null ]
+    ] ],
+    [ "API Objects by Category", "topics.html", "topics" ],
+    [ "Reference", null, [
+      [ "All Classes", "annotated.html", "annotated" ],
+      [ "Raw Example Code", null, [
+        [ "C++", null, [
+          [ "Basic Experiment", "basic_experiment_8cpp-example.html", null ],
+          [ "Advanced Experiment", "advanced_experiment_8cpp-example.html", null ],
+          [ "Manual Experiment", "manual_experiment_8cpp-example.html", null ],
+          [ "Updating Firmware", "firmware_update_8cpp-example.html", null ],
+          [ "Writing Data to File", "data_output_8cpp-example.html", null ],
+          [ "Advanced Control Flow", "advanced_control_flow_8cpp-example.html", null ],
+          [ "Linked Channels", "linked_channels_8cpp-example.html", null ],
+          [ "Nonblocking Experiment", "nonblocking_experiment_8cpp-example.html", null ],
+          [ "Handle Pulse Data", "pulse_data_8cpp-example.html", null ]
+        ] ],
+        [ "Python", null, [
+          [ "Basic Experiment", "basic_experiment_8py-example.html", null ],
+          [ "Advanced Experiment", "advanced_experiment_8py-example.html", null ],
+          [ "Manual Experiment", "manual_experiment_8py-example.html", null ],
+          [ "Updating Firmware", "firmware_update_8py-example.html", null ],
+          [ "Writing Data to File", "data_output_8py-example.html", null ],
+          [ "Nonblocking Experiment", "nonblocking_experiment_8py-example.html", null ],
+          [ "Linked Channels", "linked_channels_8py-example.html", null ],
+          [ "Handle Pulse Data", "pulse_data_8py-example.html", null ],
+          [ "Async Example", "async_8py-example.html", null ],
+          [ "Parallel Operation with Other device", "writein_c_s_v_8py-example.html", null ],
+          [ "Operating Squidstats Remotely", null, [
+            [ "TCP Server", "tcp_server_8py-example.html", null ],
+            [ "TCP Client", "tcp_client_8py-example.html", null ]
+          ] ]
+        ] ]
+      ] ]
     ] ],
     [ "Download", "^https://github.com/Admiral-Instruments/AdmiralSquidstatAPI", null ]
   ] ]
@@ -56,9 +77,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_ais_abstract_element_8h_source.html",
-"class_ais_data_manipulator.html#a5db03f9c911861333fcdab45edf238dc",
-"class_ais_normal_pulse_voltammetry_element.html#abcb86888974ebea23bac32f18ddb5466"
+"advanced_control_flow_8cpp-example.html",
+"class_ais_diff_pulse_voltammetry_element.html",
+"class_ais_normal_pulse_voltammetry_element.html#afe5d8c65a21ec9e688b8076f16034527"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

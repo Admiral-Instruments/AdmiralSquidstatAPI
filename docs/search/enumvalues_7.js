@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['success_0',['Success',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04',1,'AisErrorCode']]]
+  ['normalpulse_0',['NormalPulse',['../group___helpers.html#gga56fc00dfd921ed4247fd41691d762d9faf06f02af628f1931a1f4fbc27d4efba0',1,'AisManipulatorType.h']]]
 ];

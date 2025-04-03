@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['errorcode_0',['ErrorCode',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311a',1,'AisErrorCode']]]
+  ['aispulsetype_0',['AisPulseType',['../group___helpers.html#ga56fc00dfd921ed4247fd41691d762d9f',1,'AisManipulatorType.h']]]
 ];

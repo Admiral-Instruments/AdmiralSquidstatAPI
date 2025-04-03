@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['message_0',['message',['../class_ais_error_code.html#a25e4eef5129000305294ad761b9f2c5e',1,'AisErrorCode']]]
+  ['loadprimarydata_0',['loadPrimaryData',['../class_ais_data_manipulator.html#a34519a6bfa87d03946b467f05b633326',1,'AisDataManipulator']]]
 ];

@@ -3,6 +3,7 @@ var class_ais_device_tracker =
     [ "connectAllPluggedInDevices", "class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d", null ],
     [ "connectToDeviceOnComPort", "class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097", null ],
     [ "deviceDisconnected", "class_ais_device_tracker.html#a10daf47917dabe80b74b362e0a4416db", null ],
+    [ "firmwareUpdateNotification", "class_ais_device_tracker.html#a1f308b1322e75270ce0f0f6c23e5b9ec", null ],
     [ "getConnectedDevices", "class_ais_device_tracker.html#adb8ae66667e1e99a617f82ca9bf8d571", null ],
     [ "getInstrumentHandler", "class_ais_device_tracker.html#a5aad6e927602f641f60ad8942af0a5f3", null ],
     [ "newDeviceConnected", "class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff", null ],

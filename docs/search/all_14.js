@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['_7eaismottschottkyelement_0',['~AisMottSchottkyElement',['../class_ais_mott_schottky_element.html#a1a329e410a08d9e7c0df2b014a093e14',1,'AisMottSchottkyElement']]],
-  ['_7eaisstaircasepotentialvoltammetryelement_1',['~AisStaircasePotentialVoltammetryElement',['../class_ais_staircase_potential_voltammetry_element.html#ac8adcae6df411ad9281a2de2c496955d',1,'AisStaircasePotentialVoltammetryElement']]],
-  ['_7eaissteppedvoltageelement_2',['~AisSteppedVoltageElement',['../class_ais_stepped_voltage_element.html#a15928788cc33b8fc7c89b58b4954ff3a',1,'AisSteppedVoltageElement']]]
+  ['where_20to_20go_20from_20here_0',['Where to go from here',['../index.html#autotoc_md15',1,'']]],
+  ['windows_1',['Windows',['../md__markdown_files_2_comports.html#autotoc_md5',1,'']]],
+  ['with_20c_2',['Installing with C++',['../md__markdown_files_2_setup.html',1,'']]],
+  ['with_20python_3',['How To Use The SquidstatLibrary with Python',['../md__markdown_files_2_setup_python.html#autotoc_md35',1,'']]],
+  ['workingelectrodedcvoltage_4',['workingElectrodeDCVoltage',['../struct_ais_a_c_data.html#adbaec4445a396c47ba073ab79d9cee79',1,'AisACData']]],
+  ['workingelectrodevoltage_5',['workingElectrodeVoltage',['../struct_ais_d_c_data.html#ad49c1bb5b6e60fe631e174f64f40afbe',1,'AisDCData']]],
+  ['wrapper_6',['Installing the Python Wrapper',['../md__markdown_files_2_setup_python.html',1,'']]]
 ];

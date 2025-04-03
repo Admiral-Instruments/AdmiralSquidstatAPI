@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['updating_20firmware_0',['Updating Firmware',['../md_intro_and_examples_4__firmware_update.html',1,'']]]
+  ['manual_0',['Squidstat API User Manual',['../index.html',1,'']]],
+  ['manual_20experiments_1',['Manual Experiments',['../md__markdown_files_2_manual_experiments.html',1,'']]]
 ];
