@@ -7,6 +7,9 @@
 class CyclicVoltammetryElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief This experiment sweeps the potential of the working electrode back and forth between the 
  * <strong>first voltage-limit</strong> and the <strong>second voltage-limit</strong> at a constant
  * <strong>scan rate (dE/dt)</strong> for a specified number of <strong>cycles</strong>.

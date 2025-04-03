@@ -8,6 +8,8 @@
 class AisCompRangePrivate;
 
 /**
+ * @ingroup Helpers
+ *
  * @brief This class has advanced options controlling the device stability including the bandwidth index and the stability factor.
  * @see setBandwidthIndex
  * @see setStabilityFactor
@@ -29,7 +31,7 @@ public:
     */
     AisCompRange(const AisCompRange&);
 
-    
+
     /**
      * @brief get the value set for the bandwidth index.
      * @return the set value for the bandwidth index.
@@ -39,8 +41,8 @@ public:
 
     /**
      * @brief set the index value for the bandwidth.
-     * 
-     * Usually, the device's default index value is optimal for running experiments. 
+     *
+     * Usually, the device's default index value is optimal for running experiments.
      * You may still increase the index within the range 0-10 as you run higher frequency experiments to see what best fits.
      * @param index the index value for the bandwidth (0-10).
     */
@@ -54,10 +56,10 @@ public:
 
     /**
      * @brief set a value for the stability factor.
-     * 
-     * Usually, the device's default factor value is optimal for running experiments. 
+     *
+     * Usually, the device's default factor value is optimal for running experiments.
      * You may still increase the factor within the range 0-10 as you run experiments with more oscillations to see what best fits.
-     * @param factor the stability-factor value (0-10) 
+     * @param factor the stability-factor value (0-10)
     */
     void setStabilityFactor(uint8_t factor);
 

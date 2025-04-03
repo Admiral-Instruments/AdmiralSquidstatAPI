@@ -9,6 +9,9 @@ class CustomExperimentRunner;
 class AisExperimentPrivate;
 
 /**
+ *
+ * @ingroup InstrumentControl
+ * 
  * @brief this class is used to create custom experiments. A custom experiment contains one or more elements.
  * Once you create elements and set their parameters, you can add them to the container.
  *
@@ -71,20 +74,24 @@ public:
     void setDescription(QString description);
 
     /**
-     * @brief append an element to the custom experiment.
-     * @param element an elemental experiment to be appended to this/(the calling) custom experiment.
-     * @param repeat the number of times this element is to be repeated. This is an optional parameter and is defaulted to equal 1 when not set.
-     * @return true if appending the element was successful and false otherwise.
-     * @note although an element is an experiment, in the context of custom experiments, it is referred to as an element to make a distinction between the two.
+     * @brief Append an element to this experiment.
+     * @param element The experiment element to be appended to this experiment.
+     * @param repeat The number of times this element will be repeated. This is an optional parameter with a default value of 1.\n
+                     The minimum value is 1. If smaller the function <u>will not append</u> the node to the experiment.\n
+                     The maximum value is 65535. The function will clamp any value greater than this to 65535, and it <u>will append</u> the node to the experiment.
+     * @return <b>true</b> if the element was appended to the experiment and <b>false</b> otherwise.
+     * @note Although an element is an experiment, in the context of custom experiments, it is referred to as an element to make a distinction between the two.
      * In other contexts where such distinction is not needed, an element may still be referred to as an experiment.
     */
     bool appendElement(AisAbstractElement& element, unsigned int repeat = 1);
 
     /**
-     * @brief append a sub experiment to this/(the calling) custom experiment.
-     * @param subExp a sub experiment to be appended to this/(the calling) custom experiment.
-     * @param repeat the number of times this sub experiment is to be repeated. This is an optional parameter and is defaulted to equal 1 when not set.
-     * @return true if appending the sub experiment was successful and false otherwise.
+     * @brief Append a sub experiment to this experiment.
+     * @param subExp A sub experiment to be appended to this experiment.
+     * @param repeat The number of times this sub experiment will be repeated. This is an optional parameter with a default value of 1.\n
+                     The minimum value is 1. If smaller, the function <u>will not append</u> the sub experiment to the experiment\n
+                     The maximum value is 65535. The function will clamp any value greater than this to 65535, and it <u>will append</u> the <b>sub experiment</b> to the experiment.
+     * @return <b>true</b> if the sub experiment was appended to the experiment and <b>false</b> otherwise.
     */
     bool appendSubExperiment(const AisExperiment& subExp, unsigned int repeat = 1);
 

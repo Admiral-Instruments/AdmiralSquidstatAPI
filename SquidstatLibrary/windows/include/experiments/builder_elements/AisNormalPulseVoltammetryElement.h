@@ -7,6 +7,9 @@
 class NormalPulseVoltammetryElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief This experiment holds the working electrode at a <strong>baseline potential</strong> during the <strong>quiet time</strong>,
  * then applies a train of pulses, which increase in amplitude until the <strong>final potential</strong> is reached. 
  * 
@@ -30,12 +33,32 @@ public:
      * @param pulseWidth the value for the pulse width in seconds.
      * @param pulsePeriod the value for the pulse period in seconds.
     */
+    [[deprecated("Use the constructor with the approxMaxCurrent parameter instead.")]]
     explicit AisNormalPulseVoltammetryElement(
         double startVoltage,
         double endVoltage,
         double voltageStep,
         double pulseWidth,
         double pulsePeriod);
+
+    
+    /**
+     * @brief the normal-pulse-voltammetry element constructor
+     * @param startVoltage the value of the starting potential in volts
+     * @param endVoltage the value of the ending potential in volts
+     * @param voltageStep the value set for the voltage step in volts.
+     * @param pulseWidth the value for the pulse width in seconds.
+     * @param pulsePeriod the value for the pulse period in seconds.
+     * @param approxMaxCurrent the value for the approximate maximum current in amperes.
+    */
+    explicit AisNormalPulseVoltammetryElement(
+        double startVoltage,
+        double endVoltage,
+        double voltageStep,
+        double pulseWidth,
+        double pulsePeriod,
+        double approxMaxCurrent);
+
     /**
     * @brief copy constructor for the AisNormalPulseVoltammetryElement object.
     */
@@ -194,14 +217,21 @@ public:
     /**
      * @brief tells whether the current range is set to auto-select or not.
      * @return true if the current range is set to auto-select and false if a rage has been selected.
+     * 
+     * @deprecated This function is deprecated and no longer supports auto range for this element.
+     * Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.
     */
+    [[deprecated("No longer supports auto range for this element. Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.")]]
     bool isAutoRange() const;
 
     /**
      * @brief set to auto-select the current range.
      * 
      * This option is set by default. There is no need to call this function to auto-select if the range was not manually set.
+     * 
+     * @deprecated This function is deprecated. Use setApproxMaxCurrent() to specify the current range instead.
     */
+    [[deprecated("Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.")]]
     void setAutoRange();
 
     /**

@@ -6,21 +6,26 @@
 #include <QObject>
 #include <memory>
 
-
-
 class AisDeviceTrackerPrivate;
 class AisInstrumentHandler;
 
-
 /**
- * @brief This class is used track device connections to the computer. It can establish connection with plugged-in devices.
- * It also provides instrument handlers specific to each connected device which can provide control of the specific device like starting experiments.
+ *
+ * @ingroup InstrumentControl
+ *
+ * @brief This class is used track device connections to the computer.
+ * It also provides instrument handlers specific to each connected device which provide control of the relevant device.
 */
 class SQUIDSTATLIBRARY_EXPORT AisDeviceTracker final : public QObject
 {
     Q_OBJECT
 public:
     ~AisDeviceTracker() override;
+
+    /**
+     * @brief get the instance of the device tracker.
+     * @return the static instance of the AisDeviceTracker
+     */
     static AisDeviceTracker *Instance();
 
     /**
@@ -39,14 +44,13 @@ public:
 
     /**
      * @brief get an instrument handler to control a specific device.
-     * @param deviceName the name of the connected device to get the instrument handler for.
+     * @param deviceName the name of the connected device to get the instrument handler for (case sensitive).
      * @return the instrument handler that controls the specified device.
      * @note You may get a list of the connected devices using getConnectedDevices().
      * Also, whenever a device has been connected by calling connectToDeviceOnComPort(), a signal is emitted with the device name.
-     * A signal and slot example is shown \ref basics "here".
      * @see AisInstrumentHandler
-     * @see connectToDeviceOnComPort()
-     * @see getConnectedDevices()
+     * @see AisdeviceTracker::connectToDeviceOnComPort()
+     * @see AisdeviceTracker::getConnectedDevices()
     */
     const AisInstrumentHandler &getInstrumentHandler(const QString &deviceName) const;
 
@@ -68,7 +72,7 @@ public:
 
     /**
      * @brief update firmware on connected device at USB port.
-     * @param comPort the communication port to connect through.
+     * @param comport the communication port to connect through.
      * @return AisErrorCode::Success if firmware update successfully initiated through the given communication port.
      * If not successful, possible returned errors are: 
      * - AisErrorCode::FirmwareUptodate
@@ -77,7 +81,6 @@ public:
      * @note You need to specify the communication port specific to your computer. For example, on PC, you may find your port number through the 'device manager'.
      * An example would be "COM15".
     */
-
     AisErrorCode updateFirmwareOnComPort(const QString& comport) const;
 
     /**
@@ -126,6 +129,10 @@ signals:
     */
     void deviceDisconnected(const QString &deviceName);
 
+    /**
+     * @brief a signal which is emitted regularaly during a firmware update, providing information about the progress of the update.
+     * @param message a string containing the progress percentage message.
+     */
     void firmwareUpdateNotification(const QString& message);
     
 private:

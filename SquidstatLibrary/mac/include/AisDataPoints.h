@@ -4,7 +4,9 @@
 #include <qstring.h>
 
 /**
- * @brief a structure containing DC data information.
+ * @ingroup Helpers
+ *
+ * @brief A structure containing DC data collected from the instrument.
 */
 struct AisDCData {
 
@@ -35,8 +37,10 @@ struct AisDCData {
 };
 
 /**
- * @brief a structure containing AC data information.
-*/
+ * @ingroup Helpers
+ * 
+ * @brief A structure containing AC data collected from the instrument.
+ */
 struct AisACData {
 
     /**
@@ -76,9 +80,7 @@ struct AisACData {
 
     /**
      * @brief the number of cycles specific to the reported frequency.
-     * 
-     * In EIS, we run a range of frequencies. For each frequency, a specific number of cycles are run. 
-     * The higher the frequency, the more number of cycles.
+     * @note In EIS, we run a range of frequencies. For each frequency, a specific number of cycles are run. The higher the frequency, the more number of cycles.
     */
     double numberOfCycles;
 
@@ -104,8 +106,10 @@ struct AisACData {
 };
 
 /**
- * @brief a structure containing some information regarding the running element.
-*/
+ * @ingroup Helpers
+ * 
+ * @brief A structure containing some information regarding the running element.
+ */
 struct AisExperimentNode {
 
     /**

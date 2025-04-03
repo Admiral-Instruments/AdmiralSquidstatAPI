@@ -13,7 +13,10 @@
 class AisInstrumentHandlerPrivate;
 class AisExperiment;
 
-    /**
+/**
+ *
+ * @ingroup InstrumentControl
+ * 
  * @brief this class provides control of the device including starting, pausing, resuming and stopping an experiment on a channel
  * as well as reading the data and other controls of the device. 
  * 
@@ -242,6 +245,37 @@ public:
     std::vector<uint8_t> getLinkedChannels(uint8_t channel) const;
 
     /**
+     * @brief Set the fan speed to maximum when an experiment is active. Only available on some devices.
+     * @note Setting this mode may remove small variations in data caused by fan cycling in some electrochemical systems.
+     * @details Set the fan speed to maximum when an experiment is active. Only available on some devices.\n
+                Model-specific fan behavior:\n
+                  - Squidstat <u>Cycler</u>: Not available.\n
+                  - Squidstat <u>Ace</u>, <u>Prime</u>, <u>Solo</u>, and Squidstat <u>Plus</u> (serial numbers below <u>1700</u>): Always operate in this mode. Fans will turn off when no experiment is running.\n
+                  - Squidstat <u>Plus</u> (serial numbers <u>1700</u> or higher), Squidstat <u>Penta</u>, <u>Decka</u>, and <u>Venta</u>: Default operating mode. Fans will adjust based on the internal temperature of the instrument when no experiment is running.\n
+     * @retval AisErrorCode::Success
+     * @retval AisErrorCode::DeviceNotFound
+     * @retval AisErrorCode::FeatureNotSupported
+     * @retval AisErrorCode::DeviceCommunicationFailed
+     * @see setFanSpeedVariable
+     */
+    AisErrorCode setFanSpeedMaximum() const;
+
+    /**
+     * @brief Set the fan speed to always adjust automatically based on the internal temperature of the instrument. Only available on some devices.
+     * @details Set the fan speed to always adjust automatically based on the internal temperature of the instrument. Only available on some devices.\n
+                Model-specific fan behavior:\n
+                  - Squidstat <u>Cycler</u>: Always operates in this mode; no data variances occur from fan cycling.\n
+                  - Squidstat <u>Ace</u>, <u>Prime</u>, <u>Solo</u>, and Squidstat <u>Plus</u> (serial numbers below <u>1700</u>): Not available.\n
+                  - Squidstat <u>Plus</u> (serial numbers <u>1700</u> or higher), Squidstat <u>Penta</u>, <u>Decka</u>, and <u>Venta</u>: Available on these models.\n
+     * @retval AisErrorCode::Success
+     * @retval AisErrorCode::DeviceNotFound
+     * @retval AisErrorCode::FeatureNotSupported
+     * @retval AisErrorCode::DeviceCommunicationFailed
+     * @see setFanSpeedMaximum
+     */
+    AisErrorCode setFanSpeedVariable() const;
+
+    /**
      * @brief tells whether the given channel is busy or not.
      * @param channel the channel number to check if it is busy or not.
      * @return true only if given a valid channel number that has either a running or a paused experiment.
@@ -441,6 +475,85 @@ public:
     std::vector<std::pair<double, double>> getManualModeVoltageRangeList(uint8_t channel) const;
 
 
+     /**
+     * @brief Sets the maximum allowable voltage for a channel. The experiment will stop if the measured voltage exceeds this limit.
+     * 
+     * Sets the maximum allowable voltage for a channel. The experiment will stop if the measured voltage exceeds this limit.
+     * 
+     * @param channel The channel number for which the voltage limit is to be set.
+     * @param Vmax The maximum allowable voltage in volts.
+     * @return AisErrorCode indicating success or failure of the operation.
+       @note
+             - For <u>Squidstat Cyclers</u>, this limit will not apply to AC elements.
+             - For <u>all other devices</u>, it is not recommended to use this for AC elements.
+     */
+    AisErrorCode setChannelMaximumVoltage(uint8_t channel, double Vmax) const;
+
+     /**
+     * @brief Sets the minimum allowable voltage for a channel. The experiment will stop if the measured voltage falls below this limit.
+     * 
+     * Sets the minimum allowable voltage for a channel. The experiment will stop if the measured voltage falls below this limit.
+     * 
+     * @param channel The channel number for which the voltage limit is to be set.
+     * @param Vmin The minimum allowable voltage in volts.
+     * @return AisErrorCode indicating success or failure of the operation.
+       @note
+             - For <u>Squidstat Cyclers</u>, this limit will not apply to AC elements.
+             - For <u>all other devices</u>, it is not recommended to use this for AC elements.
+     */
+        AisErrorCode setChannelMinimumVoltage(uint8_t channel, double Vmin) const;
+
+     /**
+     * @brief Sets the maximum allowable current for a channel. The experiment will stop if the measured current exceeds this limit.
+     * 
+     * Sets the maximum allowable current for a channel. The experiment will stop if the measured current exceeds this limit.
+     * 
+     * @param channel The channel number for which the current limit is to be set.
+     * @param Imax The maximum allowable current in amperes.
+     * @return AisErrorCode indicating success or failure of the operation.
+       @note
+             - For <u>Squidstat Cyclers</u>, this limit will not apply to AC elements.
+             - For <u>all other devices</u>, it is not recommended to use this for AC elements.
+     */
+        AisErrorCode setChannelMaximumCurrent(uint8_t channel, double Imax) const;
+
+     /**
+     * @brief Sets the minimum allowable current for a channel. The experiment will stop if the measured current falls below this limit.
+     * 
+     * Sets the minimum allowable current for a channel. The experiment will stop if the measured current falls below this limit.
+     * 
+     * @param channel The channel number for which the current limit is to be set.
+     * @param Imin The minimum allowable current in amperes.
+     * @return AisErrorCode indicating success or failure of the operation.
+       @note
+             - For <u>Squidstat Cyclers</u>, this limit will not apply to AC elements.
+             - For <u>all other devices</u>, it is not recommended to use this for AC elements.
+     */
+        AisErrorCode setChannelMinimumCurrent(uint8_t channel, double Imin) const;
+
+     /**
+     * @brief Sets the maximum allowable temperature for a channel. The experiment will stop if the measured temperature exceeds this limit.
+     * 
+     * Sets the maximum allowable temperature for a channel. The experiment will stop if the measured temperature exceeds this limit.
+     * 
+     * @param channel The channel number for which the temperature limit is to be set.
+     * @param MaxTemperature The maximum allowable temperature in degrees Celsius.
+     * @return AisErrorCode indicating success or failure of the operation.
+       @note
+             - For <u>Squidstat Cyclers</u>, this limit will not apply to AC elements.
+     */
+        AisErrorCode setChannelMaximumTemperature(uint8_t channel, double MaxTemperature) const;
+
+     /**
+     * @brief Resets all limits for the specified channel.
+     * 
+     * This function removes all configured voltage, current, and temperature limits for a specific channel,
+     * restoring it to its default state.
+     * 
+     * @param channel The channel number for which the limits are to be reset.
+     * @return AisErrorCode indicating success or failure of the operation.
+     */
+        AisErrorCode resetChannelLimits(uint8_t channel) const;
 signals:
 
     /**
@@ -503,8 +616,9 @@ signals:
     /**
      * @brief a signal that is emitted whenever an experiment was stopped manually or has completed.
      * @param channel the channel on which the experiment has stopped.
+     * @param reason the reason why the experiment has stopped.
     */
-    void experimentStopped(uint8_t channel);
+    void experimentStopped(uint8_t channel, const QString& reason);
 
     /**
      * @brief a signal that is emitted whenever an experiment was paused.

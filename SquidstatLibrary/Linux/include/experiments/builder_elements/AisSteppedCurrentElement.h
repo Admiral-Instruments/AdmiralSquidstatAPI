@@ -7,6 +7,9 @@
 class SteppedCurrent;
 
 /**
+ * 
+ * @ingroup Elements
+ * 
  * @brief A class representing an experiment to apply the stepped current. 
  * <br>
  * @image html SteppedCurrent.png
@@ -32,12 +35,12 @@ public:
         double stepDuration,
         double samplingInterval);
     /**
-* @brief copy constructor for the AisSteppedCurrentElement object.
-*/
+     * @brief copy constructor for the AisSteppedCurrentElement object.
+     */
     explicit AisSteppedCurrentElement(const AisSteppedCurrentElement&);
     /**
-* @brief overload equal to operator for the AisSteppedCurrentElement object.
-*/
+     * @brief overload equal to operator for the AisSteppedCurrentElement object.
+     */
     AisSteppedCurrentElement& operator=(const AisSteppedCurrentElement&);
 
     ~AisSteppedCurrentElement() override;
@@ -45,82 +48,82 @@ public:
     /**
      * @brief get the name of the element.
      * @return The name of the element: "SteppedCurrent".
-    */
+     */
     QString getName() const override;
 
     /**
      * @brief get a list of applicable categories of the element.
      * @return A list of applicable categories: ("Galvanostatic Control").
-    */
+     */
     QStringList getCategory() const override;
 
     /**
      * @brief get how frequently we are sampling the data.
      * @return the data sampling interval value in seconds.
-    */
+     */
     double getSamplingInterval() const;
 
     /**
      * @brief set how frequently we are sampling the data.
      * @param samplingInterval the data sampling interval value in seconds.
-    */
+     */
     void setSamplingInterval(double samplingInterval);
 
     /**
      * @brief Gets the ending current value for the stepped experiment.
-    *
-    * @return The ending current value in amperes.
-    */
+     *
+     * @return The ending current value in amperes.
+     */
     double getEndCurrent() const;
 
     /**
-    * @brief Gets the size of each current step in the stepped experiment.
-    *
-    * @return The size of each current step in amperes.
-    */
-    double getStepSize() const;
-
-    /**
-    * @brief Gets the starting current value for the stepped experiment.
-    *
-    * @return The starting current value in amperes.
-    */
-    double getStartCurrent() const;
-
-    /**
-    * @brief Gets the duration of each current step in the stepped experiment.
-    *
-    * @return The duration of each current step in seconds.
-    */
-    double getStepDuration() const;
-
-    /**
-    * @brief Sets the ending current value for the stepped experiment.
-    *
-    * @param iEnd The ending current value in amperes.
-    */
+     * @brief Sets the ending current value for the stepped experiment.
+     *
+     * @param iEnd The ending current value in amperes.
+     */
     void setEndCurrent(double iEnd);
 
     /**
-    * @brief Sets the size of each current step in the stepped experiment.
-    *
-    * @param iStep The size of each current step in amperes.
-    * @note Regardless of iStep's sign, the device will determine the step direction based on the start and end current.
-    */
+     * @brief Gets the size of each current step in the stepped experiment.
+     *
+     * @return The size of each current step in amperes.
+     */
+    double getStepSize() const;
+
+    /**
+     * @brief Sets the size of each current step in the stepped experiment.
+     *
+     * @param iStep The size of each current step in amperes.
+     * @note Regardless of iStep's sign, the device will determine the step direction based on the start and end current.
+     */
     void setStepSize(double iStep);
 
     /**
-    * @brief Sets the starting current value for the stepped experiment.
-    *
-    * @param iStart The starting current value in amperes.
-    */
+     * @brief Gets the starting current value for the stepped experiment.
+     *
+     * @return The starting current value in amperes.
+     */
+    double getStartCurrent() const;
+
+    /**
+     * @brief Sets the starting current value for the stepped experiment.
+     *
+     * @param iStart The starting current value in amperes.
+     */
     void setStartCurrent(double iStart);
 
     /**
-    * @brief Sets the duration of each current step in the stepped experiment.
-    *
-    * @param tStep The duration of each current step in seconds.
-    */
+     * @brief Gets the duration of each current step in the stepped experiment.
+     *
+     * @return The duration of each current step in seconds.
+     */
+    double getStepDuration() const;
+
+    /**
+     * @brief Sets the duration of each current step in the stepped experiment.
+     *
+     * @param tStep The duration of each current step in seconds.
+     */
     void setStepDuration(double tStep);
 
     /**
@@ -151,7 +154,7 @@ public:
      *
      * This is an <strong>optional</strong> parameter.
      * If nothing is set, the device will auto-select the voltage range.
-     * @param approxMaxVoltage the value for the maximum current expected in V.
+     * @param approxMinVoltage the value for the minimum current expected in V.
      */
     void setApproxMinVoltage(double approxMinVoltage);
 

@@ -7,6 +7,9 @@
 class SquareWaveVoltammetryElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief This experiment holds the working electrode at the <strong>starting potential</strong> during the <strong>quiet time</strong>. 
  * Then it applies a train of square pulses superimposed on a staircase waveform with a uniform <strong>potential step</strong> magnitude. 
  * 
@@ -31,7 +34,9 @@ public:
      * @param voltageStep the value set for the voltage step in volts.
      * @param pulseAmp the value for the pulse amplitude in volts.
      * @param pulseFrequency the value for the pulse frequency in Hz.
+     * @deprecated Use the constructor with the approxMaxCurrent parameter instead.
     */
+    [[deprecated("Use the constructor with the approxMaxCurrent parameter instead.")]]
     explicit AisSquareWaveVoltammetryElement(
         double startVoltage,
         double endVoltage,
@@ -39,13 +44,30 @@ public:
         double pulseAmp,
         double pulseFrequency);
 
+     /**
+     * @brief the square wave element constructor
+     * @param startVoltage the value of the starting potential in volts
+     * @param endVoltage the value of the ending potential in volts
+     * @param voltageStep the value set for the voltage step in volts.
+     * @param pulseAmp the value for the pulse amplitude in volts.
+     * @param pulseFrequency the value for the pulse frequency in Hz.
+     * @param approxMaxCurrent the value for the approximate maximum current in amperes.
+     */
+        explicit AisSquareWaveVoltammetryElement(
+            double startVoltage,
+            double endVoltage,
+            double voltageStep,
+            double pulseAmp,
+            double pulseFrequency,
+            double approxMaxCurrent);
+
     /**
-* @brief copy constructor for the AisSquareWaveVoltammetryElement object.
-*/
-    explicit AisSquareWaveVoltammetryElement(const AisSquareWaveVoltammetryElement&);
-    /**
-* @brief overload equal to operator for the AisSquareWaveVoltammetryElement object.
-*/
+    * @brief copy constructor for the AisSquareWaveVoltammetryElement object.
+    */
+        explicit AisSquareWaveVoltammetryElement(const AisSquareWaveVoltammetryElement&);
+        /**
+    * @brief overload equal to operator for the AisSquareWaveVoltammetryElement object.
+    */
     AisSquareWaveVoltammetryElement& operator=(const AisSquareWaveVoltammetryElement&);
 
     ~AisSquareWaveVoltammetryElement() override;
@@ -193,14 +215,21 @@ public:
     /**
      * @brief tells whether the current range is set to auto-select or not.
      * @return true if the current range is set to auto-select and false if a rage has been selected.
+     * 
+     * @deprecated This function is deprecated and no longer supports auto range for this element. 
+     * Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.
     */
+    [[deprecated("No longer supports auto range for this element. Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.")]]
     bool isAutoRange() const;
 
     /**
      * @brief set to auto-select the current range.
      * 
      * This option is set by default. There is no need to call this function to auto-select if the range was not manually set.
+     * 
+     * @deprecated This function is deprecated. Use setApproxMaxCurrent() to specify the current range instead.
     */
+    [[deprecated("Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.")]]
     void setAutoRange();
 
     /**

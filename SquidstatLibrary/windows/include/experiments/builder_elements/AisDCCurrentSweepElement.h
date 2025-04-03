@@ -7,6 +7,9 @@
 class DCCurrentSweepElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief this experiment performs a DC current sweep from the <strong>starting current</strong> to the <strong>ending current</strong>
  * which progresses linearly according to the <strong>scan rate</strong>.
  * 

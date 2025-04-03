@@ -7,6 +7,9 @@
 class ConstantResistanceElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief This element/experiment simulates a constant resistance load.
  * <br>
  * @image html ConstantResistance.png
@@ -104,7 +107,7 @@ public:
     void setMinimumVoltageVsOCP(bool vsOCP);
 
     /**
-     * @brief get the value set maximum for the voltage in volts.
+    * @brief get the value set maximum for the voltage in volts.
     * @return the value set for the maximum voltage in volts.
     * @note this is an optional parameter. If no value has been set, the default value is positive infinity
     */
@@ -116,7 +119,7 @@ public:
      * This is an <strong>optional</strong> condition.
      * If nothing is set, then the experiment will not stop based on an upper-limit voltage value.
      * If a maximum voltage is set, the experiment will continue to run as long as the measured voltage is above that value.
-     * @param minVoltage the maximum voltage value in volts at which the experiment will stop.
+     * @param maxVoltage the maximum voltage value in volts at which the experiment will stop.
     */
     void setMaxVoltage(double maxVoltage);
 

@@ -7,6 +7,9 @@
 class EISPotentiostaticElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief This experiment records the complex impedance of the experimental cell in potentiostatic mode,
  * starting from the <strong>start frequency</strong> and sweeping through towards the <strong>end frequency</strong>,
  * with a fixed number of frequency <strong>steps per decade</strong>. 

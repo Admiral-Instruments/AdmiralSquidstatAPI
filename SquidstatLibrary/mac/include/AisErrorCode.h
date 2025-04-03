@@ -6,15 +6,21 @@
 #include <qstring.h>
 
 /**
- * @brief This class contains the possible error codes returned to the user when working with the API.
  *
- * If a function has an AisErrorCode return type, then it needs to be checked for possible failures.
- * The object of this class returned will contain an error code that can be accessed by calling \ref value() member function
- * and an error message that can be accessed by calling @see message.
-*/
+ * @ingroup InstrumentControl
+ * 
+ * @brief This class contains the possible error codes returned to the user when working with the API.
+ * Error codes can help diagnose issues such as invalid parameters, communication failures, or device malfunctions. 
+ * By handling errors properly, you can ensure reliable operation of your experiments.
+ * 
+ * @note If a function has an AisErrorCode return type, then it needs to be checked for possible issues.
+ */
 class SQUIDSTATLIBRARY_EXPORT AisErrorCode {
 
 public:
+    /**
+    * @brief The possible error codes that can be returned to the user.
+    */
     enum ErrorCode : uint8_t {
         Unknown = 255, /*!< indicates that the command failed for an unknown reason.*/
         Success = 0, /*!< indicates success.*/
@@ -26,6 +32,7 @@ public:
         InvalidChannel = 10, /*!< indicates that the given channel number is not valid.*/
         BusyChannel = 11, /*!< indicates that the failure was due to the channel being busy.*/
         DeviceNotFound = 13, /*!< indicates that no device was detected to be connected.*/
+        FeatureNotSupported = 14, /*!< indicates that the feature is not available on the device.*/
 
         ManualExperimentNotRunning = 51, /*!< indicates that the given command applies when there is a manual experiment running on the channel but there is none.*/
         ExperimentNotUploaded = 52, /*!< indicates that the given command applies when an experiment has already been uploaded to the channel but there is none.*/
@@ -50,13 +57,20 @@ public:
         FailedToSetManualModeSamplingInterval = 112, /*!< indicates failure of setting manual mode sampling interval. possible communication failure with the device.*/
         FailedToSetIRComp = 113, /*!< indicates failure of setting IR Compensation. Possible communication failure with the device.*/
         FailedToSetCompRange = 114, /*!< indicates failure of setting Compensation Range. Possible communication failure with the device.*/
+        FailedToSetChannelMaximumVoltage = 115, /*!< indicates failure of setting Channel Maximum Voltage. Possible communication failure with the device.*/
+        FailedToSetChannelMinimumVoltage = 116, /*!< indicates failure of setting Channel Minimum Voltage. Possible communication failure with the device.*/
+        FailedToSetChannelMaximumCurrent = 117, /*!< indicates failure of setting Channel Maximum Current. Possible communication failure with the device.*/
+        FailedToSetChannelMinimumCurrent = 118,/*!< indicates failure of setting Channel Minimum Current. Possible communication failure with the device.*/
+        FailedToSetChannelMinimumTemperature = 119, /*!< indicates failure of setting Channel Maximum Temperature. Possible communication failure with the device.*/
 
         FailedRequest = 254 /* !< indicates a failed request to the device. */
     };
 
+    //! @cond DOXYGEN_SHOULD_SKIP_THIS
     AisErrorCode();
     AisErrorCode(ErrorCode error);
     AisErrorCode(ErrorCode error, QString message);
+    //! @endcond
 
     /**
      * @brief a function to get a message explaining the error.
@@ -70,7 +84,9 @@ public:
     */
     int value() const;
 
+    //! @cond DOXYGEN_SHOULD_SKIP_THIS
     operator ErrorCode() const;
+    //! @endcond
 
 private:
     ErrorCode code;

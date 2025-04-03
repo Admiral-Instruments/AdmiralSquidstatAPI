@@ -7,6 +7,9 @@
 class ConstantPotAdvElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief an experiment that simulates a constant applied voltage.
  * <br>
  * @image html ConstantPot.png
@@ -127,7 +130,7 @@ public:
      * The experiment will end when the absolute current reaches this value.
      * @return the maximum current value in Amps.
      * @note this is an optional parameter. If no value has been set, the default value is positive infinity.
-     * @attention Deprecation Warning: This function may be modified or changed in a future version. Use getMaxAbsoluteCurrent instead.
+     * @attention Deprecation Warning: This function may be modified or changed in a future version. Use #getMaxAbsoluteCurrent instead.
     */
     [[deprecated("getMaxCurrent has been renamed getMaxAbsoluteCurrent for description accuracy. In future versions this function may be removed or modified.")]]
     double getMaxCurrent() const;
@@ -139,7 +142,7 @@ public:
      * If nothing is set, then the experiment will not stop based on an upper-limit current value.
      * If a maximum current is set, the experiment will continue to run as long as the measured current is below that value.
      * @param maxCurrent the maximum current value in Amps.
-     * @attention Deprecation Warning: This function may be modified or changed in a future version. Use setMaxAbsoluteCurrent instead.
+     * @attention Deprecation Warning: This function may be modified or changed in a future version. Use #setMaxAbsoluteCurrent instead.
     */
     [[deprecated("setMaxCurrent has been renamed setMaxAbsoluteCurrent for description accuracy. In future versions this function may be removed or modified.")]]
     void setMaxCurrent(double maxCurrent);

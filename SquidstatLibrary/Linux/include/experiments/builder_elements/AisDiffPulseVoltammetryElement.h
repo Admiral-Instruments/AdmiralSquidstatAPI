@@ -7,6 +7,9 @@
 class DiffPulseVoltammetryElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief In this experiment, the working electrode holds at a <strong>starting potential</strong> during the <strong>quiet time</strong>. 
  * Then it applies a train of pulses superimposed on a staircase waveform, with a uniform <strong>potential step</strong> size. 
  * The potential continues to step until the <strong>final potential</strong> is reached. 
@@ -30,6 +33,7 @@ public:
      * @param pulseHeight the value for the pulse height in volts.
      * @param pulseWidth the value for the pulse width in seconds.
      * @param pulsePeriod the value for the pulse period in seconds.
+     * @param approxMaxCurrent the value for the approximate maximum current in amperes.
     */
     explicit AisDiffPulseVoltammetryElement(
         double startVoltage,
@@ -37,7 +41,27 @@ public:
         double voltageStep,
         double pulseHeight,
         double pulseWidth,
+        double pulsePeriod,
+        double approxMaxCurrent);
+
+    /**
+     * @brief the differential pulse element constructor.
+     * @param startVoltage the value of the starting potential in volts
+     * @param endVoltage the value of the ending potential in volts
+     * @param voltageStep the value set for the voltage step in volts.
+     * @param pulseHeight the value for the pulse height in volts.
+     * @param pulseWidth the value for the pulse width in seconds.
+     * @param pulsePeriod the value for the pulse period in seconds.
+    */
+    [[deprecated("Use the constructor with the approxMaxCurrent parameter instead.")]]
+    explicit AisDiffPulseVoltammetryElement(
+        double startVoltage,
+        double endVoltage,
+        double voltageStep,
+        double pulseHeight,
+        double pulseWidth,
         double pulsePeriod);
+
     /**
    * @brief copy constructor for the AisDiffPulseVoltammetryElement object.
   */
@@ -212,14 +236,21 @@ public:
     /**
      * @brief tells whether the current range is set to auto-select or not.
      * @return true if the current range is set to auto-select and false if a rage has been selected.
+     * 
+     * @deprecated This function is deprecated and no longer supports auto range for this element.
+     * Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.
     */
+    [[deprecated("No longer supports auto range for this element. Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.")]]
     bool isAutoRange() const;
 
     /**
      * @brief set to auto-select the current range.
      * 
      * This option is set by default. There is no need to call this function to auto-select if the range was not manually set.
+     * 
+     * @deprecated This function is deprecated. Use setApproxMaxCurrent() to specify the current range instead.
     */
+    [[deprecated("Specify the current using setApproxMaxCurrent(). The device will determine the appropriate range based on the current value.")]]
     void setAutoRange();
 
     /**

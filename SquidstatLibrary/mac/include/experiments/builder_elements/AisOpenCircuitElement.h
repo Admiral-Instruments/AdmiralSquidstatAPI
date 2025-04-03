@@ -7,6 +7,9 @@
 class OpenCircuitElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief This experiment observes the <strong>open circuit potential</strong> of the working electrode for a specific period of time.
  * <br>
  * @image html OpenCircuitPotential.png
@@ -107,8 +110,7 @@ public:
     /**
      * @brief get the value set for the minimum voltage rate of change with respect to time (minimum dV/dt).
      * @return the value set for the minimum voltage rate of change with respect to time (minimum dV/dt).
-     * @note this is an optional parameter. If no value has been set, the default value is zero
-
+     * @note this is an optional parameter. If no value has been set, the default value is zero.
     */
     double getMindVdt() const;
 

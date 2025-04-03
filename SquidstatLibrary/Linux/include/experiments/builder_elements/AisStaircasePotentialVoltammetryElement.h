@@ -7,6 +7,9 @@
 class StaircasePotentialVoltammetryElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief AisStaircasePotentialVoltammetryElement class represents an element for staircase potential voltammetry experiments.
  * It inherits from AisAbstractElement.
  * 

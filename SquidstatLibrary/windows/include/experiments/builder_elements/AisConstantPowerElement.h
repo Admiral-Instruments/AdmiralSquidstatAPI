@@ -7,6 +7,9 @@
 class ConstantPowerElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief This experiment simulates a constant power, charge or discharge".
  * <br>
  * @image html ConstantPower.png

@@ -7,6 +7,9 @@
 class MottSchottkyElement;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief This class performs Mott-Schottky analysis on the working electrode for a specified range of potentials.
  *
  * The Mott-Schottky experiment is used to analyze the electrochemical properties of a working electrode by sweeping

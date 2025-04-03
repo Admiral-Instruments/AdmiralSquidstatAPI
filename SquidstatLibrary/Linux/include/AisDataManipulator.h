@@ -9,17 +9,16 @@
 #include <string>
 #include <memory>
 
-/**
- * @class AisDataManipulator
- * @brief The AisDataManipulator class offers advanced control over pulse data collection and manipulation. It provides methods to manipulate 
- * AIS primary data for all three pulse voltammetry experiments types, namely Differential Pulse Voltammetry (DPV), Square Wave Voltammetry (SWV), 
- * and Normal Pulse Voltammetry (NPV). 
- * 
- * The Pulse Voltammetry example shows how to use this class with each pulse element.
- * */
 class AisDataManipulatorPrivate;
-class SQUIDSTATLIBRARY_EXPORT AisDataManipulator {
 
+/**
+ *
+ * @ingroup Helpers
+ *
+ * @brief This class offers advanced control over pulse data collection and manipulation. It provides methods to manipulate AIS primary data for all three pulse voltammetry experiments types, namely Differential Pulse Voltammetry (DPV), Square Wave Voltammetry (SWV), and Normal Pulse Voltammetry (NPV). 
+ */
+class SQUIDSTATLIBRARY_EXPORT AisDataManipulator
+{
 public:
     /**
      * @brief Default constructor for AisDataManipulator class.

@@ -9,6 +9,9 @@
 class SteppedVoltage;
 
 /**
+ *
+ * @ingroup Elements
+ * 
  * @brief A class representing an experiment to apply the stepped volatge. 
  *
  * This class inherits from AisAbstractElement and is designed for Stepped Voltage experiments.
@@ -74,58 +77,16 @@ public:
     double getStartVoltage() const;
 
     /**
-     * @brief Get the ending voltage for the experiment.
-     * @return The ending voltage in volts.
-     */
-    double getEndVoltage() const;
-
-    /**
-     * @brief Get the voltage step for each iteration.
-     * @return The voltage step in volts.
-     */
-    double getStepSize() const;
-
-    /**
-     * @brief Get the time step for each iteration.
-     * @return The time step in seconds.
-     */
-    double getStepDuration() const;
-
-    /**
-     * @brief Get the data sampling interval.
-     * @return The data sampling interval in seconds.
-     */
-    double getSamplingInterval() const;
-
-    /**
-     * @brief Get the approximate maximum current.
-     * @return The approximate maximum current in Amps.
-     */
-    double getApproxMaxCurrent() const;
-
-    /**
-     * @brief Check if the experiment starts with the open circuit potential.
-     * @return True if the experiment starts with open circuit potential, false otherwise.
-     */
-    bool isStartVoltageVsOCP() const;
-
-    /**
-     * @brief Check if the experiment ends with the open circuit potential.
-     * @return True if the experiment ends with open circuit potential, false otherwise.
-     */
-    bool isEndVoltageVsOCP() const;
-
-    /**
-     * @brief Check if current autoranging is enabled.
-     * @return True if current autoranging is enabled, false otherwise.
-     */
-    bool isAutoRange() const;
-
-    /**
      * @brief Set the starting voltage for the experiment.
      * @param vStart The starting voltage in volts.
      */
     void setStartVoltage(double vStart);
+
+    /**
+     * @brief Get the ending voltage for the experiment.
+     * @return The ending voltage in volts.
+     */
+    double getEndVoltage() const;
 
     /**
      * @brief Set the ending voltage for the experiment.
@@ -134,6 +95,12 @@ public:
     void setEndVoltage(double vEnd);
 
     /**
+     * @brief Get the voltage step for each iteration.
+     * @return The voltage step in volts.
+     */
+    double getStepSize() const;
+    
+    /**
      * @brief Set the voltage step for each iteration.
      * @param vStep The voltage step in volts.
      * @note Regardless of vStep's sign, the device will determine the step direction based on the start and end voltage.
@@ -141,10 +108,22 @@ public:
     void setStepSize(double vStep);
 
     /**
-     * @brief Set the time step for each iteration.
-     * @param tStep The time step in seconds.
+     * @brief Get the time step for each iteration.
+     * @return The time step in seconds.
+     */
+    double getStepDuration() const;
+
+    /**
+     * @brief Set the duration of each step.
+     * @param duration The step duration in seconds.
      */
     void setStepDuration(double duration);
+
+    /**
+     * @brief Get the data sampling interval.
+     * @return The data sampling interval in seconds.
+     */
+    double getSamplingInterval() const;
 
     /**
      * @brief Set the data sampling interval.
@@ -153,10 +132,22 @@ public:
     void setSamplingInterval(double samplingInterval);
 
     /**
+     * @brief Get the approximate maximum current.
+     * @return The approximate maximum current in Amps.
+     */
+    double getApproxMaxCurrent() const;
+
+    /**
      * @brief Set the approximate maximum current.
      * @param approxMaxCurrent The approximate maximum current in Amps.
      */
     void setApproxMaxCurrent(double approxMaxCurrent);
+
+    /**
+     * @brief Check if the experiment starts with the open circuit potential.
+     * @return True if the experiment starts with open circuit potential, false otherwise.
+     */
+    bool isStartVoltageVsOCP() const;
 
     /**
      * @brief Set whether the experiment starts with the open circuit potential.
@@ -165,11 +156,23 @@ public:
     void setStartVoltageVsOCP(bool startVsOCP);
 
     /**
+     * @brief Check if the experiment ends with the open circuit potential.
+     * @return True if the experiment ends with open circuit potential, false otherwise.
+     */
+    bool isEndVoltageVsOCP() const;
+
+    /**
      * @brief Set whether the experiment ends with the open circuit potential.
      * @param endVsOCP True to end with open circuit potential, false otherwise.
      */
     void setEndVoltageVsOCP(bool endVsOCP);
 
+    /**
+     * @brief Check if current autoranging is enabled.
+     * @return True if current autoranging is enabled, false otherwise.
+     */
+    bool isAutoRange() const;
+    
     /**
      * @brief Enable current autoranging for the experiment.
      */
