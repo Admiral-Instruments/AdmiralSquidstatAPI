@@ -37,6 +37,6 @@ var searchData=
   ['api_20user_20manual_34',['Squidstat API User Manual',['../index.html',1,'']]],
   ['appendelement_35',['appendElement',['../class_ais_experiment.html#a612f4174967e5751e0747fd430a31e9e',1,'AisExperiment']]],
   ['appendsubexperiment_36',['appendSubExperiment',['../class_ais_experiment.html#a0a4b2cbbb5335b4020da4fe53e27c7c7',1,'AisExperiment']]],
-  ['apple_20silicon_37',['Apple Silicon',['../md__markdown_files_2_setup.html#autotoc_md28',1,'Mac ARM64 (Apple Silicon)'],['../md__markdown_files_2_setup_python.html#autotoc_md33',1,'Mac ARM64 (Apple Silicon)']]],
-  ['arm64_20apple_20silicon_38',['ARM64 Apple Silicon',['../md__markdown_files_2_setup.html#autotoc_md28',1,'Mac ARM64 (Apple Silicon)'],['../md__markdown_files_2_setup_python.html#autotoc_md33',1,'Mac ARM64 (Apple Silicon)']]]
+  ['apple_20silicon_37',['Apple Silicon',['../md__markdown_files_2_setup.html#autotoc_md28',1,'Mac ARM64 (Apple Silicon)'],['../md__markdown_files_2_setup_python.html#autotoc_md35',1,'Mac ARM64 (Apple Silicon)']]],
+  ['arm64_20apple_20silicon_38',['ARM64 Apple Silicon',['../md__markdown_files_2_setup.html#autotoc_md28',1,'Mac ARM64 (Apple Silicon)'],['../md__markdown_files_2_setup_python.html#autotoc_md35',1,'Mac ARM64 (Apple Silicon)']]]
 ];

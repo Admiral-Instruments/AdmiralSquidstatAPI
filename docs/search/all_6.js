@@ -77,10 +77,11 @@ var searchData=
   ['getstepquiettime_74',['getStepQuietTime',['../class_ais_mott_schottky_element.html#a6063c891608bbf4d308f0446c3e628dc',1,'AisMottSchottkyElement']]],
   ['getstepsize_75',['getStepSize',['../class_ais_staircase_potential_voltammetry_element.html#a743de05350942853524c4be5488f0646',1,'AisStaircasePotentialVoltammetryElement::getStepSize()'],['../class_ais_stepped_current_element.html#a7bc9bac1739118574fd7dbd03fe878c1',1,'AisSteppedCurrentElement::getStepSize()'],['../class_ais_stepped_voltage_element.html#a52d2109f20f025d33a7eb8e338da3ced',1,'AisSteppedVoltageElement::getStepSize()']]],
   ['getstepsperdecade_76',['getStepsPerDecade',['../class_ais_e_i_s_galvanostatic_element.html#a3f438508d86043dde874d409fa7759da',1,'AisEISGalvanostaticElement::getStepsPerDecade()'],['../class_ais_e_i_s_potentiostatic_element.html#ab3e65ce655e63cfdbedb9e079d36c458',1,'AisEISPotentiostaticElement::getStepsPerDecade()'],['../class_ais_mott_schottky_element.html#a5f50270568117fe95d384433500a33aa',1,'AisMottSchottkyElement::getStepsPerDecade()']]],
-  ['getvoltagerange_77',['getVoltageRange',['../class_ais_constant_pot_element.html#a04ef30c1ff34f5af407f8a8ff9f5fa80',1,'AisConstantPotElement']]],
-  ['getvoltagestep_78',['getVoltageStep',['../class_ais_mott_schottky_element.html#a52bd98bf23f76792570d4153d9c4eb6b',1,'AisMottSchottkyElement']]],
-  ['getvstep_79',['getVStep',['../class_ais_diff_pulse_voltammetry_element.html#aa34475e31343e264384662592da9e7bb',1,'AisDiffPulseVoltammetryElement::getVStep()'],['../class_ais_normal_pulse_voltammetry_element.html#afe5d8c65a21ec9e688b8076f16034527',1,'AisNormalPulseVoltammetryElement::getVStep()'],['../class_ais_square_wave_voltammetry_element.html#a86f655b5406b9bd6c0cd4da18eaa1476',1,'AisSquareWaveVoltammetryElement::getVStep()']]],
-  ['go_20from_20here_80',['Where to go from here',['../index.html#autotoc_md15',1,'']]],
-  ['groundfloatstatechanged_81',['groundFloatStateChanged',['../class_ais_instrument_handler.html#a45111d4edbe3df6b1c8fe0612d6b1951',1,'AisInstrumentHandler']]],
-  ['guided_20examples_82',['Guided Examples',['../md__markdown_files_2_guided_examples_intro.html',1,'']]]
+  ['getting_20started_3a_20labview_20beta_77',['Getting Started: LabVIEW (Beta)',['../_setup_lab_v_i_e_w.html',1,'']]],
+  ['getvoltagerange_78',['getVoltageRange',['../class_ais_constant_pot_element.html#a04ef30c1ff34f5af407f8a8ff9f5fa80',1,'AisConstantPotElement']]],
+  ['getvoltagestep_79',['getVoltageStep',['../class_ais_mott_schottky_element.html#a52bd98bf23f76792570d4153d9c4eb6b',1,'AisMottSchottkyElement']]],
+  ['getvstep_80',['getVStep',['../class_ais_diff_pulse_voltammetry_element.html#aa34475e31343e264384662592da9e7bb',1,'AisDiffPulseVoltammetryElement::getVStep()'],['../class_ais_normal_pulse_voltammetry_element.html#afe5d8c65a21ec9e688b8076f16034527',1,'AisNormalPulseVoltammetryElement::getVStep()'],['../class_ais_square_wave_voltammetry_element.html#a86f655b5406b9bd6c0cd4da18eaa1476',1,'AisSquareWaveVoltammetryElement::getVStep()']]],
+  ['go_20from_20here_81',['Where to go from here',['../index.html#autotoc_md15',1,'']]],
+  ['groundfloatstatechanged_82',['groundFloatStateChanged',['../class_ais_instrument_handler.html#a45111d4edbe3df6b1c8fe0612d6b1951',1,'AisInstrumentHandler']]],
+  ['guided_20examples_83',['Guided Examples',['../md__markdown_files_2_guided_examples_intro.html',1,'']]]
 ];

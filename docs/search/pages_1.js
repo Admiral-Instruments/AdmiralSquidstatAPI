@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['c_0',['Installing with C++',['../md__markdown_files_2_setup.html',1,'']]],
-  ['com_20ports_1',['Finding COM Ports',['../md__markdown_files_2_comports.html',1,'']]]
+  ['beta_0',['Getting Started: LabVIEW (Beta)',['../_setup_lab_v_i_e_w.html',1,'']]]
 ];

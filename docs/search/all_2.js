@@ -8,7 +8,7 @@ var searchData=
   ['com_20ports_5',['Finding COM Ports',['../md__markdown_files_2_comports.html',1,'']]],
   ['commands_6',['Manual Mode Commands',['../md__markdown_files_2_manual_experiments.html#autotoc_md17',1,'']]],
   ['connectallpluggedindevices_7',['connectAllPluggedInDevices',['../class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d',1,'AisDeviceTracker']]],
-  ['connecting_20signals_8',['Connecting Signals',['../md__markdown_files_2_signals.html#autotoc_md40',1,'']]],
+  ['connecting_20signals_8',['Connecting Signals',['../md__markdown_files_2_signals.html#autotoc_md42',1,'']]],
   ['connecting_20to_20the_20device_9',['Connecting to the Device',['../md__markdown_files_2_run_experiment.html#autotoc_md24',1,'']]],
   ['connectionfailed_10',['ConnectionFailed',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaeb42711ddc3e80059b824b01673e26cf',1,'AisErrorCode']]],
   ['connecttodeviceoncomport_11',['connectToDeviceOnComPort',['../class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097',1,'AisDeviceTracker']]],

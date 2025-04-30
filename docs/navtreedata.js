@@ -26,8 +26,10 @@ var NAVTREE =
 [
   [ "Squidstat API User Manual", "index.html", [
     [ "Getting Started", null, [
+      [ "Introduction", "index.html", null ],
       [ "Getting Started: C++", "md__markdown_files_2_setup.html", null ],
       [ "Getting Started: Python", "md__markdown_files_2_setup_python.html", null ],
+      [ "Getting Started: LabVIEW (Beta)", "_setup_lab_v_i_e_w.html", null ],
       [ "Finding COM Ports", "md__markdown_files_2_comports.html", null ]
     ] ],
     [ "Guided Examples", "md__markdown_files_2_guided_examples_intro.html", [
@@ -71,15 +73,16 @@ var NAVTREE =
         ] ]
       ] ]
     ] ],
-    [ "Download", "^https://github.com/Admiral-Instruments/AdmiralSquidstatAPI", null ]
+    [ "Download", "^https://github.com/Admiral-Instruments/AdmiralSquidstatAPI", null ],
+    [ "Questions and Feedback", "^https://github.com/Admiral-Instruments/AdmiralSquidstatAPI/discussions", null ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"advanced_control_flow_8cpp-example.html",
-"class_ais_diff_pulse_voltammetry_element.html",
-"class_ais_normal_pulse_voltammetry_element.html#afe5d8c65a21ec9e688b8076f16034527"
+"_setup_lab_v_i_e_w.html",
+"class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff",
+"class_ais_normal_pulse_voltammetry_element.html#af456320ae52b28d31c6abb747670a6f9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

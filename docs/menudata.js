@@ -25,8 +25,10 @@
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
 {text:"Getting Started",url:"",children:[
+{text:"Introduction",url:"index.html"},
 {text:"Getting Started: C++",url:"md__markdown_files_2_setup.html"},
 {text:"Getting Started: Python",url:"md__markdown_files_2_setup_python.html"},
+{text:"Getting Started: LabVIEW (Beta)",url:"_setup_lab_v_i_e_w.html"},
 {text:"Finding COM Ports",url:"md__markdown_files_2_comports.html"}]},
 {text:"Guided Examples",url:"md__markdown_files_2_guided_examples_intro.html",children:[
 {text:"Updating Firmware",url:"md__markdown_files_2_firmware_update.html"},
@@ -63,4 +65,5 @@ var menudata={children:[
 {text:"Operating Squidstats Remotely",url:"",children:[
 {text:"TCP Server",url:"tcp_server_8py-example.html"},
 {text:"TCP Client",url:"tcp_client_8py-example.html"}]}]}]}]},
-{text:"Download",url:"^https://github.com/Admiral-Instruments/AdmiralSquidstatAPI"}]}
+{text:"Download",url:"^https://github.com/Admiral-Instruments/AdmiralSquidstatAPI"},
+{text:"Questions and Feedback",url:"^https://github.com/Admiral-Instruments/AdmiralSquidstatAPI/discussions"}]}

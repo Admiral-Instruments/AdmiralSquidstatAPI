@@ -1,7 +1,7 @@
 var searchData=
 [
   ['mac_0',['Mac',['../md__markdown_files_2_comports.html#autotoc_md6',1,'']]],
-  ['mac_20arm64_20apple_20silicon_1',['Mac ARM64 Apple Silicon',['../md__markdown_files_2_setup.html#autotoc_md28',1,'Mac ARM64 (Apple Silicon)'],['../md__markdown_files_2_setup_python.html#autotoc_md33',1,'Mac ARM64 (Apple Silicon)']]],
+  ['mac_20arm64_20apple_20silicon_1',['Mac ARM64 Apple Silicon',['../md__markdown_files_2_setup.html#autotoc_md28',1,'Mac ARM64 (Apple Silicon)'],['../md__markdown_files_2_setup_python.html#autotoc_md35',1,'Mac ARM64 (Apple Silicon)']]],
   ['manual_2',['Squidstat API User Manual',['../index.html',1,'']]],
   ['manual_20experiments_3',['Manual Experiments',['../md__markdown_files_2_manual_experiments.html',1,'']]],
   ['manual_20mode_20commands_4',['Manual Mode Commands',['../md__markdown_files_2_manual_experiments.html#autotoc_md17',1,'']]],

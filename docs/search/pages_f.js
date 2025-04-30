@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['with_20c_0',['Installing with C++',['../md__markdown_files_2_setup.html',1,'']]],
-  ['wrapper_1',['Installing the Python Wrapper',['../md__markdown_files_2_setup_python.html',1,'']]]
+  ['updating_20firmware_0',['Updating Firmware',['../md__markdown_files_2_firmware_update.html',1,'']]],
+  ['user_20manual_1',['Squidstat API User Manual',['../index.html',1,'']]]
 ];

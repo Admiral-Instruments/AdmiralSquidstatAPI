@@ -1,5 +1,6 @@
 var NAVTREEINDEX0 =
 {
+"_setup_lab_v_i_e_w.html":[0,3],
 "advanced_control_flow_8cpp-example.html":[3,1,0,5],
 "advanced_experiment_8cpp-example.html":[3,1,0,1],
 "advanced_experiment_8py-example.html":[3,1,1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "class_ais_device_tracker.html#a96eb0487b0200ae4308b539ae9d90996":[2,1,0,8],
 "class_ais_device_tracker.html#a9a42add8e62f171ef0280b8df3c3beed":[2,1,0,9],
 "class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d":[2,1,0,0],
-"class_ais_device_tracker.html#adb8ae66667e1e99a617f82ca9bf8d571":[2,1,0,4],
-"class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff":[2,1,0,6]
+"class_ais_device_tracker.html#adb8ae66667e1e99a617f82ca9bf8d571":[2,1,0,4]
 };

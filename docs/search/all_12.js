@@ -6,6 +6,7 @@ var searchData=
   ['updating_20firmware_3',['Updating Firmware',['../md__markdown_files_2_firmware_update.html',1,'']]],
   ['updating_20outdated_20firmware_4',['Checking for and Updating Outdated Firmware',['../md__markdown_files_2_firmware_update.html#autotoc_md12',1,'']]],
   ['uploadexperimenttochannel_5',['uploadExperimentToChannel',['../class_ais_instrument_handler.html#a5096c381f44458a8875cad033072be57',1,'AisInstrumentHandler::uploadExperimentToChannel(uint8_t channel, std::shared_ptr&lt; AisExperiment &gt; experiment) const'],['../class_ais_instrument_handler.html#ae32afd654a4d32a1d834a2bb5b5d6389',1,'AisInstrumentHandler::uploadExperimentToChannel(uint8_t channel, const AisExperiment &amp;experiment) const']]],
-  ['use_20the_20squidstatlibrary_20with_20python_6',['How To Use The SquidstatLibrary with Python',['../md__markdown_files_2_setup_python.html#autotoc_md35',1,'']]],
-  ['user_20manual_7',['Squidstat API User Manual',['../index.html',1,'']]]
+  ['use_6',['How to Use',['../_setup_lab_v_i_e_w.html#autotoc_md33',1,'']]],
+  ['use_20the_20squidstatlibrary_20with_20python_7',['How To Use The SquidstatLibrary with Python',['../md__markdown_files_2_setup_python.html#autotoc_md37',1,'']]],
+  ['user_20manual_8',['Squidstat API User Manual',['../index.html',1,'']]]
 ];

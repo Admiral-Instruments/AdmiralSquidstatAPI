@@ -124,9 +124,9 @@ $(function(){initNavTree('md__markdown_files_2_signals.html',''); initResizable(
   <div class="headertitle"><div class="title">Handling Signals</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md36"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md38"></a></p>
 <p>This example reviews the basic signals emitted by the <a class="el" href="class_ais_device_tracker.html">AisDeviceTracker</a> and <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a>, which notify users of instrument events, errors, experiment data, and progress. For simplicity, all signals in this example are connected to lambda functions. However, they can be connected to any slot function compatible with the signal's signature.</p>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Tracker Signals</h2>
 <p>The <a class="el" href="class_ais_device_tracker.html">AisDeviceTracker</a> emits signals regarding device connection, disconnection, and firmware update status. The following example demonstrates how these signals are connected. For details on firmware update signals, refer to the <a class="el" href="md__markdown_files_2_firmware_update.html">Firmware Update Example</a>.</p>
 <div class="tabbed"><ul>
@@ -140,7 +140,7 @@ Tracker Signals</h2>
 <div class="line">tracker.deviceDisconnected.connect(<span class="keyword">lambda</span> deviceName: print(f<span class="stringliteral">&quot;Device Disconnected: {deviceName}&quot;</span>))</div>
 </div><!-- fragment --> </li>
 </ul>
-</div><h2><a class="anchor" id="autotoc_md38"></a>
+</div><h2><a class="anchor" id="autotoc_md40"></a>
 Experiment Data Signals</h2>
 <p>The <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> emits signals containing experiment data and progress information during active experiments. The signals <a class="el" href="class_ais_instrument_handler.html#a3de1ee62bac5796ef2d4e24dfb75eebf">AisInstrumentHandler::activeDCDataReady</a> and <a class="el" href="class_ais_instrument_handler.html#a2f319978ea32fc5cf0c5282857bfa405">AisInstrumentHandler::activeACDataReady</a> provide relevant <a class="el" href="struct_ais_d_c_data.html">DC</a> and <a class="el" href="struct_ais_a_c_data.html">AC</a>, respectively, and should be handled for each experiment.</p>
 <div class="tabbed"><ul>
@@ -155,7 +155,7 @@ Experiment Data Signals</h2>
 <div class="line">    handler.activeACDataReady.connect(<span class="keyword">lambda</span> channel, data: print(f<span class="stringliteral">&quot;Timestamp: {data.timestamp} Frequency: {data.frequency} Absolute Impedance: {data.absoluteImpedance}&quot;</span>))</div>
 </div><!-- fragment --> </li>
 </ul>
-</div><h2><a class="anchor" id="autotoc_md39"></a>
+</div><h2><a class="anchor" id="autotoc_md41"></a>
 Other Signals</h2>
 <p>The <a class="el" href="class_ais_instrument_handler.html">AisInstrumentHandler</a> also emits other signals, such as notifications for the start of new elements, the end of an experiment, instrument errors, and more. Below are some examples:</p>
 <div class="tabbed"><ul>
@@ -184,7 +184,7 @@ Other Signals</h2>
 </div><!-- fragment --> </li>
 </ul>
 </div><p>For othere signals emitted: <a href="file:///C:/Workspace/SquidstatLibrary/Doc/output/html/class_ais_instrument_handler.html#signals">AisInstrumentHandler signals</a></p>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Connecting Signals</h2>
 <p>To connect data and handler signals to a valid <a class="el" href="class_ais_instrument_handler.html" title="this class provides control of the device including starting, pausing, resuming and stopping an exper...">AisInstrumentHandler</a> object, ensure the connection to the instrument is fully established. This can be done by connecting signals when the <a class="el" href="class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff">AisDeviceTracker::newDeviceConnected</a> signal is emitted.</p>
 <p>Here, a lambda function is created to connect relevant signals to the handler when the device is connected: </p><div class="tabbed"><ul>
@@ -264,7 +264,7 @@ Connecting Signals</h2>
 </div><!-- fragment --> </li>
 </ul>
 </div><p>See the full example <a href="basic_experiment_8cpp-example.html">here</a></p>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 References</h2>
 <p>For information on syntax and related concepts used in this example, refer to the following documentation links:</p><ul>
 <li>Signals and Slots: <a href="https://doc.qt.io/qt-5/signalsandslots.html">C++</a> | <a href="https://doc.qt.io/qtforpython-6/tutorials/basictutorial/signals_and_slots.html">Python</a></li>

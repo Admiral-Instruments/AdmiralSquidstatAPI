@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['deprecated_20list_0',['Deprecated List',['../deprecated.html',1,'']]]
+  ['c_0',['Installing with C++',['../md__markdown_files_2_setup.html',1,'']]],
+  ['com_20ports_1',['Finding COM Ports',['../md__markdown_files_2_comports.html',1,'']]]
 ];

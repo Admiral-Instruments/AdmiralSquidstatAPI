@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>Squidstat API User Manual: Installing the Python Wrapper</title>
+<title>Squidstat API User Manual: Getting Started: LabVIEW (Beta)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -95,7 +95,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('md__markdown_files_2_setup_python.html',''); initResizable(true); });
+$(function(){initNavTree('_setup_lab_v_i_e_w.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -121,51 +121,27 @@ $(function(){initNavTree('md__markdown_files_2_setup_python.html',''); initResiz
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Installing the Python Wrapper</div></div>
+  <div class="headertitle"><div class="title">Getting Started: LabVIEW (Beta)</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md34"></a></p>
-<p>The Squidstat API provides a Python wrapper, which can be downloaded from the Admiral Instruments GitHub page. The Python wrapper gives access to all the functiosn of the Squidstat API in Python.</p>
-<h2><a class="anchor" id="autotoc_md35"></a>
-Mac ARM64 (Apple Silicon)</h2>
-<p>If you are using a newer Mac with an ARM64 processor (M1, M2, etc.), you must perform additional steps to set up the Squidstat API.</p>
+<div class="textblock"><h2><a class="anchor" id="autotoc_md32"></a>
+Introduction</h2>
+<p>This is a proof of concept for Squidstat integration into LabVIEW. It is not feature complete, but should include enough to get started using our Squidstats in LabVIEW.</p>
+<p><em>Note:</em> <b>Control via LabVIEW</b> is still in beta. We cannot guarantee the accuracy or stability of the system while using it. If you see any issues or if you would like to request that we implement a missing feature, please create a new discussion on our <a href="https://github.com/Admiral-Instruments/AdmiralSquidstatAPI/discussions">GitHub Discussions page</a>. We currently only support Windows for this beta release.</p>
+<h2><a class="anchor" id="autotoc_md33"></a>
+How to Use</h2>
 <ol type="1">
-<li>Open the cloned repository in a Finder window and navigate down a level to <code>./SquidstatLibrary</code>.<ul>
-<li>In this folder you should see <code>Linux</code>, <code>mac</code>, <code>windows</code>, and <code>mac.tar.gz</code>.</li>
+<li>Follow the "Cloning the Repository" section of our documentation <a class="el" href="md__markdown_files_2_setup.html">here</a>.</li>
+<li>Checkout the beta branch using the git command <code>git checkout LabVIEW-beta</code></li>
+<li>Create or open an existing LabVIEW project.</li>
+<li>In the project explorer, right-click <code>My Computer</code> and navigate to <code>Add-&gt;Folder (Auto-populating)...</code></li>
+<li>In the file browser pop-up, navigate to the cloned API and then into the <code>SquidstatLibrary/windows/LabVIEW-beta</code> directory in the API and select it.</li>
+<li>Open the <code>.vi</code> located at <code>LabVIEW-beta/Demo/Demo.vi</code>. Here you will find an example of handling AC and DC data. Our API utilizes LabVIEW User Events to facilitate the transfer of data into the rest of the system.<ul>
+<li>The event system in LabVIEW adds some overhead to the library overall. If you need faster response time, you can look at <code>Squidstat/SquidstatEventLoop.vi</code> for an example of the polling loop that creates these events. You can copy this loop where desired and remove the event structures. For future releases, this may become simplified.</li>
 </ul>
 </li>
-<li>Delete the <code>mac</code> directory. It contains the library for Intel-based Mac processors.</li>
-<li>Extract the tar file by double clicking <code>mac.tar.gz</code> in the Finder window.<ul>
-<li>You should see a new <code>mac/</code> directory get automatically created.</li>
-</ul>
-</li>
-<li>At this point, your build environment is set up, and you can proceed normally.</li>
+<li>At the point you may choose to import the palette file located at <code>SquidstatLibrary/windows/LabVIEW-beta/SquidstatPalette.mnu</code>. This can be done via <code>Tools-&gt;Advanced-&gt;Edit Palette Set...</code> </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md36"></a>
-Linux</h1>
-<p>If you are on a device running Linux, before using the API, run <code>sudo ./SquidstatLibrary/Linux/install_dependencies.sh</code> from the root directory of the SquidstatAPI. This will install all dependencies and configuration files needed to run the API.<br  />
-<b>Note:</b> This will run <code>apt-get update &amp;&amp; sudo apt-get upgrade -y</code> which will update all packages currently installed on your device.</p>
-<h1><a class="anchor" id="autotoc_md37"></a>
-How To Use The SquidstatLibrary with Python</h1>
-<ol type="1">
-<li>To use the SquidstatPyLibrary, you need to install a Python version &ge; 3.9 and &le; 3.12.<ul>
-<li>Visit the official Python website at <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>.</li>
-<li>Download the installer for the desired Python version (&ge; 3.9 and &le; 3.12).</li>
-<li>Run the installer and follow the installation wizard's instructions.</li>
-<li>Make sure to select the option to add Python to the system environment (PATH) variables during the installation process. This will enable you to run Python from any location on your computer.</li>
-</ul>
-</li>
-<li>Make sure you have installed Python correctly by checking the Python version using the <code>python -V</code> command.</li>
-<li>Now you can choose to install the library in either the global environment or a virtual environment. If you want to install the library in the global environment, you can skip this step.<ul>
-<li>If you prefer using a <a href="https://docs.python.org/3/library/venv.html">Python virtual environment</a>, you can create one by running the command: <code>python -m venv VIRTUAL_ENVIRONMENT_NAME</code></li>
-<li>Open the command prompt and activate the virtual environment by typing: <code>./VIRTUAL_ENVIRONMENT_NAME/Scripts/activate.bat</code></li>
-</ul>
-</li>
-<li>Now you can proceed to install the SquidstatPyLibrary. Download the .whl file from <a href="https://github.com/Admiral-Instruments/AdmiralSquidstatAPI/tree/main/SquidstatLibrary/windows/pythonWrapper/Release">here</a>. After downloading, you can install it using the command <code>pip install YOUR_DOWNLOADED_FILE.whl</code></li>
-<li>Now, let's run an example script. If you have an Experiment.py file that you created to run an experiment, you can execute it by using the command <code>python Experiment.py</code>.</li>
-</ol>
-<p>The necessary Python library files are also located inside the <a href="https://github.com/Admiral-Instruments/AdmiralSquidstatAPI/tree/main/SquidstatLibrary/windows/pythonWrapper/Release">pythonWrapper</a> directory.</p>
-<p>Check out the <a class="el" href="md__markdown_files_2_guided_examples_intro.html">Guided Examples</a> for help getting started. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

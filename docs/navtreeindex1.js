@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff":[2,1,0,6],
 "class_ais_diff_pulse_voltammetry_element.html":[2,0,7],
 "class_ais_diff_pulse_voltammetry_element.html#a13423f4ec2431a5275252642ffaf0575":[2,0,7,0],
 "class_ais_diff_pulse_voltammetry_element.html#a135d42fd33567dda611e66bf017d568b":[2,0,7,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "class_ais_normal_pulse_voltammetry_element.html#ab92b47ac751a65307ab95ec2568b79a6":[2,0,10,17],
 "class_ais_normal_pulse_voltammetry_element.html#abcb86888974ebea23bac32f18ddb5466":[2,0,10,29],
 "class_ais_normal_pulse_voltammetry_element.html#addf1de74e346e56b3ea2856e695cca02":[2,0,10,27],
-"class_ais_normal_pulse_voltammetry_element.html#ae886af36b016e98d9b13b91cd470f8e4":[2,0,10,23],
-"class_ais_normal_pulse_voltammetry_element.html#af456320ae52b28d31c6abb747670a6f9":[2,0,10,3]
+"class_ais_normal_pulse_voltammetry_element.html#ae886af36b016e98d9b13b91cd470f8e4":[2,0,10,23]
 };

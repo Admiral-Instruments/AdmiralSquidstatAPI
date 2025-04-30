@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['signals_0',['Handling Signals',['../md__markdown_files_2_signals.html',1,'']]],
-  ['squidstat_20api_20user_20manual_1',['Squidstat API User Manual',['../index.html',1,'']]]
+  ['running_20an_20experiment_0',['Running an Experiment',['../md__markdown_files_2_run_experiment.html',1,'']]]
 ];
