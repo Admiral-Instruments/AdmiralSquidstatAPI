@@ -26,16 +26,14 @@ int main()
 
     // Create the AisDiffPulseVoltammetryElement element and add it to the experiment
     std::shared_ptr<AisExperiment> experiment = nullptr;
-    AisDiffPulseVoltammetryElement dpv_element(-0.4, 0.5, 0.01, 0.1, 0.1, 0.45);
+    AisDiffPulseVoltammetryElement dpv_element(-0.4, 0.5, 0.01, 0.1, 0.1, 0.45, 0.1);
     dpv_element.setStartVoltageVsOCP(false);
     dpv_element.setEndVoltageVsOCP(false);
-    dpv_element.setApproxMaxCurrent(0.001);
     experiment = std::make_shared<AisExperiment>();
     experiment->appendElement(dpv_element, 1);
 
      // Create an `AisDataManipulator` class for calculating advance parameters.
-    std::shared_ptr<AisDataManipulator> dataManipulator = std::make_shared<AisDataManipulator>();
-    dataManipulator->setPulseType(AisPulseType::DifferentialPulse, dpv_element.getPulseWidth(), dpv_element.getPulsePeriod());
+    std::shared_ptr<AisDataManipulator> dataManipulator = std::make_shared<AisDataManipulator>(dpv_element); //Pass the pulse element to the manipulator
 
     auto connectSignals = [=](const AisInstrumentHandler* handler) {
         QObject::connect(handler, &AisInstrumentHandler::activeDCDataReady, [=](uint8_t channel, const AisDCData& data) {

@@ -10,6 +10,9 @@
 #include <memory>
 
 class AisDataManipulatorPrivate;
+class AisDiffPulseVoltammetryElement;
+class AisNormalPulseVoltammetryElement;
+class AisSquareWaveVoltammetryElement;
 
 /**
  *
@@ -24,6 +27,24 @@ public:
      * @brief Default constructor for AisDataManipulator class.
      */
     AisDataManipulator();
+
+    /**
+     * @brief AisDiffPulseVoltammetryElement constructor for AisDataManipulator class.
+     * @param other The AisDiffPulseVoltammetryElement tile to be executed
+     */
+    AisDataManipulator(const AisDiffPulseVoltammetryElement& other);
+
+    /**
+     * @brief AisNormalPulseVoltammetryElement constructor for AisDataManipulator class.
+     * @param other the AisNormalPulseVoltammetryElement tile to be executed
+     */
+    AisDataManipulator(const AisNormalPulseVoltammetryElement& other);
+
+    /**
+     * @brief AisSquareWavePulseVoltammetryElement constructor for AisDataManipulator class.
+     * @param other AisSquareWaveVoltammetryElement tile to be executed
+     */
+    AisDataManipulator(const AisSquareWaveVoltammetryElement& other);
 
     /**
      * @brief Set pulse type with pulse width and pulse period.
