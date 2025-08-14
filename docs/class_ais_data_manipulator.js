@@ -1,6 +1,9 @@
 var class_ais_data_manipulator =
 [
     [ "AisDataManipulator", "class_ais_data_manipulator.html#a9781905cfd2150cf28636bd09300f1a2", null ],
+    [ "AisDataManipulator", "class_ais_data_manipulator.html#ac32d74f41eddb6259671633fc32a14a8", null ],
+    [ "AisDataManipulator", "class_ais_data_manipulator.html#a2e87bbd8e0147cc7f144c1cd8a3160bc", null ],
+    [ "AisDataManipulator", "class_ais_data_manipulator.html#a9d75f57729f2fba610835a944352af8b", null ],
     [ "getBaseCurrent", "class_ais_data_manipulator.html#a8e90d222be90b72162e039f9ff682209", null ],
     [ "getBaseVoltage", "class_ais_data_manipulator.html#aa46c776b453a110f5ccf0c45c43ac3f8", null ],
     [ "getFrequency", "class_ais_data_manipulator.html#afa73ca7b06b5c440b7be5a82e1dcdb8e", null ],

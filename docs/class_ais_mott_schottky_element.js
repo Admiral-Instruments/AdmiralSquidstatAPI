@@ -1,5 +1,6 @@
 var class_ais_mott_schottky_element =
 [
+    [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html#a5e1ac1035e2cf3825f84b383616408fe", null ],
     [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html#a1ace2b23d9f80bd7283ae672e2d77cfa", null ],
     [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html#a4dd9698a7b2602be1649879a22802ff6", null ],
     [ "~AisMottSchottkyElement", "class_ais_mott_schottky_element.html#a1a329e410a08d9e7c0df2b014a093e14", null ],

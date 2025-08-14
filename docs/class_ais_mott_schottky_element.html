@@ -138,6 +138,9 @@ $(function(){initNavTree('class_ais_mott_schottky_element.html',''); initResizab
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a5e1ac1035e2cf3825f84b383616408fe" id="r_a5e1ac1035e2cf3825f84b383616408fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e1ac1035e2cf3825f84b383616408fe">AisMottSchottkyElement</a> (double startingPotential, double endingPotential, double voltageStep, double startFrequency, double endFrequency, double stepsPerDecade, double amplitude, unsigned int minCycles, double stepQuietTime)</td></tr>
+<tr class="memdesc:a5e1ac1035e2cf3825f84b383616408fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Mott-Schottky experiment element.  <br /></td></tr>
+<tr class="separator:a5e1ac1035e2cf3825f84b383616408fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ace2b23d9f80bd7283ae672e2d77cfa" id="r_a1ace2b23d9f80bd7283ae672e2d77cfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ace2b23d9f80bd7283ae672e2d77cfa">AisMottSchottkyElement</a> (double startingPotential, double endingPotential, double voltageStep, double startFrequency, double endFrequency, double stepsPerDecade, double amplitude, unsigned int minCycles)</td></tr>
 <tr class="memdesc:a1ace2b23d9f80bd7283ae672e2d77cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Mott-Schottky experiment element.  <br /></td></tr>
 <tr class="separator:a1ace2b23d9f80bd7283ae672e2d77cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -243,8 +246,86 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9552be653b863dcb982027fd7354ed41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5e1ac1035e2cf3825f84b383616408fe" name="a5e1ac1035e2cf3825f84b383616408fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e1ac1035e2cf3825f84b383616408fe">&#9670;&#160;</a></span>AisMottSchottkyElement() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AisMottSchottkyElement::AisMottSchottkyElement </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>startingPotential</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>endingPotential</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>voltageStep</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>startFrequency</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>endFrequency</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>stepsPerDecade</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>amplitude</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>minCycles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>stepQuietTime</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startingPotential</td><td>The starting potential (voltage) for the experiment. </td></tr>
+    <tr><td class="paramname">endingPotential</td><td>The ending potential (voltage) for the experiment. </td></tr>
+    <tr><td class="paramname">voltageStep</td><td>The voltage step size between each potential during the experiment. </td></tr>
+    <tr><td class="paramname">startFrequency</td><td>The starting frequency for the EIS measurement. </td></tr>
+    <tr><td class="paramname">endFrequency</td><td>The ending frequency for the EIS measurement. </td></tr>
+    <tr><td class="paramname">stepsPerDecade</td><td>The number of frequency steps per decade. </td></tr>
+    <tr><td class="paramname">amplitude</td><td>The amplitude of the AC signal used in the EIS measurement. </td></tr>
+    <tr><td class="paramname">minCycles</td><td>The minimum number of cycles per frequency step during the EIS measurement. </td></tr>
+    <tr><td class="paramname">stepQuietTime</td><td>The time spent at the starting potential. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1ace2b23d9f80bd7283ae672e2d77cfa" name="a1ace2b23d9f80bd7283ae672e2d77cfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ace2b23d9f80bd7283ae672e2d77cfa">&#9670;&#160;</a></span>AisMottSchottkyElement() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ace2b23d9f80bd7283ae672e2d77cfa">&#9670;&#160;</a></span>AisMottSchottkyElement() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -316,7 +397,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a4dd9698a7b2602be1649879a22802ff6" name="a4dd9698a7b2602be1649879a22802ff6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dd9698a7b2602be1649879a22802ff6">&#9670;&#160;</a></span>AisMottSchottkyElement() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd9698a7b2602be1649879a22802ff6">&#9670;&#160;</a></span>AisMottSchottkyElement() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

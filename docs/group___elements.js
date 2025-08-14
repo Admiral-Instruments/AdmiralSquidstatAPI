@@ -445,6 +445,7 @@ var group___elements =
       [ "setStepSize", "class_ais_stepped_current_element.html#ad3b04d9417884faa8b698429ae6485af", null ]
     ] ],
     [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html", [
+      [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html#a5e1ac1035e2cf3825f84b383616408fe", null ],
       [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html#a1ace2b23d9f80bd7283ae672e2d77cfa", null ],
       [ "AisMottSchottkyElement", "class_ais_mott_schottky_element.html#a4dd9698a7b2602be1649879a22802ff6", null ],
       [ "~AisMottSchottkyElement", "class_ais_mott_schottky_element.html#a1a329e410a08d9e7c0df2b014a093e14", null ],
