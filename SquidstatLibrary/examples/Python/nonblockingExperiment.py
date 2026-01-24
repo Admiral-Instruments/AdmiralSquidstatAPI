@@ -1,6 +1,6 @@
 """! @example nonblockingExperiment.py """
 import sys
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from PySide6.QtCore import QTimer
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisInstrumentHandler
@@ -11,7 +11,7 @@ from SquidstatPyLibrary import AisErrorCode
 
 CHANNEL = 0
 
-app = QApplication()
+app = QCoreApplication()
 
 tracker = AisDeviceTracker.Instance()
 

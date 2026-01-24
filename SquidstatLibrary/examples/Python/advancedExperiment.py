@@ -1,7 +1,7 @@
 """! @example advancedExperiment.py """
 #! [Setup]
 import sys
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from SquidstatPyLibrary import AisDeviceTracker, AisExperiment, AisInstrumentHandler, AisErrorCode, AisOpenCircuitElement, AisConstantPotElement, AisConstantCurrentElement, AisEISGalvanostaticElement
 
 #Define relavant device information, for easy access
@@ -9,7 +9,7 @@ COMPORT = "COM1"
 CHANNEL = 0
 INSTRUMENT_NAME = "Plus2000"
 
-app = QApplication()
+app = QCoreApplication()
 
 tracker = AisDeviceTracker.Instance()
 

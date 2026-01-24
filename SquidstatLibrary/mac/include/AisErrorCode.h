@@ -63,6 +63,7 @@ public:
         FailedToSetChannelMinimumCurrent = 118,/*!< indicates failure of setting Channel Minimum Current. Possible communication failure with the device.*/
         FailedToSetChannelMinimumTemperature = 119, /*!< indicates failure of setting Channel Maximum Temperature. Possible communication failure with the device.*/
 
+
         FailedRequest = 254 /* !< indicates a failed request to the device. */
     };
 

@@ -2,7 +2,7 @@
 import sys
 import struct
 import asyncio
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisCompRange
 from SquidstatPyLibrary import AisDCData
@@ -16,7 +16,7 @@ from SquidstatPyLibrary import AisEISPotentiostaticElement
 from SquidstatPyLibrary import AisConstantCurrentElement
 
 # initialize the application
-app = QApplication([])
+app = QCoreApplication([])
 
 # Add delay before quitting
 async def delayed_quit():

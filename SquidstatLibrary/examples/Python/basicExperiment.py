@@ -1,7 +1,7 @@
 """! @example basicExperiment.py """
 ##! [Setup]
 import sys
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisExperiment, AisErrorCode
 from SquidstatPyLibrary import AisInstrumentHandler
@@ -11,7 +11,7 @@ from SquidstatPyLibrary import AisConstantPotElement
 COMPORT = "COM16"
 CHANNEL = 0
 
-app = QApplication()
+app = QCoreApplication()
 
 tracker = AisDeviceTracker.Instance()
 ##! [Setup]

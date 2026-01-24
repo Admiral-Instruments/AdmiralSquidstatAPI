@@ -29,10 +29,21 @@ public:
     static AisDeviceTracker *Instance();
 
     /**
+     * @brief Establish a connection with a device connected on a USB port via its name.
+     * @details Move a device handler to the specified thread. All signals from that handler will then be emitted from that thread.
+     * @param deviceName The name of the device to connect. (case sensitive)
+     * @retval AisErrorCode::Success if the device was connected, or is currently active. No AisDeviceTracker::newDeviceConnected signal will be emitted if the device is already connected.
+     * @retval AisErrorCode::DeviceNotFound if the device was not found on any comport or it is open in another application
+     * @note This function will briefly open all available Squidstat serial connections and then close them. It may conflict with other applications attempting to initialize Squidstats.
+     * @note emits newDeviceConnected() signal with the device name if establishing the connection was successful.
+     */
+    AisErrorCode connectToDevice(const QString& deviceName);
+
+    /**
      * @brief establish a connection with a device connected on a USB port.
      * @param comPort the communication port to connect through.
      * @return AisErrorCode::Success if a connection was established with the device through the given communication port.
-     * If not successful, possible returned errors are: 
+     * If not successful, possible returned errors are:
      * - AisErrorCode::Unknown
      * - AisErrorCode::FirmwareNotSupported
      * - AisErrorCode::ConnectionFailed
@@ -45,9 +56,10 @@ public:
     /**
      * @brief get an instrument handler to control a specific device.
      * @param deviceName the name of the connected device to get the instrument handler for (case sensitive).
-     * @return the instrument handler that controls the specified device.
+     * @return The instrument handler that controls the specified device. If the device has not been connected, it will return a stale device.
      * @note You may get a list of the connected devices using getConnectedDevices().
      * Also, whenever a device has been connected by calling connectToDeviceOnComPort(), a signal is emitted with the device name.
+     * @note Device handlers will become stale if a device disconnects, and you will need to aquire new instances on reconnection.
      * @see AisInstrumentHandler
      * @see AisdeviceTracker::connectToDeviceOnComPort()
      * @see AisdeviceTracker::getConnectedDevices()
@@ -74,7 +86,7 @@ public:
      * @brief update firmware on connected device at USB port.
      * @param comport the communication port to connect through.
      * @return AisErrorCode::Success if firmware update successfully initiated through the given communication port.
-     * If not successful, possible returned errors are: 
+     * If not successful, possible returned errors are:
      * - AisErrorCode::FirmwareUptodate
      * - AisErrorCode::ConnectionFailed
      * @note emits firmwareUpdateNotification() signal to provide firmware update progress.
@@ -102,7 +114,6 @@ public:
      * @param save When set to 'false,' it will not write logs to the file. When set to 'true,' it will begin writing device error logs to the file.
      * @see setLogFilePath
     */
-    
     void saveLogToFile(bool save);
 
     /**
@@ -112,8 +123,15 @@ public:
      * @note If you set 'false' for 'saveLogToFile,' it will not generate the log file. It is recommended to set it to 'true' or leave the permission as the default setting.
      * @see saveLogToFile
     */
-    
     void setLogFilePath(const QString& path);
+
+    /**
+     * @brief Calling this function will remove all disconnected devices from memory. Any pointers and references to these devices will be invalidated.
+     * @note This function should only be called after handling a disconnection event and removing all references to the disconnected device.
+     * @note This is a temporary patch function to fix memory leaks over long periods of time with many disconnection events. In a future implementation this function will no longer be needed.
+    */
+    void purgeStaleDevices();
+
 
 signals:
     /**
@@ -127,21 +145,30 @@ signals:
      * @brief a signal to be emitted whenever a device has been disconnected.
      * @param deviceName the name of the newly disconnected device.
     */
-    void deviceDisconnected(const QString &deviceName);
+    void deviceDisconnected(const QString& deviceName);
 
     /**
      * @brief a signal which is emitted regularaly during a firmware update, providing information about the progress of the update.
      * @param message a string containing the progress percentage message.
+     * @note If the device is in reset mode when the firmware is updated, the device name will be "Not Available" for all firmware update messaging.
      */
     void firmwareUpdateNotification(const QString& message);
-    
+
+    /**
+     * @brief Emitted when a device finishes the firmware update process.
+     * @param deviceName The name of the device which is finished updating.
+     * @param success Indicates whether the firmware updated successfully.
+     * @note If the device is in reset mode when the firmware is updated, the device name will be "Not Available" for all firmware update messaging.
+     */
+    void firmwareUpdateFinished(const QString& deviceName, bool success);
+
 private:
     AisDeviceTracker();
     AisDeviceTracker(const AisDeviceTracker &);
     void operator=(const AisDeviceTracker &);
 
 
-    std::unique_ptr<AisDeviceTrackerPrivate> m_data;
+    AisDeviceTrackerPrivate* m_data = nullptr;
 };
 
 #endif

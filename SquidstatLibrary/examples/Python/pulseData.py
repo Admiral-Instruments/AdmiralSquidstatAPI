@@ -1,7 +1,7 @@
 """! @example pulseData.py """
 
 import sys
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisCompRange
 from SquidstatPyLibrary import AisDCData
@@ -59,7 +59,7 @@ def create_logic(handler):
     # fucntion for printing an experiment has stopped
     def on_experiment_stopped(channel, reason):
         print(f"Experiment has completed on channel {channel}, {reason}")
-        QApplication.quit()
+        QCoreApplication.quit()
 
     # function to print an experiment has paused
     def on_experiment_paused(channel):
@@ -88,7 +88,7 @@ def create_logic(handler):
 # setup experiment
 def main():
     # initialize the application
-    app = QApplication()
+    app = QCoreApplication()
     
     # get a device tracker
     tracker = AisDeviceTracker.Instance()
