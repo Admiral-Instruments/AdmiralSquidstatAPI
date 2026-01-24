@@ -152,6 +152,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>deviceDisconnected</b
 <tr class="memitem:a45111d4edbe3df6b1c8fe0612d6b1951" id="r_a45111d4edbe3df6b1c8fe0612d6b1951"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45111d4edbe3df6b1c8fe0612d6b1951">groundFloatStateChanged</a> (bool grounded)</td></tr>
 <tr class="memdesc:a45111d4edbe3df6b1c8fe0612d6b1951"><td class="mdescLeft">&#160;</td><td class="mdescRight">a signal that is emitted when the floating ground connection state has changed.  <br /></td></tr>
 <tr class="separator:a45111d4edbe3df6b1c8fe0612d6b1951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3a5990221f9c4fd50ee1743909c1ba4" id="r_ab3a5990221f9c4fd50ee1743909c1ba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3a5990221f9c4fd50ee1743909c1ba4">experimentStarting</a> (uint8_t channel)</td></tr>
+<tr class="memdesc:ab3a5990221f9c4fd50ee1743909c1ba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">a signal that is emitted whenever an experiment begins  <br /></td></tr>
+<tr class="separator:ab3a5990221f9c4fd50ee1743909c1ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0df19029d26b1cce0d05650ecfa854" id="r_a9d0df19029d26b1cce0d05650ecfa854"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d0df19029d26b1cce0d05650ecfa854">experimentNewElementStarting</a> (uint8_t channel, const <a class="el" href="struct_ais_experiment_node.html">AisExperimentNode</a> &amp;stepInfo)</td></tr>
 <tr class="memdesc:a9d0df19029d26b1cce0d05650ecfa854"><td class="mdescLeft">&#160;</td><td class="mdescRight">a signal that is emitted whenever a new elemental experiment has started.  <br /></td></tr>
 <tr class="separator:a9d0df19029d26b1cce0d05650ecfa854"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -308,6 +311,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8715d3ac8ae930f27a02d6b7c60e3e4d" id="r_a8715d3ac8ae930f27a02d6b7c60e3e4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8715d3ac8ae930f27a02d6b7c60e3e4d">resetChannelLimits</a> (uint8_t channel) const</td></tr>
 <tr class="memdesc:a8715d3ac8ae930f27a02d6b7c60e3e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all limits for the specified channel.  <br /></td></tr>
 <tr class="separator:a8715d3ac8ae930f27a02d6b7c60e3e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef5117779c6b6780002d4246d12971c" id="r_a6ef5117779c6b6780002d4246d12971c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef5117779c6b6780002d4246d12971c">setLoadImpedance</a> (uint8_t channel, const float &amp;loadImpedance)</td></tr>
+<tr class="memdesc:a6ef5117779c6b6780002d4246d12971c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the expected load impedance for a specific channel.  <br /></td></tr>
+<tr class="separator:a6ef5117779c6b6780002d4246d12971c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ac7a76399e3574f65fad91427ea0a1" id="r_a64ac7a76399e3574f65fad91427ea0a1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64ac7a76399e3574f65fad91427ea0a1">getLoadImpedance</a> (uint8_t channel)</td></tr>
+<tr class="memdesc:a64ac7a76399e3574f65fad91427ea0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the currently configured load impedance for a specific channel.  <br /></td></tr>
+<tr class="separator:a64ac7a76399e3574f65fad91427ea0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2f319978ea32fc5cf0c5282857bfa405" name="a2f319978ea32fc5cf0c5282857bfa405"></a>
@@ -552,6 +561,37 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ab3a5990221f9c4fd50ee1743909c1ba4" name="ab3a5990221f9c4fd50ee1743909c1ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3a5990221f9c4fd50ee1743909c1ba4">&#9670;&#160;</a></span>experimentStarting</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisInstrumentHandler::experimentStarting </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>channel</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>the channel number on which the experiment has begun </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ad252ccab4eaccb8bf1247ffb249c8ff8" name="ad252ccab4eaccb8bf1247ffb249c8ff8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad252ccab4eaccb8bf1247ffb249c8ff8">&#9670;&#160;</a></span>experimentStopped</h2>
 
@@ -653,6 +693,31 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a list of channels linked to the channel parameter. </dd></dl>
+
+</div>
+</div>
+<a id="a64ac7a76399e3574f65fad91427ea0a1" name="a64ac7a76399e3574f65fad91427ea0a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ac7a76399e3574f65fad91427ea0a1">&#9670;&#160;</a></span>getLoadImpedance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AisInstrumentHandler::getLoadImpedance </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>channel</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This allows the user to query the load impedance previously set for a channel.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The channel number for which the load impedance is requested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The load impedance value in ohms for the specified channel. </dd></dl>
 
 </div>
 </div>
@@ -1422,6 +1487,36 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the master channel out of the given list of channels. The master channel is your interface to upload an experiment to and then control it. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>this functionality is only applicable to the cycler model. </dd></dl>
+
+</div>
+</div>
+<a id="a6ef5117779c6b6780002d4246d12971c" name="a6ef5117779c6b6780002d4246d12971c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef5117779c6b6780002d4246d12971c">&#9670;&#160;</a></span>setLoadImpedance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisInstrumentHandler::setLoadImpedance </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>channel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;</td>          <td class="paramname"><span class="paramname"><em>loadImpedance</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>By providing the load impedance, the Cycler can calculate and apply an initial current that will result in a voltage close to the desired setpoint at the start of a potentiostatic experiment. This helps prevent immediately hitting lower current safety limits when the experiment begins.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The channel number for which the load impedance is being set. </td></tr>
+    <tr><td class="paramname">loadImpedance</td><td>The load impedance value in ohms to be applied to the channel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_ais_error_code.html" title="This class contains the possible error codes returned to the user when working with the API....">AisErrorCode</a> indicating success or failure of the operation. </dd></dl>
 
 </div>
 </div>

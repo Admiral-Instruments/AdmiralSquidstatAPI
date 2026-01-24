@@ -6,6 +6,7 @@ var annotated =
     [ "AisConstantPotElement", "class_ais_constant_pot_element.html", "class_ais_constant_pot_element" ],
     [ "AisConstantPowerElement", "class_ais_constant_power_element.html", "class_ais_constant_power_element" ],
     [ "AisConstantResistanceElement", "class_ais_constant_resistance_element.html", "class_ais_constant_resistance_element" ],
+    [ "AisCumulativeCapacityData", "struct_ais_cumulative_capacity_data.html", "struct_ais_cumulative_capacity_data" ],
     [ "AisCyclicVoltammetryElement", "class_ais_cyclic_voltammetry_element.html", "class_ais_cyclic_voltammetry_element" ],
     [ "AisDataManipulator", "class_ais_data_manipulator.html", "class_ais_data_manipulator" ],
     [ "AisDCCurrentSweepElement", "class_ais_d_c_current_sweep_element.html", "class_ais_d_c_current_sweep_element" ],

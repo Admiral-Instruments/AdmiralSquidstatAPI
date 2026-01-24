@@ -10,8 +10,13 @@ var group___helpers =
       [ "setCompRangeName", "class_ais_comp_range.html#a230f0fc67eeaf30084a03e499b4836a4", null ],
       [ "setStabilityFactor", "class_ais_comp_range.html#a6eb997fad619cbe6ea38d72e57ea5595", null ]
     ] ],
+    [ "AisCumulativeCapacityData", "struct_ais_cumulative_capacity_data.html", [
+      [ "absolute", "struct_ais_cumulative_capacity_data.html#aa4487173746a61a90a6ecc5412404d87", null ],
+      [ "net", "struct_ais_cumulative_capacity_data.html#ab7c31b2035e720787e93f2587bd8cd3d", null ]
+    ] ],
     [ "AisDCData", "struct_ais_d_c_data.html", [
       [ "counterElectrodeVoltage", "struct_ais_d_c_data.html#a6c765ec62a21cddb6482eebf64e5c812", null ],
+      [ "cumulativeCapacity", "struct_ais_d_c_data.html#ac8ee2eaf91fa6483bf05ae2d6f9da262", null ],
       [ "current", "struct_ais_d_c_data.html#a8dbf057e272af392efcfdc6343eb1db5", null ],
       [ "temperature", "struct_ais_d_c_data.html#ae686c0ad102816793735a760312ab5e0", null ],
       [ "timestamp", "struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881", null ],

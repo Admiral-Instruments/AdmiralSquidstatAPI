@@ -1,12 +1,15 @@
 var class_ais_device_tracker =
 [
     [ "connectAllPluggedInDevices", "class_ais_device_tracker.html#abb8abce4de564252066d06925e25d13d", null ],
+    [ "connectToDevice", "class_ais_device_tracker.html#ace3f0d0c63ad437f5cda2cc9874ae765", null ],
     [ "connectToDeviceOnComPort", "class_ais_device_tracker.html#a3369b0043dd80bd1ab4e23dabe236097", null ],
     [ "deviceDisconnected", "class_ais_device_tracker.html#a10daf47917dabe80b74b362e0a4416db", null ],
+    [ "firmwareUpdateFinished", "class_ais_device_tracker.html#ae08ef97eed4d8a77238ee167caf15af7", null ],
     [ "firmwareUpdateNotification", "class_ais_device_tracker.html#a1f308b1322e75270ce0f0f6c23e5b9ec", null ],
     [ "getConnectedDevices", "class_ais_device_tracker.html#adb8ae66667e1e99a617f82ca9bf8d571", null ],
     [ "getInstrumentHandler", "class_ais_device_tracker.html#a5aad6e927602f641f60ad8942af0a5f3", null ],
     [ "newDeviceConnected", "class_ais_device_tracker.html#af0985ed0e0e7ba1b5168767720a5f0ff", null ],
+    [ "purgeStaleDevices", "class_ais_device_tracker.html#a9704fff351a086571216958ba9aee598", null ],
     [ "saveLogToFile", "class_ais_device_tracker.html#a696013276e83951e6c4ef7bab1805936", null ],
     [ "setLogFilePath", "class_ais_device_tracker.html#a96eb0487b0200ae4308b539ae9d90996", null ],
     [ "updateFirmwareOnAllAvailableDevices", "class_ais_device_tracker.html#a9a42add8e62f171ef0280b8df3c3beed", null ],

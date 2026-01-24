@@ -1,6 +1,7 @@
 var struct_ais_d_c_data =
 [
     [ "counterElectrodeVoltage", "struct_ais_d_c_data.html#a6c765ec62a21cddb6482eebf64e5c812", null ],
+    [ "cumulativeCapacity", "struct_ais_d_c_data.html#ac8ee2eaf91fa6483bf05ae2d6f9da262", null ],
     [ "current", "struct_ais_d_c_data.html#a8dbf057e272af392efcfdc6343eb1db5", null ],
     [ "temperature", "struct_ais_d_c_data.html#ae686c0ad102816793735a760312ab5e0", null ],
     [ "timestamp", "struct_ais_d_c_data.html#ae394dc60504aa5fdbc06604265d71881", null ],

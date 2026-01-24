@@ -128,7 +128,7 @@ $(function(){initNavTree('pulse_data_8py-example.html',''); initResizable(true);
 <div class="fragment"><div class="line"><span class="lineno">    1</span><span class="stringliteral">&quot;&quot;&quot;! @example pulseData.py &quot;&quot;&quot;</span></div>
 <div class="line"><span class="lineno">    2</span> </div>
 <div class="line"><span class="lineno">    3</span><span class="keyword">import</span> sys</div>
-<div class="line"><span class="lineno">    4</span><span class="keyword">from</span> PySide6.QtWidgets <span class="keyword">import</span> QApplication</div>
+<div class="line"><span class="lineno">    4</span><span class="keyword">from</span> PySide6.QtCore <span class="keyword">import</span> QCoreApplication</div>
 <div class="line"><span class="lineno">    5</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisDeviceTracker</div>
 <div class="line"><span class="lineno">    6</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisCompRange</div>
 <div class="line"><span class="lineno">    7</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisDCData</div>
@@ -186,7 +186,7 @@ $(function(){initNavTree('pulse_data_8py-example.html',''); initResizable(true);
 <div class="line"><span class="lineno">   59</span>    <span class="comment"># fucntion for printing an experiment has stopped</span></div>
 <div class="line"><span class="lineno">   60</span>    <span class="keyword">def </span>on_experiment_stopped(channel, reason):</div>
 <div class="line"><span class="lineno">   61</span>        print(f<span class="stringliteral">&quot;Experiment has completed on channel {channel}, {reason}&quot;</span>)</div>
-<div class="line"><span class="lineno">   62</span>        QApplication.quit()</div>
+<div class="line"><span class="lineno">   62</span>        QCoreApplication.quit()</div>
 <div class="line"><span class="lineno">   63</span> </div>
 <div class="line"><span class="lineno">   64</span>    <span class="comment"># function to print an experiment has paused</span></div>
 <div class="line"><span class="lineno">   65</span>    <span class="keyword">def </span>on_experiment_paused(channel):</div>
@@ -215,7 +215,7 @@ $(function(){initNavTree('pulse_data_8py-example.html',''); initResizable(true);
 <div class="line"><span class="lineno">   88</span><span class="comment"># setup experiment</span></div>
 <div class="line"><span class="lineno">   89</span><span class="keyword">def </span>main():</div>
 <div class="line"><span class="lineno">   90</span>    <span class="comment"># initialize the application</span></div>
-<div class="line"><span class="lineno">   91</span>    app = QApplication()</div>
+<div class="line"><span class="lineno">   91</span>    app = QCoreApplication()</div>
 <div class="line"><span class="lineno">   92</span>    </div>
 <div class="line"><span class="lineno">   93</span>    <span class="comment"># get a device tracker</span></div>
 <div class="line"><span class="lineno">   94</span>    tracker = <a class="code hl_function" href="class_ais_device_tracker.html#adc58454bc5bfc76b3c8fc3fad40d2f1c">AisDeviceTracker.Instance</a>()</div>

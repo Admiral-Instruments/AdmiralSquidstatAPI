@@ -125,14 +125,14 @@ $(function(){initNavTree('md__markdown_files_2_setup_python.html',''); initResiz
   <div class="headertitle"><div class="title">Installing the Python Wrapper</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md34"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md35"></a></p>
 <p>The Squidstat API provides a Python wrapper, which can be downloaded from the Admiral Instruments GitHub page. The Python wrapper gives access to all the functiosn of the Squidstat API in Python.</p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Mac ARM64 (Apple Silicon)</h2>
 <p>If you are using a newer Mac with an ARM64 processor (M1, M2, etc.), you must perform additional steps to set up the Squidstat API.</p>
 <ol type="1">
 <li>Open the cloned repository in a Finder window and navigate down a level to <code>./SquidstatLibrary</code>.<ul>
-<li>In this folder you should see <code>Linux</code>, <code>mac</code>, <code>windows</code>, and <code>mac.tar.gz</code>.</li>
+<li>In this folder you should see <code>Linux</code>, <code>mac</code>, <code>windows</code>,<code>Linux.tar</code>, and <code>mac.tar.gz</code>.</li>
 </ul>
 </li>
 <li>Delete the <code>mac</code> directory. It contains the library for Intel-based Mac processors.</li>
@@ -142,11 +142,26 @@ Mac ARM64 (Apple Silicon)</h2>
 </li>
 <li>At this point, your build environment is set up, and you can proceed normally.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 Linux</h1>
 <p>If you are on a device running Linux, before using the API, run <code>sudo ./SquidstatLibrary/Linux/install_dependencies.sh</code> from the root directory of the SquidstatAPI. This will install all dependencies and configuration files needed to run the API.<br  />
 <b>Note:</b> This will run <code>apt-get update &amp;&amp; sudo apt-get upgrade -y</code> which will update all packages currently installed on your device.</p>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h3><a class="anchor" id="autotoc_md38"></a>
+Linux ARM64</h3>
+<p>If you are using a newer Linux with an ARM64 processor, you must perform additional steps to set up the Squidstat API.</p>
+<ol type="1">
+<li>Open the cloned repository in a Finder window and navigate down a level to <code>./SquidstatLibrary</code>.<ul>
+<li>In this folder you should see <code>Linux</code>, <code>mac</code>,<code>mac.tar.gz</code>, <code>windows</code>, and <code>Linux.tar</code>.</li>
+</ul>
+</li>
+<li>Delete the <code>Linux</code> directory. It contains the library for Intel-based x86_64 architecture.</li>
+<li>Extract the tar file by double clicking <code>Linux.tar</code> in the Finder window.<ul>
+<li>You should see a new <code>Linux/</code> directory get automatically created.</li>
+</ul>
+</li>
+<li>At this point, your build environment is set up, and you can proceed normally.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md39"></a>
 How To Use The SquidstatLibrary with Python</h1>
 <ol type="1">
 <li>To use the SquidstatPyLibrary, you need to install a Python version &ge; 3.9 and &le; 3.12.<ul>
@@ -159,7 +174,7 @@ How To Use The SquidstatLibrary with Python</h1>
 <li>Make sure you have installed Python correctly by checking the Python version using the <code>python -V</code> command.</li>
 <li>Now you can choose to install the library in either the global environment or a virtual environment. If you want to install the library in the global environment, you can skip this step.<ul>
 <li>If you prefer using a <a href="https://docs.python.org/3/library/venv.html">Python virtual environment</a>, you can create one by running the command: <code>python -m venv VIRTUAL_ENVIRONMENT_NAME</code></li>
-<li>Open the command prompt and activate the virtual environment by typing: <code>./VIRTUAL_ENVIRONMENT_NAME/Scripts/activate.bat</code></li>
+<li>Open the command prompt and activate the virtual environment by typing: <code>./VIRTUAL_ENVIRONMENT_NAME/Scripts/activate.bat</code> in Windows or <code>source ./VIRTUAL_ENVIRONMENT_NAME/bin/activate</code> in Linux and Mac.</li>
 </ul>
 </li>
 <li>Now you can proceed to install the SquidstatPyLibrary. Download the .whl file from <a href="https://github.com/Admiral-Instruments/AdmiralSquidstatAPI/tree/main/SquidstatLibrary/windows/pythonWrapper">here</a>. After downloading, you can install it using the command <code>pip install YOUR_DOWNLOADED_FILE.whl</code></li>

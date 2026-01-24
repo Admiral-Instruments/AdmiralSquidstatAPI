@@ -129,7 +129,7 @@ $(function(){initNavTree('async_8py-example.html',''); initResizable(true); });
 <div class="line"><span class="lineno">    2</span><span class="keyword">import</span> sys</div>
 <div class="line"><span class="lineno">    3</span><span class="keyword">import</span> struct</div>
 <div class="line"><span class="lineno">    4</span><span class="keyword">import</span> asyncio</div>
-<div class="line"><span class="lineno">    5</span><span class="keyword">from</span> PySide6.QtWidgets <span class="keyword">import</span> QApplication</div>
+<div class="line"><span class="lineno">    5</span><span class="keyword">from</span> PySide6.QtCore <span class="keyword">import</span> QCoreApplication</div>
 <div class="line"><span class="lineno">    6</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisDeviceTracker</div>
 <div class="line"><span class="lineno">    7</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisCompRange</div>
 <div class="line"><span class="lineno">    8</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisDCData</div>
@@ -143,7 +143,7 @@ $(function(){initNavTree('async_8py-example.html',''); initResizable(true); });
 <div class="line"><span class="lineno">   16</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisConstantCurrentElement</div>
 <div class="line"><span class="lineno">   17</span> </div>
 <div class="line"><span class="lineno">   18</span><span class="comment"># initialize the application</span></div>
-<div class="line"><span class="lineno">   19</span>app = QApplication([])</div>
+<div class="line"><span class="lineno">   19</span>app = QCoreApplication([])</div>
 <div class="line"><span class="lineno">   20</span> </div>
 <div class="line"><span class="lineno">   21</span><span class="comment"># Add delay before quitting</span></div>
 <div class="line"><span class="lineno">   22</span><span class="keyword">async def </span>delayed_quit():</div>

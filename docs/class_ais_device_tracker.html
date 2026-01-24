@@ -155,9 +155,15 @@ Signals</h2></td></tr>
 <tr class="memitem:a1f308b1322e75270ce0f0f6c23e5b9ec" id="r_a1f308b1322e75270ce0f0f6c23e5b9ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f308b1322e75270ce0f0f6c23e5b9ec">firmwareUpdateNotification</a> (const QString &amp;message)</td></tr>
 <tr class="memdesc:a1f308b1322e75270ce0f0f6c23e5b9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">a signal which is emitted regularaly during a firmware update, providing information about the progress of the update.  <br /></td></tr>
 <tr class="separator:a1f308b1322e75270ce0f0f6c23e5b9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08ef97eed4d8a77238ee167caf15af7" id="r_ae08ef97eed4d8a77238ee167caf15af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae08ef97eed4d8a77238ee167caf15af7">firmwareUpdateFinished</a> (const QString &amp;deviceName, bool success)</td></tr>
+<tr class="memdesc:ae08ef97eed4d8a77238ee167caf15af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a device finishes the firmware update process.  <br /></td></tr>
+<tr class="separator:ae08ef97eed4d8a77238ee167caf15af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ace3f0d0c63ad437f5cda2cc9874ae765" id="r_ace3f0d0c63ad437f5cda2cc9874ae765"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace3f0d0c63ad437f5cda2cc9874ae765">connectToDevice</a> (const QString &amp;deviceName)</td></tr>
+<tr class="memdesc:ace3f0d0c63ad437f5cda2cc9874ae765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establish a connection with a device connected on a USB port via its name.  <br /></td></tr>
+<tr class="separator:ace3f0d0c63ad437f5cda2cc9874ae765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3369b0043dd80bd1ab4e23dabe236097" id="r_a3369b0043dd80bd1ab4e23dabe236097"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ais_error_code.html">AisErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3369b0043dd80bd1ab4e23dabe236097">connectToDeviceOnComPort</a> (const QString &amp;comPort)</td></tr>
 <tr class="memdesc:a3369b0043dd80bd1ab4e23dabe236097"><td class="mdescLeft">&#160;</td><td class="mdescRight">establish a connection with a device connected on a USB port.  <br /></td></tr>
 <tr class="separator:a3369b0043dd80bd1ab4e23dabe236097"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,6 +188,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a96eb0487b0200ae4308b539ae9d90996" id="r_a96eb0487b0200ae4308b539ae9d90996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96eb0487b0200ae4308b539ae9d90996">setLogFilePath</a> (const QString &amp;path)</td></tr>
 <tr class="memdesc:a96eb0487b0200ae4308b539ae9d90996"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will help to change the log file directory.  <br /></td></tr>
 <tr class="separator:a96eb0487b0200ae4308b539ae9d90996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9704fff351a086571216958ba9aee598" id="r_a9704fff351a086571216958ba9aee598"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9704fff351a086571216958ba9aee598">purgeStaleDevices</a> ()</td></tr>
+<tr class="memdesc:a9704fff351a086571216958ba9aee598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calling this function will remove all disconnected devices from memory. Any pointers and references to these devices will be invalidated.  <br /></td></tr>
+<tr class="separator:a9704fff351a086571216958ba9aee598"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -206,6 +215,39 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>This will automatically detect all the communication ports that have devices plugged in and establish a connection with each. </p><dl class="section return"><dt>Returns</dt><dd>the number of <em>new</em> devices that have successfully established a connection with the computer. If a device has already been connected before calling this function, it will not be counted in the return value. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>emits <a class="el" href="#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">newDeviceConnected()</a> signal with the device name for each successful connection. </dd></dl>
+
+</div>
+</div>
+<a id="ace3f0d0c63ad437f5cda2cc9874ae765" name="ace3f0d0c63ad437f5cda2cc9874ae765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace3f0d0c63ad437f5cda2cc9874ae765">&#9670;&#160;</a></span>connectToDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ais_error_code.html">AisErrorCode</a> AisDeviceTracker::connectToDevice </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>deviceName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Move a device handler to the specified thread. All signals from that handler will then be emitted from that thread. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deviceName</td><td>The name of the device to connect. (case sensitive) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaa21a6da1189d0d65d44581a9f7a6ee04">AisErrorCode::Success</a></td><td>if the device was connected, or is currently active. No <a class="el" href="#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">AisDeviceTracker::newDeviceConnected</a> signal will be emitted if the device is already connected. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac315004f9231fc07be6abaf30d2f4bfa">AisErrorCode::DeviceNotFound</a></td><td>if the device was not found on any comport or it is open in another application </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function will briefly open all available Squidstat serial connections and then close them. It may conflict with other applications attempting to initialize Squidstats. </dd>
+<dd>
+emits <a class="el" href="#af0985ed0e0e7ba1b5168767720a5f0ff" title="a signal to be emitted whenever a new connection has been successfully established with a device.">newDeviceConnected()</a> signal with the device name if establishing the connection was successful. </dd></dl>
 
 </div>
 </div>
@@ -274,6 +316,43 @@ You need to specify the communication port specific to your computer. For exampl
 
 </div>
 </div>
+<a id="ae08ef97eed4d8a77238ee167caf15af7" name="ae08ef97eed4d8a77238ee167caf15af7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08ef97eed4d8a77238ee167caf15af7">&#9670;&#160;</a></span>firmwareUpdateFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisDeviceTracker::firmwareUpdateFinished </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>deviceName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>success</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deviceName</td><td>The name of the device which is finished updating. </td></tr>
+    <tr><td class="paramname">success</td><td>Indicates whether the firmware updated successfully. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>If the device is in reset mode when the firmware is updated, the device name will be "Not Available" for all firmware update messaging. </dd></dl>
+
+</div>
+</div>
 <a id="a1f308b1322e75270ce0f0f6c23e5b9ec" name="a1f308b1322e75270ce0f0f6c23e5b9ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f308b1322e75270ce0f0f6c23e5b9ec">&#9670;&#160;</a></span>firmwareUpdateNotification</h2>
 
@@ -302,6 +381,7 @@ You need to specify the communication port specific to your computer. For exampl
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>If the device is in reset mode when the firmware is updated, the device name will be "Not Available" for all firmware update messaging. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="firmware_update_8cpp-example.html#a1">firmwareUpdate.cpp</a>.</dd>
 </dl>
 
@@ -345,8 +425,10 @@ You need to specify the communication port specific to your computer. For exampl
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the instrument handler that controls the specified device. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>You may get a list of the connected devices using <a class="el" href="#adb8ae66667e1e99a617f82ca9bf8d571" title="get a list of all the connected devices.">getConnectedDevices()</a>. Also, whenever a device has been connected by calling <a class="el" href="#a3369b0043dd80bd1ab4e23dabe236097" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a>, a signal is emitted with the device name. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The instrument handler that controls the specified device. If the device has not been connected, it will return a stale device. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>You may get a list of the connected devices using <a class="el" href="#adb8ae66667e1e99a617f82ca9bf8d571" title="get a list of all the connected devices.">getConnectedDevices()</a>. Also, whenever a device has been connected by calling <a class="el" href="#a3369b0043dd80bd1ab4e23dabe236097" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a>, a signal is emitted with the device name. </dd>
+<dd>
+Device handlers will become stale if a device disconnects, and you will need to aquire new instances on reconnection. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_ais_instrument_handler.html" title="this class provides control of the device including starting, pausing, resuming and stopping an exper...">AisInstrumentHandler</a> </dd>
 <dd>
 AisdeviceTracker::connectToDeviceOnComPort() </dd>
@@ -414,6 +496,26 @@ AisdeviceTracker::getConnectedDevices() </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>this signal will be emitted for each newly connected device whenever either <a class="el" href="#a3369b0043dd80bd1ab4e23dabe236097" title="establish a connection with a device connected on a USB port.">connectToDeviceOnComPort()</a> or <a class="el" href="#abb8abce4de564252066d06925e25d13d" title="connect all devices physically plugged to the computer.">connectAllPluggedInDevices()</a> successfully established connections. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="advanced_control_flow_8cpp-example.html#a5">advancedControlFlow.cpp</a>, <a class="el" href="advanced_experiment_8cpp-example.html#a14">advancedExperiment.cpp</a>, <a class="el" href="basic_experiment_8cpp-example.html#a13">basicExperiment.cpp</a>, <a class="el" href="data_output_8cpp-example.html#a13">dataOutput.cpp</a>, <a class="el" href="linked_channels_8cpp-example.html#a6">linkedChannels.cpp</a>, <a class="el" href="manual_experiment_8cpp-example.html#a8">manualExperiment.cpp</a>, <a class="el" href="nonblocking_experiment_8cpp-example.html#a9">nonblockingExperiment.cpp</a>, and <a class="el" href="pulse_data_8cpp-example.html#a14">pulseData.cpp</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="a9704fff351a086571216958ba9aee598" name="a9704fff351a086571216958ba9aee598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9704fff351a086571216958ba9aee598">&#9670;&#160;</a></span>purgeStaleDevices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AisDeviceTracker::purgeStaleDevices </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>This function should only be called after handling a disconnection event and removing all references to the disconnected device. </dd>
+<dd>
+This is a temporary patch function to fix memory leaks over long periods of time with many disconnection events. In a future implementation this function will no longer be needed. </dd></dl>
 
 </div>
 </div>

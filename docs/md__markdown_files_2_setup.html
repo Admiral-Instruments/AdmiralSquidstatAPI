@@ -160,7 +160,7 @@ Mac ARM64 (Apple Silicon)</h2>
 <p>If you are using a newer Mac with an ARM64 processor (M1, M2, etc.), you must perform additional steps to set up the Squidstat API.</p>
 <ol type="1">
 <li>Open the cloned repository in a Finder window and navigate down a level to <code>./SquidstatLibrary</code>.<ul>
-<li>In this folder you should see <code>Linux</code>, <code>mac</code>, <code>windows</code>, and <code>mac.tar.gz</code>.</li>
+<li>In this folder you should see <code>Linux</code>, <code>mac</code>, <code>windows</code>, <code>Linux.tar</code>, and <code>mac.tar.gz</code>.</li>
 </ul>
 </li>
 <li>Delete the <code>mac</code> directory. It contains the library for Intel-based Mac processors.</li>
@@ -174,7 +174,22 @@ Mac ARM64 (Apple Silicon)</h2>
 Linux</h2>
 <p>If you are on a device running Linux, before using the API, run <code>sudo ./SquidstatLibrary/Linux/install_dependencies.sh</code> from the root directory of the SquidstatAPI. This will install all dependencies and configuration files needed to run the API.<br  />
 <b>Note:</b> This will run <code>apt-get update &amp;&amp; sudo apt-get upgrade -y</code> which will update all packages currently installed on your device.</p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h3><a class="anchor" id="autotoc_md30"></a>
+Linux ARM64</h3>
+<p>If you are using a newer Linux with an ARM64 processor, you must perform additional steps to set up the Squidstat API.</p>
+<ol type="1">
+<li>Open the cloned repository in a Finder window and navigate down a level to <code>./SquidstatLibrary</code>.<ul>
+<li>In this folder you should see <code>Linux</code>, <code>mac</code>,<code>mac.tar.gz</code>, <code>windows</code>, and <code>Linux.tar</code>.</li>
+</ul>
+</li>
+<li>Delete the <code>Linux</code> directory. It contains the library for Intel-based x86_64 architecture.</li>
+<li>Extract the tar file by double clicking <code>Linux.tar</code> in the Finder window.<ul>
+<li>You should see a new <code>Linux/</code> directory get automatically created.</li>
+</ul>
+</li>
+<li>At this point, your build environment is set up, and you can proceed normally.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md31"></a>
 CMake Installation</h2>
 <p>The API uses CMake natively to build the project. Provided is a CMakeLists.txt file which you can include in your project to build the API.</p>
 <ol type="1">
@@ -182,7 +197,7 @@ CMake Installation</h2>
  <b>Note:</b> When installing, be sure to add the CMake executable to your environment variables.</li>
 <li>To verify if CMake is installed correctly, type <code>cmake</code> in the command prompt and press Enter.</li>
 </ol>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<h3><a class="anchor" id="autotoc_md32"></a>
 Building the project</h3>
 <ol type="1">
 <li>To use the API on Windows you must install MSVC64 through Visual Studio. For Mac and Linux install Clang.</li>

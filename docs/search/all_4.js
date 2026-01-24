@@ -6,7 +6,7 @@ var searchData=
   ['examples_3',['Examples',['../md__markdown_files_2_extra_examples.html',1,'Extra Examples'],['../md__markdown_files_2_guided_examples_intro.html',1,'Guided Examples']]],
   ['experiment_4',['Experiment',['../md__markdown_files_2_advanced_experiment_logic.html#autotoc_md2',1,'Building the Experiment'],['../md__markdown_files_2_run_experiment.html',1,'Running an Experiment'],['../md__markdown_files_2_manual_experiments.html#autotoc_md18',1,'Start the Experiment'],['../md__markdown_files_2_run_experiment.html#autotoc_md25',1,'Starting Experiment'],['../md__markdown_files_2_advanced_experiment_logic.html#autotoc_md3',1,'Starting the Experiment'],['../md__markdown_files_2_manual_experiments.html#autotoc_md20',1,'Stop the Experiment']]],
   ['experiment_5',['Building the experiment',['../md__markdown_files_2_run_experiment.html#autotoc_md23',1,'']]],
-  ['experiment_20data_20signals_6',['Experiment Data Signals',['../md__markdown_files_2_signals.html#autotoc_md40',1,'']]],
+  ['experiment_20data_20signals_6',['Experiment Data Signals',['../md__markdown_files_2_signals.html#autotoc_md42',1,'']]],
   ['experiment_20description_7',['Experiment Description',['../md__markdown_files_2_advanced_experiment_logic.html#autotoc_md1',1,'']]],
   ['experiment_20elements_8',['Experiment Elements',['../group___elements.html',1,'']]],
   ['experiment_20logic_9',['Advanced Experiment Logic',['../md__markdown_files_2_advanced_experiment_logic.html',1,'']]],
@@ -18,7 +18,8 @@ var searchData=
   ['experimentpaused_15',['experimentPaused',['../class_ais_instrument_handler.html#ab82d52f4f759b02162f6d047901cf192',1,'AisInstrumentHandler']]],
   ['experimentresumed_16',['experimentResumed',['../class_ais_instrument_handler.html#abdc033f7c96d34728cf74f316c73c8f1',1,'AisInstrumentHandler']]],
   ['experiments_17',['Manual Experiments',['../md__markdown_files_2_manual_experiments.html',1,'']]],
-  ['experimentstopped_18',['experimentStopped',['../class_ais_instrument_handler.html#ad252ccab4eaccb8bf1247ffb249c8ff8',1,'AisInstrumentHandler']]],
-  ['experimentuploaded_19',['ExperimentUploaded',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac81e3fd4ad428f9c703132a8923fc1f8',1,'AisErrorCode']]],
-  ['extra_20examples_20',['Extra Examples',['../md__markdown_files_2_extra_examples.html',1,'']]]
+  ['experimentstarting_18',['experimentStarting',['../class_ais_instrument_handler.html#ab3a5990221f9c4fd50ee1743909c1ba4',1,'AisInstrumentHandler']]],
+  ['experimentstopped_19',['experimentStopped',['../class_ais_instrument_handler.html#ad252ccab4eaccb8bf1247ffb249c8ff8',1,'AisInstrumentHandler']]],
+  ['experimentuploaded_20',['ExperimentUploaded',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aac81e3fd4ad428f9c703132a8923fc1f8',1,'AisErrorCode']]],
+  ['extra_20examples_21',['Extra Examples',['../md__markdown_files_2_extra_examples.html',1,'']]]
 ];

@@ -128,7 +128,7 @@ $(function(){initNavTree('advanced_experiment_8py-example.html',''); initResizab
 <div class="fragment"><div class="line"><span class="lineno">    1</span><span class="stringliteral">&quot;&quot;&quot;! @example advancedExperiment.py &quot;&quot;&quot;</span></div>
 <div class="line"><span class="lineno">    2</span><span class="comment">#! [Setup]</span></div>
 <div class="line"><span class="lineno">    3</span><span class="keyword">import</span> sys</div>
-<div class="line"><span class="lineno">    4</span><span class="keyword">from</span> PySide6.QtWidgets <span class="keyword">import</span> QApplication</div>
+<div class="line"><span class="lineno">    4</span><span class="keyword">from</span> PySide6.QtCore <span class="keyword">import</span> QCoreApplication</div>
 <div class="line"><span class="lineno">    5</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisDeviceTracker, AisExperiment, AisInstrumentHandler, AisErrorCode, AisOpenCircuitElement, AisConstantPotElement, AisConstantCurrentElement, AisEISGalvanostaticElement</div>
 <div class="line"><span class="lineno">    6</span> </div>
 <div class="line"><span class="lineno">    7</span><span class="comment">#Define relavant device information, for easy access</span></div>
@@ -136,7 +136,7 @@ $(function(){initNavTree('advanced_experiment_8py-example.html',''); initResizab
 <div class="line"><span class="lineno">    9</span>CHANNEL = 0</div>
 <div class="line"><span class="lineno">   10</span>INSTRUMENT_NAME = <span class="stringliteral">&quot;Plus2000&quot;</span></div>
 <div class="line"><span class="lineno">   11</span> </div>
-<div class="line"><span class="lineno">   12</span>app = QApplication()</div>
+<div class="line"><span class="lineno">   12</span>app = QCoreApplication()</div>
 <div class="line"><span class="lineno">   13</span> </div>
 <div class="line"><span class="lineno">   14</span>tracker = <a class="code hl_function" href="class_ais_device_tracker.html#adc58454bc5bfc76b3c8fc3fad40d2f1c">AisDeviceTracker.Instance</a>()</div>
 <div class="line"><span class="lineno">   15</span> </div>

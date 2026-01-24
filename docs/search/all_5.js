@@ -20,8 +20,9 @@ var searchData=
   ['finding_20com_20ports_17',['Finding COM Ports',['../md__markdown_files_2_comports.html',1,'']]],
   ['firmware_18',['Firmware',['../md__markdown_files_2_firmware_update.html#autotoc_md12',1,'Checking for and Updating Outdated Firmware'],['../md__markdown_files_2_firmware_update.html',1,'Updating Firmware']]],
   ['firmwarenotsupported_19',['FirmwareNotSupported',['../class_ais_error_code.html#aa1d7e88850560cfd6229469c60e3311aaebaf047df011cabf7dfdf13f0c7299e0',1,'AisErrorCode']]],
-  ['firmwareupdatenotification_20',['firmwareUpdateNotification',['../class_ais_device_tracker.html#a1f308b1322e75270ce0f0f6c23e5b9ec',1,'AisDeviceTracker']]],
-  ['for_20and_20updating_20outdated_20firmware_21',['Checking for and Updating Outdated Firmware',['../md__markdown_files_2_firmware_update.html#autotoc_md12',1,'']]],
-  ['frequency_22',['frequency',['../struct_ais_a_c_data.html#ac6b51ee0dfd56a5ad9f919a6c325aa4f',1,'AisACData']]],
-  ['from_20here_23',['Where to go from here',['../index.html#autotoc_md15',1,'']]]
+  ['firmwareupdatefinished_20',['firmwareUpdateFinished',['../class_ais_device_tracker.html#ae08ef97eed4d8a77238ee167caf15af7',1,'AisDeviceTracker']]],
+  ['firmwareupdatenotification_21',['firmwareUpdateNotification',['../class_ais_device_tracker.html#a1f308b1322e75270ce0f0f6c23e5b9ec',1,'AisDeviceTracker']]],
+  ['for_20and_20updating_20outdated_20firmware_22',['Checking for and Updating Outdated Firmware',['../md__markdown_files_2_firmware_update.html#autotoc_md12',1,'']]],
+  ['frequency_23',['frequency',['../struct_ais_a_c_data.html#ac6b51ee0dfd56a5ad9f919a6c325aa4f',1,'AisACData']]],
+  ['from_20here_24',['Where to go from here',['../index.html#autotoc_md15',1,'']]]
 ];

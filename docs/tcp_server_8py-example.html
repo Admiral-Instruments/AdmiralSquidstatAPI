@@ -135,7 +135,7 @@ $(function(){initNavTree('tcp_server_8py-example.html',''); initResizable(true);
 <div class="line"><span class="lineno">    6</span><span class="keyword">import</span> os</div>
 <div class="line"><span class="lineno">    7</span><span class="keyword">import</span> socket</div>
 <div class="line"><span class="lineno">    8</span><span class="keyword">import</span> threading</div>
-<div class="line"><span class="lineno">    9</span><span class="keyword">from</span> PySide6.QtWidgets <span class="keyword">import</span> QApplication</div>
+<div class="line"><span class="lineno">    9</span><span class="keyword">from</span> PySide6.QtCore <span class="keyword">import</span> QCoreApplication</div>
 <div class="line"><span class="lineno">   10</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisDeviceTracker</div>
 <div class="line"><span class="lineno">   11</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisExperiment</div>
 <div class="line"><span class="lineno">   12</span><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisOpenCircuitElement</div>
@@ -150,7 +150,7 @@ $(function(){initNavTree('tcp_server_8py-example.html',''); initResizable(true);
 <div class="line"><span class="lineno">   21</span>SQUIDNAME = <span class="stringliteral">&quot;Plus2000&quot;</span></div>
 <div class="line"><span class="lineno">   22</span> </div>
 <div class="line"><span class="lineno">   23</span><span class="comment"># Create the QT application</span></div>
-<div class="line"><span class="lineno">   24</span>app = QApplication([])</div>
+<div class="line"><span class="lineno">   24</span>app = QCoreApplication([])</div>
 <div class="line"><span class="lineno">   25</span>activeSockets = []</div>
 <div class="line"><span class="lineno">   26</span> </div>
 <div class="line"><span class="lineno">   27</span><span class="comment"># This will build and start the Open Circuit Potential experiment</span></div>

@@ -4,5 +4,6 @@ var searchData=
   ['experimentnewelementstarting_1',['experimentNewElementStarting',['../class_ais_instrument_handler.html#a9d0df19029d26b1cce0d05650ecfa854',1,'AisInstrumentHandler']]],
   ['experimentpaused_2',['experimentPaused',['../class_ais_instrument_handler.html#ab82d52f4f759b02162f6d047901cf192',1,'AisInstrumentHandler']]],
   ['experimentresumed_3',['experimentResumed',['../class_ais_instrument_handler.html#abdc033f7c96d34728cf74f316c73c8f1',1,'AisInstrumentHandler']]],
-  ['experimentstopped_4',['experimentStopped',['../class_ais_instrument_handler.html#ad252ccab4eaccb8bf1247ffb249c8ff8',1,'AisInstrumentHandler']]]
+  ['experimentstarting_4',['experimentStarting',['../class_ais_instrument_handler.html#ab3a5990221f9c4fd50ee1743909c1ba4',1,'AisInstrumentHandler']]],
+  ['experimentstopped_5',['experimentStopped',['../class_ais_instrument_handler.html#ad252ccab4eaccb8bf1247ffb249c8ff8',1,'AisInstrumentHandler']]]
 ];

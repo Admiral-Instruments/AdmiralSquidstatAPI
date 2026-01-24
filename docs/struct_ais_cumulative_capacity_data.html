@@ -17,7 +17,7 @@
     <meta name="twitter:title" content="Squidstat API User Manual" />
     <meta name="twitter:description" content="Squidstat API documentation from Admiral Instruments" />
     <!-- END twitter metadata -->
-    <title>Squidstat API User Manual: AisDCData Struct Reference</title>
+    <title>Squidstat API User Manual: AisCumulativeCapacityData Struct Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -96,7 +96,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('struct_ais_d_c_data.html',''); initResizable(true); });
+$(function(){initNavTree('struct_ais_cumulative_capacity_data.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -124,13 +124,13 @@ $(function(){initNavTree('struct_ais_d_c_data.html',''); initResizable(true); })
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_ais_d_c_data-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">AisDCData Struct Reference<div class="ingroups"><a class="el" href="group___helpers.html">Helpers</a></div></div></div>
+<a href="struct_ais_cumulative_capacity_data-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">AisCumulativeCapacityData Struct Reference<div class="ingroups"><a class="el" href="group___helpers.html">Helpers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A structure containing DC data collected from the instrument.  
- <a href="#details">More...</a></p>
+<p>A structure containing DC cumulative capacity data collected from the instrument.  
+</p>
 
 <p><code>#include &lt;<a class="el" href="_ais_data_points_8h_source.html">AisDataPoints.h</a>&gt;</code></p>
 
@@ -138,30 +138,14 @@ $(function(){initNavTree('struct_ais_d_c_data.html',''); initResizable(true); })
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae394dc60504aa5fdbc06604265d71881" id="r_ae394dc60504aa5fdbc06604265d71881"><td class="memItemLeft" align="right" valign="top"><a id="ae394dc60504aa5fdbc06604265d71881" name="ae394dc60504aa5fdbc06604265d71881"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp</b></td></tr>
-<tr class="memdesc:ae394dc60504aa5fdbc06604265d71881"><td class="mdescLeft">&#160;</td><td class="mdescRight">the time at which the DC data arrived. <br /></td></tr>
-<tr class="separator:ae394dc60504aa5fdbc06604265d71881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad49c1bb5b6e60fe631e174f64f40afbe" id="r_ad49c1bb5b6e60fe631e174f64f40afbe"><td class="memItemLeft" align="right" valign="top"><a id="ad49c1bb5b6e60fe631e174f64f40afbe" name="ad49c1bb5b6e60fe631e174f64f40afbe"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>workingElectrodeVoltage</b></td></tr>
-<tr class="memdesc:ad49c1bb5b6e60fe631e174f64f40afbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">the measured working electrode voltage in volts. <br /></td></tr>
-<tr class="separator:ad49c1bb5b6e60fe631e174f64f40afbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c765ec62a21cddb6482eebf64e5c812" id="r_a6c765ec62a21cddb6482eebf64e5c812"><td class="memItemLeft" align="right" valign="top"><a id="a6c765ec62a21cddb6482eebf64e5c812" name="a6c765ec62a21cddb6482eebf64e5c812"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>counterElectrodeVoltage</b></td></tr>
-<tr class="memdesc:a6c765ec62a21cddb6482eebf64e5c812"><td class="mdescLeft">&#160;</td><td class="mdescRight">the measured counter electrode voltage in volts. <br /></td></tr>
-<tr class="separator:a6c765ec62a21cddb6482eebf64e5c812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dbf057e272af392efcfdc6343eb1db5" id="r_a8dbf057e272af392efcfdc6343eb1db5"><td class="memItemLeft" align="right" valign="top"><a id="a8dbf057e272af392efcfdc6343eb1db5" name="a8dbf057e272af392efcfdc6343eb1db5"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>current</b></td></tr>
-<tr class="memdesc:a8dbf057e272af392efcfdc6343eb1db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">the measured electric current value in Amps <br /></td></tr>
-<tr class="separator:a8dbf057e272af392efcfdc6343eb1db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae686c0ad102816793735a760312ab5e0" id="r_ae686c0ad102816793735a760312ab5e0"><td class="memItemLeft" align="right" valign="top"><a id="ae686c0ad102816793735a760312ab5e0" name="ae686c0ad102816793735a760312ab5e0"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>temperature</b></td></tr>
-<tr class="memdesc:ae686c0ad102816793735a760312ab5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">the measured temperature in Celsius. <br /></td></tr>
-<tr class="separator:ae686c0ad102816793735a760312ab5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8ee2eaf91fa6483bf05ae2d6f9da262" id="r_ac8ee2eaf91fa6483bf05ae2d6f9da262"><td class="memItemLeft" align="right" valign="top"><a id="ac8ee2eaf91fa6483bf05ae2d6f9da262" name="ac8ee2eaf91fa6483bf05ae2d6f9da262"></a>
-<a class="el" href="struct_ais_cumulative_capacity_data.html">AisCumulativeCapacityData</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cumulativeCapacity</b></td></tr>
-<tr class="memdesc:ac8ee2eaf91fa6483bf05ae2d6f9da262"><td class="mdescLeft">&#160;</td><td class="mdescRight">the cumulative capacity data <br /></td></tr>
-<tr class="separator:ac8ee2eaf91fa6483bf05ae2d6f9da262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4487173746a61a90a6ecc5412404d87" id="r_aa4487173746a61a90a6ecc5412404d87"><td class="memItemLeft" align="right" valign="top"><a id="aa4487173746a61a90a6ecc5412404d87" name="aa4487173746a61a90a6ecc5412404d87"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>absolute</b></td></tr>
+<tr class="memdesc:aa4487173746a61a90a6ecc5412404d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">absolute cumulative capacity over the entire experiment. <br /></td></tr>
+<tr class="separator:aa4487173746a61a90a6ecc5412404d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7c31b2035e720787e93f2587bd8cd3d" id="r_ab7c31b2035e720787e93f2587bd8cd3d"><td class="memItemLeft" align="right" valign="top"><a id="ab7c31b2035e720787e93f2587bd8cd3d" name="ab7c31b2035e720787e93f2587bd8cd3d"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>net</b></td></tr>
+<tr class="memdesc:ab7c31b2035e720787e93f2587bd8cd3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">net cumulative capacity over the entire experiment. <br /></td></tr>
+<tr class="separator:ab7c31b2035e720787e93f2587bd8cd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="_ais_data_points_8h_source.html">AisDataPoints.h</a></li>
@@ -171,7 +155,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>temperature</b></td
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="struct_ais_d_c_data.html">AisDCData</a></li>
+    <li class="navelem"><a class="el" href="struct_ais_cumulative_capacity_data.html">AisCumulativeCapacityData</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>

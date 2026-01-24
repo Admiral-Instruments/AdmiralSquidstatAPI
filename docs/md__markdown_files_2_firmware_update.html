@@ -177,7 +177,7 @@ Checking for and Updating Outdated Firmware</h2>
 <div class="line">}</div>
 </div><!-- fragment --></li>
 <li><b class="tab-title">Python</b> <div class="fragment"><div class="line"><span class="keyword">import</span> sys</div>
-<div class="line"><span class="keyword">from</span> PySide6.QtWidgets <span class="keyword">import</span> QApplication</div>
+<div class="line"><span class="keyword">from</span> PySide6.QtCore <span class="keyword">import</span> QCoreApplication</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisDeviceTracker</div>
 <div class="line"><span class="keyword">from</span> SquidstatPyLibrary <span class="keyword">import</span> AisInstrumentHandler</div>
@@ -186,7 +186,7 @@ Checking for and Updating Outdated Firmware</h2>
 <div class="line"><span class="comment"># Define relavant device information, for easy access</span></div>
 <div class="line">COMPORT = <span class="stringliteral">&quot;COM16&quot;</span></div>
 <div class="line"> </div>
-<div class="line">app = QApplication()</div>
+<div class="line">app = QCoreApplication()</div>
 <div class="line"> </div>
 <div class="line">tracker = <a class="code hl_function" href="class_ais_device_tracker.html#adc58454bc5bfc76b3c8fc3fad40d2f1c">AisDeviceTracker.Instance</a>()</div>
 <div class="line"> </div>
