@@ -28,6 +28,23 @@ class MottSchottkyElement;
  */
 class SQUIDSTATLIBRARY_EXPORT AisMottSchottkyElement final : public AisAbstractElement {
 public:
+
+    /**
+     * @brief Constructor for the Mott-Schottky experiment element.
+     * @param startingPotential The starting potential (voltage) for the experiment.
+     * @param endingPotential The ending potential (voltage) for the experiment.
+     * @param voltageStep The voltage step size between each potential during the experiment.
+     * @param startFrequency The starting frequency for the EIS measurement.
+     * @param endFrequency The ending frequency for the EIS measurement.
+     * @param stepsPerDecade The number of frequency steps per decade.
+     * @param amplitude The amplitude of the AC signal used in the EIS measurement.
+     * @param minCycles The minimum number of cycles per frequency step during the EIS measurement.
+     * @param stepQuietTime The time spent at the starting potential.
+     */
+    explicit AisMottSchottkyElement(double startingPotential, double endingPotential, double voltageStep,
+         double startFrequency, double endFrequency,
+        double stepsPerDecade, double amplitude, unsigned int minCycles, double stepQuietTime);
+
     /**
      * @brief Constructor for the Mott-Schottky experiment element.
      * @param startingPotential The starting potential (voltage) for the experiment.
@@ -39,9 +56,12 @@ public:
      * @param amplitude The amplitude of the AC signal used in the EIS measurement.
      * @param minCycles The minimum number of cycles per frequency step during the EIS measurement.
      */
+    [[deprecated("Use the constructor with the stepQuietTime parameter instead.")]]
     explicit AisMottSchottkyElement(double startingPotential, double endingPotential, double voltageStep,
                                     double startFrequency, double endFrequency, double stepsPerDecade,
                                     double amplitude, unsigned int minCycles);
+
+
 
     /**
      * @brief Copy constructor for the AisMottSchottkyElement object.

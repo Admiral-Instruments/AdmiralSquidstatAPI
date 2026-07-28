@@ -38,14 +38,15 @@ if(NOT WIN32 AND APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES "Linux")
     link_libraries(${SquidstatLibrarylib_debug} ${QtLib})
 endif()
 
-if(NOT WIN32 AND NOT APPLE AND CMAKE_SYSTEM_NAME MATCHES "Linux")
+# Linux x86_64 architecture
+if(NOT WIN32 AND NOT APPLE AND CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64" AND CMAKE_SYSTEM_NAME MATCHES "Linux")
     include_directories(
             ../../Linux/include
             ../../Linux/thirdParty/Qt/include/QtCore
             ../../Linux/thirdParty/Qt/include/
     )
 
-    find_library(Qt5ore
+    find_library(Qt5Core
         NAME libQt5Core.so.5
         HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
         )
@@ -80,7 +81,73 @@ if(NOT WIN32 AND NOT APPLE AND CMAKE_SYSTEM_NAME MATCHES "Linux")
         HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
     ) 
     
-    link_libraries(${SquidstatLibrarylib_debug} ${Qt5ore} ${Qt5SerialPort} ${libcudata} ${libcui18n} ${libicuuc})
+    link_libraries(${SquidstatLibrarylib_debug} ${Qt5Core} ${Qt5SerialPort} ${libcudata} ${libcui18n} ${libicuuc})
+    add_compile_options(-fPIC)
+endif()
+
+# Linux ARM64 architecture
+if(NOT WIN32 AND NOT APPLE AND (CMAKE_SYSTEM_PROCESSOR MATCHES "arm" OR CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64") AND CMAKE_SYSTEM_NAME MATCHES "Linux")
+    include_directories(
+            ../../Linux/include
+            ../../Linux/thirdParty/Qt/include/QtCore
+            ../../Linux/thirdParty/Qt/include/
+    )
+    
+    find_library(Qt6Core
+        NAME libQt6Core.so.6
+        HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
+        )
+        
+    find_library(Qt6SerialPort
+        NAME libQt6SerialPort.so.6 libicudata.so.73 libicui18n.so.73 libicuuc.so.73
+        HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
+        )
+        
+    find_library(libcudata
+        NAME libicudata.so.73 libicui18n.so.73 libicuuc.so.73
+        HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
+        )	
+    
+    find_library(libcui18n
+        NAME libicui18n.so.73 libicuuc.so.73
+        HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
+        )
+        
+    find_library(libicuuc
+        NAME libicuuc.so.73
+        HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
+        )
+        
+    find_library(SquidstatLibrarylib_debug
+        NAME SquidstatLibraryd
+        HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
+        )
+
+    find_library(SquidstatLibrarylib_release
+        NAME SquidstatLibrary
+        HINTS ${CMAKE_SOURCE_DIR}/Linux/bin
+    ) 
+    
+    #link_libraries(${SquidstatLibrarylib_debug} ${Qt6Core} ${Qt6SerialPort} ${libcudata} ${libcui18n} ${libicuuc})
+    
+    # Build list of libraries to link
+    set(ARM_LINK_LIBS ${SquidstatLibrarylib_debug} ${Qt6Core} ${Qt6SerialPort})
+    
+    if(libcudata)
+        list(APPEND ARM_LINK_LIBS ${libcudata})
+    endif()
+    
+    if(libcui18n)
+        list(APPEND ARM_LINK_LIBS ${libcui18n})
+    endif()
+    
+    if(libicuuc)
+        list(APPEND ARM_LINK_LIBS ${libicuuc})
+    endif()
+    
+    link_libraries(${ARM_LINK_LIBS})
+    
+    
     add_compile_options(-fPIC)
 endif()
 

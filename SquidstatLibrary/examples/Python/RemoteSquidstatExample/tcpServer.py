@@ -6,7 +6,7 @@ It can recieve TCP commands from a client to trigger experiments and send data b
 import os
 import socket
 import threading
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisExperiment
 from SquidstatPyLibrary import AisOpenCircuitElement
@@ -21,7 +21,7 @@ SQUIDCOMPORT = "COM1"
 SQUIDNAME = "Plus2000"
 
 # Create the QT application
-app = QApplication([])
+app = QCoreApplication([])
 activeSockets = []
 
 # This will build and start the Open Circuit Potential experiment

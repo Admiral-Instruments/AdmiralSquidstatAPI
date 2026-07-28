@@ -546,14 +546,39 @@ public:
 
      /**
      * @brief Resets all limits for the specified channel.
-     * 
+     *
      * This function removes all configured voltage, current, and temperature limits for a specific channel,
      * restoring it to its default state.
-     * 
+     *
      * @param channel The channel number for which the limits are to be reset.
      * @return AisErrorCode indicating success or failure of the operation.
      */
         AisErrorCode resetChannelLimits(uint8_t channel) const;
+
+     /**
+     * @brief Sets the expected load impedance for a specific channel.
+     *
+     * By providing the load impedance, the Cycler can calculate and apply an initial current 
+     * that will result in a voltage close to the desired setpoint at the start of a potentiostatic experiment.
+     * This helps prevent immediately hitting lower current safety limits when the experiment begins.
+     *
+     * @param channel The channel number for which the load impedance is being set.
+     * @param loadImpedance The load impedance value in ohms to be applied to the channel.
+     * @return AisErrorCode indicating success or failure of the operation.
+     */
+    
+    AisErrorCode setLoadImpedance(uint8_t channel, const float& loadImpedance);
+
+     /**
+     * @brief Retrieves the currently configured load impedance for a specific channel.
+     *
+     * This allows the user to query the load impedance previously set for a channel.
+     *
+     * @param channel The channel number for which the load impedance is requested.
+     * @return The load impedance value in ohms for the specified channel.
+     */
+    float getLoadImpedance(uint8_t channel);
+
 signals:
 
     /**
@@ -567,6 +592,12 @@ signals:
      * @param grounded true if there is a connection to ground and false if the ground has disconnected.
     */
     void groundFloatStateChanged(bool grounded);
+
+    /**
+     * @brief a signal that is emitted whenever an experiment begins
+     * @param channel the channel number on which the experiment has begun
+    */
+    void experimentStarting(uint8_t channel);
 
     /**
      * @brief a signal that is emitted whenever a new elemental experiment has started.
@@ -645,6 +676,7 @@ signals:
      * @note stop experiment command will automatilcally send on channel.
     */
     void deviceError(uint8_t channel, const QString& error);
+
 
 
 private slots:

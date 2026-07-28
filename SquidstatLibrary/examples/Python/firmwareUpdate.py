@@ -1,7 +1,7 @@
 """! @example firmwareUpdate.py """
 ##! [FirmwareUpdate]
 import sys
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisInstrumentHandler
@@ -10,7 +10,7 @@ from SquidstatPyLibrary import AisErrorCode
 # Define relavant device information, for easy access
 COMPORT = "COM16"
 
-app = QApplication()
+app = QCoreApplication()
 
 tracker = AisDeviceTracker.Instance()
 

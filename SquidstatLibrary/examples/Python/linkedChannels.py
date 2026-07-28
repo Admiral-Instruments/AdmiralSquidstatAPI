@@ -6,13 +6,13 @@
 	@note This feature is only available on Cycler models.
 """
 import sys
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from SquidstatPyLibrary import AisDeviceTracker, AisInstrumentHandler, AisErrorCode, AisConstantCurrentElement, AisExperiment
 
 # Define relavant device information, for easy access
 COMPORT = "COM1"
 
-app = QApplication()
+app = QCoreApplication()
 
 tracker = AisDeviceTracker.Instance()
 

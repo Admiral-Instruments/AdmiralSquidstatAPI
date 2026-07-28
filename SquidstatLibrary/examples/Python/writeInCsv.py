@@ -1,4 +1,6 @@
-"""! @example writeinCSV.py 
+"""! \example writeinCSV.py """
+
+"""
 This is an example of the writeinCSV.py file, which helps control Squidstat in parallel with other devices. 
 In this example, we inform other devices using SerialPortReader::writeData when a new element starts executing 
 inside Squidstat, and also print the data received from the other device using the SerialPortReader::dataReceived signal. 
@@ -15,7 +17,7 @@ In detail:
 import sys
 from PySide6.QtCore import QIODevice, QThread, QObject, Signal
 from PySide6.QtSerialPort import QSerialPort
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from SquidstatPyLibrary import AisDeviceTracker
 from SquidstatPyLibrary import AisErrorCode
 from SquidstatPyLibrary import AisExperiment
@@ -23,7 +25,7 @@ from SquidstatPyLibrary import AisConstantCurrentElement
 from SquidstatPyLibrary import AisOpenCircuitElement
 
 # initialize the application
-app = QApplication([])
+app = QCoreApplication([])
 
 # convert incoming data to string with single line
 def convert_to_csv_line(data_list):

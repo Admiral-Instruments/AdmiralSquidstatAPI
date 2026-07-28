@@ -6,6 +6,23 @@
 /**
  * @ingroup Helpers
  *
+ * @brief A structure containing DC cumulative capacity data collected from the instrument.
+*/
+struct AisCumulativeCapacityData {
+   /**
+    * @brief absolute cumulative capacity over the entire experiment.
+    */
+    double absolute;
+
+   /**
+    * @brief net cumulative capacity over the entire experiment.
+    */
+    double net;
+};
+
+/**
+ * @ingroup Helpers
+ *
  * @brief A structure containing DC data collected from the instrument.
 */
 struct AisDCData {
@@ -34,11 +51,16 @@ struct AisDCData {
      * @brief the measured temperature in Celsius.
     */
     double temperature;
+
+    /**
+     * @brief the cumulative capacity data
+    */
+    AisCumulativeCapacityData cumulativeCapacity;
 };
 
 /**
  * @ingroup Helpers
- * 
+ *
  * @brief A structure containing AC data collected from the instrument.
  */
 struct AisACData {

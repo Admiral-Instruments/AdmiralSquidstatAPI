@@ -1,6 +1,6 @@
 """! @example dataOutput.py """
 import sys
-from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import QCoreApplication
 from PySide6.QtCore import  QTextStream, QFile, QStandardPaths, QIODevice
 from SquidstatPyLibrary import AisDeviceTracker, AisErrorCode
 from SquidstatPyLibrary import AisExperiment
@@ -12,7 +12,7 @@ from SquidstatPyLibrary import AisConstantCurrentElement
 COMPORT = "COM1"
 CHANNEL = 0
 
-app = QApplication()
+app = QCoreApplication()
 
 tracker = AisDeviceTracker.Instance()
 
